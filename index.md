@@ -16,7 +16,7 @@ In Verus Sanitas.
 [I'm mining since XYZ with XYZ, why I haven't found a block yet?](#!faq-allos/02_average_time_to_find_a_block_manual_calculation.md)
 [How do I direct all my mined rewards to a single Verus wallet?](#!faq-allos/03_mine_rewards_to_a_single_verus_wallet_gui_+_cli.md)
 [How to consolidate multiple `wallet.dat` files in one?](#!faq-allos/04_consolidate_multiple_wallet.dat_files_in_one.md)
-[What reward do I get for staking (PoS) or Mining (PoW) a block?](#!faq-allos/05_reward_received_per_blocknummer.md)
+[What reward do I get for staking (PoS) or Mining (PoW) a block?](#!faq-allos\05_reward_received_per_blocknumber.md)
 [Stake estimates, halving and block-rewards](#!faq-allos/06_pos,_halving,_block_reward.md)
 [What's the value of VRSC?](#!faq-allos/07_what_are_my_vrsc_worth.md)
 [How do you know a block was minted (staking reward)?](09_how_do_you_know_a_block_was_minted_staking_reward.md)
