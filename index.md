@@ -30,9 +30,10 @@ In Verus Sanitas.
 [What are the pools that i can join?](#!faq-allos/21_mining_pools.md)
 [What are the staking pools that I can join?](#!faq-allos/22_staking_pools.md)
 [Verus Wallet & VRSC.conf standard locations](#!faq-allos/24_wallet.dat_and_vrsc.conf_location.md)
-[My wallet is stuck on block number XXXX. It does not synchronize properly anymore.](!faq-allos/25_wallet_not_synced.md)
-
+[My wallet is stuck on block number XXXX. It does not synchronize properly anymore.](#!faq-allos/25_wallet_not_synced.md)
+[I accidentally send funds to a B-address and cannot move those funds](#!faq-allos\26_sent_funds_to_b-address.md)
 ## Frequently Asked Questions (Windows specific)
+[Remarks on Windows command line formatting](#!faq-windows/winfaq-01_cli_formatting.md)
 
 ## Frequently Asked Questions (Linux specific)
 
