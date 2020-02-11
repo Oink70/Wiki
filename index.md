@@ -1,3 +1,3 @@
-# Verus Coin Wiki of Awesomeness.
+#H1 Verus Coin Wiki 
 
 In Verus Sanitas.
