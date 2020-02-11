@@ -2,4 +2,4 @@
 
 In Verus Sanitas.
 
-[test link](https://wiki.veruscoin.io/faq-allos/01;_immature_block_unlock_time_calculation_manual_calculation.md)
+[test link](#01;_immature_block_unlock_time_calculation_manual_calculation.md)
