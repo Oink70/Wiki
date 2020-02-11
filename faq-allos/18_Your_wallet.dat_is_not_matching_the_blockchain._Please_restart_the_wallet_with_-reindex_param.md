@@ -1,6 +1,5 @@
-Question: ERROR: Your wallet.dat is not matching the blockchain. Please restart the wallet with -reindex param.
-
-Answer: It seems you probably trying to move coinbase coins that you must move them through a private address (zaddress) first by shielding your coinbases, which is required by Verus blockchain rules.
+# Question: ERROR: Your wallet.dat is not matching the blockchain. Please restart the wallet with -reindex param.
+It seems you probably trying to move coinbase coins that you must move them through a private address (zaddress) first by shielding your coinbases, which is required by Verus blockchain rules.
 
 To do this, you must:
 1. go to the "Receive" screen and make a new private address
@@ -11,4 +10,4 @@ To do this, you must:
 6. Wait a while until you have a private balance showing on the transactions screen
 7. Send again, this time from your private address to any normal transparent receive address that you have.
 
-(submitted by @keda666, solution written by mikeout)
+(submitted by @keda666, solution written by @mikeout)

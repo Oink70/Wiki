@@ -1,6 +1,5 @@
-﻿Question: How can I tell the difference between stacked and mined coins?
+# ﻿Question: How can I tell the difference between stacked and mined coins?
 
-Answer:
 You can check this in the VerusExplorer https://explorer.veruscoin.io/
 CLI:
 1) Check last 10 transactions in the </>CLI. Use `listtransactions`.

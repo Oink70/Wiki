@@ -1,6 +1,5 @@
-Question: I'm mining since XYZ with XYZ, why I haven't found a block yet?
+# Question: I'm mining since XYZ with XYZ, why I haven't found a block yet?
 
-Answer:
 average_time_to_find_one_block = ( NetworkHashrate / LocalHashrate ) * BlockTime
 
 One block = 24 coins (as now)

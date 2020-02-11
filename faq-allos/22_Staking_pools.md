@@ -1,6 +1,5 @@
-Question: what are the staking pools that I can join?
+# Question: what are the staking pools that I can join?
 
-Answer:
 http://vrsc.ginasismining.com/
 
 

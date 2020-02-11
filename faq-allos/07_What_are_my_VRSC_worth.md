@@ -1,9 +1,8 @@
-Question: What's the value of VRSC?
+# Question: What's the value of VRSC?
 
-answer:
 Use with: https://veruspay.io/api/ for simple USD VRSC price, or choose options now added!
 
-Options (values are case insensitive): 
+Options (values are case insensitive):
       currency - BTC or Fiat code like USD or CAD
       ticker - ARRR or VRSC
       data - volume or price - volume only relevant if exchange is defined
