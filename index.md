@@ -1,6 +1,10 @@
 # Verus Coin Wiki
 
-In Verus Sanitas.
+In this WIKI we collected the most frequently asked questions and useful guides that are related to Verus.
+
+On the bottom of each document, you may find a revision and/or creation date. If no date is mentioned the document originates from before february 12th, 2020 and may apply to older situations.
+
+If you have any questions about the information here, need help or have suggestions on the content, don't hesitate to contact us through [Discord](https://discord.gg/VRKMP2S).
 
 
 ## Information
@@ -9,7 +13,15 @@ In Verus Sanitas.
 [VerusHash 2.1](#!information/verushash_2.1.md)
 
 ## How-To
-
+[Verus Information Page](#!how-to\how-to_verus_info.md)
+[Backup, Install or Update and Bootstrap your wallet](#!how-to\how-to_bootstrap.md)
+[Verus Wallet installation guide (External)](https://medium.com/veruscoin/how-to-update-veruscoin-graphical-gui-wallet-to-0-4-0a-for-linux-686fc7a5b6e7)
+[Verus Beginners Mining guide (External)](https://medium.com/veruscoin/how-to-start-cpu-mining-verus-coin-vrsc-from-your-laptop-in-under-5-minutes-f69c9aae340e)
+[Verus Beginners Staking guide (External)](https://medium.com/veruscoin/how-to-earn-vrsc-solo-mining-with-your-cpu-and-staking-mined-coins-aa27da76882c)
+[Shield Verus Coins via Command Line Interface](#!how-to\how-to_shield_via_cli.md)
+[Create an ID on Verus Desktop (pdf)](https://veruscoin.io/downloads/how-to/how-to_create_verus_id_with_verus_desktop.pdf)
+[Create an ID on command Line (pdf)](https://veruscoin.io/downloads/how-to/how-to_create_verus_id_with_cli.pdf)
+[Join Verus Testnet](#!how-to\how-to_join_testnet.md)
 
 ## Frequently Asked Questions (General)
 [How do I know when an immature block will "unlock" (mature)?](#!faq-allos/01_immature_block_unlock_time_calculation_manual_calculation.md)
@@ -32,11 +44,24 @@ In Verus Sanitas.
 [Verus Wallet & VRSC.conf standard locations](#!faq-allos/24_wallet.dat_and_vrsc.conf_location.md)
 [My wallet is stuck on block number XXXX. It does not synchronize properly anymore.](#!faq-allos/25_wallet_not_synced.md)
 [I accidentally send funds to a B-address and cannot move those funds](#!faq-allos\26_sent_funds_to_b-address.md)
+
 ## Frequently Asked Questions (Windows specific)
-[Remarks on Windows command line formatting](#!faq-windows/winfaq-01_cli_formatting.md)
+[Windows pool-mining on low priority](#!faq-windows\winfaq-01_low_priority_mining.md)
+[Remarks on Windows command line formatting](#!faq-windows/winfaq-02_cli_formatting.md)
 
 ## Frequently Asked Questions (Linux specific)
+[Install the Linux CLI wallet](#!faq-linux\faq-lin01_install_linux_cli.md)
+[Script calculating time to unlock for immature rewards](#!faq-linux\faq-lin02_immature_block_unlock_time.md)
+[Linux Bash scripts to make mining life easier](#1faq-linux\faq-lin03_linux_scripts_make_life_easy.md)
+[ERROR: Cannot obtain lock on data directory](#!faq-linux\faq-lin04_cannot_obtain_lock.md)
+[Cloud daily backup of Wallet.dat](#!faq-linux\faq-lin05_daily_cloud_backup.md)
+[PHP staking interface for coinshielding nodes](#!faq-linux\faq-lin07_PHP_CLI_interface.md)
+[Low priority pool-mining](#!faq-linux\faq-lin08_low_priority_mining.html.md)
 
 ## Frequently Asked Questions (MacOS specific)
+[ERROR: Cannot Get a lock on data directory /root/.komodo/VRSC.](#!faq-macos\mac-faq01_obtain_lock.md)
+[What versions of OSX/macOS are supported?](#!faq-macos\mac-faq02_what_versions_osx.md)
+[Start mining on MacOS](#!faq-macos\mac-faq03-mining_guide.md)
+[MacOS pool-mining on low priority](#!mac-faq04_low_priority_mining.md)
 
 ## Frequently Asked Questions (ARM specific)
