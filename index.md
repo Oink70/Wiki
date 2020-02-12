@@ -52,7 +52,7 @@ If you have any questions about the information here, need help or have suggesti
 ## Frequently Asked Questions (Linux specific)
 [Install the Linux CLI wallet](#!faq-linux\faq-lin01_install_linux_cli.md)
 [Script calculating time to unlock for immature rewards](#!faq-linux\faq-lin02_immature_block_unlock_time.md)
-[Linux Bash scripts to make mining life easier](#1faq-linux\faq-lin03_linux_scripts_make_life_easy.md)
+[Linux Bash scripts to make mining life easier](#!faq-linux\faq-lin03_linux_scripts_make_life_easy.md)
 [ERROR: Cannot obtain lock on data directory](#!faq-linux\faq-lin04_cannot_obtain_lock.md)
 [Cloud daily backup of Wallet.dat](#!faq-linux\faq-lin05_daily_cloud_backup.md)
 [PHP staking interface for coinshielding nodes](#!faq-linux\faq-lin07_PHP_CLI_interface.md)
