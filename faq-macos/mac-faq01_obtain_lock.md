@@ -17,4 +17,4 @@ and seeing if any processes are listed besides the process you're using to searc
 You would see verusd with a child process of komodo and all its cli arguments.
 
 
-(submitted by @keda666, solution written by englal)
+(submitted by @keda666, solution written by englal.vrsc@)

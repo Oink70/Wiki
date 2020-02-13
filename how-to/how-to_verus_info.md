@@ -158,6 +158,6 @@ For those interested in VerusPay, a guide can be found here: https://veruspay.io
 And finally for those interested in running various Veruscoin services: https://github.com/VerusCoin/VerusServicesSetup
 
 
-Information compiled by @Thoskk, complemented by @Godballz and @Oink.
+Information compiled by Thoskk.vrsc@, complemented by Godballz.vrsc@ and Oink.vrsc@.
 
 Note: revision date 2020-02-12.

@@ -30,4 +30,4 @@ Now we'll need to adjust the batchfile to run on low priority:
     miner to you.
 
 
-Created by @Oink.
+Created by Oink.vrsc@.

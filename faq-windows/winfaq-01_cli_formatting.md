@@ -5,3 +5,5 @@ The CLI help shows the command format for Linux and MacOS. On the native windows
 * For windows substitute the shown `"`-character with the `\"`-characters.
 
 Note: this only applies to giving commands from the windows command prompt. Verus Desktop will accept commands as listed.
+
+Created by Oink.vrsc@

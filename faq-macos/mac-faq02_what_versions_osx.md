@@ -23,4 +23,4 @@ If you installed on OSX 10.11.x or earlier and need to remove it:
 7. Upgrade OS.
 8. Install Agama (Check `Link1` for a smooth install)
 
-(submitted by @bigtom, edited by @Oink)
+(submitted by @bigtom, edited by Oink.vrsc@)

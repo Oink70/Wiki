@@ -1,4 +1,4 @@
-# ﻿Question: How can I tell the difference between stacked and mined coins?
+# ﻿Question: How can I tell the difference between staked and mined coins?
 
 You can check this in the VerusExplorer https://explorer.veruscoin.io/
 CLI:
@@ -14,4 +14,4 @@ In the GUI you can also click yourself thru to that information.
 3) In the VRSC explorer click on the block hash value (in light blue) – now the block hash is displayed as the title of the box.
 4) Click on the info "i" on the right and click on "search": in the result displayed for blocktype 'mined' or 'minted'.(edited)
 
-(submitted by karero, edited by @Oink)
+(submitted by karero, edited by Oink.vrsc@)

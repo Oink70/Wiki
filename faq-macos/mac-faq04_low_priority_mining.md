@@ -22,4 +22,4 @@ Now we'll need to adjust the batchfile to run on low priority:
     foundation donation address. If desired change the identifier (`Donator`) to a name that easily identifies the
     miner to you.
 
-Created by @Oink.
+Created by Oink.vrsc@.

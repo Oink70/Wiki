@@ -14,4 +14,4 @@ average_time_to_find_one_block = 75.287 seconds (20,91 hours)
 
 bear in mind that these are average times to find a block. In real life you may hit a block much sooner or later after finding the last. In the long run it averages out to the values predicted.
 
-(submitted by @TexWiller, edited by @Oink)
+(submitted by @TexWiller, edited by Oink.vrsc@)

@@ -39,4 +39,4 @@ CCMINER:
   - save and exit the file
   - run `run.vershhash.bat` to start mining.
 
-Submitted by @Oink
+Submitted by Oink.vrsc@

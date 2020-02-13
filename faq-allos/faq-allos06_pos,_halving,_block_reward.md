@@ -11,4 +11,4 @@ See your own percentage of total coins possible to stake, and pay attention to t
 The spreadsheet will also show how many days until the next halvings.
 The calculation of timelocked coins being unlocked is based on an average for the entire period, but should be fairly accurate, and is included in the total of staking coins.
 
-(submitted by @Cragorn, edited by @Oink)
+(submitted by @Cragorn, edited by Oink.vrsc@)

@@ -10,4 +10,4 @@ To do this, you must:
 6. Wait a while until you have a private balance showing on the transactions screen
 7. Send again, this time from your private address to any normal transparent receive address that you have.
 
-(submitted by @keda666, solution written by @mikeout)
+(submitted by @keda666, solution written by mikeout.vrsc@)

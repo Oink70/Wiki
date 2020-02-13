@@ -55,4 +55,4 @@ PermitRootLogin no
 Apply no settings:
   `sudo systemctl restart sshd`
 
-(submitted by @karero, corrected by @Glennp, edited by @Oink)
+(submitted by @karero, corrected by @Glennp, edited by Oink.vrsc@)

@@ -32,4 +32,4 @@ Make sure you don't remove any folders, or you'll have to use the bootstrap.
 
 Then start your wallet as you're used to.
 
-Submitted by @Oink & @Thoskk
+Submitted by Oink.vrsc@ & Thoskk.vrsc@

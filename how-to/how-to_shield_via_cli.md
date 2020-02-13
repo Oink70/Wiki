@@ -30,7 +30,7 @@ To shield all coinbase in your wallet, you can use `"*"` (quotes are important) 
 
 To just shield a single address, specify that as the first argument:
 
-  `verus z_shieldcoinbase  <YOUR R-ADDRESS> <YOUR zs-ADDRESS>`
+  `verus z_shieldcoinbase <YOUR R-ADDRESS> <YOUR zs-ADDRESS>`
 
 Once the funds have moved to the zaddr and are confirmed, you can freely send them to any address, They will be eligble for staking id sent to a transpartent address (R-address).
 

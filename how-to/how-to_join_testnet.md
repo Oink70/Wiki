@@ -45,4 +45,4 @@ Linux and MacOS. If you already have a wallet verify that the wallet is the most
 
 
 
-Created by @Oink, inspired by @0x03.
+Created by Oink.vrsc@, inspired by 0x03.vrsc@.

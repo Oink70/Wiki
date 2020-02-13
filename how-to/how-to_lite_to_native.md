@@ -37,3 +37,5 @@ Link 2: Download Verus Bootstrap
 If you followed these steps, you will have updated to the latest version of Agama for verus, installed the bootstrap and imported your existing address into Agama. You can now Stake your balance and use Private (sapling) addresses.
 
 Attention: Agama wallet is deprecated. This guide is not linked from the main page. It needs updating/reworking to Verus Desktop
+
+Created by Oink.vrsc@

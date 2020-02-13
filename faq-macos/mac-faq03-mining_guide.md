@@ -42,4 +42,4 @@ We have all the settings ready to go, but the file we just edited is not executa
 Now we have an executable file that will run when you doubleclick.
  15. Doubleclick `start.command` and your machine will start mining.
 
-Created by @Oink.
+Created by Oink.vrsc@.

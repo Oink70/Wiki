@@ -13,4 +13,4 @@ Regarding the Verus debug.log: “<DATE> No eligible staking transaction found�
 Regarding time locked coins:
 The Zcash protocol requires you to send all coins received by mining (on wallet, not pool mining) or staking (reward transactions, also on wallet, not pool staking) once unlocked to a private address and then to a public/transparent address before you can use them either for staking or for making transactions (that’s how you make use of your rewarded coins = coinbase coins). So, once your coins loose their time lock, you can unlock those coins as described in "HOW-TO Shield Verus Coin via the CLI.md". Once you've transferred the coins from your private address back to (one of) your public / transparent address(es) and you’ll automatically start staking.
 
-(submitted by @karero, edited by @Oink)
+(submitted by @karero, edited by Oink.vrsc@)

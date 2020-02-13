@@ -5,3 +5,5 @@
 1) adapt the above `createrawtransaction` api call
 2) `signrawtransaction` the result of 1)
 3) `sendrawtransaction` the result of 2
+
+This faq needs further explanation and clarification
