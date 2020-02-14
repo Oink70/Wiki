@@ -1,5 +1,4 @@
-# Verus Coin Wiki
-
+# ![Verus Coin](https://wiki.veruscoin.io/img/favicon.png "Verus Coin Wiki") Verus Coin Wiki
 In this WIKI we collected the most frequently asked questions and useful guides that are related to Verus.
 
 On the bottom of each document, you may find a revision and/or creation date. If no date is mentioned the document originates from before february 12th, 2020 and may apply to older situations.
