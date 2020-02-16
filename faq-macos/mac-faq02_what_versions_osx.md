@@ -1,15 +1,23 @@
 # What versions of OSX/macOS are supported?
+
 ## Verus Desktop
+
 Currently only macOS 10.12.x and up are tested and supported for Verus Desktop. Installing Verus Desktop on OSX 10.11.x or earlier may be possible but the wallet does not function and never completes the initial sync.
+
 ## Verus CLI wallet
+
 The CLI wallet should run on lower versions without problems.
 
 ## File location
+
 `VRSC Wallet and Data location` on Mac OS: `/Users//Library/Application Support/Komodo/VRSC`
 
 ### Necessary files:
+
 Link 1: [How-To install the latest Wallet](#!/how-to/how-to_bootstrap.md)
+
 ## Procedure:
+
 If you installed on OSX 10.11.x or earlier and need to remove it:
 
 1. Quit your Wallet.

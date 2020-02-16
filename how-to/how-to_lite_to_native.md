@@ -1,21 +1,23 @@
 # Guide to change Agama from Lite Mode to Native Mode.
-Attention: Read completely before use.
+
+Attention: Read completely before use. Agama wallet is no longer supported.
 
 #### Important General Information
-'Agama Wallet location` on different OS:
+
+`Agama Wallet location` on different OS:
 Linux GUI: `~/.Komodo/VRSC`
 Mac OS: `/Users//Library/Application Support/Komodo/VRSC`
 Windows 10: `%AppData%\Roaming\Komodo\VRSC\`
 
 #### Necessary files:
-Link 1: Download latest Wallet
+
 Link 2: Download Verus Bootstrap
 
 ## Procedure:
 1) Make sure you have your seed phrase and password you use to log into your Lite mode wallet available.
 2) First of all make a notition of your address and balance of VRSC you have in your wallet, before closing Agama.
 3) Make sure the latest version of Agama Wallet for Verus is installed.
-	3a) Download the latest Agama Verus Wallet from Link 1.
+	3a) Download the latest Agama Verus Wallet (Agama is now unsupported)
 	3b) Verify the SHA256 checksum of your download, so you have an untampered installer.
 	3c) Run the file you just downloaded to install it.
 4) Installing the bootstrap:

@@ -1,18 +1,24 @@
 # Shielding Verus Coin via the CLI.
+
 Attention: Read it completely before use.
 
 Note: Shielding is no longer required for coinbase rewards after block 800200. Earlier timelocked coins will still need to be shielded in order to use them.
 
 #### General remarks on CLI wallet:
+
 On Windows command line enter the commands as shown without the surrounding quotation marks
 In Linux shell preceed the commands without surrounding quotation marks with `./`
 In MacOS shell preceed the commands without surrounding quotation marks with `./`
 Example: the windows version `verus listtransactions` transforms in Linux or MacOS to `./verus listtransactions`.
+
 #### General remarks on Windows command line formatting:
+
 The CLI help shows the command format for Linux and MacOS.
 For windows substitute the shown `'`-character with the `"`-character.
 For windows substitute the shown `"`-character with the `\"`-characters.
+
 ## Procedure:
+
 You must first "shield coins" (send from a transparent R-addr to a shielded zaddr) to be able to use them in staking, when they first unlock.
 This is part of the Zcash protocol itself. The commands below assume you are in the Verus source code directory
 

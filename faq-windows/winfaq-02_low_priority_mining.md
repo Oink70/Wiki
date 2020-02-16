@@ -1,7 +1,11 @@
 # Windows pool-mining on low priority.
+
 ## Links to VRSC miners:
-[Miners download page](https://veruscoin.io/getVRSC.html#download)
+
+[Miners download page](https://veruscoin.io/getVRSC.html)
+
 ## Procedure:
+
 In order to let your mining not interfere with other processes running on your PC, we'll need to deprioritize
 the mining process. This will result in your miner throttling down whenever your PC needs processing power.
 People have reported to be able to use CPU-heavy applications, like games, without the miner interfering, with
@@ -15,7 +19,9 @@ preferred miner, extract it to your prefered location and configure the batchfil
 and your own mining address.
 
 Now we'll need to adjust the batchfile to run on low priority:
-NHEQMINER:
+
+##### NHEQMINER:
+
   - change to the folder you extracted the download
   - edit the `start.bat`
   - Scroll down to the line, that needs to be adjusted:
@@ -25,7 +31,8 @@ NHEQMINER:
   - save and exit the file
   - run `start.bat` to start mining
 
-CCMINER:
+##### CCMINER:
+
   - Change to the folder you put the three files from the downloaded archive in (`run.vershhash.bat`, `libcrypto-1_1-x64.dll` & `ccminer.exe`)
   - edit the `run.vershhash.bat`
   - The line, that needs to be adjusted:

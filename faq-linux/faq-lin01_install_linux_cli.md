@@ -1,14 +1,18 @@
 # How do I install the Linux CLI (command line interface) on a brand new (hosted) system?
+
 Notice: Read it completely before use.
 
 #### Important General Information
+
 `wallet.dat` location on Linux: `~/.Komodo/VRSC`
 
 #### Necessary files:
+
 Link 1: [Download latest Wallet](https://veruscoin.io/wallet.html)
 Link 2: [Download Verus Bootstrap](https://bootstrap.veruscoin.io/)
 
 ## Procedure:
+
 1. First make sure your system is up to date:  
   `sudo apt-get update && apt-get upgrade -y`  
 

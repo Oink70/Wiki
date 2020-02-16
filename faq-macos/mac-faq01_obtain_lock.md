@@ -1,4 +1,5 @@
 # ERROR: Cannot Get a lock on data directory /root/.komodo/VRSC.
+
 Komodo is probably already running.
 
 ## Procedure:

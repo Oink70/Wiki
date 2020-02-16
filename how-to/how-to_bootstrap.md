@@ -1,23 +1,33 @@
 # Guide to install Bootstrap for your Verus Wallet.
+
 Attention: Read it completely before using.
 
 ### Important General Information
+
 `VRSC Wallet location` on different OS:
 Linux GUI: `~/.komodo/VRSC`
 Mac OS: `/Users//Library/Application Support/komodo/VRSC`
 Windows 10: `%AppData%\Komodo\VRSC\`
+
 Tip: The easiest way is to copy the location above and past it into your address bar of your file browser. Your operation system will accept the input, interpret where that location is and bring you there.
+
 #### NEW:
+
 ##### Automated bootstrap scripts:
+
 [Windows 10](https://github.com/Oink70/VerusExtras/releases/download/v1.0.3/VRSC-bootstrap-win.bat) (Tested on build 18362.418)
 [Linux](https://github.com/Oink70/VerusExtras/releases/download/v1.0.3/VRSC-bootstrap-linux.sh) (Tested on Ubuntu 18.04)
 [MacOS](https://github.com/Oink70/VerusExtras/releases/download/v1.0.3/VRSC-bootstrap-mac.command) (Tested on Mac OS 10.14 Mojave)
+
 Tip: The bootstraps above do not delete any information, don't update your wallet to the latest version and don't make a backup of your wallet. If you are instructed to use the manual procedure, don't use these scripts.
+
 ## Necessary files:
+
 Link 1: [Download latest Wallet](https://veruscoin.io/wallet.html)
 Link 2: [Download Verus Bootstrap](https://bootstrap.veruscoin.io/)
 
 ## Manual procedure:
+
 If you do not feel confident in executing the instructions listed below, consider using the automated bootstrap script
 available for your Operating system. In some cases you will be asked by community members to execute the manual procedure,
 since the script does not delete any files, it only overwrites the chain data with the most recent version from the

@@ -6,3 +6,5 @@ To solve this you need to install the libgomp library:
 `sudo apt-get install libgomp1`
 
 Solution supplied by: _PureHate.vrsc@
+
+Note: creation date 2020-02-12.

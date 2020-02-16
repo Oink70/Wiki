@@ -1,4 +1,5 @@
 # How do I know when an immature block will "unlock" (mature)?
+
 You can use the following scripts to automate it (prints, for each block, how many blocks remaining and the estimated date).
 Keep in mind that the actual number of blocks per day is not always exactly 1440. It varies and the estimated dates may change slightly over time. Below you will find the Linux script that will calculate the extimated time for you:
 

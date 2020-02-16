@@ -1,18 +1,26 @@
 # Verus Information Page.
+
 There's a lof of information about the Veruscoin project. We have gathered as much information and resources and bundled them into this FAQ, as to give a quick overview
 
 #### `VRSC Wallet & data location` on different OS:
+
 Linux GUI: `~/.komodo/VRSC`
 Mac OS: `/Users//Library/Application Support/komodo/VRSC`
 Windows: `%AppData%\Komodo\VRSC\`
 
-#### CLI binaries location in Verus Agama installation:
-Windows Verus binaries: `\resources\app\assets\bin\win64\verusd\` contains `verusd` and `verus`
-Windows Komodo (and asset chains) binaries: `\resources\app\assets\bin\win64\` contains `komodod` and `komodo-cli`
-Linux Verus binaries: `\resources\app\assets\bin\linux64\verusd`  contains `verusd` and `verus`
-Linux Komodo (and asset chains) binaries: `\resources\app\assets\bin\linux64\` contains `komodod` and `komodo-cli`
+#### CLI binaries location in Verus Enhanced Agama installation:
+
+Note: All locations are relative to the installation location of Agama:
+
+Windows Verus binaries: `resources\app\assets\bin\win64\verusd\` contains `verusd` and `verus`
+Windows Komodo (and asset chains) binaries: `resources\app\assets\bin\win64\` contains `komodod` and `komodo-cli`
+Linux Verus binaries: `resources\app\assets\bin\linux64\verusd`  contains `verusd` and `verus`
+Linux Komodo (and asset chains) binaries: `resources\app\assets\bin\linux64\` contains `komodod` and `komodo-cli`
 
 #### CLI binaries location in Verus Desktop installation:
+
+Note: All locations are relative to the installation location of Verus Desktop:
+
 Windows Verus binaries: `\resources\app\assets\bin\win64\verusd\` contains `verusd` and `verus`
 Windows Komodo (and asset chains) binaries: `\resources\app\assets\bin\win64\komodod` contains `komodod` and `komodo-cli`
 Windows Zcash binaries: `\resources\app\assets\bin\win64\zcash` contains `zcashd` and `zcash-cli`
@@ -20,7 +28,8 @@ Linux Verus binaries: `\resources\app\assets\bin\linux64\verusd`  contains `veru
 Linux Komodo (and asset chains) binaries: `\resources\app\assets\bin\linux64\` contains `komodod` and `komodo-cli`
 
 
-Necessary files:
+#### Various links:
+
 Website: [Official VerusCoin website](https://veruscoin.io)
 GitHub: [VerusCoin source code for the VerusCoin wallet, miner and explorer](https://github.com/veruscoin)
 Block explorer: [Main VerusCoin Explorer](https://explorer.veruscoin.io)
@@ -66,7 +75,9 @@ Mobile wallet: [iOS Mobile Wallet](https://testflight.apple.com/join/ZS43lYcw)
 Paper wallet: [Verus Paper wallet](https://paperwallet.veruscoin.io/)
 Bootstrap: [Download Verus Bootstrap](https://bootstrap.veruscoin.io)
 VerusPay: [VerusPay setup guide](https://veruspay.io/setup/)
+
 ## Information:
+
 |||
 |---|---|
 |Platform:           |Komodo|
@@ -94,11 +105,12 @@ VerusPay: [VerusPay setup guide](https://veruspay.io/setup/)
 |PoS Period:         |150 blocks cooldown of UTXO|
 |Unique features:    |VerusID: VerusIDs are a fully functional blockchain protocol, not just an ID system. There is no corporation involved in the protocol, unlike most blockchain ID implementations. VerusIDs provide plenty of opportunity for identity applications.|
 
-##### Mining:
+#### Mining:
+
 VerusCoin can be mined with CPUs, GPUs and FPGAs, solo and in pools. However, the algo is carefully designed for CPUs, and they still substantially outrange GPUs.
 ARM mining works in general, but although fairly efficient, without high hashrates. FPGAs can mine this coin, but don't outperform CPUs by much.
 
-Miners:
+##### Miners:
 Besides solo-mining with Verus Desktop or CLI wallet, you can use:
 ccminer for CPU (efficient for most modern CPUs) or GPU https://github.com/monkins1010/ccminer/releases;
 nheqminer https://github.com/VerusCoin/nheqminer/releases (for Windows, Linux, and MacOS);
@@ -123,14 +135,14 @@ https://vrsc.ciscotech.dk/
 http://vrsc.standardpool.club/
 https://zpool.ca/
 
-##### Staking pools:
+#### Staking pools:
 https://discord.gg/4FJJRY5 (Ginasis Staking pool, 5% fee)
 https://docs.google.com/spreadsheets/d/1Up1WbMuCR21e6TxLae6zjLJePu_RIOVZwqShRj9vVvc/edit?usp=sharing (Dudezmobi Staking pool, 1% fee)
 https://www.aacoin.com/#/trade?symbol=VRSC_BTC (Technically not a pool, but it stakes your VRSC on the exchange, 20% fee)
 
 Price: https://veruspay.io/price/
 
-Exchanges:
+#### Exchanges:
 https://app.stex.com/de/trade/pair/BTC/VRSC/1D
 https://safe.trade/trading/vrscbtc
 https://www.aacoin.com/#/trade?symbol=VRSC_BTC
@@ -140,7 +152,7 @@ https://www.kuangex.com/#/exchange/vrsc_usdt
 
 Also check out the Guide on how to mine in under 5 minutes: https://medium.com/veruscoin/how-to-start-cpu-mining-verus-coin-vrsc-from-your-laptop-in-under-5-minutes-f69c9aae340e
 
-##### Wallets:
+#### Wallets:
 Verus Agama GUI wallet is a forked Agama Desktop App for multiple coins (for Win, Linux and Mac). It's been deprecated now and no longer supported;
 Verus Desktop GUI wallet is a newly developed multi-coin wallet supporting VerusID https://github.com/VerusCoin/Verus-Desktop/releases (for Win, Linux, Mac and ARM Linux);
 the CLI wallets can be found here: https://github.com/VerusCoin/VerusCoin/releases/

@@ -5,18 +5,22 @@ Attention: Read it completely before use.
 `VRSC Wallet and Data location` on Mac OS: `/Users//Library/Application Support/Komodo/VRSC`
 
 ### Software needed to mine
+
 Prerequisite: [VerusCoin wallets](https://veruscoin.io/wallet.html)
 Needed: [VerusCoin miners](https://veruscoin.io/getVRSC.html)
 
 ## Prerequisites:
+
 To start mining with your Mac, you will need to have an address to mine to. Possibilities are:
 
-An exchange address (NOT recommended. This is asking for trouble.)
+~~An exchange address~~ (__***NOT***__ recommended. This is asking for trouble.)
 An address from a web-wallet
 An address from a mobile wallet
 An address from a Desktop Lite wallet
 An address from a desktop Native wallet
+
 ## Procedure:
+
 To start mining on your Mac, you should already have a wallet and and access to an address to mine to. Now to start mining we will need to download the miner first:
   1. Go to the `Veruscoin miners` link above and download `CLI nheqminer` for MacOS.
   2. Open the download folder in finder.
