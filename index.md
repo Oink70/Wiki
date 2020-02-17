@@ -48,8 +48,8 @@ If you have any questions about the information here, need help or have suggesti
 [I accidentally send funds to a B-address and cannot move those funds](#!faq-allos/26_sent_funds_to_b-address.md)
 
 ## Frequently Asked Questions (Windows specific)
-[Windows pool-mining on low priority](#!faq-windows/winfaq-01_low_priority_mining.md)
-[Remarks on Windows command line formatting](#!faq-windows/winfaq-02_cli_formatting.md)
+[Remarks on Windows command line formatting](#!faq-windows/winfaq-01_cli_formatting.md)
+[Windows pool-mining on low priority](#!faq-windows/winfaq-02_low_priority_mining.md)
 
 ## Frequently Asked Questions (Linux specific)
 [Install the Linux CLI wallet](#!faq-linux/faq-lin01_install_linux_cli.md)
