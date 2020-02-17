@@ -14,7 +14,10 @@ To convert your *seed phrase* in Verus Desktop, go to `settings` --> `Coin Setti
 ```
 run convertpassphrase "seedphrase"
 ```
-You will receive a response similar to this:
+
+Note: Make sure you replace `seedphrase` with the actual seedphrase of the address you want to import!
+
+You will receive a response __similar__ to this:
 ```
 {
 "walletpassphrase": "seedphrase",
@@ -26,13 +29,15 @@ You will receive a response similar to this:
 ```
 Copy that information and store it somewhere **SAFE**. With this information anyone having access to it will have full control over that address.
 
-The **wif** that is shown is the data you want to import in the next step.
+The 52-character string after **"wif":** that is shown, is what you want to import in the next step.
 
 To import your address, go to `settings` --> `Coin Settings` and enter the following command:
 ```
 run importprivkey "<wif>" "" true
 ```
 Replace `<wif>` with the actual **wif** you got from the `convertpassphrase` command earlier.
+
+Note: Don't use the WIF from the example above, but use the one from the CLI-interface in Verus Desktop.
 
 The GUI wallet will not show any progress on the import and may give messages that the RPC daemon is not reacting. It will take quite some time for the process to finish in the background, especially if the address has many transaction on it.
 
