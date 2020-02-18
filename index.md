@@ -45,7 +45,7 @@ If you have any questions about the information here, need help or have suggesti
 [What are the staking pools that I can join?](#!faq-allos/faq-allos22_staking_pools.md)
 [Verus Wallet & VRSC.conf standard locations](#!faq-allos/faq-allos24_wallet.dat_and_vrsc.conf_location.md)
 [My wallet is stuck on block number XXXX. It does not synchronize properly anymore.](#!faq-allos/faq-allos25_wallet_not_synced.md)
-[I accidentally send funds to a B-address and cannot move those funds](#!faq-allos/26_sent_funds_to_b-address.md)
+[I accidentally send funds to a B-address and cannot move those funds](#!faq-allos/faq-allos26_sent_funds_to_b-address.md)
 
 ## Frequently Asked Questions (Windows specific)
 [Remarks on Windows command line formatting](#!faq-windows/winfaq-01_cli_formatting.md)
