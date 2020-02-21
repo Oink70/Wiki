@@ -47,6 +47,9 @@ bootstrap archive.
   a. Download the bootstrap from Link 2. (For Windows a zip archive is available to accomodate native extraction. Linux and MacOS users can use the tar.gz archive)
   b. (Optional, but recommended) Verify the md5, sha256 or sha512 checksum and the signature of your download, to verify that you downloaded an untampered Bootstrap archive.
   c. Remove all files and folders from `VRSC Wallet Location` except `wallet.dat` and `VRSC.conf`.
+
+Attention: If you have downloaded, copied or moved the bootstrap archive to the `VRSC Wallet location`, do not delete that archive when removing files.
+
   d. Unpack the downloaded archive to `VRSC Wallet location`.
 5. If you had a VRSC wallet running before, restore essential files:
 	a. Go to `VRSC Wallet location`
@@ -54,8 +57,8 @@ bootstrap archive.
 	c. copy `wallet.dat` from your *SAFE* location
 6. Start your wallet
 
-If you followed these steps, you will have installed/updated the latest version of a wallet for verus, made a backup of your wallet and installed the bootstrap.
+If you followed these steps, you will have installed/updated the latest version of a wallet for verus, made a backup of your wallet and installed the bootstrap. If desired you can remove the downloaded bootstrap archive to free up space on your hard drive.
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-02-12.
+Note: revision date 2020-02-20.

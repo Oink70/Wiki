@@ -19,8 +19,8 @@ If you have any questions about the information here, need help or have suggesti
 [Verus Beginners Mining guide (External)](https://medium.com/veruscoin/how-to-start-cpu-mining-verus-coin-vrsc-from-your-laptop-in-under-5-minutes-f69c9aae340e)
 [Verus Beginners Staking guide (External)](https://medium.com/veruscoin/how-to-earn-vrsc-solo-mining-with-your-cpu-and-staking-mined-coins-aa27da76882c)
 [Shield Verus Coins via Command Line Interface](#!how-to/how-to_shield_via_cli.md)
-[Create an ID on Verus Desktop (pdf)](https://veruscoin.io/downloads/how-to/how-to_create_verus_id_with_verus_desktop.pdf)
-[Create an ID on command Line (pdf)](https://veruscoin.io/downloads/how-to/how-to_create_verus_id_with_cli.pdf)
+[Create an ID on Verus Desktop (pdf)](https://wiki.veruscoin.io/how-to/how-to_create_verus_id_with_verus_desktop.pdf)
+[Create an ID on command Line (pdf)](http://wiki.veruscoin.io/how-to/how-to_create_verus_id_with_cli.pdf)
 [Join Verus Testnet](#!how-to/how-to_join_testnet.md)
 
 ## Frequently Asked Questions (General)
@@ -50,6 +50,7 @@ If you have any questions about the information here, need help or have suggesti
 ## Frequently Asked Questions (Windows specific)
 [Remarks on Windows command line formatting](#!faq-windows/winfaq-01_cli_formatting.md)
 [Windows pool-mining on low priority](#!faq-windows/winfaq-02_low_priority_mining.md)
+[Standard locations for Verus-Desktop installations](#!faq-windows/winfaq-03_verus_desktop_locations.md)
 
 ## Frequently Asked Questions (Linux specific)
 [Install the Linux CLI wallet](#!faq-linux/faq-lin01_install_linux_cli.md)
