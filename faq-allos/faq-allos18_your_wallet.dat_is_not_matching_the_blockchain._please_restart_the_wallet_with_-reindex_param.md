@@ -2,12 +2,14 @@
 It seems you probably trying to move coinbase coins that you must move them through a private address (zaddress) first by shielding your coinbases, which is required by Verus blockchain rules.
 
 To do this, you must:
-1. go to the "Receive" screen and make a new private address
+1. go to the "Receive" screen and make sure you have a private address (starting with `zs`), if you don't have that create one.
 2. Copy the new private address to your clipboard
-3. Go to the "Send" screen and select "Shield a coinbase"
-4. Leave "Transparent funds" as the source and paste the new zaddress into the destination
-5. Click on "Shield funds"
-6. Wait a while until you have a private balance showing on the transactions screen
+3. Go to the "Mining" screen, enet Verus and select "Shield Rewards"
+4. Leave "All unshielded funds" as the source and paste the new zaddress into the destination
+5. Click on "Continue"
+6. Wait a while until you have a private balance showing on the Wallet screen
 7. Send again, this time from your private address to any normal transparent receive address that you have.
 
 (submitted by @keda666, solution written by mikeout.vrsc@)
+
+Note: revised 2020-02-24
