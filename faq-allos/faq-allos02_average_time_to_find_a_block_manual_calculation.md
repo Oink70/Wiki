@@ -1,3 +1,5 @@
+[gimmick: math]()
+
 # Question: I'm mining since XYZ with XYZ, why I haven't found a block yet?
 
 average_time_to_find_one_block = ( NetworkHashrate / LocalHashrate ) * BlockTime
@@ -21,5 +23,3 @@ bear in mind that these are average times to find a block. In real life you may 
 (submitted by @TexWiller, edited by Oink.vrsc@)
 
 note: last revision date 2020-02-25.
-
-[gimmick: math]()
