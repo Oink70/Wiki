@@ -7,7 +7,7 @@ NetworkHashrate = retrieved by `getmininginfo` command from </>CLI
 LocalHashrate = retrieved by `getmininginfo` command
 BlockTime = 60 seconds (average)
 
-$$ average_time_to_find_one_block = ( NetworkHashrate / LocalHashrate ) * 60 $$
+$$ average_time_to_find_one_block = ( \frac{NetworkHashrate}{LocalHashrate} ) * 60 $$
 
 Real example with - 24 threads Intel Skylake 2.0Ghz -
 
@@ -19,3 +19,5 @@ bear in mind that these are average times to find a block. In real life you may 
 (submitted by @TexWiller, edited by Oink.vrsc@)
 
 note: last revision date 2020-02-25.
+
+[gimmick: math]()
