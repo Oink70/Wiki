@@ -6,7 +6,7 @@ The CLI help shows the command format for Linux and MacOS. On the native windows
 * In windows command prompt, substitute the shown `"`-character with the `\"`-characters.
 * In windows command prompt, omit the preceding `./`.
 
-Example: In Linux the command:
+Note: As an example, in Linux the command:
 `./verus z_sendmany my_private_address_without_quotationmarks '[{"address":"my_transparent_address","amount":95.9998}]'`
 should be entered on the Windows command prompt as:
 `verus z_sendmany my_private_address_without_quotationmarks "[{\"address\":\"my_transparent_address\",\"amount\":95.9998}]"`
@@ -26,3 +26,5 @@ after a few minutes (operations from private addresses are a bit time consuming)
 Note: I am always using the same private address.
 
 (submitted by @karero, based on @dukeleto)
+
+Note: last revision date 2020-02-25.

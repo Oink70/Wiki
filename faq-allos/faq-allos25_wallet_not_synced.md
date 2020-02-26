@@ -1,16 +1,17 @@
 # My wallet is stuck on block number XXXX. It does not synchronize properly anymore.
-Read it completely before use.
 
-`Wallet & blockchain location`:
+note: Read it completely before use.
+
+#### Wallet & blockchain location:
 Linux GUI:    `~/.Komodo/VRSC`
 Mac OS:       `/Users//Library/Application Support/Komodo/VRSC`
 Windows 10:   `%AppData%\Komodo\VRSC\`
 
-Usefull links:
+#### Usefull links:
 Link 1: [Download latest Wallet](https://veruscoin.io/wallet.html)
-Link 2: [Show current blockheight](https://explorer.vrsc.0x03.services/api/getblockcount)
+Link 2: [Show current blockheight](https://explorer.veruscoin.io/api/getblockcount)
 
-Procedure:
+## Procedure:
 In case your wallet is not synchronized with the blockchain and restarting Agama doesn't connect to any peers:
 
 Compare your blockheight with the one Link 2 above is showing to make sure you are
@@ -33,3 +34,5 @@ Make sure you don't remove any folders, or you'll have to use the bootstrap.
 Then start your wallet as you're used to.
 
 Submitted by Oink.vrsc@ & Thoskk.vrsc@
+
+Note: last revision date 2020-02-25.

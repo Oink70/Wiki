@@ -6,6 +6,7 @@ Keep in mind that the actual number of blocks per day is not always exactly 1440
 ## Script:
 
 ```bash
+
 #!/bin/bash
 
 #Config
@@ -27,3 +28,5 @@ do
 You'll need to enter the correct path to your verus directory and you will need to have the verus daemon running in order to sucessfully run this script.
 
 (submitted by @TexWiller, edited by @bigtom)
+
+Note: last revision date 2020-02-25.

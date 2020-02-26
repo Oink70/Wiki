@@ -11,4 +11,8 @@ See your own percentage of total coins possible to stake, and pay attention to t
 The spreadsheet will also show how many days until the next halvings.
 The calculation of timelocked coins being unlocked is based on an average for the entire period, but should be fairly accurate, and is included in the total of staking coins.
 
-(submitted by @Cragorn, edited by Oink.vrsc@)
+note: Verus Desktop uses the live info from the blockchain with regards to locked coins, coins in z-addresses, current coinsupply, minimum stake age of UTXOs and staking difficulty to display real-time predictions of your profitability on your staking balance.
+
+(submitted by Cragorn.vrsc@, additions by Oink.vrsc@)
+
+note: last revision date 2020-02-24.

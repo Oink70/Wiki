@@ -19,3 +19,5 @@ You would see verusd with a child process of komodo and all its cli arguments.
 
 
 (submitted by @keda666, solution written by englal.vrsc@)
+
+Note: last revision date 2020-02-26.

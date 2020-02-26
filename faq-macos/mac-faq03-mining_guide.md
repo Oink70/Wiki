@@ -16,8 +16,8 @@ To start mining with your Mac, you will need to have an address to mine to. Poss
 ~~An exchange address~~ (__***NOT***__ recommended. This is asking for trouble.)
 An address from a web-wallet
 An address from a mobile wallet
-An address from a Desktop Lite wallet
-An address from a desktop Native wallet
+An address from a Verus-Desktop Lite wallet
+An address from a Verus-Desktop Native wallet
 
 ## Procedure:
 
@@ -47,3 +47,5 @@ Now we have an executable file that will run when you doubleclick.
  15. Doubleclick `start.command` and your machine will start mining.
 
 Created by Oink.vrsc@.
+
+Note: last revision date 2020-02-26.

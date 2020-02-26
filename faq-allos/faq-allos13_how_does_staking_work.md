@@ -11,6 +11,8 @@ Example: I have 300 coins in a public/transparent address / 300.000 in public wa
 Regarding the Verus debug.log: “<DATE> No eligible staking transaction found“. It means that you are staking but have not received a reward yet. @miketout will change the message soon.
 
 Regarding time locked coins:
-The Zcash protocol requires you to send all coins received by mining (on wallet, not pool mining) or staking (reward transactions, also on wallet, not pool staking) once unlocked to a private address and then to a public/transparent address before you can use them either for staking or for making transactions (that’s how you make use of your rewarded coins = coinbase coins). So, once your coins loose their time lock, you can unlock those coins as described in "HOW-TO Shield Verus Coin via the CLI.md". Once you've transferred the coins from your private address back to (one of) your public / transparent address(es) and you’ll automatically start staking.
+The Zcash protocol requires you to send all coins received by mining (on wallet, not pool mining) or staking (reward transactions, also on wallet, not pool staking) once unlocked to a private address and then to a public/transparent address before you can use them either for staking or for making transactions (that’s how you make use of your rewarded coins = coinbase coins). So, once your coins loose their time lock, you can unlock those coins as described in ["Shield Verus Coins via Command Line Interface]"(#!how-to/how-to_shield_via_cli.md). Once you've transferred the coins from your private address back to (one of) your public / transparent address(es) and you’ll automatically start staking.
 
 (submitted by @karero, edited by Oink.vrsc@)
+
+note: last revision date 2020-02-25.

@@ -33,17 +33,17 @@ Now we'll need to adjust the batchfile to run on low priority:
 
 ##### CCMINER:
 
-  - Change to the folder you put the three files from the downloaded archive in (`run.vershhash.bat`, `libcrypto-1_1-x64.dll` & `ccminer.exe`)
-  - edit the `run.vershhash.bat`
+  - Change to the folder you put the three files from the downloaded archive in (`run.verushhash.bat`, `libcrypto-1_1-x64.dll` & `ccminer.exe`)
+  - edit the `run.verushhash.bat`
   - The line, that needs to be adjusted:
       `ccminer -a verus -o stratum+tcp://na.luckpool.net:3956 -u REoPcdGXthL5yeTCrJtrQv5xhYTknbFbec.Donator -p d=6 -t 8`
   - adjust the line, so it looks like:
       `C:\Windows\System32\cmd.exe /c start "ccminerCPUv3.5 VerusPool" /Low "c:\Miners\CCminer 2.0 CPU Release 3.5\ccminer.exe" -a verus -o stratum+tcp://pool.veruscoin.io:9999 -u RVjvbZuqSGLGDm1B9BFkbHWySPKEx4tfjQ.Donator -t 16`
-  - make sure you replave the pool (`stratum+tcp://pool.veruscoin.io:9999`) with your prefered pool and the address
+  - make sure you replace the pool (`stratum+tcp://pool.veruscoin.io:9999`) with your prefered pool and the address
     (`RVjvbZuqSGLGDm1B9BFkbHWySPKEx4tfjQ`) with your own address. The address shown in this line is the veruscoin
     foundation donation address. If desired change the identifier (`Donator`) to a name that easily identifies the
     miner to you.
   - save and exit the file
-  - run `run.vershhash.bat` to start mining.
+  - run `run.verushhash.bat` to start mining.
 
 Submitted by Oink.vrsc@

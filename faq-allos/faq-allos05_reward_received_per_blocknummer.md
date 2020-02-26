@@ -19,3 +19,5 @@ Years 5+6: Block 2328480 - 3379679 ==> 6 VRSC reward ==> 6,307,200 VRSC total th
 All rewards equal or over 192 VRSC are time locked to mature at a random block between 129,600 and 1,181,520
 
 (submitted by @keda666, edited by Oink.vrsc@)
+
+note: last review date 2020-02-25.

@@ -14,6 +14,7 @@ If you have any questions about the information here, need help or have suggesti
 ## How-To
 [Verus Information Page](#!how-to/how-to_verus_info.md)
 [Backup, Install or Update and Bootstrap your wallet](#!how-to/how-to_bootstrap.md)
+[Change Verus-Desktop from Lite Mode to Native Mode](#!how-to/how-to_lite_to_native.md)
 [import your Lite wallet address into your native Verus Desktop](#!how-to/how-to_convert-seed-to-wif.md)
 [Verus Wallet installation guide (External)](https://medium.com/veruscoin/how-to-update-veruscoin-graphical-gui-wallet-to-0-4-0a-for-linux-686fc7a5b6e7)
 [Verus Beginners Mining guide (External)](https://medium.com/veruscoin/how-to-start-cpu-mining-verus-coin-vrsc-from-your-laptop-in-under-5-minutes-f69c9aae340e)
@@ -70,3 +71,5 @@ If you have any questions about the information here, need help or have suggesti
 
 ## Frequently Asked Questions (ARM specific)
 [error while loading shared libraries: libgomp.so.1](#!faq-arm/armfaq-01_libgomp.so.1.md)
+
+Note: last revision date 2020-02-26.

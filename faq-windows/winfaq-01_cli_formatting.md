@@ -7,3 +7,5 @@ The CLI help shows the command format for Linux and MacOS. On the native windows
 Note: this only applies to giving commands from the windows command prompt. Verus Desktop will accept commands as listed.
 
 Created by Oink.vrsc@
+
+Note: last revision date 2020-02-26.

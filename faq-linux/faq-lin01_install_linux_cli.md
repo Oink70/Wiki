@@ -27,27 +27,28 @@ Link 2: [Download Verus Bootstrap](https://bootstrap.veruscoin.io/)
   `drwx------  6 root root 4096 Jul  3 15:56`
 5. Download & install the wallet binaries:
   `wget https://github.com/VerusCoin/VerusCoin/releases/download/v0.6.4-1/Verus-CLI-Linux-v0.6.4-1-amd64.gz`
-The downloaded archive contains another archive and a signature text file, enabling the archive within to be verified (You'll need a runnung wallet to do that)
+ The downloaded archive contains another archive and a signature text file, enabling the archive within to be verified (You'll need a running wallet to do that)
+ Also: Verify the URL to the latest version from the [Download latest Wallet](https://veruscoin.io/wallet.html) above.
   `tar -xvf verus-cli-linux-v0.6.4.1.gz`
-Now extract the wallet archive:
+ Now extract the wallet archive:
   `tar -xvf verus-cli-linux-v0.6.4.1.tar.gz`
-Change directory to verus-cli
+ Change directory to verus-cli
   `cd verus-cli`
-Fetch parameters, takes time, more on slow Internet connection
+ Fetch parameters, takes time, more on slow Internet connection
   `./fetch-params`
-Install libraries for Verus
+ Install libraries for Verus
   `sudo apt-get install libcurl3 g++-multilib -y`
-Install Tmux a terminal multiplexer with which you can run threads in the background see https://en.wikipedia.org/wiki/Tmux
+ Install Tmux a terminal multiplexer with which you can run threads in the background see https://en.wikipedia.org/wiki/Tmux
   `sudo apt-get install tmux -y`
-Start tmux:
+ Start tmux:
   `tmux`
-Launch Verus Daemon with or without number of threads
-(usually number of threads equals number of cores or double of that if the processor support hyper threading well)
+ Launch Verus Daemon with or without number of threads
+ (usually number of threads equals number of cores or double of that if the processor support hyper threading well)
   `./verusd -gen -genproclimit`
   `./verusd -gen -genproclimit=24`
-Once mining is operational – again this may take some time –
-you’ll see: 256 mega hashes complete - working
-then detach tmux
+ Once mining is operational – again this may take some time –
+ you’ll see: 256 mega hashes complete - working
+ then detach tmux
 `[ctrl]&b d`
 
 Disable login with Root User
@@ -60,3 +61,5 @@ Apply no settings:
   `sudo systemctl restart sshd`
 
 (submitted by @karero, corrected by @Glennp, edited by Oink.vrsc@)
+
+Note: last revision date 2020-02-25.

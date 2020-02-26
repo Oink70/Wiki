@@ -6,8 +6,13 @@ Following are some bash scriptse to help make managing your Linux-based CLI mine
 for wallet version prior to 0.5.7, replace verusd with komodod.
 
 ## Scripts:
-##### MINER SRVC MONITOR & ALERT IF DOWN
+
+#### MINER SRVC MONITOR & ALERT IF DOWN
+
 Checks for the verusd daemon and if it has stopped emails you.
+
+##### checkifverusdisrunning.sh
+
 ```bash
 #!/bin/bash
 if pgrep -x "verusd" > /dev/null
@@ -18,13 +23,16 @@ else
 fi
 ```
 
-##### ALERT ON NEW BLOCKS MINED
+#### ALERT ON NEW BLOCKS MINED
+
 Prereq: Create a file called txHistory.txt and put 0 in it, saved to your home folder.
 The script then compares the current wallet TX count and compares to the txHistory file...
 so first run it will enter the right number in that file overwriting your 0.
 Only emails you if the number changes.
 
-```Bash
+##### checkfornewblocks.sh
+
+```bash
 #!/bin/bash
 
 historicalcount=$(cat /home/user/txHistory.txt)
@@ -39,23 +47,32 @@ else
 fi
 ```
 
-##### WALLET BACKUP TO SECURED EMAIL (PROTONMAIL SUGGESTED)
+#### WALLET BACKUP TO SECURED EMAIL (PROTONMAIL SUGGESTED)
+
 For this script I recommend setting up a new Protonmail account with no association to any other service or your name, 2FA secure it.
+
+##### backupwallet.sh
+
 ```bash
 echo "Attached Backup" | mail -s "Merry Backup" -A /home/user/.komodo/VRSC/wallet.dat -a "From: user@yourfullyqualifieddomain.tld" you@youremail.tld
 ```
 Again, these scripts are a little rudementary but they do work! If you're curious my crontab, I'll post it next...to set your cron jobs use the command crontab -e
 
-##### MY CRONTAB
+#### Schedule script in CRONTAB
+
 In the following, the `*/5` is every 5 min, the `0` is on the hour every hour, the `0 12` is every day at 12 PM.
+
+##### CRONTAB
+
 ```bash
 # m h  dom mon dow   command
 */5 * * * * /home/user/checkfornewblocks.sh
-0 * * * * /home/user/checkifkomododisrunning.sh
+0 * * * * /home/user/checkifverusdisrunning.sh
 0 12 * * * /home/user/backupwallet.sh
 ```
 Note: For any emails sent (for backup of dat file for example) make sure to enforce TLS security in postfix by adding the following line to your /etc/postfix/main.cf
-
 `smtp_tls_security_level=encrypt`
 
 (submitted by @J Oliver Westbrook)
+
+Note: last revision date 2020-02-25.

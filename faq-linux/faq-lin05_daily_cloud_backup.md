@@ -45,4 +45,7 @@ rm $DEST_FOLDER$DEST_FILE
 # Keep only last 6 days - BE SURE to fully understand how it works, as every "rm" command!
 find $DEST_FOLDER/wallet* -type f -mtime +6 -exec rm {} ;
 ```          
+
 (submitted by @TexWiller)
+
+Note: last revision date 2020-02-26.
