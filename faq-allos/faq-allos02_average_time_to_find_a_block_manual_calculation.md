@@ -15,7 +15,7 @@ Real example with - 24 threads Intel Skylake 2.0Ghz -
 $$ Average Time To Find One Block = ( \frac{12527490696}{9983712} ) * 60 $$
 $$ Average Time To Find One Block = 75.287 seconds (20,91 hours) $$
 
-bear in mind that these are average times to find a block. In real life you may hit a block much sooner or later after finding the last. In the long run it averages out to the values predicted.
+Bear in mind that these are average times to find a block. In real life you may hit a block much sooner or later after finding the last. In the long run it averages out to the values predicted.
 
 (submitted by @TexWiller, edited by Oink.vrsc@)
 

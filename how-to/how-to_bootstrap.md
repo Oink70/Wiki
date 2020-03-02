@@ -5,7 +5,7 @@ Attention: Read it completely before using.
 ### Important General Information
 
 `VRSC Wallet location` on different OS:
-Linux GUI: `~/.komodo/VRSC`
+Linux: `~/.komodo/VRSC`
 Mac OS: `/Users//Library/Application Support/komodo/VRSC`
 Windows 10: `%AppData%\Komodo\VRSC\`
 
@@ -16,7 +16,7 @@ Tip: The easiest way is to copy the location above and past it into your address
 ##### Automated bootstrap scripts:
 
 [Windows 10](https://github.com/Oink70/VerusExtras/releases/download/v1.0.3/VRSC-bootstrap-win.bat) (Tested on build 18362.418)
-[Linux](https://github.com/Oink70/VerusExtras/releases/download/v1.0.3/VRSC-bootstrap-linux.sh) (Tested on Ubuntu 18.04)
+[Linux](https://github.com/Oink70/VerusExtras/releases/download/v1.0.3/VRSC-bootstrap-linux.sh) (Tested on Ubuntu 18.04 x64 and Ubuntu 18.04 ARM)
 [MacOS](https://github.com/Oink70/VerusExtras/releases/download/v1.0.3/VRSC-bootstrap-mac.command) (Tested on Mac OS 10.14 Mojave)
 
 Tip: The bootstraps above do not delete any information, don't update your wallet to the latest version and don't make a backup of your wallet. If you are instructed to use the manual procedure, don't use these scripts.
