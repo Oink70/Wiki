@@ -3,9 +3,10 @@
 To completely reset your wallet in the event of a fork, particularly if you've already followed [this procedure](#!faq-allos/faq-allos19_what_should_i_do_if_i_end_up_on_my_own_fork_because_of_a_network_issue_or_having_an_old_version_of_the_wallet.md), follow the steps below.
 
 Tip: `VRSC.conf` is standard located in:
-* On windows this is located at `%AppData%\Komodo\VRSC\VRSC.conf`
-* On linux it is located at `~/.komodo/VRSC/VRSC.conf`
-* On MacOS it is located at `~/Library/Application Support/Komodo/VRSC`
+
+ * On windows this is located at `%AppData%\Komodo\VRSC\VRSC.conf`
+ * On linux it is located at `~/.komodo/VRSC/VRSC.conf`
+ * On MacOS it is located at `~/Library/Application Support/Komodo/VRSC`
 
 ### Important General Information
 
