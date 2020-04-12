@@ -7,6 +7,11 @@ Tip: `VRSC.conf` is standard located in:
 * On linux it is located at `~/.komodo/VRSC/VRSC.conf`
 * On MacOS it is located at `~/Library/Application Support/Komodo/VRSC`
 
+### Important General Information
+
+`verus command "<userinput>"` needs to be entered literally, with `<userinput>` replaced by your specific userdata. So if the text directs you to use for example `"<Public Address>"`, you replace that (including the `<` and `>`) with the address,
+so it looks similar to this: `"RYX6RYU3AAvwVCNyNM4cVyGUhSMUPvKs3r"`.
+
 
 ## Procedure
 1. Open your `VRSC.conf` file for editing.
@@ -15,20 +20,23 @@ Tip: `VRSC.conf` is standard located in:
   `exportdir=/home/<username>/`
   (or on windows)
   `exportdir=c:\Users<username>\Desktop\`
-3. Save the file and stop verusd for Windows-Desktop or Agama, just exit and wait for it to close completely. For the linux cli run `./verus stop`, or for the windows cli run `verus.bat stop`.
+3. Save the file and stop verusd for Windows-Desktop or Agama, just exit and wait for it to close completely. For the linux cli run `./verus stop`, or for the windows cli run `verus stop`.
 4. Once your wallet is finished closing make a backup of your `wallet.dat` file somewhere safe. `wallet.dat` is located in the same directory as your configuration file (see above). To make the backup just copy it to another directory, make sure to leave the original there for the time being.
 5. Now restart your wallet by launching Verus Desktop, Agama or running verusd for the CLI.
 6. Now we'll export the wallet (this produces a different kind of file from what we did above).
+
+Note: The filename you replace`<mywalletexport>` with, can only contain letters and figures, no other characters, so it **cannot** have an file-extension
+
  * Verus Desktop:
    Go to `Settings`, `Coin Settings` en click in the textbox shown there.
-   Enter `run z_exportwallet mywalletexport` en press enter to execute the command.
+   Enter `run z_exportwallet <mywalletexport>` en press enter to execute the command.
  * Agama:
    Go to settings, scroll to the bottom and click CLI, select VRSC in that section.
-   Then below type `z_exportwallet mywalletexport` and click the button below to run it.
+   Then below type `z_exportwallet <mywalletexport>` and click the button below to run it.
  * linux CLI:
-   run `./verus z_exportwallet mywalletexport`
+   run `./verus z_exportwallet <mywalletexport>`
  * win CLI:
-   run `verus.bat z_exportwallet mywalletexport`
+   run `verus z_exportwallet <mywalletexport>`
 
 The exported wallet should be a file called `mywalletexport` in the location you set for exportdir in `VRSC.conf`. Keep this file secure, it has your plaintext private keys. Verify that the file is there and isn't empty.
 7. Stop Verus again by closing Verus-Desktop, Agama or running `./verus stop` for the linux CLI or `verus.bat stop` for the windows CLI.
@@ -49,4 +57,4 @@ The exported wallet should be a file called `mywalletexport` in the location you
 
 Depending on the number of addresses in your wallet and how far along you are on re-syncing, this may take several minutes to complete. Your balances will adjust as the chain syncs, as it only knows about the transactions that have happened in the blocks it has received and scanned. That means your balance will adjust as new blocks are scanned and won't reflect an accurate balance until you are fully synced.
 
-Note: last revision date 2020-02-25.
+Note: last revision date 2020-04-12.

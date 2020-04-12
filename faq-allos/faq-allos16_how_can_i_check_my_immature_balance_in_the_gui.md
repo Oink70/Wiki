@@ -1,4 +1,4 @@
-# Question: How can I check my immature balance in the Graphic User Interface?
+# Question: How can I check my immature balance in the (deprecated) Verus Agama?
 
 ## Verus Desktop
 
@@ -16,4 +16,4 @@ Verus Desktop shows your immature balance in your wallet dashboard, between the 
 
 (submitted by @karero)
 
-Note: last revision date 2020-02-25.
+Note: last revision date 2020-04-12.

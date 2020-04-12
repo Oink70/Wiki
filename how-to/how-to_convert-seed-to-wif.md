@@ -2,6 +2,11 @@
 
 Attention: Read it completely before using.
 
+### Important General Information
+
+`verus command "<userinput>"` needs to be entered literally, with `<userinput>` replaced by your specific userdata. So if the text directs you to use for example `"<Public Address>"`, you replace that (including the `<` and `>`) with the address,
+so it looks similar to this: `"RYX6RYU3AAvwVCNyNM4cVyGUhSMUPvKs3r"`.
+
 ## Prerequisites
 
 In order to convert your seedphrase into a Private key (WIF), you need to have a running native wallet first, that is fully synchronized. The earliest wallet that supports these functions is **Verus Desktop v0.6.4-beta-1**.
@@ -12,10 +17,10 @@ If needed, use this guide to quickly synchronize your wallet: https://wiki.verus
 If you have a seed, you can retrieve your Private key (WIF) by having the Verus Desktop wallet convert it for you.
 To convert your *seed phrase* in Verus Desktop, go to `settings` --> `Coin Settings` and enter the following command:
 ```
-run convertpassphrase "seedphrase"
+run convertpassphrase "<seedphrase>"
 ```
 
-Note: Make sure you replace `seedphrase` with the actual seedphrase of the address you want to import!
+Note: Make sure you replace `<seedphrase>` with the actual seedphrase of the address you want to import!
 
 You will receive a response __similar__ to this:
 ```

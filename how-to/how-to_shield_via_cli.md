@@ -4,6 +4,11 @@ Attention: Read it completely before use.
 
 Note: Shielding is no longer required for coinbase rewards after block 800200. Earlier timelocked coins will still need to be shielded in order to use them.
 
+### Important General Information
+
+`verus command "<userinput>"` needs to be entered literally, with `<userinput>` replaced by your specific userdata. So if the text directs you to use for example `"<Public Address>"`, you replace that (including the `<` and `>`) with the address,
+so it looks similar to this: `"RYX6RYU3AAvwVCNyNM4cVyGUhSMUPvKs3r"`.
+
 #### General remarks on CLI wallet:
 
 On Windows command line enter the commands as shown without the surrounding quotation marks
