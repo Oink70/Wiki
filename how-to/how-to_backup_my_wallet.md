@@ -3,6 +3,7 @@
 ## Important General Information
 
 Your`wallet.dat` is standard located in:
+
  * On windows this is located at `%AppData%\Komodo\VRSC\VRSC.conf`.
  * On linux it is located at `~/.komodo/VRSC/VRSC.conf`.
  * On MacOS it is located at `~/Library/Application Support/Komodo/VRSC`
