@@ -23,6 +23,7 @@ do
         mature_to_date=$(date +"%m-%d-%Y" -d "+$days_to_mature days")
         echo ""Block #" $arr_idx "will mature in approximately"$days_to_mature "days" "(" $mature_to_date ")" "
         ((arr_idx++))
+done
 ```
 
 You'll need to enter the correct path to your verus directory and you will need to have the verus daemon running in order to sucessfully run this script.
