@@ -22,10 +22,11 @@ If the numbers are equal or close, your wallet is synchronized and the procedure
 Close your wallet.
 Go to the appropriate location for your OS as mentioned above.
 
-Add the following list to the bottom of your `VRSC.conf`, just below `rpcallowip=127.0.0.1`:
+Add a similar list to the bottom of your `VRSC.conf`, just below `rpcallowip=127.0.0.1`:
   addnode=95.216.252.182
   addnode=104.18.42.17
 Save and exit the file.
+An up-to-date list of working nodes can be found in Verus Discord in the #tipbot channel, by messaging `!vrsctip peers` in that channel.
 
 After you added those 2 nodes, remove every **file** that is directly in VRSC folder, none from the subfolders
 (or at least move to a different location) except `wallet.dat` and `vrsc.conf`.
@@ -35,4 +36,4 @@ Then start your wallet as you're used to.
 
 Submitted by Oink.vrsc@ & Thoskk.vrsc@
 
-Note: last revision date 2020-02-25.
+Note: last revision date 2020-04-24.

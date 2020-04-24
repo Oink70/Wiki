@@ -20,6 +20,6 @@ note: These commands can be given in
 * Verus Desktop in `settings`, `coin settings`: `run z_exportwallet FILENAME`& `run z_importwallet /LOCAL_PATH/FILENAME`
 * Verus Agama in `settings`, `<CLI>`: `z_exportwallet FILENAME`& `z_importwallet /LOCAL_PATH/FILENAME`
 
-(submitted by @TexWiller)
+(submitted by @TexWiller, revised by @englal)
 
-note: last revision date 2020-02-24.
+note: last revision date 2020-04-24.

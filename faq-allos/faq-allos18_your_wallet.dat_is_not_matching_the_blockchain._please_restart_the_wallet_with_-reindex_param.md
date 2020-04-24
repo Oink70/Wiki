@@ -2,7 +2,7 @@
 
 It seems you probably trying to move coinbase coins that you must move them through a private address (zaddress) first by shielding your coinbases, which is required by Verus blockchain rules.
 
-## Peocedure
+## Procedure
 
 1. go to the "Receive" screen and make sure you have a private address (starting with `zs`), if you don't have that create one.
 2. Copy the new private address to your clipboard
@@ -14,4 +14,4 @@ It seems you probably trying to move coinbase coins that you must move them thro
 
 (submitted by @keda666, solution written by mikeout.vrsc@)
 
-Note: revised 2020-02-24
+Note: revised 2020-04-24
