@@ -30,7 +30,7 @@ If you have any questions about the information here, need help or have suggesti
 [I'm mining since XYZ with XYZ, why I haven't found a block yet?](#!faq-allos/faq-allos02_average_time_to_find_a_block_manual_calculation.md)
 [How do I direct all my mined rewards to a single Verus wallet?](#!faq-allos/faq-allos03_mine_rewards_to_a_single_verus_wallet_gui_+_cli.md)
 [How to consolidate multiple `wallet.dat` files in one?](#!faq-allos/faq-allos04_consolidate_multiple_wallet.dat_files_in_one.md)
-[What reward do I get for staking (PoS) or Mining (PoW) a block?](#!faq-allos/faq-allos05_reward_received_per_blocknumber.md)
+[What reward do I get for staking (PoS) or Mining (PoW) a block?](#!faq-allos/faq-allos05_reward_received_per_blocknummer.md)
 [Stake estimates, halving and block-rewards](#!faq-allos/faq-allos06_pos,_halving,_block_reward.md)
 [What's the value of VRSC?](#!faq-allos/faq-allos07_what_are_my_vrsc_worth.md)
 [Is mining profitable?](#!faq-allos/faq-allos08_mining_profitability.md)
@@ -74,4 +74,4 @@ If you have any questions about the information here, need help or have suggesti
 ## Frequently Asked Questions (ARM specific)
 [error while loading shared libraries: libgomp.so.1](#!faq-arm/armfaq-01_libgomp.so.1.md)
 
-Note: last revision date 2020-02-26.
+Note: last revision date 2020-04-24.
