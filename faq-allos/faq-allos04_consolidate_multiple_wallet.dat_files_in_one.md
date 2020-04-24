@@ -9,11 +9,11 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
 ## Procedure
 
-1. Edit the `VRSC.conf` file on each instance you have, adding the following line: `exportdir=/LOCAL_PATH/` (ie /home/user/)
-2. Restart your wallet
-3. Issue the following command: `z_exportwallet FILENAME` (ie z_exportwallet export_instance01, the filename cannot have a `.` in it.)
-4. Copy the generated file to the machine who host your main wallet
-5. Issue the following command (on the "main" verus-cli): `z_importwallet /LOCAL_PATH/FILENAME` (ie /home/user/export_instance01)
+1. With one of the wallets loaded, issue the following command: `z_exportwallet FILENAME` (ie z_exportwallet export_instance01, the filename cannot have a `.` in it.)
+2. Copy the generated file to the machine that hosts your main wallet. This file will either be in the same directory as the config file and wallet.dat file, or in a location specified by exportdir in VRSC.conf.
+3. Issue the following command (on the "main" verus-cli): `z_importwallet /LOCAL_PATH/EXPORTFILENAME` (ie /home/user/export_instance01)
+
+note: Older versions of verusd required `expordir` to be set in VRSC.conf before exporting a wallet. If you get an error about your export directory not being set, please upgrade immediately.
 
 note: These commands can be given in
 * CLI wallet: `./verus z_exportwallet FILENAME`& `./verus z_importwallet /LOCAL_PATH/FILENAME`
