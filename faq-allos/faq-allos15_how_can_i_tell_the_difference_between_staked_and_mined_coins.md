@@ -15,7 +15,7 @@ In Verus Desktop, simply go to your Mining Dashboard and enter into Verus detail
 Scroll down to the bottom of the page. It will list the rewards as `mined` or `minted` in green.
 The TXIDs that staked the  minted rewards are shown in blue.
 
-## Verus Agama:
+## Verus Agama (Deprecated):
 
 In the GUI you can also click yourself thru to that information.
 1. Click on the magnifying glass all the way on the right of the transaction.
@@ -25,4 +25,4 @@ In the GUI you can also click yourself thru to that information.
 
 (submitted by karero, edited by Oink.vrsc@)
 
-Note: last revision date 2020-02-25.
+Note: last revision date 2020-04-24.

@@ -1,11 +1,10 @@
-# Question: How can I check my immature balance in the (deprecated) Verus Agama?
+# Question: How can I check my immature balance in a graphical Wallets?
 
 ## Verus Desktop
 
-Verus Desktop shows your immature balance in your wallet dashboard, between the `Transparant Balance` and `Private Balance`
-.
+Verus Desktop shows your immature balance in your wallet dashboard, between the `Transparant Balance` and `Private Balance`.
 
-## Agama
+## Agama (Deprecated)
 1. In the Agama wallet click on the hamburger menu (the three stripes) on the top right
 2. click on `Settings`
 3. click on the item `</> CLI`
@@ -16,4 +15,4 @@ Verus Desktop shows your immature balance in your wallet dashboard, between the 
 
 (submitted by @karero)
 
-Note: last revision date 2020-04-12.
+Note: last revision date 2020-04-24.

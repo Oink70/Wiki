@@ -28,6 +28,6 @@ done
 
 You'll need to enter the correct path to your verus directory and you will need to have the verus daemon running in order to sucessfully run this script.
 
-(submitted by @TexWiller, edited by @bigtom)
+(submitted by @TexWiller, edited by @bigtom, reviewed by @Englal)
 
-Note: last revision date 2020-02-25.
+Note: last revision date 2020-04-24.
