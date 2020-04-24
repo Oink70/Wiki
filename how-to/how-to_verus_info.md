@@ -44,21 +44,18 @@ Overview: [Chain specifications](https://cdn-images-1.medium.com/max/2000/1*GUXC
 Miner: [Monkins ccminer for CPU (recommended) or GPU](https://github.com/monkins1010/ccminer/releases)
 Miner: [nheqminer for Windows, Linux, and MacOS](https://github.com/VerusCoin/nheqminer/releases)
 Reported mining speeds: [spreadsheet to compare hashrates](https://docs.google.com/spreadsheets/d/1RrSYJDV0Mjj3X-myMC3aQDGkcipivxHsD7ZxJ3r5f_A/edit#gid=201266774)
-Mining pool: https://pool.veruscoin.io/ (fees will go to VERUS foundation)
 Mining pool: https://luckpool.net/verus
-Mining pool: https://vrsc.loudmining.com/
+Mining pool: https://pool.veruscoin.io/
 Mining pool: https://zergpool.com/
-Mining pool: http://verus.bcmonster.com/
 Mining pool: https://vrsc.mcmpool.eu/
 Mining pool: https://wattpool.net/
 Mining pool: https://www.nlpool.nl/
-Mining pool: https://cryptopools.aod-tech.com/
-Mining pool: https://vrsc.fpgapool.net/
 Mining pool: https://vrsc.dev-codex.com/
-Mining pool: https://vrsc.ciscotech.dk/
-Mining pool: http://vrsc.standardpool.club/
-Mining pool: https://zpool.ca/algo/verus
 Mining pool: http://vrsc.52hash.com/
+Mining pool: https://vrsc.ciscotech.dk/
+Mining pool: http://www.lepool.com.cn:8088/
+Mining pool: https://zpool.ca/
+Mining pool: http://verus.bcmonster.com/
 Staking pool: http://www.ginasismining.com/
 Staking pool: https://www.aacoin.com/#/trade?symbol=VRSC_BTC (Technically not a pool, but it stakes your VRSC on the exchange)
 Exchange: https://atomicdex.io/ (VRSC/any listed coin)
@@ -121,19 +118,16 @@ You can also compare older and current algos
 ##### Mining pools:
 https://pool.veruscoin.io/ (fees will go to VERUS foundation)
 https://luckpool.net/verus
-https://vrsc.loudmining.com/
 https://zergpool.com/
 https://vrsc.mcmpool.eu/
-https://veruspool.coinminingguide.com/
 https://wattpool.net/
 https://www.nlpool.nl/
-https://cryptopools.aod-tech.com/
-https://vrsc.fpgapool.net/
 https://vrsc.dev-codex.com/
 http://vrsc.52hash.com/
 https://vrsc.ciscotech.dk/
-http://vrsc.standardpool.club/
+http://www.lepool.com.cn:8088/
 https://zpool.ca/
+http://verus.bcmonster.com/
 
 #### Staking pools:
 https://discord.gg/4FJJRY5 (Ginasis Staking pool, 5% fee)
@@ -172,4 +166,4 @@ And finally for those interested in running various Veruscoin services: https://
 
 Information compiled by Thoskk.vrsc@, complemented by Godballz.vrsc@ and Oink.vrsc@.
 
-Note: revision date 2020-02-12.
+Note: revision date 2020-04-24.
