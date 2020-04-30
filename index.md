@@ -74,4 +74,4 @@ If you have any questions about the information here, need help or have suggesti
 ## Frequently Asked Questions (ARM specific)
 [error while loading shared libraries: libgomp.so.1](#!faq-arm/armfaq-01_libgomp.so.1.md)
 
-Note: last revision date 2020-04-24.
+Note: last revision date 2020-04-30.

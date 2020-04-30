@@ -3,7 +3,7 @@ Question 2: When is next halving, what is the block reward, and how long will it
 Question 3: How many timelocked coins have been unlocked and are mature?
 
 Answer:
-https://github.com/Oink70/Verus-Help-Documents/blob/master/Tools/Verus_POS.xlsx
+https://github.com/Oink70/Staking-calculator/releases
 
 Download this spreadsheet and keep it handy to input current blockheight and amount of coins you are staking when you want to know.
 You can also enter a percentage for guessing how many coins are actually staking, to see when it matches your own actual average.
@@ -15,4 +15,4 @@ note: Verus Desktop uses the live info from the blockchain with regards to locke
 
 (submitted by Cragorn.vrsc@, additions by Oink.vrsc@)
 
-note: last revision date 2020-02-24.
+note: last revision date 2020-04-30.
