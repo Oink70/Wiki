@@ -15,6 +15,7 @@ If you have any questions about the information here, need help or have suggesti
 [Verus Information Page](#!how-to/how-to_verus_info.md)
 [Backup, Install or Update and Bootstrap your wallet](#!how-to/how-to_bootstrap.md)
 [Backing up my wallet](#!how-to/how-to_backup_my_wallet.md)
+[Restoring my wallet](#!how-to/how-to_restore_my_wallet.md)
 [Change Verus-Desktop from Lite Mode to Native Mode](#!how-to/how-to_lite_to_native.md)
 [import your Lite wallet address into your native Verus Desktop](#!how-to/how-to_convert-seed-to-wif.md)
 [Verus Wallet installation guide (External)](https://medium.com/veruscoin/how-to-update-veruscoin-graphical-gui-wallet-to-0-4-0a-for-linux-686fc7a5b6e7)
