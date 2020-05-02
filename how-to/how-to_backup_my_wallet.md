@@ -26,9 +26,9 @@ Note: The filename you replace`<mywalletexport>` with, can only contain letters 
 #### Agama:
    Go to settings, scroll to the bottom and click CLI, select VRSC in that section.
    Then below type `z_exportwallet <mywalletexport>` and click the button below to run it.
-#### linux CLI:
+#### linux/MacOS CLI:
    run `./verus z_exportwallet <mywalletexport>`
-#### win CLI:
+#### windows CLI:
    run `verus z_exportwallet <mywalletexport>`
 
 Attention: Pay attention to the feedback this command gives you: it will mention the location the backup file is saved.
