@@ -9,7 +9,7 @@ Linux: `~/.komodo/VRSC`
 Mac OS: `/Users//Library/Application Support/komodo/VRSC`
 Windows 10: `%AppData%\Komodo\VRSC\`
 
-Tip: The easiest way is to copy the location above and past it into your address bar of your file browser. Your operation system will accept the input, interpret where that location is and bring you there.
+Tip: The easiest way is to copy the location above and paste it into your address bar of your file browser. Your operation system will accept the input, interpret where that location is and bring you there.
 
 #### NEW:
 
@@ -61,4 +61,4 @@ If you followed these steps, you will have installed/updated the latest version 
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-02-20.
+Note: revision date 2020-05-02.
