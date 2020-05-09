@@ -1,5 +1,5 @@
 # Useful Verus CLI commands.
-Note: Read it completely before use.
+Note: This list is by no means complete, it highlites only the most commonly used commands. A complete list of commands can be obtained by running `verus help`
 
 ### Important General Information
 
@@ -18,8 +18,23 @@ For windows substitute the shown '-character with the "-character.
 For windows substitute the shown "-character with the \"-characters.
 
 ## Handy verus-cli commands:
-Importing a VRSC private key into your wallet:
+Getting a new Public address:
+`verus getnewaddress`
+
+Listing your available public addresses:
+`verus listaddressgroupings`
+
+Getting a new Private address:
+`verus z_getnewaddress`
+
+Listing your available private addresses:
+`verus z_listaddresses`
+
+Importing a VRSC private key of a R-address into your wallet:
 `verus importprivkey "<PRIVATE_KEY>"`
+
+Importing a VRSC private key of a z-address into your wallet:
+`verus z_importkey "<PRIVATE_KEY>"`
 
 Getting your current VRSC balance:
 `verus getbalance`
@@ -27,23 +42,29 @@ Getting your current VRSC balance:
 or for somewhat more information:
 `verus z_gettotalbalance`
 
-Sending VRSC coins from your verus wallet to and another VRSC address (t-address in this case, seperate command for z-addresses I think):
+or for any specific address:
+`verus z_getbalance "<z-, i- or P-ADDRESS>"`
+
+get info about your wallet, (immature & staking) balances:
+`verus getwalletinfo`
+
+Sending VRSC coins from your verus wallet to and another VRSC address (only public address in this case, seperate command for z-addresses I think):
 `verus sendtoaddress "<VRSC_address>" <AMOUNT> "<Some comments here>"`
 
 Listing the latest VRSC transactions:
 `verus listtransactions`
 
-Send VRSC from PUBLIC address:
-`verus`
-
 Shield reward coins from all public addresses:
-`verus z_shieldcoinbase "*" "<Z-ADDRESS>"`
+`verus z_shieldcoinbase "*" "<z-ADDRESS>"`
 
-Transfer X VRSX from (private) z-address to (public) R-address:
-`verus z_sendmany "<Z-ADDRESS>" '[{"amount":<X>, "address":"<R-ADDRESS>"}]'`
+Transfer X VRSX from any (P-, i- and z-) address to any (P-, i- and z-) address:
+`verus z_sendmany "<z-, i- or P-ADDRESS>" '[{"amount":<X>, "address":"<Z-, i- or P-ADDRESS>"}]'`
+
+Check the Operation Status of your z_sendmany command (or z_shieldconbase):
+`verus z_getoperationstatus`
 
 Disclaimer: Always read up before using a verus-cli command, more info on each command can be found using the following:
-    'verus help'
+`verus help`
 
-Added by @Crupti and @Oliver Westbrook.
-note: last revision date 2020-04-12.
+Added by @Crupti, @Oliver Westbrook and Oink.vrsc@
+note: last revision date 2020-05-09.
