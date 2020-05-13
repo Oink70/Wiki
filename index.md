@@ -61,7 +61,7 @@ If you have any questions about the information here, need help or have suggesti
 [Linux Bash scripts to make mining life easier](#!faq-linux/faq-lin03_linux_scripts_make_life_easy.md)
 [ERROR: Cannot obtain lock on data directory](#!faq-linux/faq-lin04_cannot_obtain_lock.md)
 [Cloud daily backup of Wallet.dat](#!faq-linux/faq-lin05_daily_cloud_backup.md)
-[Compile Monkins Verus enhanced CCMiner for various hardware](#!faq-linux/faq-linux06_compile_ccminer.md)
+[Compile Monkins Verus enhanced CCMiner for various hardware](#!faq-linux/faq-lin06_compile_ccminer.md)
 [PHP staking interface for coinshielding nodes](#!faq-linux/faq-lin07_PHP_CLI_interface.md)
 [Low priority pool-mining](#!faq-linux/faq-lin08_low_priority_mining.html.md)
 [error while loading shared libraries: libgomp.so.1](#!faq-linux/faq-lin09_libgomp.so.1.md)
@@ -75,4 +75,4 @@ If you have any questions about the information here, need help or have suggesti
 ## Frequently Asked Questions (ARM specific)
 [error while loading shared libraries: libgomp.so.1](#!faq-arm/armfaq-01_libgomp.so.1.md)
 
-Note: last revision date 2020-05-09.
+Note: last revision date 2020-05-13.
