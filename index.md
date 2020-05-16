@@ -7,12 +7,12 @@ If you have any questions about the information here, need help or have suggesti
 
 
 ## Information
+[Verus Information Page](#!how-to/how-to_verus_info.md)
 [VerusIDs](#!information/verusid.md)
 [Verus Digital Signatures](#!information/signatures.md)
 [VerusHash 2.1](#!information/verushash_2.1.md)
 
 ## How-To
-[Verus Information Page](#!how-to/how-to_verus_info.md)
 [Backup, Install or Update and Bootstrap your wallet](#!how-to/how-to_bootstrap.md)
 [Backing up my wallet](#!how-to/how-to_backup_my_wallet.md)
 [Restoring my wallet](#!how-to/how-to_restore_my_wallet.md)
@@ -75,4 +75,10 @@ If you have any questions about the information here, need help or have suggesti
 ## Frequently Asked Questions (ARM specific)
 [error while loading shared libraries: libgomp.so.1](#!faq-arm/armfaq-01_libgomp.so.1.md)
 
-Note: last revision date 2020-05-13.
+## CLI wallet specific Information
+[Verusd options list](#!faq-cli/clifaq-01_verusd_options.md)
+[Verus command list](#!faq-cli/clifaq-02_verus_commands.md)
+[Remarks on Windows command line formatting](#!faq-windows/winfaq-01_cli_formatting.md)
+
+
+Note: last revision date 2020-05-16.
