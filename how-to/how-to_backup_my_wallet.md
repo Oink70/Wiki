@@ -4,8 +4,8 @@
 
 Your`wallet.dat` is standard located in:
 
- * On windows this is located at `%AppData%\Komodo\VRSC\VRSC.conf`.
- * On linux it is located at `~/.komodo/VRSC/VRSC.conf`.
+ * On windows this is located at `%AppData%\Komodo\VRSC`.
+ * On linux it is located at `~/.komodo/VRSC`.
  * On MacOS it is located at `~/Library/Application Support/Komodo/VRSC`
 
 `verus command "<userinput>"` needs to be entered literally, with `<userinput>` replaced by your specific userdata. So if the text directs you to use for example `"<Public Address>"`, you replace that (including the `<` and `>`) with the address,
@@ -37,4 +37,4 @@ The exported wallet should be a file called `<mywalletexport>`, standard in the 
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-05-02.
+Note: revision date 2020-05-19.

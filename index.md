@@ -81,4 +81,4 @@ If you have any questions about the information here, need help or have suggesti
 [Remarks on Windows command line formatting](#!faq-windows/winfaq-01_cli_formatting.md)
 
 
-Note: last revision date 2020-05-16.
+Note: last revision date 2020-05-19.
