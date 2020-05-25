@@ -7,7 +7,7 @@ If you have any questions about the information here, need help or have suggesti
 
 
 ## Information
-[Verus Welcome Information](#!information/verus-landing-page.md)
+[Verus Welcome Information](#!information/verus-welcome.md)
 [Verus Information Page](#!how-to/how-to_verus_info.md)
 [VerusIDs](#!information/verusid.md)
 [Verus Digital Signatures](#!information/signatures.md)
