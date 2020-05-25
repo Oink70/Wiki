@@ -2,15 +2,18 @@
 
 ## Important General Information
 
-Your`wallet.dat` is standard located in:
+Your Verus `wallet.dat` is standard located in:
 
  * On windows this is located at `%AppData%\Komodo\VRSC`.
  * On linux it is located at `~/.komodo/VRSC`.
- * On MacOS it is located at `~/Library/Application Support/Komodo/VRSC`
+ * On MacOS it is located at `~/Library/Application Support/komodo/VRSC`
+
+Note: For Komodo the base directory is `komodo`.
+For Komodo asset chains it is a folder/directory in the `komodo` base directory (eg `komodo/PIRATE`) with the **official** coin designation.
+For Zcash the base directory is `zcash`instead of komodo.
 
 `verus command "<userinput>"` needs to be entered literally, with `<userinput>` replaced by your specific userdata. So if the text directs you to use for example `"<Public Address>"`, you replace that (including the `<` and `>`) with the address,
 so it looks similar to this: `"RYX6RYU3AAvwVCNyNM4cVyGUhSMUPvKs3r"`.
-
 
 ## Procedure
 1. Stop verusd. For Windows-Desktop or Agama, just exit and wait for it to close completely. For the linux cli run `./verus stop`, or for the windows cli run `verus stop`.
@@ -19,6 +22,8 @@ so it looks similar to this: `"RYX6RYU3AAvwVCNyNM4cVyGUhSMUPvKs3r"`.
 4. Now we'll export the wallet (this produces a different kind of file from what we did above).
 
 Note: The filename you replace`<mywalletexport>` with, can only contain letters and figures, no other characters, so it **cannot** have an file-extension
+
+Attention: On VRSC the export function is by default enabled. Other chains may need an entry in the coins configuration file to specify the export directory, before this can be used.
 
 #### Verus Desktop:
    Go to `Settings`, `Coin Settings` en click in the textbox shown there.
@@ -37,4 +42,4 @@ The exported wallet should be a file called `<mywalletexport>`, standard in the 
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-05-19.
+Note: revision date 2020-05-23.

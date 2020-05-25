@@ -15,11 +15,12 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
 note: Older versions of verusd required `expordir` to be set in VRSC.conf before exporting a wallet. If you get an error about your export directory not being set, please upgrade immediately.
 
-note: These commands can be given in
+#### These commands can be given in:
+
 * CLI wallet: `./verus z_exportwallet FILENAME`& `./verus z_importwallet /LOCAL_PATH/FILENAME`
 * Verus Desktop in `settings`, `coin settings`: `run z_exportwallet FILENAME`& `run z_importwallet /LOCAL_PATH/FILENAME`
 * Verus Agama in `settings`, `<CLI>`: `z_exportwallet FILENAME`& `z_importwallet /LOCAL_PATH/FILENAME`
 
 (submitted by @TexWiller, revised by @englal)
 
-note: last revision date 2020-04-24.
+note: last revision date 2020-05-25.
