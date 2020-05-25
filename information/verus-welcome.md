@@ -100,3 +100,5 @@ Community twitter - [*https://twitter.com/VerusCommunity*](https://twitter.com/V
 As a community project of just regular Joes, it can’t be stressed enough how important each and every one of us all are. The true power of decentralization is putting power back in the hands of **YOU**.
 
 created by Rozo@
+
+Note: last revision date 2020-05-25.
