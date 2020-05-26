@@ -32,7 +32,7 @@ Website: [*https://veruscoin.io*](https://veruscoin.io/index.html)
 Wallet: [*https://veruscoin.io/wallet*](https://veruscoin.io/wallet)
 GitHub: [*https://github.com/veruscoin/veruscoin*](https://github.com/veruscoin/veruscoin)
 Explorer: [*https://explorer.veruscoin.io*](https://explorer.veruscoin.io)
-Discord: [*veruscoin.io/discord*](veruscoin.io/discord)
+Discord: [*https://veruscoin.io/discord*](veruscoin.io/discord)
 Bitcointalk: [*https://bitcointalk.org/index.php?topic=4070404.0*](https://bitcointalk.org/index.php?topic=4070404.0)
 
 Max Supply: 83,540,184
@@ -101,4 +101,4 @@ As a community project of just regular Joes, it can’t be stressed enough how i
 
 created by Rozo@ and Godballz@
 
-Note: last revision date 2020-05-25.
+Note: last revision date 2020-05-26.
