@@ -20,10 +20,10 @@ We believe that actions speak louder than words. Anything that may be considered
 
 ### What we’re about:
 
-Put simply, Verus is much more than any single ordinary blockchain; more of an entire ecosystem of **interconnected blockchains that all operate decentralized and at the protocol level**. Verus introduces Verus PBaaS (Public Blockchains as a Service), a true publicly notarized blockchain as a service with an easy to use built in wallet UI, designed to make it so that now anyone can start their very own full-fledged cryptocurrency so long as it can be funded or supported by miners. Newly created chains are just as secure as Verus itself and have the ability to be merge mined (up to __22x__ at once\!)
+Put simply, Verus is much more than any single ordinary blockchain; more of an entire ecosystem of **interconnected blockchains that all operate decentralized and at the protocol level**. Verus introduces Verus PBaaS (__**Public Blockchains as a Service**__), a true publicly notarized blockchain as a service with an easy to use built in wallet UI, designed to make it so that now anyone can start their very own full-fledged cryptocurrency so long as it can be funded or supported by miners. Newly created chains are just as secure as Verus itself and have the ability to be merge mined (up to __22x__ at once\!)
 
-Benefiting both the user and the miners, self-strengthening the ecosystem and ensuring minimal fees (no room for middlemen to take a cut). Reserve backed currencies are also possible with fractional reserve capabilities and since interoperability is paramount, exchanging currencies in cross-chain transactions is as simple as sending coins from one wallet to a different coin’s wallet. Conversions are handled by a built in market maker that automatically determines price based on a predetermined curve and issues orders fairly to all buy/sells within a block, with minimum spread and the added benefit of eliminating the well- established problem of front-running. With reserve currencies, buyers can make buys without even needing sellers (and vice versa).
-Amazingly, everything is done at the protocol level on a decentralized network, meaning Verus and it's associated chains can't be censored or stopped.
+Benefiting both the user and the miners, self-strengthening the ecosystem and ensuring minimal fees (no room for middlemen to take a cut). Reserve backed currencies are also possible with __fractional reserve__ capabilities and since interoperability is paramount, exchanging currencies in __cross-chain transactions__ is as simple as sending coins from one wallet to a different coin’s wallet. __Conversions__ are handled by a built in market maker that automatically determines price based on a predetermined curve and issues orders fairly to all buy/sells within a block, with minimum spread and the added benefit of eliminating the well- established problem of front-running. With reserve currencies, buyers can make buys without even needing sellers (and vice versa).
+Amazingly, everything is done at the __protocol level__ on a decentralized network, meaning Verus and it's associated chains can't be censored or stopped.
 
 ## Getting started:
 ### Important links:
@@ -72,7 +72,7 @@ As you might expect from looking at the fact that anywhere from 20 to 100 Verus 
 
 Focus on Verus’ social media presence has picked up with new, fresh looking Facebook and YouTube channels so check them out and feel free to post something or simply explore the content. There’s so much going on, plenty to learn about.
 
-So much so that there is an open call to anyone and everyone out there who can submit graphical or textual content that can be used to help support the upcoming mainnet launch.
+So much so that there is an *open call to anyone and everyone out there who can submit graphical or textual content* that can be used to help support the upcoming mainnet launch.
 
 A stronger effort from our already wide base of members to post and utilize social media tools to help spread the word and generate new interested users is something we can all do right now. There is no better time than now and getting fresh new minds in here to discover what is being done is the first step in getting the great snowball rolling. To those of us who truly care and believe in this project, then this message is meant for you.
 
@@ -99,6 +99,6 @@ Community twitter - [*https://twitter.com/VerusCommunity*](https://twitter.com/V
 
 As a community project of just regular Joes, it can’t be stressed enough how important each and every one of us all are. The true power of decentralization is putting power back in the hands of **YOU**.
 
-created by Rozo@
+created by Rozo@ and Godballz@
 
 Note: last revision date 2020-05-25.
