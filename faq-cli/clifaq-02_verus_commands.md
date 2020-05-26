@@ -2,7 +2,7 @@
 
 ## Important General Information
 
-### Verus CLI version 0.6.4-3
+### Verus CLI version 0.6.5-2
 
 Usage: `verus [command]` Issue a command to the coindaemon
 
@@ -1043,34 +1043,49 @@ Result:
 "deserialize-invalid" - block could not be deserialized and was rejected as invalid
 "blocksfull"          - block did not exceed others in estimated ROI, and there was no room for an additional merge mined block
 
-### `definechain '{"name": "BAAS", ... }'`
-This defines a PBaaS chain, provides it with initial notarization fees to support its launch, and prepares it to begin running.
+### `definecurrency '{"name": "BAAS", ..., "nodes":[{"networkaddress":"identity"},..]}'`
+This defines a blockchain currency, either as an independent blockchain, or as a token on this blockchain. It also spends the identity after which this currency is named and sets a bit indicating that it has a currently active blockchain in its name.
+
+To create a currency of any kind, the identity it is named after must be minted on the blockchain on which the currency is created. Once a currency is activated for an identity name, the same symbol may not be reused for another currency or blockchain, even if the identity is transferred, revoked or recovered, unless there is an endblock specified and the currency or blockchain has deactivated as of that end block.
+
+All funds to start the currency and for initial conversion amounts must be available to spend from the identity with the same name and ID as the currency being defined.
 
 Arguments
 ```
-      {
-         "name"       : "xxxx",    (string, required) unique Verus ecosystem-wide name/symbol of this PBaaS chain
-         "paymentaddress" : "Rxxx", (string, optional) premine and launch fee recipient
-         "premine"    : "n",       (int,    optional) amount of coins that will be premined and distributed to premine address
-         "initialcontribution" : "n", (int, optional) amount of coins as initial contribution
-         "conversion" : "n",       (int,    optional) amount of coins that may be converted from Verus, price determined by total contribution
-         "launchfee"  : "n",       (int,    optional) VRSC fee for conversion at startup, multiplied by amount, divided by 100000000
-         "startblock" : "n",       (int,    optional) VRSC block must be notarized into block 1 of PBaaS chain, default curheight + 100
-         "eras"       : "objarray", (array, optional) data specific to each era, maximum 3
-         {
-            "reward"      : "n",   (int64,  optional) native initial block rewards in each period
-            "decay" : "n",         (int64,  optional) reward decay for each era
-            "halving"      : "n",  (int,    optional) halving period for each era
-            "eraend"       : "n",  (int,    optional) ending block of each era
-            "eraoptions"   : "n",  (int,    optional) options for each era
-         }
-         "notarizationreward" : "n", (int,  required) default VRSC notarization reward total for first billing period
-         "billingperiod" : "n",    (int,    optional) number of blocks in each billing period
-         "nodes"      : "[obj, ..]", (objectarray, optional) up to 2 nodes that can be used to connect to the blockchain         [{
-            "networkaddress" : "txid", (string,  optional) internet, TOR, or other supported address for node
-            "paymentaddress" : "n", (int,     optional) rewards payment address
-          }, .. ]
-      }
+{
+   "options" : "n",             (int,    optional) bits:
+                                                       1 = FRACTIONAL, 2 = IDRESTRICTED, 4 = IDSTAKING, 8 = IDREFERRALS
+                                                       0x10 = IDREFERRALSREQUIRED, 0x20 = TOKEN, 0x40 = CANBERESERVE
+   "name" : "xxxx",             (string, required) name of existing identity with no active or pending blockchain
+   "idregistrationprice" : "xx.xx", (value, required) price of an identity in native currency
+   "idreferrallevels" : "n",    (int, required) how many levels ID referrals go back in reward
+   "notaries" : "[identity,..]", (list, optional) list of identities that are assigned as chain notaries
+   "minnotariesconfirm" : "n",  (int, optional) unique notary signatures required to confirm an auto-notarization
+   "notarizationreward" : "xx.xx", (value,  required) default VRSC notarization reward total for first billing period
+   "billingperiod" : "n",       (int,    optional) number of blocks in each billing period
+   "proofprotocol" : "n",       (int,    optional) if 2, currency can be minted by whoever controls the ID
+   "startblock"   : "n",        (int,    optional) VRSC block must be notarized into block 1 of PBaaS chain, default curheight + 100
+   "endblock"     : "n",        (int,    optional) chain is considered inactive after this block height, and a new one may be started
+   "reserveratio" : "n",        (value, optional) total reserve ratio, divided among currencies
+   "currencies" : "["VRSC",..]", (list, optional) reserve currencies backing this chain in equal amounts
+   "conversions" : "["xx.xx",..]", (list, optional) if present, must be same size as currencies. pre-launch conversion ratio overrides
+   "minpreconvert" : "["xx.xx",..]", (list, optional) must be same size as currencies. minimum in each currency to launch
+   "maxpreconvert" : "["xx.xx",..]", (list, optional) maximum in each currency allowed
+   "preallocationratio" : "xx.xx", (value, optional) if non-0, pre-allocation is a percentage after initial supply is determined
+   "preallocation" : "[{"identity":xx.xx}..]", (list, optional) amount or % of from pre-allocation, depending on preallocationratio
+   "initialcontribution" : "["xx.xx",..]", (list, optional) initial contribution in each currency
+   "eras"         : "objarray", (array, optional) data specific to each era, maximum 3
+   {
+      "reward"    : "n",       (int64,  optional) native initial block rewards in each period
+      "decay" : "n",           (int64,  optional) reward decay for each era
+      "halving"   : "n",       (int,    optional) halving period for each era
+      "eraend"    : "n",       (int,    optional) ending block of each era
+   }
+   "nodes"      : "[obj, ..]", (objectarray, optional) up to 2 nodes that can be used to connect to the blockchain         [{
+      "networkaddress" : "txid", (string,  optional) internet, TOR, or other supported address for node
+      "nodeidentity" : "name@",  (string, optional) rewards payment and identity
+    }, .. ]
+}
 ```
 Result:
 ```
@@ -1081,7 +1096,26 @@ Result:
 }
 ```
 
-### `getchaindefinition "chainname"`
+### `getcrossnotarization "systemid" '["notarizationtxid1", "notarizationtxid2", ...]'`
+Creates and returns a cross notarization of this chain back to the system id caller, assuming that a prior notarization for that system is found.
+
+Arguments
+1. "systemid"                    (string, required) the currency system id to search for notarizations on
+2. "txidlist"                    (stringarray, optional) list of transaction ids to check in preferred order, first found is returned
+3. "accepted"                    (bool, optional) accepted, not earned notarizations, default: true if on VRSC or VRSCTEST, false otherwise
+
+Result:
+```
+{
+  "crosstxid" : "xxxx",        (hexstring) cross-transaction id of the notarization that matches, which is one in the arguments
+  "txid" : "xxxx",             (hexstring) transaction id of the notarization that was found
+  "rawtx" : "hexdata",         (hexstring) entire matching transaction data, serialized
+  "newtx" : "hexdata"          (hexstring) the proposed notarization transaction with an opret and opretproof
+}
+```
+
+
+### `getcurrency "chainname"`
 Returns a complete definition for any given chain if it is registered on the blockchain. If the chain requested is NULL, chain definition of the current chain is returned.
 
 Arguments
@@ -1089,41 +1123,63 @@ Arguments
 
 Result:
 ```
+{
+  "version" : "n",             (int) version of this chain definition
+  "name" : "string",           (string) name or symbol of the chain, same as passed
+  "address" : "string",        (string) cryptocurrency address to send fee and non-converted premine
+  "currencyid" : "i-address",  (string) string that represents the currency ID, same as the ID behind the currency
+  "premine" : "n",             (int) amount of currency paid out to the premine address in block #1, may be smart distribution
+  "convertible" : "xxxx"       (bool) if this currency is a fractional reserve currency of Verus
+  "startblock" : "n",          (int) block # on this chain, which must be notarized into block one of the chain
+  "endblock" : "n",            (int) block # after which, this chain's useful life is considered to be over
+  "eras" : "[obj, ...]",       (objarray) different chain phases of rewards and convertibility
   {
-     "chaindefinition" : {
-        "version" : "n",             (int) version of this chain definition
-        "name" : "string",           (string) name or symbol of the chain, same as passed
-        "address" : "string",        (string) cryptocurrency address to send fee and non-converted premine
-        "chainid" : "hex-string",    (string) 40 char string that represents the chain ID, calculated from the name
-        "premine" : "n",             (int) amount of currency paid out to the premine address in block #1, may be smart distribution
-        "convertible" : "xxxx"       (bool) if this currency is a fractional reserve currency of Verus
-        "launchfee" : "n",           (int) (launchfee * total converted) / 100000000 sent directly to premine address
-        "startblock" : "n",          (int) block # on this chain, which must be notarized into block one of the chain
-        "endblock" : "n",            (int) block # after which, this chain's useful life is considered to be over
-        "eras" : "[obj, ...]",       (objarray) different chain phases of rewards and convertibility
-        {
-          "reward" : "[n, ...]",     (int) reward start for each era in native coin
-          "decay" : "[n, ...]",      (int) exponential or linear decay of rewards during each era
-          "halving" : "[n, ...]",    (int) blocks between halvings during each era
-          "eraend" : "[n, ...]",     (int) block marking the end of each era
-          "eraoptions" : "[n, ...]", (int) options for each era (reserved)
-        }
-        "nodes"      : "[obj, ..]",  (objectarray, optional) up to 2 nodes that can be used to connect to the blockchain          [{
-             "nodeaddress" : "txid", (string,  optional) internet, TOR, or other supported address for node
-             "paymentaddress" : "n", (int,     optional) rewards payment address
-           }, .. ]
-      }
-    "bestnotarization" : {
-     }
-    "besttxid" : "txid"
-     }
-    "confirmednotarization" : {
-     }
-    "confirmedtxid" : "txid"
+    "reward" : "[n, ...]",     (int) reward start for each era in native coin
+    "decay" : "[n, ...]",      (int) exponential or linear decay of rewards during each era
+    "halving" : "[n, ...]",    (int) blocks between halvings during each era
+    "eraend" : "[n, ...]",     (int) block marking the end of each era
+    "eraoptions" : "[n, ...]", (int) options (reserved)
   }
+  "nodes"      : "[obj, ..]",  (objectarray, optional) up to 8 nodes that can be used to connect to the blockchain      [{
+       "nodeidentity" : "txid", (string,  optional) internet, TOR, or other supported address for node
+       "paymentaddress" : "n", (int,     optional) rewards payment address
+     }, .. ]
+  "bestnotarization" : {
+   }
+  "besttxid" : "txid"
+   }
+  "confirmednotarization" : {
+   }
+  "confirmedtxid" : "txid"
+}
 ```
 
-### `getchainexports "chainname"`
+### `getcurrencystate "n"`
+Returns the total amount of preconversions that have been confirmed on the blockchain for the specified chain.
+
+Arguments
+   "n" or "m,n" or "m,n,o"         (int or string, optional) height or inclusive range with optional step at which to get the currency state. If not specified, the latest currency state and height is returned
+
+Result:
+```
+   [
+       {
+           "height": n,
+           "blocktime": n,
+           "currencystate": {
+               "flags" : n,
+               "initialratio" : n,
+               "initialsupply" : n,
+               "emitted" : n,
+               "supply" : n,
+               "reserve" : n,
+               "currentratio" : n,
+           "}
+       },
+   ]
+```
+
+### `getexports "chainname"`
 Returns all pending export transfers that are not yet provable with confirmed notarizations.
 
 Arguments
@@ -1135,7 +1191,7 @@ Result:
   }
 ```
 
-### `getchainimports "chainname"`
+### `getimports "chainname"`
 Returns all imports from a specific chain.
 
 Arguments
@@ -1166,71 +1222,9 @@ Result:
 }
 ```
 
-### getcurrencystate "n"
-Returns the total amount of preconversions that have been confirmed on the blockchain for the specified chain.
-
-Arguments
-   "n" or "m,n" or "m,n,o"         (int or string, optional) height or inclusive range with optional step at which to get the currency state
-                                                                   If not specified, the latest currency state and height is returned
-
-Result:
-```
-   [
-       {
-           "height": n,
-           "blocktime": n,
-           "currencystate": {
-               "flags" : n,
-               "initialratio" : n,
-               "initialsupply" : n,
-               "emitted" : n,
-               "supply" : n,
-               "reserve" : n,
-               "currentratio" : n,
-           "}
-       },
-   ]
-```
-
-### `getdefinedchains (includeexpired)`
-Returns a complete definition for any given chain if it is registered on the blockchain. If the chain requested
-
-is NULL, chain definition of the current chain is returned.
-
-Arguments
-1. "includeexpired"                (bool, optional) if true, include chains that are no longer active
-
-Result:
-```
-[
-  {
-    "version" : "n",             (int) version of this chain definition
-    "name" : "string",           (string) name or symbol of the chain, same as passed
-    "address" : "string",        (string) cryptocurrency address to send fee and non-converted premine
-    "chainid" : "hex-string",    (string) 40 char string that represents the chain ID, calculated from the name
-    "premine" : "n",             (int) amount of currency paid out to the premine address in block #1, may be smart distribution
-    "convertible" : "xxxx"       (bool) if this currency is a fractional reserve currency of Verus
-    "launchfee" : "n",           (int) (launchfee * total converted) / 100000000 sent directly to premine address
-    "startblock" : "n",          (int) block # on this chain, which must be notarized into block one of the chain
-    "endblock" : "n",            (int) block # after which, this chain's useful life is considered to be over
-    "eras" : "[obj, ...]",       (objarray) different chain phases of rewards and convertibility
-    {
-      "reward" : "[n, ...]",     (int) reward start for each era in native coin
-      "decay" : "[n, ...]",      (int) exponential or linear decay of rewards during each era
-      "halving" : "[n, ...]",    (int) blocks between halvings during each era
-      "eraend" : "[n, ...]",     (int) block marking the end of each era
-      "eraoptions" : "[n, ...]", (int) options for each era (reserved)
-    }
-    "nodes"      : "[obj, ..]",  (objectarray, optional) up to 2 nodes that can be used to connect to the blockchain      [{
-         "nodeaddress" : "txid", (string,  optional) internet, TOR, or other supported address for node
-         "paymentaddress" : "n", (int,     optional) rewards payment address
-       }, .. ]
-  }, ...
-]
-```
-
 ### `getinitialcurrencystate "name"`
-Returns the total amount of preconversions that have been confirmed on the blockchain for the specified chain.
+Returns the total amount of preconversions that have been confirmed on the blockchain for the specified PBaaS chain.
+This should be used to get information about chains that are not this chain, but are being launched by it.
 
 Arguments
    "name"                    (string, required) name or chain ID of the chain to get the export transactions for
@@ -1334,13 +1328,13 @@ Result:
 }
 ```
 
-### `getnotarizationdata "chainid" accepted`
-Returns the latest PBaaS notarization data for the specifed chainid.
+### `getnotarizationdata "currencyid" accepted`
+
+Returns the latest PBaaS notarization data for the specifed currencyid.
 
 Arguments
-1. "chainid"                     (string, required) the hex-encoded ID or string name  search for notarizations on
-2. "accepted"                    (bool, optional) accepted, not earned notarizations, default: true if on
-                                                    VRSC or VRSCTEST, false otherwise
+1. "currencyid"                  (string, required) the hex-encoded ID or string name  search for notarizations on
+2. "accepted"                    (bool, optional) accepted, not earned notarizations, default: true if on VRSC or VRSCTEST, false otherwise
 
 Result:
 ```
@@ -1361,27 +1355,77 @@ Result:
   }
 ```
 
-### `paynotarizationrewards "chainid" "amount" "billingperiod"`
-Adds some amount of funds to a specific billing period of a PBaaS chain, which will be released
+### `getsaplingtree "n"`
+Returns the entries for a light wallet Sapling tree state.
 
-in the form of payments to notaries whose notarizations are confirmed.
+Arguments
+   "n" or "m,n" or "m,n,o"         (int or string, optional) height or inclusive range with optional step at which to get the Sapling tree state. If not specified, the latest currency state and height is returned
+
+Result:
+```
+   [
+       {
+           "network": "VRSC",
+           "height": n,
+           "hash": "hex"
+           "time": n,
+           "tree": "hex"
+       },
+   ]
+```
+
+### `listcurrencies (includeexpired)`
+Returns a complete definition for any given chain if it is registered on the blockchain. If the chain requested is NULL, chain definition of the current chain is returned.
+
+Arguments
+1. "includeexpired"                (bool, optional) if true, include chains that are no longer active
+
+Result:
+```
+[
+  {
+    "version" : "n",             (int) version of this chain definition
+    "name" : "string",           (string) name or symbol of the chain, same as passed
+    "address" : "string",        (string) cryptocurrency address to send fee and non-converted premine
+    "currencyid" : "hex-string", (string) i-address that represents the chain ID, same as the ID that launched the chain
+    "premine" : "n",             (int) amount of currency paid out to the premine address in block #1, may be smart distribution
+    "convertible" : "xxxx"       (bool) if this currency is a fractional reserve currency of Verus
+    "startblock" : "n",          (int) block # on this chain, which must be notarized into block one of the chain
+    "endblock" : "n",            (int) block # after which, this chain's useful life is considered to be over
+    "eras" : "[obj, ...]",       (objarray) different chain phases of rewards and convertibility
+    {
+      "reward" : "[n, ...]",     (int) reward start for each era in native coin
+      "decay" : "[n, ...]",      (int) exponential or linear decay of rewards during each era
+      "halving" : "[n, ...]",    (int) blocks between halvings during each era
+      "eraend" : "[n, ...]",     (int) block marking the end of each era
+      "eraoptions" : "[n, ...]", (int) options (reserved)
+    }
+    "nodes"      : "[obj, ..]",  (objectarray, optional) up to 2 nodes that can be used to connect to the blockchain      [{
+         "nodeaddress" : "txid", (string,  optional) internet, TOR, or other supported address for node
+         "paymentaddress" : "n", (int,     optional) rewards payment address
+       }, .. ]
+  }, ...
+]
+```
+
+### `paynotarizationrewards "currencyid" "amount" "billingperiod"`
+Adds some amount of funds to a specific billing period of a PBaaS chain, which will be released in the form of payments to notaries whose notarizations are confirmed.
 
 Arguments
 
 Result:
 
-### `refundfailedlaunch "chainid"`
+### `refundfailedlaunch "currencyid"`
 Refunds any funds sent to the chain if they are eligible for refund.
 This attempts to refund all transactions for all contributors.
 
 Arguments
-"chainid"            (hex or chain name, required)   the chain to refund contributions to
+"currencyid"            (hex or chain name, required) the chain to refund contributions to
 
 Result:
 
 ### `reserveexchange '[{"toreserve": 1, "recipient": "RRehdmUV7oEAqoZnzEGBH34XysnWaBatct", "amount": 5.0}]'`
 This sends a Verus output as a JSON object or lists of Verus outputs as a list of objects to an address on the same or another chain.
-
 Funds are sourced automatically from the current wallet, which must be present, as in sendtoaddress.
 
 Arguments
@@ -1398,27 +1442,32 @@ Arguments
 Result:
        "txid" : "transactionid" (string) The transaction id.
 
-### `sendreserve '{"name": "PBAASCHAIN", "paymentaddress": "RRehdmUV7oEAqoZnzEGBH34XysnWaBatct", "amount": 5.0, "convert": 1}' (returntx)`
-This sends a Verus output as a JSON object or lists of Verus outputs as a list of objects to an address on the same or another chain.
-
+### `sendcurrency "fromaddress" '[{"address":... ,"amount":...},...]' (returntx)`
+This sends one or many Verus outputs to one or many addresses on the same or another chain.
 Funds are sourced automatically from the current wallet, which must be present, as in sendtoaddress.
+If "fromaddress" is specified, all funds will be taken from that address, otherwise funds may come from any source set of UTXOs controlled by the wallet.
 
 Arguments
-```
-       {
-           "name"           : "xxxx",  (string, optional) Verus ecosystem-wide name/symbol of chain to send to, if absent, current chain is assumed
-           "paymentaddress" : "Rxxx",  (string, required) transaction recipient address
-           "refundaddress"  : "Rxxx",  (string, optional) if a pre-convert is not mined in time, funds can be spent by the owner of this address
-           "amount"         : "n.n",   (value,  required) coins that will be moved and sent to address on PBaaS chain, network and conversion fees additional
-           "tonative"       : "false", (bool,   optional) auto-convert from Verus to PBaaS currency at market price
-           "toreserve"      : "false", (bool,   optional) auto-convert from PBaaS to Verus reserve currency at market price
-           "preconvert"     : "false", (bool,   optional) auto-convert to PBaaS currency at market price, this only works if the order is mined before block start of the chain
-           "subtractfee"    : "bool",  (bool,   optional) if true, reduce amount to destination by the transfer and conversion fee amount. normal network fees are never subtracted
-       }
-       "returntx"                        (bool,   optional) defaults to false and transaction is sent, if true, transaction is signed by this wallet and returned
-```
+1. "fromaddress"             (string, required) The VerusID or address to send the funds from. "\*" means all addresses
+2. "outputs"                 (array, required) An array of json objects representing currencies, amounts, and destinations to send.
+    ```
+    [{
+      "currency": "name"   (string, required) Name of the source currency to send in this output, defaults to native of chain
+      "amount":amount        (numeric, required) The numeric amount of currency, denominated in source currency
+      "convertto":"name",  (string, optional) Valid currency to convert to, either a reserve of a native source, or fractional of reserve
+      "address":"dest"     (string, required) The address and optionally chain/system after the "@" as a system specific destination
+      "refundto":"dest"    (string, optional) For pre-conversions, this is where refunds will go, defaults to fromaddress
+      "memo":memo            (string, optional) If destination is a zaddr (not supported on testnet), a string message (not hexadecimal) to include.
+      "preconvert":"false", (bool,   optional) auto-convert to PBaaS currency at market price, this only works if the order is mined before block start of the chain
+      "subtractfee":"bool", (bool,   optional) if true, output must be of native or convertible reserve currency, and output will be reduced by share of fee
+    }, ... ]
+    ```
+3. "returntx"                (bool,   optional) defaults to false and transaction is sent, if true, transaction is signed and returned
+
 Result:
-       "txid" : "transactionid" (string) The transaction id.
+   "txid" : "transactionid" (string) The transaction id if (returntx) is false
+   "hextx" : "hex"         (string) The hexadecimal, serialized transaction if (returntx) is true
+
 
 ### `submitacceptednotarization "hextx"`
 Finishes an almost complete notarization transaction based on the notary chain and the current wallet or pubkey.
@@ -3028,4 +3077,4 @@ Perform a joinsplit and return the JSDescription.
 
 compiled by Oink.vrsc@
 
-Note: last revision date 2020-05-16.
+Note: last revision date 2020-05-26.
