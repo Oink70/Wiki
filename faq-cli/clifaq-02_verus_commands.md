@@ -1053,35 +1053,35 @@ All funds to start the currency and for initial conversion amounts must be avail
 Arguments
 ```
 {
-   "options" : n,             (int,    optional) bits:
-                                                       1 = FRACTIONAL, 2 = IDRESTRICTED, 4 = IDSTAKING, 8 = IDREFERRALS
-                                                       0x10 = IDREFERRALSREQUIRED, 0x20 = TOKEN, 0x40 = CANBERESERVE
-   "name" : "xxxx",             (string, required) name of existing identity with no active or pending blockchain
+   "options" : n,                 (int,    optional) bits:
+                                               1 = FRACTIONAL, 2 = IDRESTRICTED, 4 = IDSTAKING, 8 = IDREFERRALS
+                                               0x10 = IDREFERRALSREQUIRED, 0x20 = TOKEN, 0x40 = CANBERESERVE
+   "name" : "xxxx",               (string, required) name of existing identity with no active or pending blockchain
    "idregistrationprice" : xx.xx, (value, required) price of an identity in native currency
-   "idreferrallevels" : "n",    (int, required) how many levels ID referrals go back in reward
-   "notaries" : [identity,..], (list, optional) list of identities that are assigned as chain notaries
-   "minnotariesconfirm" : n,  (int, optional) unique notary signatures required to confirm an auto-notarization
-   "notarizationreward" : xx.xx, (value,  required) default VRSC notarization reward total for first billing period
-   "billingperiod" : n,       (int,    optional) number of blocks in each billing period
-   "proofprotocol" : n,       (int,    optional) if 2, currency can be minted by whoever controls the ID
-   "startblock"   : n,        (int,    optional) VRSC block must be notarized into block 1 of PBaaS chain, default curheight + 100
-   "endblock"     : n,        (int,    optional) chain is considered inactive after this block height, and a new one may be started
-   "reserveratio" : n,        (value, optional) total reserve ratio, divided among currencies
-   "currencies" : ["VRSC",..], (list, optional) reserve currencies backing this chain in equal amounts
-   "conversions" : [xx.xx,..], (list, optional) if present, must be same size as currencies. pre-launch conversion ratio overrides
-   "minpreconvert" : [xx.xx,..], (list, optional) must be same size as currencies. minimum in each currency to launch
-   "maxpreconvert" : [xx.xx,..], (list, optional) maximum in each currency allowed
-   "preallocationratio" : xx.xx, (value, optional) if non-0, pre-allocation is a percentage after initial supply is determined
+   "idreferrallevels" : n,        (int, required) how many levels ID referrals go back in reward
+   "notaries" : [identity,..],    (list, optional) list of identities that are assigned as chain notaries
+   "minnotariesconfirm" : n,      (int, optional) unique notary signatures required to confirm an auto-notarization
+   "notarizationreward" : xx.xx,  (value,  required) default VRSC notarization reward total for first billing period
+   "billingperiod" : n,           (int,    optional) number of blocks in each billing period
+   "proofprotocol" : n,           (int,    optional) if 2, currency can be minted by whoever controls the ID
+   "startblock"   : n,            (int,    optional) VRSC block must be notarized into block 1 of PBaaS chain, default curheight + 100
+   "endblock"     : n,            (int,    optional) chain is considered inactive after this block height, and a new one may be started
+   "reserveratio" : n,            (value, optional) total reserve ratio, divided among currencies
+   "currencies" : ["VRSC",..],    (list, optional) reserve currencies backing this chain in equal amounts
+   "conversions" : [xx.xx,..],    (list, optional) if present, must be same size as currencies. pre-launch conversion ratio overrides
+   "minpreconvert" : [xx.xx,..],  (list, optional) must be same size as currencies. minimum in each currency to launch
+   "maxpreconvert" : [xx.xx,..],  (list, optional) maximum in each currency allowed
+   "preallocationratio" : xx.xx,  (value, optional) if non-0, pre-allocation is a percentage after initial supply is determined
    "preallocation" : [{"identity":xx.xx}..], (list, optional) amount or % of from pre-allocation, depending on preallocationratio
-   "initialcontribution" : ["xx.xx",..], (list, optional) initial contribution in each currency
-   "eras"         : objarray, (array, optional) data specific to each era, maximum 3
+   "initialcontribution" : [xx.xx,..], (list, optional) initial contribution in each currency
+   "eras"         : objarray,     (array, optional) data specific to each era, maximum 3
    {
-      "reward"    : n,       (int64,  optional) native initial block rewards in each period
-      "decay" : n,           (int64,  optional) reward decay for each era
-      "halving"   : n,       (int,    optional) halving period for each era
-      "eraend"    : n,       (int,    optional) ending block of each era
+      "reward"    : n,           (int64,  optional) native initial block rewards in each period
+      "decay"     : n,           (int64,  optional) reward decay for each era
+      "halving"   : n,           (int,    optional) halving period for each era
+      "eraend"    : n,           (int,    optional) ending block of each era
    }
-   "nodes"      : [obj, ..], (objectarray, optional) up to 2 nodes that can be used to connect to the blockchain         [{
+   "nodes"      : [obj, ..],     (objectarray, optional) up to 2 nodes that can be used to connect to the blockchain         [{
       "networkaddress" : "txid", (string,  optional) internet, TOR, or other supported address for node
       "nodeidentity" : "name@",  (string, optional) rewards payment and identity
     }, .. ]
@@ -1090,9 +1090,9 @@ Arguments
 Result:
 ```
 {
-  "txid" : "transactionid", (string) The transaction id
-  "tx"   : "json",          (json)   The transaction decoded as a transaction
-  "hex"  : "data"           (string) Raw data for signed transaction
+  "txid" : "transactionid",      (string) The transaction id
+  "tx"   : "json",               (json)   The transaction decoded as a transaction
+  "hex"  : "data"                (string) Raw data for signed transaction
 }
 ```
 
