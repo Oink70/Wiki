@@ -1095,6 +1095,19 @@ Result:
   "hex"  : "data"                (string) Raw data for signed transaction
 }
 ```
+##### Extra info on the "options"
+"options" are values that can be added together to set different launch options for a currency. The options and their values in hexadecimal are:
+```
+OPTION_FRACTIONAL = 1,              // allows reserve conversion using fractional reserve calculations when set
+OPTION_ID_ISSUANCE = 2,             // clear is permissionless, if set, IDs may only be created by controlling ID
+OPTION_ID_STAKING = 4,              // all IDs on chain stake equally, rather than value-based staking
+OPTION_ID_REFERRALS = 8,            // if set, this chain supports referrals
+OPTION_ID_REFERRALREQUIRED = 0x10,  // if set, this chain requires referrals
+OPTION_TOKEN = 0x20,                // if set, this is launched as a PBaaS token, not a blockchain
+OPTION_CANBERESERVE = 0x40,         // if set, this currency can be used as a reserve for fractional currencies
+OPTION_FEESASRESERVE = 0x80,        // if set, fees will not be converted from reserve to native currency
+OPTION_GATEWAY = 0x100,             // if set, this currency is used only as a gateway to another system
+```
 
 ### `getcrossnotarization "systemid" '["notarizationtxid1", "notarizationtxid2", ...]'`
 Creates and returns a cross notarization of this chain back to the system id caller, assuming that a prior notarization for that system is found.
@@ -3077,4 +3090,4 @@ Perform a joinsplit and return the JSDescription.
 
 compiled by Oink.vrsc@
 
-Note: last revision date 2020-05-28.
+Note: last revision date 2020-05-29.
