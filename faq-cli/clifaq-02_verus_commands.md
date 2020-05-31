@@ -1095,7 +1095,7 @@ Result:
   "hex"  : "data"                (string) Raw data for signed transaction
 }
 ```
-##### Extra info on the "options"
+#### Extra info on the "options"
 "options" are values that can be added together to set different launch options for a currency. The options and their values in hexadecimal are:
 ```
 OPTION_FRACTIONAL = 1,              // allows reserve conversion using fractional reserve calculations when set
@@ -1356,7 +1356,7 @@ Result:
 }
 ```
 
-### `getpendingchaintransfers "chainname"`
+### `getpendingtransfers "chainname"`
 Returns all pending transfers for a particular chain that have not yet been aggregated into an export
 
 Arguments
