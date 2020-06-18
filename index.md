@@ -14,7 +14,7 @@ If you have any questions about the information here, need help or have suggesti
 [VerusHash 2.1](#!information/verushash_2.1.md)
 
 ## How-To
-[Backup, Install or Update and Bootstrap your wallet](#!how-to/how-to_bootstrap.md)
+[Backup, Install or Update and Bootstrap your wallet](#!how-to/how-to_bootstrap.md) **UPDATED**
 [Backing up my wallet](#!how-to/how-to_backup_my_wallet.md)
 [Restoring my wallet](#!how-to/how-to_restore_my_wallet.md)
 [Change Verus-Desktop from Lite Mode to Native Mode](#!how-to/how-to_lite_to_native.md)
@@ -82,4 +82,4 @@ If you have any questions about the information here, need help or have suggesti
 [Remarks on Windows command line formatting](#!faq-windows/winfaq-01_cli_formatting.md)
 
 
-Note: last revision date 2020-06-12.
+Note: last revision date 2020-06-18.
