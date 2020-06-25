@@ -1,4 +1,4 @@
-# How do I install the Linux CLI (command line interface) on a brand new (hosted) system?
+# How do I install the Verus CLI (command line interface) wallet on a brand new (hosted) Linux system?
 
 Notice: Read it completely before use.
 
@@ -26,16 +26,23 @@ Link 2: [Download Verus Bootstrap](https://bootstrap.veruscoin.io/)
   You should get some lines like this:
   `drwx------  6 root root 4096 Jul  3 15:56`
 5. Download & install the wallet binaries:
-  `wget https://github.com/VerusCoin/VerusCoin/releases/download/v0.6.4-1/Verus-CLI-Linux-v0.6.4-1-amd64.gz`
+  `wget https://github.com/VerusCoin/VerusCoin/releases/download/v0.7.0-3/Verus-CLI-Linux-v0.7.0-3-amd64.tgz`
  The downloaded archive contains another archive and a signature text file, enabling the archive within to be verified (You'll need a running wallet to do that)
  Also: Verify the URL to the latest version from the [Download latest Wallet](https://veruscoin.io/wallet.html) above.
-  `tar -xvf verus-cli-linux-v0.6.4.1.gz`
+  `tar -xvf Verus-CLI-Linux-v0.7.0-3-amd64.tgz`
  Now extract the wallet archive:
-  `tar -xvf verus-cli-linux-v0.6.4.1.tar.gz`
+  `tar -xvf Verus-CLI-Linux-v0.7.0-3-amd64.tar.gz`
  Change directory to verus-cli
   `cd verus-cli`
  Fetch parameters, takes time, more on slow Internet connection
   `./fetch-params`
+Creating the chaindata directory
+  `cd ~`
+  `mkdir -p .komodo/VRSC`
+  `cd ~/.komodo/VRSC`
+Download the block-chain bootstrap, this considerably speeds up synchronisation of the block-chain from days to minutes... (optional)
+  `wget https://bootstrap.veruscoin.io/VRSC-bootstrap.tar.gz`
+  `tar -xvf VRSC-bootstrap.tar.gz`
  Install libraries for Verus
   `sudo apt-get install libcurl3 g++-multilib -y`
  Install Tmux a terminal multiplexer with which you can run threads in the background see https://en.wikipedia.org/wiki/Tmux
@@ -62,4 +69,4 @@ Apply no settings:
 
 (submitted by @karero, corrected by @Glennp, edited by Oink.vrsc@)
 
-Note: last revision date 2020-02-25.
+Note: last revision date 2020-06-25.
