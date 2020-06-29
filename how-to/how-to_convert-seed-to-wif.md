@@ -37,7 +37,7 @@ Copy that information and store it somewhere **SAFE**. With this information any
 The 52-character string after **"wif":** that is shown, is what you want to import in the next step.
 
 
-## Importing a singe WIF
+## Importing a single WIF
 To import your address, go to `settings` --> `Coin Settings` and enter the following command:
 ```
 run importprivkey "<wif>" "" true
