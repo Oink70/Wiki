@@ -48,7 +48,7 @@ Note: Don't use the WIF from the example above, but use the one from the CLI-int
 
 The GUI wallet will not show any progress on the import and may give messages that the RPC daemon is not reacting. It will take quite some time for the process to finish in the background, especially if the address has many transaction on it.
 
-## Importing amultiple WIFs in one batch
+## Importing multiple WIFs in one batch
 To import your address, go to `settings` --> `Coin Settings` and enter the following command for every WIF except for the final one:
 ```
 run importprivkey "<wif>"
@@ -67,4 +67,4 @@ The GUI wallet will not show any progress on the import and may give messages th
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-06-08.
+Note: revision date 2020-06-26.
