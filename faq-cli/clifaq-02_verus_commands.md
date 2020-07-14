@@ -2,7 +2,7 @@
 
 ## Important General Information
 
-### Verus CLI version 0.6.5-2
+### Verus CLI version 0.7.1
 
 Usage: `verus [command]` Issue a command to the coindaemon
 
@@ -1127,7 +1127,6 @@ Result:
 }
 ```
 
-
 ### `getcurrency "chainname"`
 Returns a complete definition for any given chain if it is registered on the blockchain. If the chain requested is NULL, chain definition of the current chain is returned.
 
@@ -1214,25 +1213,6 @@ Result:
 ```
   {
   }
-```
-
-### `getcrossnotarization "chainid" '["notarizationtxid1", "notarizationtxid2", ...]'`
-Returns the latest PBaaS notarization transaction found in the list of transaction IDs or nothing if not found
-
-Arguments
-1. "chainid"                     (string, required) the hex-encoded chainid to search for notarizations on
-2. "txidlist"                    (stringarray, optional) list of transaction ids to check in preferred order, first found is returned
-3. "accepted"                    (bool, optional) accepted, not earned notarizations, default: true if on
-                                                    VRSC or VRSCTEST, false otherwise
-
-Result:
-```
-{
-  "crosstxid" : "xxxx",        (hexstring) cross-transaction id of the notarization that matches, which is one in the arguments
-  "txid" : "xxxx",             (hexstring) transaction id of the notarization that was found
-  "rawtx" : "hexdata",         (hexstring) entire matching transaction data, serialized
-  "newtx" : "hexdata"          (hexstring) the proposed notarization transaction with an opret and opretproof
-}
 ```
 
 ### `getinitialcurrencystate "name"`
@@ -3090,4 +3070,4 @@ Perform a joinsplit and return the JSDescription.
 
 compiled by Oink.vrsc@
 
-Note: last revision date 2020-05-29.
+Note: last revision date 2020-07-14.

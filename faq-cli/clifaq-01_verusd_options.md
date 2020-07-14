@@ -2,7 +2,7 @@
 
 ## Important General Information
 
-#### Verus Daemon version 0.6.5-2
+#### Verus Daemon version 0.7.1
 
 Usage: `verusd [options]` Start Verus Daemon
 
@@ -409,4 +409,4 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
 compiled by Oink.vrsc@
 
-Note: last revision date 2020-05-26.
+Note: last revision date 2020-7-14.
