@@ -4,9 +4,9 @@
 
 Your `wallet.dat` is standard located in:
 
- * On windows this is located at `%AppData%\Komodo\VRSC`.
- * On linux it is located at `~/.komodo/VRSC`.
- * On MacOS it is located at `~/Library/Application Support/Komodo/VRSC`
+ * On windows this is located at `%AppData%\Komodo\VRSC` or as **absolute path** `c:\Users\LOGINNAME\AppData\Roaming\`.
+ * On linux it is located at `~/.komodo/VRSC` or as **absolute path** `/home/LOGINNAME/.komodo/VRSC`.
+ * On MacOS it is located at `~/Library/Application Support/Komodo/VRSC` or as **absolute path** `/Users/LOGINNAME/Library/Application\ Support/Komodo/VRSC`.
 
 `verus command "<userinput>"` needs to be entered literally, with `<userinput>` replaced by your specific userdata. So if the text directs you to use for example `"<Public Address>"`, you replace that (including the `<` and `>`) with the address,
 so it looks similar to this: `"RYX6RYU3AAvwVCNyNM4cVyGUhSMUPvKs3r"`.
@@ -26,6 +26,8 @@ Note: The filename you replace`<mywalletimport>` with, can only contain letters 
 Attention: The command `z_importwallet` triggers the wallet to rescan in order to make all transactions to the freshly imported wallet addresses visible.
 Rescanning your wallet may take a considerable time, during which your wallet may not respond to other commands. Please be patient.
 
+The `<PATH>` in the `z_importwallet` command needs to be the **full absolute** path to the file. replace `LOGINNAME` with the actual loginname.
+
 #### Verus Desktop:
    Go to `Settings`, `Coin Settings` en click in the textbox shown there.
    Enter `run z_importwallet "<PATH><mywalletimport>"` en press enter to execute the command.
@@ -42,4 +44,4 @@ Importing individual keys is explained in detail in this wiki: [import your Lite
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-05-19.
+Note: revision date 2020-07-17
