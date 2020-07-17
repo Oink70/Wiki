@@ -3,14 +3,14 @@
 Attention: Read it completely before using.
 
 ## Important General Information
-Wallet download page: (https://veruscoin.io/wallet)[https://veruscoin.io/wallet]
+Wallet download page: [https://veruscoin.io/wallet](https://veruscoin.io/wallet)
 
 ## Using Verus-Desktop
 
 1. download the new version
 2. extract the archive
 3. verify the signature using the data in the `*.signature.txt`-file through your existing Verus-Desktop, *VerusID* tab, Verify Signed Data and choose to verify a file. Only continue when this verification returns True.
-4. stop your verusdaemon verus stop
+4. stop your Verus-Desktop wallet
 5. install the verified installer (Windows).
 6. start your wallet.
 
@@ -26,4 +26,4 @@ Wallet download page: (https://veruscoin.io/wallet)[https://veruscoin.io/wallet]
 
 Compiled by: Oink@
 
-Note: creation date 2020-07-14.
+Note: creation date 2020-07-17.
