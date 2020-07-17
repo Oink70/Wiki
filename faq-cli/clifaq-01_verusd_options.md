@@ -346,6 +346,12 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
   `-gen`
        Mine/generate coins (default: 0)
 
+  `-mineraddress`
+      Send mined coins to a specific single address or ID.
+
+  `defaultid`
+      Set a default destination ID for your staking rewards.
+
   `-genproclimit=<n>`
        Set the number of threads for coin mining if enabled (-1 = all cores,
        default: 0)
@@ -409,4 +415,4 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
 compiled by Oink.vrsc@
 
-Note: last revision date 2020-7-14.
+Note: last revision date 2020-7-17.
