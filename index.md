@@ -12,6 +12,7 @@ If you have any questions about the information here, need help or have suggesti
 [VerusIDs](#!information/verusid.md)
 [Verus Digital Signatures](#!information/signatures.md)
 [VerusHash 2.1](#!information/verushash_2.1.md)
+[Verus Discord verification](https://youtu.be/dncESX-fPk0)
 
 ## How-To
 [Backup, Install or Update and Bootstrap your wallet](#!how-to/how-to_bootstrap.md) ***`UPDATED`***
