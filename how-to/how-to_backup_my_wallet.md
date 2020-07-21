@@ -10,7 +10,7 @@ Your Verus `wallet.dat` is standard located in:
 
 Note: For Komodo the base directory is `komodo`.
 For Komodo asset chains it is a folder/directory in the `komodo` base directory (eg `komodo/PIRATE`) with the **official** coin designation.
-For Zcash the base directory is `zcash`instead of komodo.
+For Zcash the base directory is `zcash` instead of komodo.
 
 `verus command "<userinput>"` needs to be entered literally, with `<userinput>` replaced by your specific userdata. So if the text directs you to use for example `"<Public Address>"`, you replace that (including the `<` and `>`) with the address,
 so it looks similar to this: `"RYX6RYU3AAvwVCNyNM4cVyGUhSMUPvKs3r"`.
@@ -42,4 +42,4 @@ The exported wallet should be a file called `<mywalletexport>`, standard in the 
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-05-23.
+Note: revision date 2020-07-21.
