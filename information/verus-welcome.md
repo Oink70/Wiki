@@ -32,7 +32,7 @@ Website: [*https://veruscoin.io*](https://veruscoin.io/index.html)
 Wallet: [*https://veruscoin.io/wallet*](https://veruscoin.io/wallet)
 GitHub: [*https://github.com/veruscoin/veruscoin*](https://github.com/veruscoin/veruscoin)
 Explorer: [*https://explorer.veruscoin.io*](https://explorer.veruscoin.io)
-Discord: [*https://veruscoin.io/discord*](veruscoin.io/discord) Check [https://youtu.be/dncESX-fPk0](Human Verification) if you only see one empty channel.
+Discord: [*https://veruscoin.io/discord*](veruscoin.io/discord) Check [https://youtu.be/YVOfIMjRf30](Human Verification) if you only see one empty channel.
 Bitcointalk: [*https://bitcointalk.org/index.php?topic=4070404.0*](https://bitcointalk.org/index.php?topic=4070404.0)
 
 Max Supply: 83,540,184
