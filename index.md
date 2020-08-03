@@ -83,5 +83,8 @@ If you have any questions about the information here, need help or have suggesti
 [Verus command list](#!faq-cli/clifaq-02_verus_commands.md)
 [Remarks on Windows command line formatting](#!faq-windows/winfaq-01_cli_formatting.md)
 
+## Q&A Archive
+[Q&A questions channel Verus-WhiteBIT 2020-07-28](https://wiki.veruscoin.io/q-a/veruscoin-q-a-questions-20200728.html)
+[Q&A reward channel Verus-WhiteBIT 2020-07-28](https://wiki.veruscoin.io/q-a/veruscoin-q-a-reward-20200728.html)
 
-Note: last revision date 2020-07-21.
+Note: last revision date 2020-08-03.
