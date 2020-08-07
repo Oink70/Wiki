@@ -6,7 +6,7 @@ Attention: Read it completely before using.
 
 `VRSC Wallet location` on different OS:
 Linux: `~/.komodo/VRSC`
-Mac OS: `/Users/Library/Application Support/komodo/VRSC`
+Mac OS: `~/Library/Application Support/Komodo/VRSC`
 Windows 10: `%AppData%\Komodo\VRSC\`
 
 Tip: The easiest way is to copy the location above and paste it into your address bar of your file browser. Your operation system will accept the input, interpret where that location is and bring you there.
@@ -16,6 +16,8 @@ Tip: The easiest way is to copy the location above and paste it into your addres
 Link 1: [Download latest Wallet](https://veruscoin.io/wallet.html)
 Link 2: [Download Verus Bootstrap](https://bootstrap.veruscoin.io/)
 
+## Optional:
+Watch this video with an explanation how to accomplish the steps below: [Bootstrapping your wallet](https://youtu.be/ILr8vDgfPHI)
 
 ## Advanced Issue Resolving Procedure
 ### As of version 0.7.0-3 this procedure is standard
@@ -47,4 +49,4 @@ If you followed these steps, you will have installed/updated the latest version 
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-06-18.
+Note: revision date 2020-08-07.

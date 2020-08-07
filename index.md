@@ -13,14 +13,15 @@ If you have any questions about the information here, need help or have suggesti
 [Verus Digital Signatures](#!information/signatures.md)
 [VerusHash 2.1](#!information/verushash_2.1.md)
 [Verus Discord verification](https://youtu.be/YVOfIMjRf30) ***`Video`***
+[Bootstrap video](https://youtu.be/ILr8vDgfPHI) ***`Video`***
 
 ## How-To
-[Backup, Install or Update and Bootstrap your wallet](#!how-to/how-to_bootstrap.md)
-[Verifying the signature of an updated wallet](#!how-to/how-to_check_signatures.md) ***`NEW`***
+[Backup, Install or Update and Bootstrap your wallet](#!how-to/how-to_bootstrap.md) ***`UPDATED`***
+[Verifying the signature of an updated wallet](#!how-to/how-to_check_signatures.md)
 [Backing up my wallet](#!how-to/how-to_backup_my_wallet.md)
 [Restoring my wallet](#!how-to/how-to_restore_my_wallet.md)
 [Change Verus-Desktop from Lite Mode to Native Mode](#!how-to/how-to_lite_to_native.md)
-[import your Lite wallet address into your native Verus Desktop](#!how-to/how-to_convert-seed-to-wif.md) ***`UPDATED`***
+[import your Lite wallet address into your native Verus Desktop](#!how-to/how-to_convert-seed-to-wif.md)
 [Verus Wallet installation guide (Linux)](#!faq-linux/faq-lin01_install_linux_cli.md)
 [Verus Beginners Mining guide (External)](https://medium.com/veruscoin/how-to-start-cpu-mining-verus-coin-vrsc-from-your-laptop-in-under-5-minutes-f69c9aae340e)
 [Verus Beginners Staking guide (External)](https://medium.com/veruscoin/how-to-earn-vrsc-solo-mining-with-your-cpu-and-staking-mined-coins-aa27da76882c)
@@ -87,4 +88,4 @@ If you have any questions about the information here, need help or have suggesti
 [Q&A questions channel Verus-WhiteBIT 2020-07-28](https://wiki.veruscoin.io/q-a/veruscoin-q-a-questions-20200728.html)
 [Q&A reward channel Verus-WhiteBIT 2020-07-28](https://wiki.veruscoin.io/q-a/veruscoin-q-a-reward-20200728.html)
 
-Note: last revision date 2020-08-03.
+Note: last revision date 2020-08-07.
