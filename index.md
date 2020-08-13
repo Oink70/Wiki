@@ -3,7 +3,7 @@ In this WIKI we collected the most frequently asked questions and useful guides 
 
 On the bottom of each document, you may find a revision and/or creation date. If no date is mentioned the document originates from before february 12th, 2020 and may apply to older situations.
 
-If you have any questions about the information here, need help or have suggestions on the content, don't hesitate to contact us through [Discord](https://discord.gg/VRKMP2S).
+If you have any questions about the information here, need help or have suggestions on the content, don't hesitate to contact us through [Discord](https://veruscoin.io/discord).
 
 
 ## Information
@@ -77,6 +77,7 @@ If you have any questions about the information here, need help or have suggesti
 [MacOS pool-mining on low priority](#!faq-macos/mac-faq04_low_priority_mining.md)
 
 ## Frequently Asked Questions (ARM specific)
+[Hardware and software requirements](#!faq-arm/armfaq-02_requirements.md) ***`NEW`***
 [error while loading shared libraries: libgomp.so.1](#!faq-arm/armfaq-01_libgomp.so.1.md)
 
 ## CLI wallet specific Information
@@ -88,4 +89,4 @@ If you have any questions about the information here, need help or have suggesti
 [Q&A questions channel Verus-WhiteBIT 2020-07-28](https://wiki.veruscoin.io/q-a/veruscoin-q-a-questions-20200728.html)
 [Q&A reward channel Verus-WhiteBIT 2020-07-28](https://wiki.veruscoin.io/q-a/veruscoin-q-a-reward-20200728.html)
 
-Note: last revision date 2020-08-07.
+Note: last revision date 2020-08-13.
