@@ -1,4 +1,4 @@
-# How to import your import your Lite wallet address into your native Verus Desktop?
+# How to import your Lite wallet address into your native Verus Desktop?
 
 Attention: Read it completely before using.
 
@@ -96,4 +96,4 @@ Note: Don't use the WIF from the example above, but use the one from the CLI-int
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-07-21.
+Note: revision date 2020-08-14.
