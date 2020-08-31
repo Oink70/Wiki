@@ -53,7 +53,7 @@ The GUI wallet will not show any progress on the import and may give messages th
 ## Importing multiple WIFs in one batch for public (transparent) addresses
 To import your address, go to `settings` --> `Coin Settings`, select the chain you want to use in the top-right corner and enter the following command for every WIF except for the final one:
 ```
-run importprivkey "<wif>"
+run importprivkey "<wif>" "" false
 ```
 Import the final WIF with this command:
 ```
@@ -80,7 +80,7 @@ The GUI wallet will not show any progress on the import and may give messages th
 ## Importing multiple WIFs in one batch for private addresses
 To import your address, go to `settings` --> `Coin Settings`, select the chain you want to use in the top-right corner and enter the following command for every WIF except for the final one:
 ```
-run z_importkey "<wif>"
+run z_importkey "<wif>" "no"
 ```
 Import the final WIF with this command:
 ```
@@ -96,4 +96,5 @@ Note: Don't use the WIF from the example above, but use the one from the CLI-int
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-08-14.
+Note: revision date 2020-08-31.
+
