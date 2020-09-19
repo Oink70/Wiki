@@ -15,19 +15,36 @@ For Zcash the base directory is `zcash` instead of komodo.
 `verus command "<userinput>"` needs to be entered literally, with `<userinput>` replaced by your specific userdata. So if the text directs you to use for example `"<Public Address>"`, you replace that (including the `<` and `>`) with the address,
 so it looks similar to this: `"RYX6RYU3AAvwVCNyNM4cVyGUhSMUPvKs3r"`.
 
-## Procedure
-1. Stop verusd. For Windows-Desktop or Agama, just exit and wait for it to close completely. For the linux cli run `./verus stop`, or for the windows cli run `verus stop`.
-2. Once your wallet is finished closing make a backup of your `wallet.dat` file somewhere safe. `wallet.dat` is located in the directory listed in the start of this document (see above). To make the backup just copy it to another directory, make sure to leave the original there for the time being.
-3. Now restart your wallet by launching Verus Desktop, Agama or running verusd for the CLI.
-4. Now we'll export the wallet (this produces a different kind of file from what we did above).
+## Backing up your `wallet.dat`
 
-Note: The filename you replace`<mywalletexport>` with, can only contain letters and figures, no other characters, so it **cannot** have an file-extension
+Note: The filename you replace`<DestinationFileName>` with, can only contain letters and figures, no other characters, so it **cannot** have an file-extension
 
-Attention: On VRSC the export function is by default enabled. Other chains may need an entry in the coins configuration file to specify the export directory, before this can be used.
+Attention: On VRSC the `exportdir=<dir>` is by default enabled to the standard chain folder. Other chains may need this entry in the coins configuration file to specify the export directory, before this can be used.
 
 #### Verus Desktop:
    Go to `Settings`, `Coin Settings` en click in the textbox shown there.
-   Enter `run z_exportwallet <mywalletexport>` en press enter to execute the command.
+   Enter `run backupwallet "<DestinationFileName>"` and press enter to execute the command.
+#### Agama:
+   Go to settings, scroll to the bottom and click CLI, select VRSC in that section.
+   Then below type `backupwallet "<DestinationFileName>"` and click the button below to run it.
+#### linux/MacOS CLI:
+   run `./verus backupwallet "<DestinationFileName>"`
+#### windows CLI:
+   run `verus backupwallet "<DestinationFileName>"`
+
+   Attention: Pay attention to the feedback this command gives you: it will mention the location the backup file is saved.
+
+   The backup wallet should be a file called `<DestinationFileName>`, standard in the same directory as your `wallet.dat`. Keep this file secure, it has your plaintext private keys. Verify that the file is there and is the same size as your `wallet.dat`.
+
+## Exporting your wallet
+
+Note: The filename you replace`<mywalletexport>` with, can only contain letters and figures, no other characters, so it **cannot** have an file-extension
+
+Attention: On VRSC the `exportdir=<dir>` is by default enabled to the standard chain folder. Other chains may need this entry in the coins configuration file to specify the export directory, before this can be used.
+
+#### Verus Desktop:
+   Go to `Settings`, `Coin Settings` and click in the textbox shown there.
+   Enter `run z_exportwallet <mywalletexport>` and press enter to execute the command.
 #### Agama:
    Go to settings, scroll to the bottom and click CLI, select VRSC in that section.
    Then below type `z_exportwallet <mywalletexport>` and click the button below to run it.
@@ -42,4 +59,4 @@ The exported wallet should be a file called `<mywalletexport>`, standard in the 
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-07-21.
+Note: revision date 2020-09-19.
