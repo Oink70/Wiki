@@ -2,7 +2,7 @@
 
 ## Important General Information
 
-### Verus CLI version 0.7.1
+### Verus CLI version 0.7.2
 
 Usage: `verus [command]` Issue a command to the coindaemon
 
@@ -19,8 +19,8 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 ### `getaddressbalance`
 Returns the balance for an address(es) (requires addressindex to be enabled).
 
-Arguments:
-```
+#### Arguments:
+```json
 {
   "addresses"
     [
@@ -29,19 +29,24 @@ Arguments:
     ]
 }
 ```
-Result:
-```
+#### Result:
+```json
 {
   "balance"  (string) The current balance in satoshis
   "received"  (string) The total number of satoshis received (including change)
 }
 ```
+Examples:
+```bash
+> verus getaddressbalance '{"addresses": ["RY5LccmGiX9bUHYGtSWQouNy1yFhc5rM87"]}'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressbalance", "params": [{"addresses": ["RY5LccmGiX9bUHYGtSWQouNy1yFhc5rM87"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getaddressdeltas`
 Returns all changes for an address (requires addressindex to be enabled).
 
-Arguments:
-```
+#### Arguments:
+```json
 {
   "addresses"
     [
@@ -53,8 +58,8 @@ Arguments:
   "chainInfo" (boolean) Include chain info in results, only applies if start and end specified
 }
 ```
-Result:
-```
+#### Result:
+```json
 [
   {
     "satoshis"  (number) The difference of satoshis
@@ -65,12 +70,17 @@ Result:
   }
 ]
 ```
+Examples:
+```bash
+> verus getaddressdeltas '{"addresses": ["RY5LccmGiX9bUHYGtSWQouNy1yFhc5rM87"]}'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressdeltas", "params": [{"addresses": ["RY5LccmGiX9bUHYGtSWQouNy1yFhc5rM87"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getaddressmempool`
 Returns all mempool deltas for an address (requires addressindex to be enabled).
 
-Arguments:
-```
+#### Arguments:
+```json
 {
   "addresses"
     [
@@ -79,8 +89,8 @@ Arguments:
     ]
 }
 ```
-Result:
-```
+#### Result:
+```json
 [
   {
     "address"  (string) The base58check encoded address
@@ -93,12 +103,17 @@ Result:
   }
 ]
 ```
+Examples:
+```bash
+> verus getaddressmempool '{"addresses": ["RY5LccmGiX9bUHYGtSWQouNy1yFhc5rM87"]}'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressmempool", "params": [{"addresses": ["RY5LccmGiX9bUHYGtSWQouNy1yFhc5rM87"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getaddresstxids`
 Returns the txids for an address(es) (requires addressindex to be enabled).
 
-Arguments:
-```
+#### Arguments:
+```json
 {
   "addresses"
     [
@@ -109,19 +124,24 @@ Arguments:
   "end" (number) The end block height
 }
 ```
-Result:
-```
+#### Result:
+```json
 [
   "transactionid"  (string) The transaction id
   ,...
 ]
 ```
+Examples:
+```bash
+> verus getaddresstxids '{"addresses": ["RY5LccmGiX9bUHYGtSWQouNy1yFhc5rM87"]}'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddresstxids", "params": [{"addresses": ["RY5LccmGiX9bUHYGtSWQouNy1yFhc5rM87"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getaddressutxos`
 Returns all unspent outputs for an address (requires addressindex to be enabled).
 
-Arguments:
-```
+#### Arguments:
+```json
 {
   "addresses"
     [
@@ -131,8 +151,8 @@ Arguments:
   "chainInfo"  (boolean) Include chain info with results
 }
 ```
-Result
-```
+#### Result:
+```json
 [
   {
     "address"  (string) The address base58check encoded
@@ -144,15 +164,20 @@ Result
   }
 ]
 ```
+Examples:
+```bash
+> verus getaddressutxos '{"addresses": ["RY5LccmGiX9bUHYGtSWQouNy1yFhc5rM87"]}'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressutxos", "params": [{"addresses": ["RY5LccmGiX9bUHYGtSWQouNy1yFhc5rM87"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getsnapshot`
 Returns a snapshot of (address,amount) pairs at current height (requires addressindex to be enabled).
 
-Arguments:
+#### Arguments:
   "top" (number, optional) Only return this many addresses, i.e. top N richlist
 
-Result:
-```
+#### Result:
+```json
 {
    "addresses": [
     {
@@ -174,16 +199,21 @@ Result:
   "end_time": 1531982752    (number) Unix epoch time snapshot finished
 }
 ```
+Examples:
+```bash
+> verus getsnapshot
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getsnapshot", "params": [1000] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ## Blockchain
 ### `coinsupply <height>`
 Return coin supply information at a given block height. If no height is given, the current height is used.
 
-Arguments:
+#### Arguments:
 1. "height"     (integer, optional) Block height
 
-Result:
-```
+#### Result:
+```json
 {
   "result" : "success",         (string) If the request was successful.
   "coin" : "VRSC",              (string) The currency symbol of the native coin of this blockchain.
@@ -193,27 +223,39 @@ Result:
   "total" :  "777.777",         (float) The total coin supply, i.e. sum of supply + zfunds
 }
 ```
+Examples:
+```bash
+> verus coinsupply 420
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "coinsupply", "params": [420] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getbestblockhash`
 Returns the hash of the best (tip) block in the longest block chain.
 
-Result
+#### Result:
+```
 "hex"      (string) the block hash hex encoded
+```
+Examples
+```bash
+> verus getbestblockhash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getbestblockhash", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getblock "hash|height" ( verbosity )`
 If verbosity is 0, returns a string that is serialized, hex-encoded data for the block.
 If verbosity is 1, returns an Object with information about the block.
 If verbosity is 2, returns an Object with information about the block and information about each transaction.
 
-Arguments:
+#### Arguments:
 1. "hash|height"          (string, required) The block hash or height
 2. verbosity              (numeric, optional, default=1) 0 for hex encoded data, 1 for a json object, and 2 for json object with transaction data
 
 Result (for verbosity = 0):
 "data"             (string) A string that is serialized, hex-encoded data for the block.
 
-Result (for verbosity = 1):
-```
+#### Results (for verbosity = 1):
+```json
 {
   "hash" : "hash",       (string) the block hash (same as provided hash)
   "confirmations" : n,   (numeric) The number of confirmations, or -1 if the block is not on the main chain
@@ -234,8 +276,8 @@ Result (for verbosity = 1):
   "nextblockhash" : "hash"       (string) The hash of the next block
 }
 ```
-Result (for verbosity = 2):
-```
+#### Result (for verbosity = 2):
+```json
 {
   ...,                     Same output as verbosity = 1.
   "tx" : [               (array of Objects) The transactions in the format of the getrawtransaction RPC. Different from verbosity = 1 "tx" result.
@@ -244,6 +286,13 @@ Result (for verbosity = 2):
   ,...                     Same output as verbosity = 1.
 }
 ```
+Examples:
+```bash
+> verus getblock "00000000febc373a1da2bd9f887b105ad79ddc26ac26c2b28652d64e5207c5b5"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblock", "params": ["00000000febc373a1da2bd9f887b105ad79ddc26ac26c2b28652d64e5207c5b5"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+> verus getblock 12800
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblock", "params": [12800] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getblockchaininfo`
 Returns an object containing various state info regarding block chain processing.
@@ -251,21 +300,31 @@ Returns an object containing various state info regarding block chain processing
 Note that when the chain tip is at the last block before a network upgrade activation,
 consensus.chaintip != consensus.nextblock.
 
-Result:
-```
+#### Result:
+```json
 {
-  "chain": "xxxx",        (string) current network name as defined in BIP70 (main, test, regtest)
-  "blocks": xxxxxx,         (numeric) the current number of blocks processed in the server
-  "headers": xxxxxx,        (numeric) the current number of headers we have validated
-  "bestblockhash": "...", (string) the hash of the currently best block
-  "difficulty": xxxxxx,     (numeric) the current difficulty
+  "chain": "xxxx",            (string) current network name as defined in BIP70 (main, test, regtest)
+  "blocks": xxxxxx,           (numeric) the current number of blocks processed in the server
+  "headers": xxxxxx,          (numeric) the current number of headers we have validated
+  "bestblockhash": "...",     (string) the hash of the currently best block
+  "difficulty": xxxxxx,       (numeric) the current difficulty
   "verificationprogress": xxxx, (numeric) estimate of verification progress [0..1]
-  "chainwork": "xxxx"     (string) total amount of work in active chain, in hexadecimal
-  "size_on_disk": xxxxxx,       (numeric) the estimated size of the block and undo files on disk
-  "commitments": xxxxxx,    (numeric) the current number of note commitments in the commitment tree
-  "softforks": [            (array) status of softforks in progress
+  "chainwork": "xxxx"         (string) total amount of work in active chain, in hexadecimal
+  "chainstake": "xxxx"        (string) total amount of stake in active chain, in hexadecimal
+  "pruned": "xx"              (boolean) when true the local chain is pruned
+  "size_on_disk": xxxxxx,     (numeric) the estimated size of the block and undo files on disk
+  "commitments": xxxxxx,      (numeric) the current number of note commitments in the commitment tree
+  "valuePools": [             (array) status of valuepools
+    {
+      "id": "xxxx",           (string) name of valuepool
+      "monitored": xx,        (boolean)
+      "chainValue": xxxx,     (numeric) total coins in this valuepool
+      "chainValueZat": xxxx,  (numeric) total sats in this valuepool
+    },
+  ],
+  "softforks": [               (array) status of softforks in progress
      {
-        "id": "xxxx",        (string) name of softfork
+        "id": "xxxx",          (string) name of softfork
         "version": xx,         (numeric) block version
         "enforce": {           (object) progress toward enforcing the softfork rules for new-version blocks
            "status": xx,       (boolean) true if threshold reached
@@ -294,8 +353,15 @@ Result:
 ### `getblockcount`
 Returns the number of blocks in the best valid block chain.
 
-Result:
+#### Result:
+```
 n    (numeric) The current block count
+```
+Examples:
+```bash
+> verus getblockcount
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockcount", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getblockdeltas "blockhash"`
 Returns information about the given block and its transactions.
@@ -306,11 +372,11 @@ To enable it, restart zcashd with the `-experimentalfeatures` and `-insightexplo
 experimentalfeatures=1
 insightexplorer=1
 ```
-Arguments:
+#### Arguments:
 1. "hash"          (string, required) The block hash
 
-Result:
-```
+#### Result:
+```json
 {
   "hash": "hash",              (string) block ID
   "confirmations": n,          (numeric) number of confirmations
@@ -350,31 +416,44 @@ Result:
   "nextblockhash" : "hash"     (hex string) The hash of the next block
 }
 ```
+Examples:
+```bash
+> verus getblockdeltas 00227e566682aebd6a7a5b772c96d7a999cadaebeaf1ce96f4191a3aad58b00b
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockdeltas", "params": ["00227e566682aebd6a7a5b772c96d7a999cadaebeaf1ce96f4191a3aad58b00b"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getblockhash index`
 Returns hash of block in best-block-chain at index provided.
 
-Arguments:
-1. index         (numeric, required) The block index
-
-Result:
+#### Arguments:
+```
+index         (numeric, required) The block index
+```
+#### Result:
+```
 "hash"         (string) The block hash
+```
+Examples:
+```bash
+> verus getblockhash 1000
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockhash", "params": [1000] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getblockhashes timestamp`
 Returns array of hashes of blocks within the timestamp range provided.
 
-Arguments:
+#### Arguments:
+```json
 1. high         (numeric, required) The newer block timestamp
 2. low          (numeric, required) The older block timestamp
 3. options      (string, required) A json object
-```
     {
       "noOrphans":true   (boolean) will only include blocks on the main chain
       "logicalTimes":true   (boolean) will include logical timestamps with hashes
     }
 ```
-Result:
-```
+#### Result:
+```json
 [
   "hash"         (string) The block hash
 ]
@@ -385,17 +464,25 @@ Result:
   }
 ]
 ```
+Examples:
+```bash
+> verus getblockhashes 1231614698 1231024505
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockhashes", "params": [1231614698, 1231024505] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+> verus getblockhashes 1231614698 1231024505 '{"noOrphans":false, "logicalTimes":true}'
+```
 
 ### `getblockheader "hash" ( verbose )`
 If verbose is false, returns a string that is serialized, hex-encoded data for blockheader 'hash'.
 If verbose is true, returns an Object with information about blockheader <hash>.
 
-Arguments:
+#### Arguments:
+```
 1. "hash"          (string, required) The block hash
 2. verbose           (boolean, optional, default=true) true for a json object, false for the hex encoded data
-
-Result (for verbose = true):
 ```
+
+### Result (for verbose = true):
+```json
 {
   "hash" : "hash",     (string) the block hash (same as provided)
   "confirmations" : n,   (numeric) The number of confirmations, or -1 if the block is not on the main chain
@@ -411,14 +498,21 @@ Result (for verbose = true):
   "nextblockhash" : "hash"       (string) The hash of the next block
 }
 ```
-Result (for verbose=false):
+### Result (for verbose=false):
+```
 "data"             (string) A string that is serialized, hex-encoded data for block 'hash'.
+```
+Examples:
+```bash
+> verus getblockheader "00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockheader", "params": ["00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getchaintips`
 Return information about all known tips in the block tree, including the main chain as well as orphaned branches.
 
-Result:
-```
+#### Result:
+```json
 [
   {
     "height": xxxx,         (numeric) height of the chain tip
@@ -441,39 +535,57 @@ Possible values for status:
 4.  "valid-fork"            This branch is not part of the active chain, but is fully validated
 5.  "active"                This is the tip of the active main chain, which is certainly valid
 
+Examples:
+```bash
+> verus getchaintips
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getchaintips", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `getdifficulty`
 Returns the proof-of-work difficulty as a multiple of the minimum difficulty.
 
-Result:
+#### Result:
+```
 n.nnn       (numeric) the proof-of-work difficulty as a multiple of the minimum difficulty.
+```
+Examples:
+```bash
+> verus getdifficulty
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getdifficulty", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getmempoolinfo`
 Returns details on the active state of the TX memory pool.
 
-Result:
-```
+#### Result:
+```json
 {
   "size": xxxxx                (numeric) Current tx count
   "bytes": xxxxx               (numeric) Sum of all tx sizes
   "usage": xxxxx               (numeric) Total memory usage for the mempool
 }
 ```
+Examples:
+```bash
+> verus getmempoolinfo
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmempoolinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getrawmempool ( verbose )`
 Returns all transaction ids in memory pool as a json array of string transaction ids.
 
-Arguments:
+#### Arguments:
 1. verbose           (boolean, optional, default=false) true for a json object, false for array of transaction ids
 
-Result: (for verbose = false):
-```
+#### Result (for verbose = false):
+```json
 [                     (json array of string)
   "transactionid"     (string) The transaction id
   ,...
 ]
 ```
-Result: (for verbose = true):
-```
+#### Result (for verbose = true):
+```json
 {                           (json object)
   "transactionid" : {       (json object)
     "size" : n,             (numeric) transaction size in bytes
@@ -488,36 +600,48 @@ Result: (for verbose = true):
   }, ...
 }
 ```
+Examples
+```bash
+> verus getrawmempool true
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getrawmempool", "params": [true] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getspentinfo`
 Returns the txid and index where an output is spent.
 
-Arguments:
-```
+#### Arguments:
+```json
 {
   "txid" (string) The hex string of the txid
   "index" (number) The start block height
 }
 ```
-Result:
-```
+#### Result:
+```json
 {
   "txid"  (string) The transaction id
   "index"  (number) The spending input index
   ,...
 }
 ```
+Examples:
+```bash
+> verus getspentinfo '{"txid": "0437cd7f8525ceed2324359c2d0ba26006d92d856a9c20fa0241106ee5a597c9", "index": 0}'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getspentinfo", "params": [{"txid": "0437cd7f8525ceed2324359c2d0ba26006d92d856a9c20fa0241106ee5a597c9", "index": 0}] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `gettxout "txid" n ( includemempool )`
 Returns details about an unspent transaction output.
 
-Arguments:
+#### Arguments:
+```
 1. "txid"       (string, required) The transaction id
 2. n              (numeric, required) vout value
 3. includemempool  (boolean, optional) Whether to include the mempool
-
-Result:
 ```
+
+#### Result:
+```json
 {
   "bestblock" : "hash",    (string) the block hash
   "confirmations" : n,       (numeric) The number of confirmations
@@ -536,6 +660,20 @@ Result:
   "coinbase" : true|false     (boolean) Coinbase or not
 }
 ```
+Examples:
+
+Get unspent transactions
+```bash
+> verus listunspent
+```
+View the details
+```bash
+> verus gettxout "txid" 1
+```
+As a json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettxout", "params": ["txid", 1] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ## `gettxoutproof ["txid",...] ( blockhash )`
 Returns a hex-encoded proof that "txid" was included in a block.
@@ -547,9 +685,9 @@ specify the block in which the transaction is included in manually (by blockhash
 
 Return the raw transaction data.
 
-Arguments:
+#### Arguments:
+```json
 1. "txids"       (string) A json array of txids to filter
-```
     [
       "txid"     (string) A transaction hash
       ,...
@@ -557,15 +695,17 @@ Arguments:
 ```
 2. "block hash"  (string, optional) If specified, looks for txid in the block with this hash
 
-Result:
+#### Result:
+```
 "data"           (string) A string that is a serialized, hex-encoded data for the proof.
+```
 
 ### `gettxoutsetinfo`
 Returns statistics about the unspent transaction output set.
 Note this call may take some time.
 
-Result:
-```
+#### Result:
+```json
 {
   "height":n,     (numeric) The current block height (index)
   "bestblock": "hex",   (string) the best block hash hex
@@ -576,15 +716,21 @@ Result:
   "total_amount": x.xxx          (numeric) The total amount
 }
 ```
+Examples:
+```bash
+> verus gettxoutsetinfo
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettxoutsetinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `kvsearch key`
 Search for a key stored via the kvupdate command. This feature is only available for asset chains.
 
-Arguments:
-1. key                      (string, required) search the chain for this key
-
-Result:
+#### Arguments:
 ```
+1. key                      (string, required) search the chain for this key
+```
+#### Result:
+```json
 {
   "coin": "xxxxx",          (string) chain the key is stored on
   "currentheight": xxxxx,     (numeric) current height of the chain
@@ -598,18 +744,23 @@ Result:
   "valuesize": xxxxx          (string) amount of characters stored
 }
 ```
+Examples:
+```bash
+> verus kvsearch examplekey
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "kvsearch", "params": [examplekey] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `kvupdate key "value" days passphrase`
 Store a key value. This feature is only available for asset chains.
-
-Arguments:
+#### Arguments:
+```
 1. key                      (string, required) key
 2. "value"                (string, required) value
 3. days                     (numeric, required) amount of days(1440 blocks/day) before the key expires. Minimum 1 day
 4. passphrase               (string, optional) passphrase required to update this key
-
-Result:
 ```
+#### Result:
+```json
 {
   "coin": "xxxxx",          (string) chain the key is stored on
   "height": xxxxx,            (numeric) height the key was stored at
@@ -623,6 +774,11 @@ Result:
   "txid": "xxxxx"           (string) transaction id
 }
 ```
+Examples:
+```bash
+> verus kvupdate examplekey "examplevalue" 2 examplepassphrase
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "kvupdate", "params": [examplekey "examplevalue" 2 examplepassphrase] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `minerids needs height`
 
@@ -631,30 +787,38 @@ Result:
 ### `verifychain ( checklevel numblocks )`
 Verifies blockchain database.
 
-Arguments:
+#### Arguments:
+```
 1. checklevel   (numeric, optional, 0-4, default=3) How thorough the block verification is.
 2. numblocks    (numeric, optional, default=288, 0=all) The number of blocks to check.
-
-Result:
+```
+#### Result:
+```
 true|false       (boolean) Verified or not
+```
+Examples:
+```bash
+> verus verifychain
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "verifychain", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `verifytxoutproof "proof"`
 Verifies that a proof points to a transaction in a block, returning the transaction it commits to
 and throwing an RPC error if the block is not in our best chain
 
-Arguments:
+#### Arguments:
+```
 1. "proof"    (string, required) The hex-encoded proof generated by gettxoutproof
-
-Result:
+```
+#### Result:
+```json
 ["txid"]      (array, strings) The txid(s) which the proof commits to, or empty array if the proof is invalid
-
+```
 ## Control
-
 ### `getinfo`
 Returns an object containing various state info.
-
-Result:
-```
+#### Result:
+```json
 {
   "version": xxxxx,           (numeric) the server version
   "protocolversion": xxxxx,   (numeric) the protocol version
@@ -674,15 +838,23 @@ Result:
   "errors": "..."           (string) any error messages
 }
 ```
+Examples:
+```bash
+> verus getinfo
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `help ( "command" )`
 List all commands, or get help for a specified command.
 
-Arguments:
+#### Arguments:
+```
 1. "command"     (string, optional) The command to get help on
-
-Result:
+```
+#### Result:
+```
 "text"     (string) The help text
+```
 
 ### `stop`
 Stop Verus server.
@@ -697,6 +869,8 @@ Takes a block hash and returns notarisation transactions within the block
 
 ### `height_MoM height`
 ### `migrate_completeimporttransaction importTx`
+Takes a cross chain import tx with proof generated on assetchain and extends proof to target chain proof root
+
 ### `migrate_converttoexport rawTx dest_symbol export_amount`
 Convert a raw transaction to a cross-chain export.
 If neccesary, the transaction should be funded using `fundrawtransaction`.
@@ -722,14 +896,22 @@ To enable it, restart verusd with the `-experimentalfeatures` and `-paymentdiscl
 experimentalfeatures=1
 paymentdisclosure=1
 ```
-Arguments:
+#### Arguments:
+```
 1. "txid"            (string, required)
 2. "js_index"        (string, required)
 3. "output_index"    (string, required)
 4. "message"         (string, optional)
-
-Result:
+```
+#### Result:
+```
 "paymentdisclosure"  (string) Hex data string, with "zpd:" prefix.
+```
+Examples:
+```bash
+> verus z_getpaymentdisclosure 96f12882450429324d5f3b48630e3168220e49ab7b0f066e5c2935a6b88bb0f2 0 0 "refund"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_getpaymentdisclosure", "params": ["96f12882450429324d5f3b48630e3168220e49ab7b0f066e5c2935a6b88bb0f2", 0, 0, "refund"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `z_validatepaymentdisclosure "paymentdisclosure"`
 Validates a payment disclosure.
@@ -737,15 +919,22 @@ Validates a payment disclosure.
 EXPERIMENTAL FEATURE
 
 WARNING: z_validatepaymentdisclosure is disabled.
-To enable it, restart zcashd with the `-experimentalfeatures` and
+To enable it, restart verusd with the `-experimentalfeatures` and
 `-paymentdisclosure` commandline options, or add these two lines
 to the zcash.conf file:
 ```
 experimentalfeatures=1
 paymentdisclosure=1
 ```
-Arguments:
+#### Arguments:
+```
 1. "paymentdisclosure"     (string, required) Hex data string, with "zpd:" prefix.
+```
+Examples:
+```bash
+> verus z_validatepaymentdisclosure "zpd:706462ff004c561a0447ba2ec51184e6c204..."
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_validatepaymentdisclosure", "params": ["zpd:706462ff004c561a0447ba2ec51184e6c204..."] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ## Generating
 
@@ -754,11 +943,20 @@ Mine blocks immediately (before the RPC call returns)
 
 Note: this function can only be used on the regtest network
 
-Arguments:
+#### Arguments:
+```
 1. numblocks    (numeric) How many blocks are generated immediately.
-
-Result
+```
+### Result:
+```json
 [ blockhashes ]     (array) hashes of blocks generated
+```
+Examples:
+
+Generate 11 blocks
+```bash
+> verus generate 11
+```
 
 ### `getgenerate`
 Return if the server is set to mine and/or mint coins or not. The default is false.
@@ -766,12 +964,17 @@ It is set with the command line argument `-gen` (or `VRSC.conf` setting `gen`) a
 It can also be set with the setgenerate call.
 
 Result
-```
+```json
 {
   "staking": true|false      (boolean) If staking is on or off (see setgenerate)
   "generate": true|false     (boolean) If mining is on or off (see setgenerate)
   "numthreads": n            (numeric) The processor limit for mining. (see setgenerate)
 }
+```
+Examples:
+```bash
+> verus getgenerate
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getgenerate", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ### `setgenerate generate ( genproclimit )`
@@ -779,33 +982,131 @@ Set 'generate' true to turn either mining/generation or minting/staking on and f
 Mining is limited to 'genproclimit' processors, -1 is unlimited, setgenerate true with 0 genproclimit turns on staking
 See the getgenerate call for the current setting.
 
-Arguments:
+#### Arguments:
+```
 1. generate         (boolean, required) Set to true to turn on generation, off to turn off.
 2. genproclimit     (numeric, optional) Set processor limit when generation is on. Can be -1 for unlimited, 0 to turn on staking.
+```
+Examples:
+
+Set the generation on with a limit of one processor
+```bash
+> verus setgenerate true 1
+```
+Turn minting/staking on
+```bash
+> verus setgenerate true 0
+```
+Check the setting
+```bash
+> verus getgenerate
+```
+Turn off generation and minting
+```bash
+> verus setgenerate false
+```
+Using json rpc
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "setgenerate", "params": [true, 1] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ## Identity
 
 ### `getidentity "name"`
-Arguments
-
-Result:
+#### Arguments:
+```
+    "name"              ID name or ID i-address
+```
+#### Result: ***`updated info`***
+```json
+{
+  "identity": {
+    "version": n,                   (integer) version number
+    "flags": n,                     (integer) flag
+    "primaryaddresses": [
+      "xxxx"                        (text) Public address that controls this ID
+    ],
+    "minimumsignatures": n,         (integer) Amount of signatures required to spend UTXOs on this ID
+    "identityaddress": "xxxx",      (text) i-address of the ID
+    "parent": "xxxx",               (text) Parent ID of the chain the ID is on
+    "name": "xxxx",                 (text) The Identity Name
+    "contentmap": {
+    },
+    "revocationauthority": "xxxx",  (text) the i-address of the identity that can revoke this ID
+    "recoveryauthority": "xxxx",    (text) the i-address of the identity that can recover this ID when revoked
+    "timelock": 0                   (integer) Timelock
+  },
+  "status": "xxxx",                 (text) The revocation status ("Active"|"Revoked")
+  "canspendfor": xxxx,              (boolean) Can the node running the command spend UTXOs on this ID (True|False)
+  "cansignfor": xxxx,               (boolean) Can the node running the command sign for this ID (True|False)
+  "blockheight": n,                 (integer) blockheight the current ID info was put on the chain
+  "txid": "xxxx",                   (string) Transaction ID at blockheight to put the current ID data on the chain
+  "vout": n                         (integer) voutnumber of the TXID
+}
+```
+Examples:
+```bash
+> verus getidentityname "name@"
+> verus getidentityname "i5v3h9FWVdRFbNHU7DfcpGykQjRaHtMqu7"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getidentityname", "params": ["name@"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `listidentities (includecansign) (includewatchonly)`
-Arguments
+#### Arguments:
     "includecanspend"    (bool, optional, default=true)    Include identities for which we can spend/authorize
     "includecansign"     (bool, optional, default=true)    Include identities that we can only sign for but not spend
     "includewatchonly"   (bool, optional, default=false)   Include identities that we can neither sign nor spend, but are either watched or are co-signers with us
 
-Result:
-
+#### Result: ***`updated info`***
+```json
+[
+  {
+    "identity": {
+      "version": n,                   (integer) version number
+      "flags": n,                     (integer) flag
+      "primaryaddresses": [
+        "xxxx"                        (text) Public address that controls this ID
+      ],
+      "minimumsignatures": n,         (integer) Amount of signatures required to spend UTXOs on this ID
+      "identityaddress": "xxxx",      (text) i-address of the ID
+      "parent": "xxxx",               (text) Parent ID of the chain the ID is on
+      "name": "xxxx",                 (text) The Identity Name
+      "contentmap": {
+      },
+      "revocationauthority": "xxxx",  (text) the i-address of the identity that can revoke this ID
+      "recoveryauthority": "xxxx",    (text) the i-address of the identity that can recover this ID when revoked
+      "timelock": 0                   (integer) Timelock
+    },
+    "blockheight": n,                 (integer) blockheight the current ID info was put on the chain
+    "txid": "xxxx",                   (string) Transaction ID at blockheight to put the current ID data on the chain
+    "status": "xxxx",                 (text) The revocation status ("Active"|"Revoked")
+    "canspendfor": xxxx,              (boolean) Can the node running the command spend UTXOs on this ID (True|False)
+    "cansignfor": xxxx,               (boolean) Can the node running the command sign for this ID (True|False)
+  },
+  ....
+]
+  ```
+Examples:
+```bash
+> verus listidentities '{"name" : "myname"}'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listidentities", "params": ['{"name" : "myname"}'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 ### `recoveridentity "jsonidentity" (returntx)`
-Arguments
+#### Arguments:
        "returntx"                        (bool,   optional) defaults to false and transaction is sent, if true, transaction is signed by this wallet and returned
 
-Result:
+#### Result:
+transactionid                   (hexstr)
+
+Examples:
+```bash
+> verus recoveridentity '{"name" : "myname"}'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "recoveridentity", "params": ['{"name" : "myname"}'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `registeridentity "jsonidregistration" feeoffer`
 Arguments
+```json
 {
     "txid" : "hexid",          (hex)    the transaction ID of the name committment for this ID name
     "namereservation" :
@@ -821,22 +1122,24 @@ Arguments
     }
 }
 feeoffer                           (amount, optional) amount to offer miner/staker for the registration fee, if missing, uses standard price
+```
 
-
-Result:
+#### Result:
    transactionid                   (hexstr)
 
 ### `registernamecommitment "name" "controladdress" ("referralidentity")`
 Registers a name commitment, which is required as a source for the name to be used when registering an identity. The name commitment hides the name itself while ensuring that the miner who mines in the registration cannot front-run the name unless they have also registered a name commitment for the same name or are willing to forfeit the offer of payment for the chance that a commitment made now will allow them to register the name in the future.
 
-Arguments
-"name"                           (string, required)  the unique name to commit to. creating a name commitment is not a registration, and if one is
-                                                       created for a name that exists, it may succeed, but will never be able to be used.
+#### Arguments:
+```
+"name"                           (string, required)  the unique name to commit to. creating a name commitment is not a
+                                                       registration, and if one is created for a name that exists, it may
+                                                       succeed, but will never be able to be used.
 "controladdress"                 (address, required) address that will control this commitment
 "referralidentity"               (identity, optional)friendly name or identity address that is provided as a referral mechanism and to lower network cost of the ID
-
-Result: obj
 ```
+#### Result: obj
+```json
 {
     "txid" : "hexid"
     "namereservation" :
@@ -849,32 +1152,56 @@ Result: obj
     }
 }
 ```
+Examples:
+```bash
+> verus registernamecommitment "name"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "registernamecommitment", "params": ["name"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `revokeidentity "nameorID" (returntx)`
-Arguments
+#### Arguments:
        "returntx"                        (bool,   optional) defaults to false and transaction is sent, if true, transaction is signed by this wallet and returned
 
-Result:
+#### Result: ***`updated info`***
+transactionid                   (hexstr)
+
+Examples:
+```bash
+> verus revokeidentity "nameorID"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "revokeidentity", "params": ["nameorID"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `updateidentity "jsonidentity" (returntx)`
-Arguments
+#### Arguments:
        "returntx"                        (bool,   optional) defaults to false and transaction is sent, if true, transaction is signed by this wallet and returned
 
-Result:
+#### Result: ***`updated info`***
+transactionid                   (hexstr)
+
+Examples:
+```bash
+> verus updateidentity '{"name" : "myname"}'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "updateidentity", "params": ['{"name" : "myname"}'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ## Mining
 
 ### `getblocksubsidy height`
 Returns block subsidy reward, taking into account the mining slow start and the founders reward, of block at index provided.
 
-Arguments:
+#### Arguments:
 1. height         (numeric, optional) The block height.  If not provided, defaults to the current height of the chain.
 
-Result:
+#### Result:
 ```
 {
-  "miner" : x.xxx           (numeric) The mining reward amount in KMD.
+  "miner" : x.xxx           (numeric) The coinbase reward amount in VRSC.
 }
+```
+Examples:
+```bash
+> verus getblocksubsidy 1000
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockubsidy", "params": [1000] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ### `getblocktemplate ( "jsonrequestobject" )`
@@ -882,7 +1209,7 @@ If the request parameters include a 'mode' key, that is used to explicitly selec
 It returns data needed to construct a block to work on.
 See https://en.bitcoin.it/wiki/BIP_0022 for full specification.
 
-Arguments:
+#### Arguments:
 1. "jsonrequestobject"       (string, optional) A json object in the following spec
 ```
      {
@@ -894,7 +1221,7 @@ Arguments:
      }
 ```
 
-Result:
+#### Result:
 ```
 {
   "version" : n,                     (numeric) The block version
@@ -929,17 +1256,28 @@ Result:
   "height" : n                      (numeric) The height of the next block
 }
 ```
+Examples:
+```bash
+> verus getblocktemplate
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblocktemplate", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getlocalsolps`
 Returns the average local solutions per second since this node was started.
 This is the same information shown on the metrics screen (if enabled).
 
-Result:
+#### Result:
 xxx.xxxxx     (numeric) Solutions per second average
+
+Examples:
+```bash
+> verus getlocalsolps
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getlocalsolps", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getmininginfo`
 Returns a json object containing mining-related information.
-Result:
+#### Result:
 ```
 {
   "blocks": nnn,             (numeric) The current block
@@ -963,6 +1301,11 @@ Result:
   "mergeminedchains": []     (optional, list of names) Blockchain names that are being merge mined with this blockchain
 }
 ```
+Examples:
+```bash
+> verus getmininginfo
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmininginfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getnetworkhashps ( blocks height )`
 DEPRECATED - left for backwards-compatibility. Use getnetworksolps instead.
@@ -971,59 +1314,91 @@ Returns the estimated network solutions per second based on the last n blocks.
 Pass in [blocks] to override # of blocks, -1 specifies over difficulty averaging window.
 Pass in [height] to estimate the network speed at the time when a certain block was found.
 
-Arguments:
+#### Arguments:
+```
 1. blocks     (numeric, optional, default=120) The number of blocks, or -1 for blocks over difficulty averaging window.
 2. height     (numeric, optional, default=-1) To estimate at the time of the given height.
-
-Result:
+```
+#### Result:
+```
 x             (numeric) Solutions per second estimated
+```
+Examples:
+```bash
+> verus getnetworkhashps
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnetworkhashps", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getnetworksolps ( blocks height )`
 Returns the estimated network solutions per second based on the last n blocks.
 Pass in [blocks] to override # of blocks, -1 specifies over difficulty averaging window.
 Pass in [height] to estimate the network speed at the time when a certain block was found.
 
-Arguments:
+#### Arguments:
+```
 1. blocks     (numeric, optional, default=120) The number of blocks, or -1 for blocks over difficulty averaging window.
 2. height     (numeric, optional, default=-1) To estimate at the time of the given height.
-
-Result:
+```
+#### Result:
+```
 x             (numeric) Solutions per second estimated
+```
+Examples:
+```bash
+> verus getnetworksolps
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnetworksolps", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `prioritisetransaction <txid> <priority delta> <fee delta>`
 Accepts the transaction into mined blocks at a higher (or lower) priority
 
-Arguments:
-1. "txid"       (string, required) The transaction id.
+#### Arguments:
+```
+1. "txid"         (string, required) The transaction id.
 2. priority delta (numeric, required) The priority to add or subtract.
                   The transaction selection algorithm considers the tx as it would have a higher priority.
                   (priority of a transaction is calculated: coinage * value_in_satoshis / txsize)
 3. fee delta      (numeric, required) The fee value (in satoshis) to add (or subtract, if negative).
                   The fee is not actually paid, only the algorithm for selecting transactions into a block
                   considers the transaction as it would have paid a higher (or lower) fee.
-
-Result
+```
+#### Results:
+```
 true              (boolean) Returns true
+```
+Examples:
+```bash
+> verus prioritisetransaction "txid" 0.0 10000
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "prioritisetransaction", "params": ["txid", 0.0, 10000] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `submitblock "hexdata" ( "jsonparametersobject" )`
 Attempts to submit new block to network.
 The 'jsonparametersobject' parameter is currently ignored.
 See https://en.bitcoin.it/wiki/BIP_0022 for full specification.
 
-Arguments
+#### Arguments:
+```
 1. "hexdata"    (string, required) the hex-encoded block data to submit
 2. "jsonparametersobject"     (string, optional) object of optional parameters
     {
       "workid" : "id"    (string, optional) if the server provided a workid, it MUST be included with submissions
     }
-
-Result:
+```
+#### Result:
+```
 "duplicate" - node already has valid copy of block
 "duplicate-invalid" - node already has block, but it is invalid
 "duplicate-inconclusive" - node already has block but has not validated it
 "inconclusive" - node has not validated the block, it may not be on the node's current best chain
 "rejected" - block was rejected as invalid
 For more information on submitblock parameters and results, see: https://github.com/bitcoin/bips/blob/master/bip-0022.mediawiki#block-submission
+```
+Examples:
+```bash
+> verus submitblock "mydata"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "submitblock", "params": ["mydata"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ## Multichain
 
@@ -1032,16 +1407,24 @@ Adds a fully prepared block and its header to the current merge mining queue of 
 Parameters determine the action to take if adding this block would exceed the available merge mining slots.
 Default action to take if adding would exceed available space is to replace the choice with the least ROI if this block provides more.
 
-Arguments
+#### Arguments:
+```
 1. "hexdata"                     (string, required) the hex-encoded, complete, unsolved block data to add. nTime, and nSolution are replaced.
 2. "name"                        (string, required) chain name symbol
 3. "rpchost"                     (string, required) host address for RPC connection
 4. "rpcport"                     (int,    required) port address for RPC connection
 5. "userpass"                    (string, required) credentials for login to RPC
-
-Result:
+```
+#### Result:
+```
 "deserialize-invalid" - block could not be deserialized and was rejected as invalid
 "blocksfull"          - block did not exceed others in estimated ROI, and there was no room for an additional merge mined block
+```
+Examples:
+```bash
+> verus addmergedblock "hexdata" '{"currencyid" : "hexstring", "rpchost" : "127.0.0.1", "rpcport" : portnum}'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "addmergedblock", "params": ["hexdata" '{"currencyid" : "hexstring", "rpchost" : "127.0.0.1", "rpcport" : portnum, "estimatedroi" : (verusreward/hashrate)}'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `definecurrency '{"name": "BAAS", ..., "nodes":[{"networkaddress":"identity"},..]}'`
 This defines a blockchain currency, either as an independent blockchain, or as a token on this blockchain. It also spends the identity after which this currency is named and sets a bit indicating that it has a currently active blockchain in its name.
@@ -1050,51 +1433,54 @@ To create a currency of any kind, the identity it is named after must be minted 
 
 All funds to start the currency and for initial conversion amounts must be available to spend from the identity with the same name and ID as the currency being defined.
 
-Arguments
-```
+#### Arguments: ***`Updated`***
+```json
 {
-   "options" : n,                 (int,    optional) bits:
-                                               1 = FRACTIONAL, 2 = IDRESTRICTED, 4 = IDSTAKING, 8 = IDREFERRALS
-                                               0x10 = IDREFERRALSREQUIRED, 0x20 = TOKEN, 0x40 = CANBERESERVE
-   "name" : "xxxx",               (string, required) name of existing identity with no active or pending blockchain
-   "idregistrationprice" : xx.xx, (value, required) price of an identity in native currency
-   "idreferrallevels" : n,        (int, required) how many levels ID referrals go back in reward
-   "notaries" : [identity,..],    (list, optional) list of identities that are assigned as chain notaries
-   "minnotariesconfirm" : n,      (int, optional) unique notary signatures required to confirm an auto-notarization
-   "notarizationreward" : xx.xx,  (value,  required) default VRSC notarization reward total for first billing period
-   "billingperiod" : n,           (int,    optional) number of blocks in each billing period
-   "proofprotocol" : n,           (int,    optional) if 2, currency can be minted by whoever controls the ID
-   "startblock"   : n,            (int,    optional) VRSC block must be notarized into block 1 of PBaaS chain, default curheight + 100
-   "endblock"     : n,            (int,    optional) chain is considered inactive after this block height, and a new one may be started
-   "reserveratio" : n,            (value, optional) total reserve ratio, divided among currencies
-   "currencies" : ["VRSC",..],    (list, optional) reserve currencies backing this chain in equal amounts
-   "conversions" : [xx.xx,..],    (list, optional) if present, must be same size as currencies. pre-launch conversion ratio overrides
-   "minpreconvert" : [xx.xx,..],  (list, optional) must be same size as currencies. minimum in each currency to launch
-   "maxpreconvert" : [xx.xx,..],  (list, optional) maximum in each currency allowed
-   "preallocationratio" : xx.xx,  (value, optional) if non-0, pre-allocation is a percentage after initial supply is determined
-   "preallocation" : [{"identity":xx.xx}..], (list, optional) amount or % of from pre-allocation, depending on preallocationratio
-   "initialcontribution" : [xx.xx,..], (list, optional) initial contribution in each currency
-   "eras"         : objarray,     (array, optional) data specific to each era, maximum 3
+   "options" : n,                  (int,    optional) bits:
+                                                       1 = FRACTIONAL, 2 = IDRESTRICTED, 4 = IDSTAKING, 8 = IDREFERRALS
+                                                       0x10 = IDREFERRALSREQUIRED, 0x20 = TOKEN, 0x40 = CANBERESERVE
+                                                       0x80 = OPTION_FEESASRESERVE, 0x100 = OPTION_GATEWAY
+   "name" : "xxxx",                (string, required) name of existing identity with no active or pending blockchain
+   "idregistrationprice" : "xx.xx", (value, required) price of an identity in native currency
+   "idreferrallevels" : n,         (int, required) how many levels ID referrals go back in reward
+   "notaries" : "[identity,..]",   (list, optional) list of identities that are assigned as chain notaries
+   "minnotariesconfirm" : n,       (int, optional) unique notary signatures required to confirm an auto-notarization
+   "notarizationreward" : "xx.xx", (value,  required) default VRSC notarization reward total for first billing period
+   "billingperiod" : n,            (int,    optional) number of blocks in each billing period
+   "proofprotocol" : n,            (int,    optional) if 2, currency can be minted by whoever controls the ID
+   "startblock"    : n,            (int,    optional) VRSC block must be notarized into block 1 of PBaaS chain, default curheight + 100
+   "endblock"      : n,            (int,    optional) chain is considered inactive after this block height, and a new one may be started
+   "currencies"    : "["VRSC",..]", (list, optional) reserve currencies backing this chain in equal amounts
+   "conversions"   : "["xx.xx",..]", (list, optional) if present, must be same size as currencies. pre-launch conversion ratio overrides
+   "minpreconversion" : "["xx.xx",..]", (list, optional) must be same size as currencies. minimum in each currency to launch
+   "maxpreconversion" : "["xx.xx",..]", (list, optional) maximum in each currency allowed
+   "initialcontributions" : "["xx.xx",..]", (list, optional) initial contribution in each currency
+   "prelaunchdiscount" : "xx.xx" (value, optional) for fractional reserve currencies less than 100%, discount on final price at launch         "initialsupply" : "xx.xx"    (value, required for fractional) supply after conversion of contributions, before preallocation
+   "prelaunchcarveouts" : "[{"identity":xx.xx}..]", (list, optional) identities and % of pre-converted amounts from each reserve currency
+   "preallocations" : "[{"identity":xx.xx}..]", (list, optional)  list of identities and amounts from pre-allocation
+   "eras"          : "objarray", (array, optional) data specific to each era, maximum 3
    {
-      "reward"    : n,           (int64,  optional) native initial block rewards in each period
-      "decay"     : n,           (int64,  optional) reward decay for each era
-      "halving"   : n,           (int,    optional) halving period for each era
-      "eraend"    : n,           (int,    optional) ending block of each era
+      "reward"     : n,           (int64,  optional) native initial block rewards in each period
+      "decay"      : n,           (int64,  optional) reward decay for each era
+      "halving"    : n,           (int,    optional) halving period for each era
+      "eraend"     : n,           (int,    optional) ending block of each era
    }
-   "nodes"      : [obj, ..],     (objectarray, optional) up to 2 nodes that can be used to connect to the blockchain         [{
+   "nodes"         : "[obj, ..]", (objectarray, optional) up to 2 nodes that can be used to connect to the blockchain         [{
       "networkaddress" : "txid", (string,  optional) internet, TOR, or other supported address for node
       "nodeidentity" : "name@",  (string, optional) rewards payment and identity
-    }, .. ]
+   }, .. ]
 }
+
 ```
-Result:
-```
+#### Result:
+```json
 {
   "txid" : "transactionid",      (string) The transaction id
   "tx"   : "json",               (json)   The transaction decoded as a transaction
   "hex"  : "data"                (string) Raw data for signed transaction
 }
 ```
+
 #### Extra info on the "options"
 "options" are values that can be added together to set different launch options for a currency. The options and their values in hexadecimal are:
 ```
@@ -1109,6 +1495,12 @@ OPTION_FEESASRESERVE = 0x80,        // if set, fees will not be converted from r
 OPTION_GATEWAY = 0x100,             // if set, this currency is used only as a gateway to another system
 ```
 
+Examples:
+```bash
+> verus definecurrency jsondefinition
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "definecurrency", "params": [jsondefinition] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `getcrossnotarization "systemid" '["notarizationtxid1", "notarizationtxid2", ...]'`
 Creates and returns a cross notarization of this chain back to the system id caller, assuming that a prior notarization for that system is found.
 
@@ -1117,8 +1509,8 @@ Arguments
 2. "txidlist"                    (stringarray, optional) list of transaction ids to check in preferred order, first found is returned
 3. "accepted"                    (bool, optional) accepted, not earned notarizations, default: true if on VRSC or VRSCTEST, false otherwise
 
-Result:
-```
+#### Result:
+```json
 {
   "crosstxid" : "xxxx",        (hexstring) cross-transaction id of the notarization that matches, which is one in the arguments
   "txid" : "xxxx",             (hexstring) transaction id of the notarization that was found
@@ -1126,15 +1518,21 @@ Result:
   "newtx" : "hexdata"          (hexstring) the proposed notarization transaction with an opret and opretproof
 }
 ```
+Examples:
+```bash
+> verus getcrossnotarization "systemid" '["notarizationtxid1", "notarizationtxid2", ...]'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getcrossnotarization", "params": ["systemid" '["notarizationtxid1", "notarizationtxid2", ...]'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getcurrency "chainname"`
 Returns a complete definition for any given chain if it is registered on the blockchain. If the chain requested is NULL, chain definition of the current chain is returned.
 
-Arguments
-1. "chainname"                     (string, optional) name of the chain to look for. no parameter returns current chain in daemon.
-
-Result:
+#### Arguments:
 ```
+1. "chainname"                     (string, optional) name of the chain to look for. no parameter returns current chain in daemon.
+```
+#### Result:
+```json
 {
   "version" : "n",             (int) version of this chain definition
   "name" : "string",           (string) name or symbol of the chain, same as passed
@@ -1165,15 +1563,39 @@ Result:
   "confirmedtxid" : "txid"
 }
 ```
+Examples:
+```bash
+> verus getcurrency "chainname"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getcurrency", "params": ["chainname"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
+### getcurrencyconverters ["currency1","currency2",...]' ***`NEW`***
+Retrieves all currencies that have at least 1000 VRSC in reserve, are >10% VRSC reserve ratio, and have all listed currencies as reserves
+
+#### Arguments:
+```json
+  ["currencyname"    : "string", ...]  (string list, one or more) all selected currencies are returned with their current state
+```
+Result:
+```json
+  "[{currency1}, {currency2}]" : "array of objects" (string) All currencies and the last notarization, which are valid converters.
+```
+Examples:
+```bash
+> verus getcurrencyconverters '["currency1","currency2",...]'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getcurrencyconverters", "params": ['["currency1","currency2",...]'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getcurrencystate "n"`
 Returns the total amount of preconversions that have been confirmed on the blockchain for the specified chain.
 
-Arguments
-   "n" or "m,n" or "m,n,o"         (int or string, optional) height or inclusive range with optional step at which to get the currency state. If not specified, the latest currency state and height is returned
-
-Result:
+#### Arguments:
 ```
+   "n" or "m,n" or "m,n,o"         (int or string, optional) height or inclusive range with optional step at which to get the currency state. If not specified, the latest currency state and height is returned
+```
+
+#### Result:
+```json
    [
        {
            "height": n,
@@ -1186,44 +1608,61 @@ Result:
                "supply" : n,
                "reserve" : n,
                "currentratio" : n,
-           "}
+           }
        },
    ]
+```
+Examples:
+```bash
+> verus getcurrencystate name
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getcurrencystate", "params": [name] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ### `getexports "chainname"`
 Returns all pending export transfers that are not yet provable with confirmed notarizations.
 
-Arguments
+###$ Arguments:
+```
 1. "chainname"                     (string, optional) name of the chain to look for. no parameter returns current chain in daemon.
-
-Result:
+```
+#### Result:
 ```
   {
   }
+```
+Examples:
+```bash
+> verus getimports "chainname"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getexports", "params": ["chainname"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ### `getimports "chainname"`
 Returns all imports from a specific chain.
-
-Arguments
+#### Arguments:
+```
 1. "chainname"                     (string, optional) name of the chain to look for. no parameter returns current chain in daemon.
-
-Result:
+```
+#### Result:
 ```
   {
   }
+```
+Examples:
+```bash
+> verus getimports "chainname"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getimports", "params": ["chainname"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ### `getinitialcurrencystate "name"`
 Returns the total amount of preconversions that have been confirmed on the blockchain for the specified PBaaS chain.
 This should be used to get information about chains that are not this chain, but are being launched by it.
 
-Arguments
-   "name"                    (string, required) name or chain ID of the chain to get the export transactions for
-
-Result:
+#### Arguments:
 ```
+   "name"                    (string, required) name or chain ID of the chain to get the export transactions for
+```
+#### Result:
+```json
    [
        {
            "flags" : n,
@@ -1236,15 +1675,21 @@ Result:
        },
    ]
 ```
+Examples:
+```bash
+> verus getinitialcurrencystate name
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getinitialcurrencystate", "params": [name] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getlastimportin "fromname"`
 This returns the last import transaction from the chain specified and a blank transaction template to use when making new import transactions. Since the typical use for this call is to make new import transactions from the other chain that will be then broadcast to this chain, we include the template by default.
 
-Arguments
-   "fromname"                (string, required) name of the chain to get the last import transaction in from
-
-Result:
+#### Arguments:
 ```
+   "fromname"                (string, required) name of the chain to get the last import transaction in from
+```
+#### Result:
+```json
    {
        "lastimporttransaction": "hex"      Hex encoded serialized import transaction
        "lastconfirmednotarization" : "hex" Hex encoded last confirmed notarization transaction
@@ -1252,29 +1697,41 @@ Result:
        "totalimportavailable": "amount"    Total amount if native import currency available to import as native
    }
 ```
+Examples:
+```bash
+> verus getlastimportin jsondefinition
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getlastimportin", "params": [jsondefinition] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getlatestimportsout "name" "lastimporttransaction" "importtxtemplate"`
 This creates and returns all new imports for the specified chain that are exported from this blockchain.
 
-Arguments
-```
+### Arguments: ***`New json names`***
+```json
 {
    "name" : "string"                   (string, required) name of the chain to get the export transactions for
    "lastimporttransaction" : "hex"     (hex,    required) the last import transaction to follow, return list starts with import that spends this
    "lastconfirmednotarization" : "hex" (hex,    required) the last confirmed notarization transaction
    "importtxtemplate" : "hex"          (hex,    required) template transaction to use, so we create a transaction compatible with the other chain
-   "totalimportavailable": "amount"    (number,  required) Total amount if native import currency available to import as native
+   "nativeimportavailable": "amount"   (number, required) Total amount of native import currency available to import as native
+   "tokenimportavailable": "array"     ([{"currencyid":amount},..], required) tokens available to import, if controlled by this chain
 }
 ```
-Result:
+#### Result:
 UniValue array of hex transactions
+
+Examples:
+```bash
+> verus getlatestimportsout jsonargs
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getlatestimportsout", "params": [jsonargs] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getblocktemplate ( "jsonrequestobject" )`
 If the request parameters include a 'mode' key, that is used to explicitly select between the default 'template' request or a 'proposal'.
 It returns data needed to construct a block to work on.
 See https://en.bitcoin.it/wiki/BIP_0022 for full specification.
 
-Arguments:
+#### Arguments:
 1. "jsonrequestobject"       (string, optional) A json object in the following spec
 ```
      {
@@ -1285,8 +1742,8 @@ Arguments:
          ]
      }
 ```
-Result:
-```
+#### Result:
+```json
 {
   "version" : n,                     (numeric) The block version
   "previousblockhash" : "xxxx",    (string) The hash of current highest block
@@ -1320,42 +1777,58 @@ Result:
   "height" : n                      (numeric) The height of the next block
 }
 ```
+Examples:
+```bash
+> verus getblocktemplate
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblocktemplate", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getnotarizationdata "currencyid" accepted`
-
 Returns the latest PBaaS notarization data for the specifed currencyid.
 
 Arguments
+```
 1. "currencyid"                  (string, required) the hex-encoded ID or string name  search for notarizations on
 2. "accepted"                    (bool, optional) accepted, not earned notarizations, default: true if on VRSC or VRSCTEST, false otherwise
-
-Result:
 ```
+#### Result:
+```json
 {
   "version" : n,                 (numeric) The notarization protocol version
 }
 ```
+Examples:
+```bash
+> verus getnotarizationdata "currencyid" true
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnotarizationdata", "params": ["currencyid"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getpendingtransfers "chainname"`
 Returns all pending transfers for a particular chain that have not yet been aggregated into an export
-
-Arguments
-1. "chainname"                     (string, optional) name of the chain to look for. no parameter returns current chain in daemon.
-
-Result:
+#### Arguments:
 ```
+1. "chainname"                     (string, optional) name of the chain to look for. no parameter returns current chain in daemon.
+```
+#### Result:
+```json
   {
   }
+```
+Examples:
+```bash
+> verus getpendingtransfers "chainname"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getpendingtransfers", "params": ["chainname"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ### `getsaplingtree "n"`
 Returns the entries for a light wallet Sapling tree state.
 
-Arguments
-   "n" or "m,n" or "m,n,o"         (int or string, optional) height or inclusive range with optional step at which to get the Sapling tree state. If not specified, the latest currency state and height is returned
-
-Result:
+#### Arguments:
 ```
+   "n" or "m,n" or "m,n,o"         (int or string, optional) height or inclusive range with optional step at which to get the Sapling tree state. If not specified, the latest currency state and height is returned
+```
+#### Result:
+```json
    [
        {
            "network": "VRSC",
@@ -1366,15 +1839,21 @@ Result:
        },
    ]
 ```
+Examples:
+```bash
+> verus getsaplingtree name
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getsaplingtree", "params": [name] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `listcurrencies (includeexpired)`
 Returns a complete definition for any given chain if it is registered on the blockchain. If the chain requested is NULL, chain definition of the current chain is returned.
 
-Arguments
-1. "includeexpired"                (bool, optional) if true, include chains that are no longer active
-
-Result:
+#### Arguments:
 ```
+1. "includeexpired"                (bool, optional) if true, include chains that are no longer active
+```
+#### Result:
+```json
 [
   {
     "version" : "n",             (int) version of this chain definition
@@ -1400,50 +1879,69 @@ Result:
   }, ...
 ]
 ```
+Examples:
+```bash
+> verus listcurrencies true
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listcurrencies", "params": [true] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `paynotarizationrewards "currencyid" "amount" "billingperiod"`
 Adds some amount of funds to a specific billing period of a PBaaS chain, which will be released in the form of payments to notaries whose notarizations are confirmed.
-
-Arguments
-
-Result:
+#### Arguments:
+#### Result:
+Examples:
+```bash
+> verus paynotarizationrewards "hextx"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "paynotarizationrewards", "params": ["hextx"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `refundfailedlaunch "currencyid"`
 Refunds any funds sent to the chain if they are eligible for refund.
 This attempts to refund all transactions for all contributors.
-
-Arguments
+#### Arguments:
+```
 "currencyid"            (hex or chain name, required) the chain to refund contributions to
-
-Result:
+```
+#### Result:
+Examples:
+```bash
+> verus refundfailedlaunch "currencyid"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "refundfailedlaunch", "params": ["currencyid"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `reserveexchange '[{"toreserve": 1, "recipient": "RRehdmUV7oEAqoZnzEGBH34XysnWaBatct", "amount": 5.0}]'`
 This sends a Verus output as a JSON object or lists of Verus outputs as a list of objects to an address on the same or another chain.
 Funds are sourced automatically from the current wallet, which must be present, as in sendtoaddress.
 
-Arguments
+#### Arguments:
+```json
+  {
+     "toreserve"      : "bool",  (bool,   optional) if present, conversion is to the underlying reserve (Verus), if false, from Verus
+     "recipient"      : "Rxxx",  (string, required) recipient of converted funds or funds that failed to convert
+     "amount"         : n,     (int64,  required) amount of source coins that will be converted, depending on the toreserve flag, the rest is change
+     "limit"          : n,     (int64,  optional) price in reserve limit, below which for buys and above which for sells, execution will occur
+     "validbefore"    : n,     (int,    optional) block before which this can execute as a conversion, otherwise, it executes as a send with normal network fee
+     "subtractfee"    : "bool",  (bool,   optional) if true, reduce amount to destination by the fee amount, otherwise, add from inputs to cover fee
+  }
 ```
-       {
-           "toreserve"      : "bool",  (bool,   optional) if present, conversion is to the underlying reserve (Verus), if false, from Verus
-           "recipient"      : "Rxxx",  (string, required) recipient of converted funds or funds that failed to convert
-           "amount"         : n,     (int64,  required) amount of source coins that will be converted, depending on the toreserve flag, the rest is change
-           "limit"          : n,     (int64,  optional) price in reserve limit, below which for buys and above which for sells, execution will occur
-           "validbefore"    : n,     (int,    optional) block before which this can execute as a conversion, otherwise, it executes as a send with normal network fee
-           "subtractfee"    : "bool",  (bool,   optional) if true, reduce amount to destination by the fee amount, otherwise, add from inputs to cover fee
-       }
+#### Result:
 ```
-Result:
-       "txid" : "transactionid" (string) The transaction id.
+  "txid" : "transactionid" (string) The transaction id.
+```
+Examples:
+```bash
+> verus reserveexchange '[{"name": "PBAASCHAIN", "paymentaddress": "RRehdmUV7oEAqoZnzEGBH34XysnWaBatct", "amount": 5.0}]'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "reserveexchange", "params": ['[{"name": "PBAASCHAIN", "paymentaddress": "RRehdmUV7oEAqoZnzEGBH34XysnWaBatct", "amount": 5.0}]'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `sendcurrency "fromaddress" '[{"address":... ,"amount":...},...]' (returntx)`
 This sends one or many Verus outputs to one or many addresses on the same or another chain.
 Funds are sourced automatically from the current wallet, which must be present, as in sendtoaddress.
 If "fromaddress" is specified, all funds will be taken from that address, otherwise funds may come from any source set of UTXOs controlled by the wallet.
-
-Arguments
+#### Arguments:
 1. "fromaddress"             (string, required) The VerusID or address to send the funds from. "\*" means all addresses
 2. "outputs"                 (array, required) An array of json objects representing currencies, amounts, and destinations to send.
-    ```
+    ```json
     [{
       "currency": "name"   (string, required) Name of the source currency to send in this output, defaults to native of chain
       "amount":amount        (numeric, required) The numeric amount of currency, denominated in source currency
@@ -1456,11 +1954,16 @@ Arguments
     }, ... ]
     ```
 3. "returntx"                (bool,   optional) defaults to false and transaction is sent, if true, transaction is signed and returned
-
-Result:
+#### Result:
+```
    "txid" : "transactionid" (string) The transaction id if (returntx) is false
    "hextx" : "hex"         (string) The hexadecimal, serialized transaction if (returntx) is true
-
+```
+Examples:
+```bash
+> verus sendcurrency "*" '[{"currency":"btc","address":"RRehdmUV7oEAqoZnzEGBH34XysnWaBatct" ,"amount":500.0},...]'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sendcurrency", "params": ["bob@" '[{"currency":"btc", "address":"alice@quad", "amount":500.0},...]'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `submitacceptednotarization "hextx"`
 Finishes an almost complete notarization transaction based on the notary chain and the current wallet or pubkey.
@@ -1470,8 +1973,14 @@ If successful in submitting the transaction based on all rules, a transaction ID
 Arguments
 1. "hextx"                       (hexstring, required) partial hex-encoded notarization transaction to submit transaction should have only one notarization and one opret output
 
-Result:
+#### Result:
 txid                               (hexstring) transaction ID of submitted transaction
+
+Examples:
+```bash
+> verus submitacceptednotarization "hextx"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "submitacceptednotarization", "params": ["hextx"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ## Network
 
@@ -1479,28 +1988,46 @@ txid                               (hexstring) transaction ID of submitted trans
 Attempts add or remove a node from the addnode list.
 Or try a connection to a node once.
 
-Arguments:
+#### Arguments:
 1. "node"     (string, required) The node (see getpeerinfo for nodes)
 2. "command"  (string, required) 'add' to add a node to the list, 'remove' to remove a node from the list, 'onetry' to try a connection to the node once
+
+Examples:
+```bash
+> verus addnode "192.168.0.6:8233" "onetry"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "addnode", "params": ["192.168.0.6:8233", "onetry"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `clearbanned`
 Clear all banned IPs.
 
+Examples:
+```bash
+> verus clearbanned
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "clearbanned", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `disconnectnode "node"`
 Immediately disconnects from the specified node.
 
-Arguments:
+#### Arguments:
 1. "node"     (string, required) The node (see getpeerinfo for nodes)
+
+Examples:
+```bash
+> verus disconnectnode "192.168.0.6:8233"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "disconnectnode", "params": ["192.168.0.6:8233"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getaddednodeinfo dns ( "node" )`
 Returns information about the given added node, or all added nodes (note that onetry addnodes are not listed here)
 If dns is false, only a list of added nodes will be provided, otherwise connected information will also be available.
 
-Arguments:
+#### Arguments:
 1. dns        (boolean, required) If false, only a list of added nodes will be provided, otherwise connected information will also be available.
 2. "node"   (string, optional) If provided, return information about this specific node, otherwise all nodes are returned.
 
-Result:
+#### Result:
 ```
 [
   {
@@ -1517,43 +2044,65 @@ Result:
   ,...
 ]
 ```
+Examples:
+```bash
+> verus getaddednodeinfo true
+> verus getaddednodeinfo true "192.168.0.201"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddednodeinfo", "params": [true, "192.168.0.201"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getconnectioncount`
 Returns the number of connections to other nodes.
 
-Result:
+#### Result:
 n          (numeric) The connection count
+
+Examples:
+```bash
+> verus getconnectioncount
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getconnectioncount", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getdeprecationinfo`
 Returns an object containing current version and deprecation block height. Applicable only on mainnet.
 
-Result:
-```
+#### Result:
+```json
 {
   "version": xxxxx,                      (numeric) the server version
   "subversion": "/MagicBean:x.y.z[-v]/",     (string) the server subversion string
   "deprecationheight": xxxxx,            (numeric) the block height at which this version will deprecate and shut down
 }
 ```
+Examples:
+```bash
+> verus getdeprecationinfo
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getdeprecationinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getnettotals`
 Returns information about network traffic, including bytes in, bytes out,
 and current time.
 
-Result:
-```
+#### Result:
+```json
 {
   "totalbytesrecv": n,   (numeric) Total bytes received
   "totalbytessent": n,   (numeric) Total bytes sent
   "timemillis": t        (numeric) Total cpu time
 }
 ```
+Examples:
+```bash
+> verus getnettotals
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnettotals", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getnetworkinfo`
 Returns an object containing various state info regarding P2P networking.
 
-Result:
-```
+#### Result:
+```json
 {
   "version": xxxxx,                      (numeric) the server version
   "subversion": "/MagicBean:x.y.z[-v]/",     (string) the server subversion string
@@ -1582,12 +2131,17 @@ Result:
   "warnings": "..."                    (string) any network warnings (such as alert messages)
 }
 ```
+Examples:
+```bash
+> verus getnetworkinfo
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnetworkinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getpeerinfo`
 Returns data about each connected network node as a json array of objects.
 
-Result:
-```
+#### Result:
+```json
 [
   {
     "id": n,                   (numeric) Peer index
@@ -1617,23 +2171,47 @@ Result:
   ,...
 ]
 ```
+Examples:
+```bash
+> verus getpeerinfo
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getpeerinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `listbanned`
 List all banned IPs/Subnets.
+
+Examples:
+```bash
+> verus listbanned
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listbanned", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `ping`
 Requests that a ping be sent to all other nodes, to measure ping time.
 Results provided in getpeerinfo, pingtime and pingwait fields are decimal seconds.
 Ping command is handled in queue with all other commands, so it measures processing backlog, not just network ping.
 
+Examples:
+```bash
+> verus ping
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "ping", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `setban "ip(/netmask)" "add|remove" (bantime) (absolute)`
 Attempts add or remove a IP/Subnet from the banned list.
 
-Arguments:
+#### Arguments:
 1. "ip(/netmask)" (string, required) The IP/Subnet (see getpeerinfo for nodes ip) with a optional netmask (default is /32 = single ip)
 2. "command"      (string, required) 'add' to add a IP/Subnet to the list, 'remove' to remove a IP/Subnet from the list
 3. "bantime"      (numeric, optional) time in seconds how long (or until when if [absolute] is set) the ip is banned (0 or empty means using the default time of 24h which can also be overwritten by the -bantime startup argument)
 4. "absolute"     (boolean, optional) If set, the bantime must be a absolute timestamp in seconds since epoch (Jan 1 1970 GMT)
+
+Examples:
+```bash
+> verus setban "192.168.0.6" "add" 86400
+> verus setban "192.168.0.0/24" "add"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "setban", "params": ["192.168.0.6", "add" 86400] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ## Rawtransactions
 
@@ -1643,9 +2221,9 @@ Returns hex-encoded raw transaction.
 Note that the transaction's inputs are not signed, and
 it is not stored in the wallet or transmitted to the network.
 
-Arguments:
+#### Arguments:
 1. "transactions"        (string, required) A json array of json objects
-```
+```json
      [
        {
          "txid":"id",    (string, required) The transaction id
@@ -1656,7 +2234,7 @@ Arguments:
      ]
 ```
 2. "addresses"           (string, required) a json object with addresses as keys and amounts as values
-```
+```json
     {
       "address": x.xxx   (numeric, required) The key is the Komodo address, the value is the VRSC amount
       ,...
@@ -1665,17 +2243,23 @@ Arguments:
 3. locktime              (numeric, optional, default=0) Raw locktime. Non-0 value also locktime-activates inputs
 4. expiryheight          (numeric, optional, default=nextblockheight+20 (pre-Blossom) or nextblockheight+40 (post-Blossom)) Expiry height of transaction (if Overwinter is active)
 
-Result:
+#### Result:
 "transaction"            (string) hex string of the transaction
+
+Examples
+```bash
+> verus createrawtransaction "[{\"txid\":\"myid\",\"vout\":0}]" "{\"address\":0.01}"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "createrawtransaction", "params": ["[{\"txid\":\"myid\",\"vout\":0}]", "{\"address\":0.01}"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `decoderawtransaction "hexstring"`
 Return a JSON object representing the serialized, hex-encoded transaction.
 
-Arguments:
+#### Arguments:
 1. "hex"      (string, required) The transaction hex string
 
-Result:
-```
+#### Result:
+```json
 {
   "txid" : "id",        (string) The transaction id
   "overwintered" : bool   (boolean) The Overwintered flag
@@ -1741,15 +2325,20 @@ Result:
   ],
 }
 ```
+Examples:
+```bash
+> verus decoderawtransaction "hexstring"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "decoderawtransaction", "params": ["hexstring"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `decodescript "hex"`
 Decode a hex-encoded script.
 
-Arguments:
+#### Arguments:
 1. "hex"     (string) the hex encoded script
 
-Result:
-```
+#### Result:
+```json
 {
   "asm":"asm",   (string) Script public key
   "hex":"hex",   (string) hex encoded public key
@@ -1762,6 +2351,11 @@ Result:
   "p2sh","address" (string) script address
 }
 ```
+Examples:
+```bash
+> verus decodescript "hexstring"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "decodescript", "params": ["hexstring"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `fundrawtransaction "hexstring"`
 Add inputs to a transaction until it has enough in value to meet its out value.
@@ -1769,17 +2363,35 @@ This will not modify existing inputs, and will add one change output to the outp
 Note that inputs which were signed may need to be resigned after completion since in/outputs have been added.
 The inputs added will not be signed, use signrawtransaction for that.
 
-Arguments:
+#### Arguments:
 1. "hexstring"    (string, required) The hex string of the raw transaction
 
-Result:
-```
+#### Result:
+```json
 {
   "hex":       "value", (string)  The resulting raw transaction (hex-encoded string)
   "fee":       n,         (numeric) The fee added to the transaction
   "changepos": n          (numeric) The position of the added change output, or -1
 }
 "hex"
+```
+Examples:
+
+Create a transaction with no inputs
+```bash
+> verus createrawtransaction "[]" "{\"myaddress\":0.01}"
+```
+Add sufficient unsigned inputs to meet the output value
+```bash
+> verus fundrawtransaction "rawtransactionhex"
+```
+Sign the transaction
+```bash
+> verus signrawtransaction "fundedtransactionhex"
+```
+Send the transaction
+```bash
+> verus sendrawtransaction "signedtransactionhex"
 ```
 
 ### `getrawtransaction "txid" ( verbose )`
@@ -1792,15 +2404,15 @@ Return the raw transaction data.
 If verbose=0, returns a string that is serialized, hex-encoded data for 'txid'.
 If verbose is non-zero, returns an Object with information about 'txid'.
 
-Arguments:
+#### Arguments:
 1. "txid"      (string, required) The transaction id
 2. verbose       (numeric, optional, default=0) If 0, return a string, other return a json object
 
 Result (if verbose is not set or set to 0):
 "data"      (string) The serialized, hex-encoded data for 'txid'
 
-Result (if verbose > 0):
-```
+#### Result (if verbose > 0):
+```json
 {
   "hex" : "data",       (string) The serialized, hex-encoded data for 'txid'
   "txid" : "id",        (string) The transaction id (same as provided)
@@ -1869,28 +2481,53 @@ Result (if verbose > 0):
   "blocktime" : ttt         (numeric) The block time in seconds since epoch (Jan 1 1970 GMT)
 }
 ```
+Examples:
+```bash
+> verus getrawtransaction "mytxid"
+> verus getrawtransaction "mytxid" 1
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getrawtransaction", "params": ["mytxid", 1] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `sendrawtransaction "hexstring" ( allowhighfees )`
 Submits raw transaction (serialized, hex-encoded) to local node and network.
 
 Also see createrawtransaction and signrawtransaction calls.
 
-Arguments:
+#### Arguments:
 1. "hexstring"    (string, required) The hex string of the raw transaction)
 2. allowhighfees    (boolean, optional, default=false) Allow high fees
 
-Result:
+#### Result:
 "hex"             (string) The transaction hash in hex
+
+Examples:
+
+Create a transaction
+```bash
+> verus createrawtransaction "[{\"txid\" : \"mytxid\",\"vout\":0}]" "{\"myaddress\":0.01}"
+```
+Sign the transaction, and get back the hex
+```bash
+> verus signrawtransaction "myhex"
+```
+Send the transaction (signed hex)
+```bash
+> verus sendrawtransaction "signedhex"
+```
+As a json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sendrawtransaction", "params": ["signedhex"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `signrawtransaction "hexstring" ( [{"txid":"id","vout":n,"scriptPubKey":"hex","redeemScript":"hex"},...] ["privatekey1",...] sighashtype )`
 Sign inputs for raw transaction (serialized, hex-encoded).
 The second optional argument (may be null) is an array of previous transaction outputs that this transaction depends on but may not yet be in the block chain.
 The third optional argument (may be null) is an array of base58-encoded private keys that, if given, will be the only keys used to sign the transaction.
 
-Arguments:
+#### Arguments:
 1. "hexstring"     (string, required) The transaction hex string
 2. "prevtxs"       (string, optional) An json array of previous dependent transaction outputs
-```
+```json
      [               (json array of json objects, or 'null' if none provided)
        {
          "txid":"id",             (string, required) The transaction id
@@ -1903,7 +2540,7 @@ Arguments:
     ]
 ```
 3. "privatekeys"     (string, optional) A json array of base58-encoded private keys for signing
-```
+```json
     [                  (json array of strings, or 'null' if none provided)
       "privatekey"   (string) private key in base58-encoding
       ,...
@@ -1918,8 +2555,8 @@ Arguments:
        "SINGLE|ANYONECANPAY"
 5.  "branchid"       (string, optional) The hex representation of the consensus branch id to sign with. This can be used to force signing with consensus rules that are ahead of the node's current height.
 
-Result:
-```
+#### Result:
+```json:
 {
   "hex" : "value",           (string) The hex-encoded raw transaction with signature(s)
   "complete" : true|false,   (boolean) If the transaction has a complete set of signatures
@@ -1935,6 +2572,11 @@ Result:
   ]
 }
 ```
+Examples:
+```bash
+> verus signrawtransaction "myhex"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "signrawtransaction", "params": ["myhex"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ## Util
 
@@ -1942,53 +2584,72 @@ Result:
 Creates a multi-signature address with n signature of m keys required.
 It returns a json object with the address and redeemScript.
 
-Arguments:
+#### Arguments:
 1. nrequired      (numeric, required) The number of required signatures out of the n keys or addresses.
 2. "keys"       (string, required) A json array of keys which are Komodo addresses or hex-encoded public keys
-```
+```json
      [
        "key"    (string) Komodo address or hex-encoded public key
        ,...
      ]
 ```
-Result:
-```
+#### Result:
+```json
 {
   "address":"multisigaddress",  (string) The value of the new multisig address.
   "redeemScript":"script"       (string) The string value of the hex-encoded redemption script.
 }
 ```
+Examples:
+Create a multisig address from 2 addresses
+```bash
+> verus createmultisig 2 "[\"RTZMZHDFSTFQst8XmX2dR4DaH87cEUs3gC\",\"RNKiEBduBru6Siv1cZRVhp4fkZNyPska6z\"]"
+```
+As a json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "createmultisig", "params": [2, "[\"RTZMZHDFSTFQst8XmX2dR4DaH87cEUs3gC\",\"RNKiEBduBru6Siv1cZRVhp4fkZNyPska6z\"]"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `estimatefee nblocks`
 Estimates the approximate fee per kilobyte needed for a transaction to begin confirmation within nblocks blocks.
 
-Arguments:
+#### Arguments:
 1. nblocks     (numeric)
 
-Result:
+#### Result:
 n :    (numeric) estimated fee-per-kilobyte
 
--1.0 is returned if not enough transactions and blocks have been observed to make an estimate.
+minimum fee is returned if not enough transactions and blocks have been observed to make an estimate.
+
+Example:
+```bash
+> verus estimatefee 6
+```
 
 ### `estimatepriority nblocks`
 Estimates the approximate priority a zero-fee transaction needs to begin confirmation within nblocks blocks.
 
-Arguments:
+#### Arguments:
 1. nblocks     (numeric)
 
-Result:
+#### Result:
 n :    (numeric) estimated priority
 
 -1.0 is returned if not enough transactions and
 blocks have been observed to make an estimate.
 
+Example:
+```bash
+> verus estimatepriority 6
+```
+
 ### `invalidateblock "hash"`
 Permanently marks a block as invalid, as if it violated a consensus rule.
 
-Arguments:
+#### Arguments:
 1. hash   (string, required) the hash of the block to mark as invalid
 
-Result:
+#### Result:
 
 #### jumblr_deposit "depositaddress"
 #### jumblr_pause
@@ -1998,19 +2659,25 @@ Result:
 Removes invalidity status of a block and its descendants, reconsider them for activation.
 This can be used to undo the effects of invalidateblock.
 
-Arguments:
+#### Arguments:
 1. hash   (string, required) the hash of the block to reconsider
 
-Result:
+#### Result:
+
+Examples:
+```bash
+> verus invalidateblock "blockhash"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "invalidateblock", "params": ["blockhash"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `validateaddress "verusaddress"`
-Return information about the given Komodo address.
+Return information about the given Verus address.
 
-Arguments:
+#### Arguments:
 1. "verusaddress"     (string, required) The Komodo address to validate
 
-Result:
-```
+#### Result:
+```json
 {
   "isvalid" : true|false,         (boolean) If the address is valid or not. If not, this is the only property returned.
   "address" : "verusaddress",   (string) The Verus address validated
@@ -2022,50 +2689,103 @@ Result:
   "account" : "account"         (string) DEPRECATED. The account associated with the address, "" is the default account
 }
 ```
+Examples:
+```bash
+> verus validateaddress "RTZMZHDFSTFQst8XmX2dR4DaH87cEUs3gC"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "validateaddress", "params": ["RTZMZHDFSTFQst8XmX2dR4DaH87cEUs3gC"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 
 ### `verifyfile "address or identity" "signature" "filepath/filename" "checklatest"`
 Verify a signed file
 
-Arguments:
+#### Arguments:
 1. "t-addr or identity" (string, required) The transparent address or identity that signed the file.
 2. "signature"       (string, required) The signature provided by the signer in base 64 encoding (see signfile).
 3. "filename"        (string, required) The file, which must be available locally to the daemon and that was signed.
 3. "checklatest"     (bool, optional)   If true, checks signature validity based on latest identity. defaults to false, which determines validity of signing height stored in signature.
 
-Result:
+#### Result:
 true|false   (boolean) If the signature is verified or not.
+
+Examples:
+
+Create the signature
+```bash
+> verus signfile "RNKiEBduBru6Siv1cZRVhp4fkZNyPska6z" "filepath/filename"
+```
+Verify the signature
+```bash
+> verus verifyfile "RNKiEBduBru6Siv1cZRVhp4fkZNyPska6z" "signature" "filepath/filename"
+```
+As json rpc
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "verifyfile", "params": ["RNKiEBduBru6Siv1cZRVhp4fkZNyPska6z", "signature", "filepath/filename"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `verifyhash "address or identity" "signature" "hexhash" "checklatest"`
 Verify a signed message
 
-Arguments:
+#### Arguments:
 1. "t-addr or identity" (string, required) The transparent address or identity that signed the data.
 2. "signature"       (string, required) The signature provided by the signer in base 64 encoding (see signmessage/signfile).
 3. "hexhash"         (string, required) Hash of the message or file that was signed.
 3. "checklatest"     (bool, optional)   If true, checks signature validity based on latest identity. defaults to false, which determines validity of signing height stored in signature.
 
-Result:
+#### Result:
 true|false   (boolean) If the signature is verified or not.
+
+Examples:
+
+Create the signature
+```bash
+> verus signfile "RNKiEBduBru6Siv1cZRVhp4fkZNyPska6z" "filepath/filename"
+or
+> verus signmessage "RNKiEBduBru6Siv1cZRVhp4fkZNyPska6z" "my message"
+```
+Verify the signature
+```bash
+> verus verifyhash "RNKiEBduBru6Siv1cZRVhp4fkZNyPska6z" "signature" "hexhash"
+```
+As json rpc
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "verifyhash", "params": ["RNKiEBduBru6Siv1cZRVhp4fkZNyPska6z", "signature", "hexhash"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `verifymessage "address or identity" "signature" "message" "checklatest"`
 Verify a signed message
 
-Arguments:
+#### Arguments:
 1. "t-addr or identity" (string, required) The transparent address or identity that signed the message.
 2. "signature"       (string, required) The signature provided by the signer in base 64 encoding (see signmessage).
 3. "message"         (string, required) The message that was signed.
 3. "checklatest"     (bool, optional)   If true, checks signature validity based on latest identity. defaults to false, which determines validity of signing height stored in signature.
 
-Result:
+#### Result:
 true|false   (boolean) If the signature is verified or not.
+
+Examples:
+
+Create the signature
+```bash
+> verus signmessage "RNKiEBduBru6Siv1cZRVhp4fkZNyPska6z" "my message"
+```
+Verify the signature
+```bash
+> verus verifymessage "RNKiEBduBru6Siv1cZRVhp4fkZNyPska6z" "signature" "my message"
+```
+As json rpc
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "verifymessage", "params": ["RNKiEBduBru6Siv1cZRVhp4fkZNyPska6z", "signature", "my message"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `z_validateaddress "zaddr"`
 Return information about the given z address.
 
-Arguments:
+#### Arguments:
 1. "zaddr"     (string, required) The z address to validate
 
-Result:
+#### Result:
 ```
 {
   "isvalid" : true|false,      (boolean) If the address is valid or not. If not, this is the only property returned.
@@ -2078,6 +2798,11 @@ Result:
   "diversifiedtransmissionkey" : "hex", (string) [sapling] The hex value of pk_d
 }
 ```
+Examples:
+```bash
+> verus z_validateaddress "zcWsmqT4X2V4jgxbgiCzyrAfRT1vi1F4sn7M5Pkh66izzw8Uk7LBGAH3DtcSMJeUb2pi3W4SQF8LMKkU2cUuVP68yAGcomL"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_validateaddress", "params": ["zcWsmqT4X2V4jgxbgiCzyrAfRT1vi1F4sn7M5Pkh66izzw8Uk7LBGAH3DtcSMJeUb2pi3W4SQF8LMKkU2cUuVP68yAGcomL"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ## Wallet
 
@@ -2086,10 +2811,10 @@ Add a nrequired-to-sign multisignature address to the wallet.
 Each key is a VRSC address or hex-encoded public key.
 If 'account' is specified (DEPRECATED), assign address to that account.
 
-Arguments:
+#### Arguments:
 1. nrequired        (numeric, required) The number of required signatures out of the n keys or addresses.
 2. "keysobject"   (string, required) A json array of VRSC addresses or hex-encoded public keys
-```
+```json
      [
        "address"  (string) VRSC address or hex-encoded public key
        ...,
@@ -2097,48 +2822,92 @@ Arguments:
 ```
 3. "account"      (string, optional) DEPRECATED. If provided, MUST be set to the empty string "" to represent the default account. Passing any other string will result in an error.
 
-Result:
+#### Result:
 "VRSC_address"  (string) A VRSC address associated with the keys.
+
+Examples:
+
+Add a multisig address from 2 addresses
+```bash
+> verus addmultisigaddress 2 "[\"RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV\",\"RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV\"]"
+```
+As json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "addmultisigaddress", "params": [2, "[\"RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV\",\"RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV\"]"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `backupwallet "destination"`
 Safely copies `wallet.dat` to destination filename
 
-Arguments:
+#### Arguments:
 1. "destination"   (string, required) The destination filename, saved in the directory set by `-exportdir` option.
+
+#### Result:
+"path"             (string) The full path of the destination file
+
+Examples:
+```bash
+> verus backupwallet "backupdata"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "backupwallet", "params": ["backupdata"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `convertpassphrase "walletpassphrase"`
 Converts Verus Desktop, Agama, Verus Agama, or Verus Mobile passphrase to a private key and WIF (for import with importprivkey).
 
-Arguments:
+#### Arguments:
 1. "walletpassphrase"   (string, required) Wallet passphrase
 
-Result:
+#### Result:
+```
 "walletpassphrase": "walletpassphrase",   (string) Wallet passphrase you entered
 "address": "verus address",             (string) Address corresponding to your passphrase
 "pubkey": "publickeyhex",               (string) The hex value of the raw public key
 "privkey": "privatekeyhex",             (string) The hex value of the raw private key
 "wif": "wif"                            (string) The private key in WIF format to use with 'importprivkey'
+```
+
+Examples:
+```bash
+> verus convertpassphrase "walletpassphrase"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "convertpassphrase", "params": ["walletpassphrase"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `dumpprivkey "t-addr"`
 Reveals the private key corresponding to 't-addr'.
 Then the importprivkey can be used with this output
 
-Arguments:
+#### Arguments:
 1. "t-addr"   (string, required) The transparent address for the private key
+
+#### Result:
+"key"         (string) The private key
+
+Examples:
+```bash
+> verus dumpprivkey "myaddress"
+> verus importprivkey "mykey"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "dumpprivkey", "params": ["myaddress"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `dumpwallet "filename" (omitemptytaddresses)`
 Dumps taddr wallet keys in a human-readable format.  Overwriting an existing file is not permitted.
 
-Arguments:
+#### Arguments:
 1. "filename"    (string, required) The filename, saved in folder set by verusd -exportdir option
 2. "omitemptytaddresses" (boolean, optional) Defaults to false. If true, export only addresses with indexed UTXOs or that control IDs in the wallet (do not use this option without being sure that all addresses of interest are included)
 
-Result:
+#### Result:
 "path"           (string) The full path of the destination file
+
+Examples:
+```bash
+> verus dumpwallet "test"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "dumpwallet", "params": ["test"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `encryptwallet "passphrase"`
 WARNING: encryptwallet is disabled.
-To enable it, restart zcashd with the `-experimentalfeatures` and `-developerencryptwallet` commandline options, or add these two lines to the zcash.conf file:
+To enable it, restart verusd with the `-experimentalfeatures` and `-developerencryptwallet` commandline options, or add these two lines to the VRSC.conf file:
 ```
 experimentalfeatures=1
 developerencryptwallet=1
@@ -2149,94 +2918,204 @@ Use the walletpassphrase call for this, and then walletlock call.
 If the wallet is already encrypted, use the walletpassphrasechange call.
 Note that this will shutdown the server.
 
-Arguments:
+#### Arguments:
 1. "passphrase"    (string) The pass phrase to encrypt the wallet with. It must be at least 1 character, but should be long.
+Examples:
+
+Encrypt you wallet
+```bash
+> verus encryptwallet "my pass phrase"
+```
+Now set the passphrase to use the wallet, such as for signing or sending VRSC
+```bash
+> verus walletpassphrase "my pass phrase"
+```
+Now we can so something like sign
+```bash
+> verus signmessage "VRSC_address" "test message"
+```
+Now lock the wallet again by removing the passphrase
+```bash
+> verus walletlock
+```
+As a json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "encryptwallet", "params": ["my pass phrase"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getaccount "VRSC_address"`
 DEPRECATED. Returns the account associated with the given address.
 
-Arguments:
+#### Arguments:
 1. "VRSC_address"  (string, required) The VRSC address for account lookup.
 
-Result:
+#### Result:
 "accountname"        (string) the account address
+
+Examples:
+```bash
+> verus getaccount "RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaccount", "params": ["RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getaccountaddress "account"`
 DEPRECATED. Returns the current VRSC address for receiving payments to this account.
 
-Arguments:
+#### Arguments:
 1. "account"       (string, required) MUST be set to the empty string "" to represent the default account. Passing any other string will result in an error.
 
-Result:
+#### Result:
 "VRSC_address"   (string) The account VRSC address
+
+Examples:
+```bash
+> verus getaccountaddress
+> verus getaccountaddress ""
+> verus getaccountaddress "myaccount"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaccountaddress", "params": ["myaccount"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getaddressesbyaccount "account"`
 DEPRECATED. Returns the list of addresses for the given account.
 
-Arguments:
+#### Arguments:
 1. "account"  (string, required) MUST be set to the empty string "" to represent the default account. Passing any other string will result in an error.
 
-Result:
-```
+#### Result:
+```json
 [                     (json array of string)
   "VRSC_address"  (string) a VRSC address associated with the given account
   ,...
 ]
 ```
 
+Examples:
+```bash
+> verus getaddressesbyaccount "tabby"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressesbyaccount", "params": ["tabby"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `getbalance ( "account" minconf includeWatchonly )`
 Returns the server's total available balance.
 
-Arguments:
+#### Arguments:
 1. "account"      (string, optional) DEPRECATED. If provided, it MUST be set to the empty string "" or to the string "`*`", either of which will give the total available balance. Passing any other string will result in an error.
 2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.
 3. includeWatchonly (bool, optional, default=false) Also include balance in watchonly addresses (see 'importaddress')
 
-Result:
+#### Result:
 amount              (numeric) The total amount in VRSC received for this account.
+
+Examples:
+
+The total amount in the wallet
+```bash
+> verus getbalance
+```
+The total amount in the wallet at least 5 blocks confirmed
+```bash
+> verus getbalance "*" 6
+```
+As a json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getbalance", "params": ["*", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getnewaddress ( "account" )`
 Returns a new VRSC address for receiving payments.
 
-Arguments:
+#### Arguments:
 1. "account"        (string, optional) DEPRECATED. If provided, it MUST be set to the empty string "" to represent the default account. Passing any other string will result in an error.
 
-Result:
+#### Result:
 "VRSC_address"    (string) The new VRSC address
+
+Examples:
+```bash
+> verus getnewaddress
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnewaddress", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getrawchangeaddress`
 Returns a new VRSC address, for receiving change.
 This is for use with raw transactions, NOT normal use.
 
-Result:
+#### Result:
 "address"    (string) The address
+
+Examples:
+```bash
+> verus getrawchangeaddress
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getrawchangeaddress", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getreceivedbyaccount "account" ( minconf )`
-Returns a new VRSC address, for receiving change.
-This is for use with raw transactions, NOT normal use.
+DEPRECATED. Returns the total amount received by addresses with <account> in transactions with at least [minconf] confirmations.
 
-Result:
-"address"    (string) The address
+#### Arguments:
+1. "account"      (string, required) MUST be set to the empty string "" to represent the default account. Passing any other string will result in an error.
+2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.
+
+#### Result:
+amount              (numeric) The total amount in VRSC received for this account.
+
+Examples:
+
+Amount received by the default account with at least 1 confirmation
+```bash
+> verus getreceivedbyaccount ""
+```
+Amount received at the tabby account including unconfirmed amounts with zero confirmations
+```bash
+> verus getreceivedbyaccount "tabby" 0
+```
+The amount with at least 6 confirmation, very safe
+```bash
+> verus getreceivedbyaccount "tabby" 6
+```
+As a json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getreceivedbyaccount", "params": ["tabby", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `getreceivedbyaddress "VRSC_address" ( minconf )`
 Returns the total amount received by the given VRSC address in transactions with at least minconf confirmations.
 
-Arguments:
+#### Arguments:
 1. "VRSC_address"  (string, required) The VRSC address for transactions.
 2. minconf             (numeric, optional, default=1) Only include transactions confirmed at least this many times.
 
-Result:
+#### Result:
 amount   (numeric) The total amount in VRSC received at this address.
+
+Examples:
+
+The amount from transactions with at least 1 confirmation
+```bash
+> verus getreceivedbyaddress "RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV"
+```
+The amount including unconfirmed transactions, zero confirmations
+```bash
+> verus getreceivedbyaddress "RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV" 0
+```
+The amount with at least 6 confirmations, very safe
+```bash
+> verus getreceivedbyaddress "RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV" 6
+```
+As a json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getreceivedbyaddress", "params": ["RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `gettransaction "txid" ( includeWatchonly )`
 Get detailed information about in-wallet transaction <txid>
 
-Arguments:
+#### Arguments:
 1. "txid"    (string, required) The transaction id
 2. "includeWatchonly"    (bool, optional, default=false) Whether to include watchonly addresses in balance calculation and details[]
 
-Result:
-```  
+#### Result:
+```json
 {
   "amount" : x.xxx,        (numeric) The transaction amount in VRSC
   "confirmations" : n,     (numeric) The number of confirmations
@@ -2271,14 +3150,21 @@ Result:
 }
 ```
 
+Examples:
+```bash
+> verus gettransaction "1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d"
+> verus gettransaction "1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d" true
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettransaction", "params": ["1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `getunconfirmedbalance`
 Returns the server's total unconfirmed balance
 
 ### `getwalletinfo`
 Returns an object containing various wallet state info.
 
-Result:
-```
+#### Result:
+```json
 {
   "walletversion": xxxxx,     (numeric) the wallet version
   "balance": xxxxxxx,         (numeric) the total confirmed balance of the wallet in VRSC
@@ -2297,31 +3183,86 @@ Result:
 }
 ```
 
+Examples:
+```bash
+> verus getwalletinfo
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getwalletinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `importaddress "address" ( "label" rescan )`
 Adds an address or script (in hex) that can be watched as if it were in your wallet but cannot be used to spend.
 
-Arguments:
+#### Arguments:
 1. "address"          (string, required) The address
 2. "label"            (string, optional, default="") An optional label
 3. rescan               (boolean, optional, default=true) Rescan the wallet for transactions
 
 Note: This call can take minutes to complete if rescan is true.
 
-### `importprivkey "komodoprivkey" ( "label" rescan )`
+Examples:
+
+Import an address with rescan
+```bash
+> verus importaddress "myaddress"
+```
+Import using a label without rescan
+```bash
+> verus importaddress "myaddress" "testing" false
+```
+As a JSON-RPC call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importaddress", "params": ["myaddress", "testing", false] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
+### `importprivkey "verusprivkey" ( "label" rescan )`
 Adds a private key (as returned by dumpprivkey) to your wallet.
 
-Arguments:
+#### Arguments:
 1. "verusprivkey"   (string, required) The private key (see dumpprivkey)
 2. "label"            (string, optional, default="") An optional label
 3. rescan               (boolean, optional, default=true) Rescan the wallet for transactions
 
 Note: This call can take minutes to complete if rescan is true.
 
+Examples:
+
+Dump a private key
+```bash
+> verus dumpprivkey "myaddress"
+```
+Import the private key with rescan
+```bash
+> verus importprivkey "mykey"
+```
+Import using a label and without rescan
+```bash
+> verus importprivkey "mykey" "testing" false
+```
+As a JSON-RPC call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importprivkey", "params": ["mykey", "testing", false] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `importwallet "filename"`
 Imports taddr keys from a wallet dump file (see dumpwallet).
 
-Arguments:
+#### Arguments:
 1. "filename"    (string, required) The wallet file
+
+Examples:
+
+Dump the wallet
+```vash
+> verus dumpwallet "nameofbackup"
+```
+Import the wallet
+```bash
+> verus importwallet "path/to/exportdir/nameofbackup"
+```
+Import using the json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importwallet", "params": ["path/to/exportdir/nameofbackup"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `keypoolrefill ( newsize )`
 Fills the keypool.
@@ -2329,19 +3270,44 @@ Fills the keypool.
 Arguments
 1. newsize     (numeric, optional, default=100) The new keypool size
 
+Examples:
+```bash
+> verus keypoolrefill
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "keypoolrefill", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `listaccounts ( minconf includeWatchonly)`
 DEPRECATED. Returns Object that has account names as keys, account balances as values.
 
-Arguments:
+#### Arguments:
 1. minconf          (numeric, optional, default=1) Only include transactions with at least this many confirmations
 2. includeWatchonly (bool, optional, default=false) Include balances in watchonly addresses (see 'importaddress')
 
-Result:
-```
+#### Result:
+```json
 {                      (json object where keys are account names, and values are numeric balances
   "account": x.xxx,  (numeric) The property name is the account name, and the value is the total balance for the account.
   ...
 }
+```
+
+Examples:
+
+List account balances where there at least 1 confirmation
+```bash
+> verus listaccounts
+```
+List account balances including zero confirmation transactions
+```bash
+> verus listaccounts 0
+```
+List account balances for 6 or more confirmations
+```bash
+> verus listaccounts 6
+```
+As json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listaccounts", "params": [6] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ### `listaddressgroupings`
@@ -2349,8 +3315,8 @@ Lists groups of addresses which have had their common ownership
 made public by common use as inputs or as the resulting change
 in past transactions
 
-Result:
-```
+#### Result:
+```json
 [
   [
     [
@@ -2364,19 +3330,59 @@ Result:
 ]
 ```
 
+Examples:
+```bash
+> verus listaddressgroupings
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listaddressgroupings", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `listlockunspent`
+Returns list of temporarily unspendable outputs.
+See the lockunspent call to lock and unlock transactions for spending.
+
+Result:
+```json
+[
+  {
+    "txid" : "transactionid",     (string) The transaction id locked
+    "vout" : n                      (numeric) The vout value
+  }
+  ,...
+]
+```
+Examples:
+
+List the unspent transactions
+```bash
+> verus listunspent
+```
+Lock an unspent transaction
+```bash
+> verus lockunspent false "[{\"txid\":\"a08e6907dbbd3d809776dbfc5d82e371b764ed838b5655e72f463568df1aadf0\",\"vout\":1}]"
+```
 List the locked transactions
+```bash
+> verus listlockunspent
+```
+Unlock the transaction again
+```bash
+> verus lockunspent true "[{\"txid\":\"a08e6907dbbd3d809776dbfc5d82e371b764ed838b5655e72f463568df1aadf0\",\"vout\":1}]"
+```
+As a json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listlockunspent", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `listreceivedbyaccount ( minconf includeempty includeWatchonly)`
 DEPRECATED. List balances by account.
 
-Arguments:
+#### Arguments:
 1. minconf      (numeric, optional, default=1) The minimum number of confirmations before payments are included.
 2. includeempty (boolean, optional, default=false) Whether to include accounts that haven't received any payments.
 3. includeWatchonly (bool, optional, default=false) Whether to include watchonly addresses (see 'importaddress').
 
-Result:
-```
+#### Result:
+```json
 [
   {
     "involvesWatchonly" : true,   (bool) Only returned if imported addresses were involved in transaction
@@ -2388,16 +3394,23 @@ Result:
 ]
 ```
 
+Examples:
+```bash
+> verus listreceivedbyaccount
+> verus listreceivedbyaccount 6 true
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listreceivedbyaccount", "params": [6, true, true] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `listreceivedbyaddress ( minconf includeempty includeWatchonly)`
 List balances by receiving address.
 
-Arguments:
+#### Arguments:
 1. minconf       (numeric, optional, default=1) The minimum number of confirmations before payments are included.
 2. includeempty  (numeric, optional, default=false) Whether to include addresses that haven't received any payments.
 3. includeWatchonly (bool, optional, default=false) Whether to include watchonly addresses (see 'importaddress').
 
-Result:
-```
+#### Result:
+```json
 [
   {
     "involvesWatchonly" : true,        (bool) Only returned if imported addresses were involved in transaction
@@ -2410,15 +3423,22 @@ Result:
 ]
 ```
 
+Examples:
+```bash
+> verus listreceivedbyaddress
+> verus listreceivedbyaddress 6 true
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listreceivedbyaddress", "params": [6, true, true] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `listsinceblock ( "blockhash" target-confirmations includeWatchonly)`
 Get all transactions in blocks since block [blockhash], or all transactions if omitted
 
-Arguments:
+#### Arguments:
 1. "blockhash"   (string, optional) The block hash to list transactions since
 2. target-confirmations:    (numeric, optional) The confirmations required, must be 1 or more
 3. includeWatchonly:        (bool, optional, default=false) Include transactions to watchonly addresses (see 'importaddress')
-Result:
-```
+#### Result:
+```json
 {
   "transactions": [
     "account":"accountname",       (string) DEPRECATED. The account name associated with the transaction. Will be "" for the default account.
@@ -2442,17 +3462,24 @@ Result:
 }
 ```
 
+Examples:
+```bash
+> verus listsinceblock
+> verus listsinceblock "000000000000000bacf66f7497b7dc45ef753ee9a7d38571037cdb1a57f663ad" 6
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listsinceblock", "params": ["000000000000000bacf66f7497b7dc45ef753ee9a7d38571037cdb1a57f663ad", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `listtransactions ( "account" count from includeWatchonly)`
 Returns up to 'count' most recent transactions skipping the first 'from' transactions for account 'account'.
 
-Arguments:
+#### Arguments:
 1. "account"    (string, optional) DEPRECATED. The account name. Should be "`*`".
 2. count          (numeric, optional, default=10) The number of transactions to return
 3. from           (numeric, optional, default=0) The number of transactions to skip
 4. includeWatchonly (bool, optional, default=false) Include transactions to watchonly addresses (see 'importaddress')
 
-Result:
-```
+#### Result:
+```json
 [
   {
     "account":"accountname",       (string) DEPRECATED. The account name associated with the transaction.
@@ -2488,24 +3515,39 @@ Result:
 ]
 ```
 
+Examples:
+
+List the most recent 10 transactions in the systems
+```bash
+> verus listtransactions
+```
+List transactions 100 to 120
+```bash
+> verus listtransactions "*" 20 100
+```
+As a json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listtransactions", "params": ["*", 20, 100] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `listunspent ( minconf maxconf  ["address",...] )`
 Returns array of unspent transaction outputs with between minconf and maxconf (inclusive) confirmations.
 Optionally filter to only include txouts paid to specified addresses.
 Results are an array of Objects, each of which has:
 {txid, vout, scriptPubKey, amount, confirmations}
 
-Arguments:
+#### Arguments:
 1. minconf          (numeric, optional, default=1) The minimum confirmations to filter
 2. maxconf          (numeric, optional, default=9999999) The maximum confirmations to filter
 3. "addresses"    (string) A json array of VRSC addresses to filter
-```
+```json
     [
       "address"   (string) VRSC address
       ,...
     ]
 ```
 Result
-```
+```json
 [                   (array of json object)
   {
     "txid" : "txid",          (string) the transaction id
@@ -2523,6 +3565,13 @@ Result
 ]
 ```
 
+Examples
+```bash
+> verus listunspent
+> verus listunspent 6 9999999 "[\"RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV\",\"RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV\"]"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listunspent", "params": [6, 9999999 "[\"RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV\",\"RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV\"]"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `lockunspent unlock [{"txid":"txid","vout":n},...]`
 Updates list of temporarily unspendable outputs.
 Temporarily lock (unlock=false) or unlock (unlock=true) specified transaction outputs.
@@ -2530,10 +3579,10 @@ A locked transaction output will not be chosen by automatic coin selection, when
 Locks are stored in memory only. Nodes start with zero locked outputs, and the locked output list is always cleared (by virtue of process exit) when a node stops or fails.
 Also see the listunspent call
 
-Arguments:
+#### Arguments:
 1. unlock            (boolean, required) Whether to unlock (true) or lock (false) the specified transactions
 2. "transactions"  (string, required) A json array of objects. Each object the txid (string) vout (numeric)
-```
+```json
      [           (json array of json objects)
        {
          "txid":"id",    (string) The transaction id
@@ -2542,21 +3591,59 @@ Arguments:
        ,...
      ]
 ```
-Result:
+#### Result:
 true|false    (boolean) Whether the command was successful or not
+
+Examples:
+
+List the unspent transactions
+```bash
+> verus listunspent
+```
+Lock an unspent transaction
+```bash
+> verus lockunspent false "[{\"txid\":\"a08e6907dbbd3d809776dbfc5d82e371b764ed838b5655e72f463568df1aadf0\",\"vout\":1}]"
+```
+List the locked transactions
+```bash
+> verus listlockunspent
+```
+Unlock the transaction again
+```bash
+> verus lockunspent true "[{\"txid\":\"a08e6907dbbd3d809776dbfc5d82e371b764ed838b5655e72f463568df1aadf0\",\"vout\":1}]"
+```
+As a json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "lockunspent", "params": [false, "[{\"txid\":\"a08e6907dbbd3d809776dbfc5d82e371b764ed838b5655e72f463568df1aadf0\",\"vout\":1}]"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `move "fromaccount" "toaccount" amount ( minconf "comment" )`
 DEPRECATED. Move a specified amount from one account in your wallet to another.
 
-Arguments:
+#### Arguments:
 1. "fromaccount"   (string, required) MUST be set to the empty string "" to represent the default account. Passing any other string will result in an error.
 2. "toaccount"     (string, required) MUST be set to the empty string "" to represent the default account. Passing any other string will result in an error.
 3. amount            (numeric) Quantity of VRSC to move between accounts.
 4. minconf           (numeric, optional, default=1) Only use funds with at least this many confirmations.
 5. "comment"       (string, optional) An optional comment, stored in the wallet only.
 
-Result:
+#### Result:
 true|false           (boolean) true if successful.
+
+Examples:
+
+Move 0.01 VRSC from the default account to the account named tabby
+```bash
+> verus move "" "tabby" 0.01
+```
+Move 0.01 VRSC timotei to akiko with a comment and funds have 6 confirmations
+```bash
+> verus move "timotei" "akiko" 0.01 6 "happy birthday!"
+```
+As a json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "move", "params": ["timotei", "akiko", 0.01, 6, "happy birthday!"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `resendwallettransactions`
 Immediately re-broadcast unconfirmed wallet transactions to all peers.
@@ -2567,7 +3654,7 @@ Returns array of transaction ids that were re-broadcast.
 DEPRECATED (use sendtoaddress). Sent an amount from an account to a VRSC address.
 The amount is a real and is rounded to the nearest 0.00000001.
 
-Arguments:
+#### Arguments:
 1. "fromaccount"       (string, required) MUST be set to the empty string "" to represent the default account. Passing any other string will result in an error.
 2. "toVRSCaddress"  (string, required) The VRSC address to send funds to.
 3. amount                (numeric, required) The amount in VRSC (transaction fee is added on top).
@@ -2578,16 +3665,31 @@ Arguments:
                                      to which you're sending the transaction. This is not part of the transaction,
                                      it is just kept in your wallet.
 
-Result:
+#### Result:
 "transactionid"        (string) The transaction id.
+
+Examples:
+
+Send 0.01 VRSC from the default account to the address, must have at least 1 confirmation
+```bash
+> verus sendfrom "" "RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV" 0.01
+```
+Send 0.01 from the tabby account to the given address, funds must have at least 6 confirmations
+```bash
+> verus sendfrom "tabby" "RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV" 0.01 6 "donation" "seans outpost"
+```
+As a json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sendfrom", "params": ["tabby", "RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV", 0.01, 6, "donation", "seans outpost"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `sendmany "fromaccount" {"address":amount,...} ( minconf "comment" ["address",...] )`
 Send multiple times. Amounts are decimal numbers with at most 8 digits of precision.
 
-Arguments:
+#### Arguments:
 1. "fromaccount"         (string, required) MUST be set to the empty string "" to represent the default account. Passing any other string will result in an error.
 2. "amounts"             (string, required) A json object with addresses and amounts
-```
+```json
     {
       "address":amount   (numeric) The VRSC address is the key, the numeric amount in VRSC is the value
       ,...
@@ -2596,98 +3698,194 @@ Arguments:
 3. minconf                 (numeric, optional, default=1) Only use the balance confirmed at least this many times.
 4. "comment"             (string, optional) A comment
 5. subtractfeefromamount   (string, optional) A json array with addresses. The fee will be equally deducted from the amount of each selected address. Those recipients will receive less VRSC than you enter in their corresponding amount field. If no addresses are specified here, the sender pays the fee.
-```
+```json
     [
       "address"            (string) Subtract fee from this address
       ,...
     ]
 ```
-Result:
+
+#### Result:
 "transactionid"          (string) The transaction id for the send. Only 1 transaction is created regardless of the number of addresses.
+
+Examples:
+
+Send two amounts to two different addresses:
+```bash
+> verus sendmany "" "{\"RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV\":0.01,\"RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV\":0.02}"
+```
+Send two amounts to two different addresses setting the confirmation and comment:
+```bash
+> verus sendmany "" "{\"RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV\":0.01,\"RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV\":0.02}" 6 "testing"
+```
+Send two amounts to two different addresses, subtract fee from amount:
+```bash
+> verus sendmany "" "{\"RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV\":0.01,\"RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV\":0.02}" 1 "" "[\"RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV\",\"RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV\"]"
+```
+As a json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sendmany", "params": ["", "{\"RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV\":0.01,\"RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV\":0.02}", 6, "testing"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `sendtoaddress "VRSC_address" amount ( "comment" "comment-to" subtractfeefromamount )`
 Send an amount to a given address. The amount is a real and is rounded to the nearest 0.00000001
 
-Arguments:
+#### Arguments:
 1. "VRSC_address"  (string, required) The VRSC address to send to.
 2. "amount"      (numeric, required) The amount in VRSC to send. eg 0.1
 3. "comment"     (string, optional) A comment used to store what the transaction is for. This is not part of the transaction, just kept in your wallet.
 4. "comment-to"  (string, optional) A comment to store the name of the person or organization to which you're sending the transaction. This is not part of the transaction, just kept in your wallet.
 5. subtractfeefromamount  (boolean, optional, default=false) The fee will be deducted from the amount being sent. The recipient will receive less VRSC than you enter in the amount field.
 
-Result:
+#### Result:
 "transactionid"  (string) The transaction id.
+
+Examples:
+```bash
+> verus sendtoaddress "RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV" 0.1
+> verus sendtoaddress "RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV" 0.1 "donation" "seans outpost"
+> verus sendtoaddress "RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV" 0.1 "" "" true
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sendtoaddress", "params": ["RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV", 0.1, "donation", "seans outpost"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `setaccount "VRSC_address" "account"`
 DEPRECATED. Sets the account associated with the given address.
 
-Arguments:
+#### Arguments:
 1. "VRSC_address"  (string, required) The VRSC address to be associated with an account.
 2. "account"         (string, required) MUST be set to the empty string "" to represent the default account. Passing any other string will result in an error.
+
+Examples:
+```bash
+> verus setaccount "RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV" "tabby"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "setaccount", "params": ["RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV", "tabby"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `settxfee amount`
 Set the transaction fee per kB.
 
-Arguments:
+#### Arguments:
 1. amount         (numeric, required) The transaction fee in VRSC/kB rounded to the nearest 0.00000001
 
-Result
+#### Result:
 true|false        (boolean) Returns true if successful
+
+Examples:
+```bash
+> verus settxfee 0.00001
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "settxfee", "params": [0.00001] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `signfile "address or identity" "filepath/filename" "curentsig"`
 Generates a SHA256D hash of the file, returns the hash, and signs the hash with the private key specified
 
-Arguments:
+#### Arguments:
 1. "t-addr or identity" (string, required) The transparent address or identity to use for signing.
 2. "filename"        (string, required) Local file to sign
 2. "cursig"          (string) The current signature of the message encoded in base 64 if multisig ID
 
-Result:
-```
+#### Result:
+```json
 {
   "hash":"hexhash"         (string) The hash of the message (SHA256, NOT SHA256D)
   "signature":"base64sig"  (string) The aggregate signature of the message encoded in base 64 if all or partial signing successful
 }
+```
+
+Examples:
+
+Create the signature
+```bash
+> verus signfile "RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV" "filepath/filename"
+```
+Verify the signature
+```bash
+> verus verifyfile "RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV" "signature" "filepath/filename"
+```
+As json rpc
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "signfile", "params": ["RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV", "filepath/filename"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ### `signmessage "address or identity" "message" "curentsig"`
 Sign a message with the private key of a t-addr or the authorities present in this wallet for an identity
 
-Arguments:
+#### Arguments:
 1. "t-addr or identity" (string, required) The transparent address or identity to use for signing.
 2. "message"                   (string, required) The message to create a signature of.
 2. "cursig"                    (string) The current signature of the message encoded in base 64 if multisig ID
 
-Result:
-```
+#### Result:
+```json
 {
   "hash":"hexhash"         (string) The hash of the message (SHA256, NOT SHA256D)
   "signature":"base64sig"  (string) The aggregate signature of the message encoded in base 64 if all or partial signing successful
 }
+```
+Examples:
+
+Create the signature
+```bash
+> verus signmessage "RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV" "my message"
+```
+Verify the signature
+```bash
+> verus verifymessage "RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV" "signature" "my message"
+```
+As json rpc
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "signmessage", "params": ["RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV", "my message"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ### `z_exportkey "zaddr"`
 Reveals the zkey corresponding to 'zaddr'.
 Then the `z_importkey` can be used with this output
 
-Arguments:
+#### Arguments:
 1. "zaddr"   (string, required) The zaddr for the private key
+
+#### Result:
+"key"                  (string) The private key
+
+Examples:
+```bash
+> verus z_exportkey "myaddress"
+> verus z_importkey "mykey"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_exportkey", "params": ["myaddress"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `z_exportviewingkey "zaddr"`
 Reveals the viewing key corresponding to 'zaddr'.
 Then the `z_importviewingkey` can be used with this output
 
-Arguments:
+#### Arguments:
 1. "zaddr"   (string, required) The zaddr for the viewing key
+
+Result:
+"vkey"                  (string) The viewing key
+
+Examples:
+```bash
+> verus z_exportviewingkey "myaddress"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_exportviewingkey", "params": ["myaddress"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `z_exportwallet "filename" (omitemptytaddresses)`
 Exports all wallet keys, for taddr and zaddr, in a human-readable format.  Overwriting an existing file is not permitted.
 
-Arguments:
+#### Arguments:
 1. "filename"            (string, required) The filename, saved in folder set by verusd -exportdir option
 2. "omitemptytaddresses" (boolean, optional) Defaults to false. If true, export only addresses with indexed UTXOs or that control IDs in the wallet
                                                (do not use this option without being sure that all addresses of interest are included)
 
+#### Result:
+"path"           (string) The full path of the destination file
+
+Examples:
+```bash
+> verus z_exportwallet "test"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_exportwallet", "params": ["test"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `z_getbalance "address" ( minconf )`
 Returns the balance of a taddr or zaddr belonging to the node's wallet.
@@ -2695,12 +3893,27 @@ Returns the balance of a taddr or zaddr belonging to the node's wallet.
 CAUTION: If the wallet has only an incoming viewing key for this address, then spends cannot be
 detected, and so the returned balance may be larger than the actual balance.
 
-Arguments:
+#### Arguments:
 1. "address"      (string) The selected address. It may be a transparent or private address.
 2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.
 
-Result:
+#### Result:
 amount              (numeric) The total amount in KMD received for this address.
+
+Examples:
+
+The total amount received by address "myaddress"
+```bash
+> verus z_getbalance "myaddress"
+```
+The total amount received by address "myaddress" at least 5 blocks confirmed
+```bash
+> verus z_getbalance "myaddress" 5
+```
+As a json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_getbalance", "params": ["myaddress", 5] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `z_getmigrationstatus`
 Returns information about the status of the Sprout to Sapling migration.
@@ -2708,8 +3921,8 @@ Note: A transaction is defined as finalized if it has at least ten confirmations
 Also, it is possible that manually created transactions involving this wallet
 will be included in the result.
 
-Result:
-```
+#### Result:
+```json
 {
   "enabled": true|false,                    (boolean) Whether or not migration is enabled
   "destination_address": "zaddr",           (string) The Sapling address that will receive Sprout funds
@@ -2727,23 +3940,48 @@ Returns a new shielded address for receiving payments.
 
 With no arguments, returns a Sapling address.
 
-Arguments:
+#### Arguments:
 1. "type"         (string, optional, default="sapling") The type of address. One of ["sprout", "sapling"].
 
-Result:
+#### Result:
 "VRSC_address"    (string) The new shielded address.
+
+Examples:
+```bash
+> verus z_getnewaddress
+> verus z_getnewaddress sapling
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_getnewaddress", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `z_getoperationresult (["operationid", ... ])`
 Retrieve the result and status of an operation which has finished, and then remove the operation from memory.
 
-Arguments:
+#### Arguments:
 1. "operationid"         (array, optional) A list of operation ids we are interested in.  If not provided, examine all operations known to the node.
+
+#### Result:
+"    [object, ...]"      (array) A list of JSON objects
+
+Examples:
+```bash
+> verus z_getoperationresult '["operationid", ... ]'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_getoperationresult", "params": ['["operationid", ... ]'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `z_getoperationstatus (["operationid", ... ])`
 Get operation status and any associated result or error data.  The operation will remain in memory.
 
-Arguments:
+#### Arguments:
 1. "operationid"         (array, optional) A list of operation ids we are interested in.  If not provided, examine all operations known to the node.
+
+#### Result:
+"    [object, ...]"      (array) A list of JSON objects
+
+Examples:
+```bash
+> verus z_getoperationstatus '["operationid", ... ]'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_getoperationstatus", "params": ['["operationid", ... ]'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `z_gettotalbalance ( minconf includeWatchonly )`
 Return the total value of funds stored in the node's wallet.
@@ -2752,12 +3990,12 @@ CAUTION: If the wallet contains any addresses for which it only has incoming vie
 the returned private balance may be larger than the actual balance, because spends cannot
 be detected with incoming viewing keys.
 
-Arguments:
+#### Arguments:
 1. minconf          (numeric, optional, default=1) Only include private and transparent transactions confirmed at least this many times.
 2. includeWatchonly (bool, optional, default=false) Also include balance in watchonly addresses (see 'importaddress' and 'z_importviewingkey')
 
-Result:
-```
+#### Result:
+```json
 {
   "transparent": xxxxx,     (numeric) the total balance of transparent funds
   "private": xxxxx,         (numeric) the total balance of shielded funds (in both Sprout and Sapling addresses)
@@ -2765,20 +4003,58 @@ Result:
 }
 ```
 
+Examples:
+
+The total amount in the wallet
+```bash
+> verus z_gettotalbalance
+```
+The total amount in the wallet at least 5 blocks confirmed
+```bash
+> verus z_gettotalbalance 5
+```
+As a json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_gettotalbalance", "params": [5] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `z_importkey "zkey" ( rescan startHeight )`
 Adds a zkey (as returned by z_exportkey) to your wallet.
 
-Arguments:
+#### Arguments:
 1. "zkey"             (string, required) The zkey (see z_exportkey)
 2. rescan             (string, optional, default="whenkeyisnew") Rescan the wallet for transactions - can be "yes", "no" or "whenkeyisnew"
 3. startHeight        (numeric, optional, default=0) Block height to start rescan from
 
 Note: This call can take minutes to complete if rescan is true.
 
+Examples:
+
+Export a zkey
+```bash
+> verus z_exportkey "myaddress"
+```
+Import the zkey with rescan
+```bash
+> verus z_importkey "mykey"
+```
+Import the zkey with partial rescan
+```bash
+> verus z_importkey "mykey" whenkeyisnew 30000
+```
+Re-import the zkey with longer partial rescan
+```bash
+> verus z_importkey "mykey" yes 200000
+```
+As a JSON-RPC call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_importkey", "params": ["mykey", "no"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `z_importviewingkey "vkey" ( rescan startHeight )`
 Adds a viewing key (as returned by z_exportviewingkey) to your wallet.
 
-Arguments:
+#### Arguments:
 1. "vkey"             (string, required) The viewing key (see z_exportviewingkey)
 2. rescan             (string, optional, default="whenkeyisnew") Rescan the wallet for transactions - can be "yes", "no" or "whenkeyisnew"
 3. startHeight        (numeric, optional, default=0) Block height to start rescan from
@@ -2786,33 +4062,101 @@ Arguments:
 
 Note: This call can take minutes to complete if rescan is true.
 
+Examples:
+
+Import a viewing key
+```bash
+> verus z_importviewingkey "vkey"
+```
+Import the viewing key without rescan
+```bash
+> verus z_importviewingkey "vkey", no
+```
+Import the viewing key with partial rescan
+```bash
+> verus z_importviewingkey "vkey" whenkeyisnew 30000
+```
+Re-import the viewing key with longer partial rescan
+```bash
+> verus z_importviewingkey "vkey" yes 20000
+```
+Import the viewing key for Sapling address
+```bash
+> verus z_importviewingkey "vkey" no 0 "zaddr"
+```
+As a JSON-RPC call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_importviewingkey", "params": ["vkey", "no"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `z_importwallet "filename"`
 Imports taddr and zaddr keys from a wallet export file (see z_exportwallet).
 
-Arguments:
+#### Arguments:
 1. "filename"    (string, required) The wallet file
+
+Examples:
+
+Dump the wallet
+```bash
+> verus z_exportwallet "nameofbackup"
+```
+Import the wallet
+```bash
+> verus z_importwallet "path/to/exportdir/nameofbackup"
+```
+Import using the json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_importwallet", "params": ["path/to/exportdir/nameofbackup"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `z_listaddresses ( includeWatchonly )`
 Returns the list of Sprout and Sapling shielded addresses belonging to the wallet.
 
-Arguments:
+#### Arguments:
 1. includeWatchonly (bool, optional, default=false) Also include watchonly addresses (see 'z_importviewingkey')
+
+#### Result:
+```json
+[                     (json array of string)
+  "zaddr"           (string) a zaddr belonging to the wallet
+  ,...
+]
+```
+Examples:
+```bash
+> verus z_listaddresses
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_listaddresses", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `z_listoperationids`
 Returns the list of operation ids currently known to the wallet.
 
-Arguments:
+#### Arguments:
 1. "status"         (string, optional) Filter result by the operation's state e.g. "success".
+
+#### Result:
+```json
+[                     (json array of string)
+  "operationid"       (string) an operation id belonging to the wallet
+  ,...
+]
+```
+Examples:
+```bash
+> verus z_listoperationids
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_listoperationids", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `z_listreceivedbyaddress "address" ( minconf )`
 Return a list of amounts received by a zaddr belonging to the node's wallet.
 
-Arguments:
+#### Arguments:
 1. "address"      (string) The private address.
 2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.
 
-Result:
-```
+#### Result:
+```json
 {
   "txid": "txid",           (string) the transaction id
   "amount": xxxxx,         (numeric) the amount of value in the note
@@ -2824,6 +4168,12 @@ Result:
 }
 ```
 
+Examples:
+```bash
+> verus z_listreceivedbyaddress "ztfaW34Gj9FrnGUEf833ywDVL62NWXBM81u6EQnM6VR45eYnXhwztecW1SjxA7JrmAXKJhxhj3vDNEpVCQoSvVoSpmbhtjf"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_listreceivedbyaddress", "params": ["ztfaW34Gj9FrnGUEf833ywDVL62NWXBM81u6EQnM6VR45eYnXhwztecW1SjxA7JrmAXKJhxhj3vDNEpVCQoSvVoSpmbhtjf"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `z_listunspent ( minconf maxconf includeWatchonly ["zaddr",...] )`
 Returns array of unspent shielded notes with between minconf and maxconf (inclusive) confirmations.
 Optionally filter to only include notes sent to specified addresses.
@@ -2832,19 +4182,19 @@ Results are an array of Objects, each of which has:
 {txid, jsindex, jsoutindex, confirmations, address, amount, memo} (Sprout)
 {txid, outindex, confirmations, address, amount, memo} (Sapling)
 
-Arguments:
+#### Arguments:
 1. minconf          (numeric, optional, default=1) The minimum confirmations to filter
 2. maxconf          (numeric, optional, default=9999999) The maximum confirmations to filter
 3. includeWatchonly (bool, optional, default=false) Also include watchonly addresses (see 'z_importviewingkey')
 4. "addresses"      (string) A json array of zaddrs (both Sprout and Sapling) to filter on.  Duplicate addresses not allowed.
-```
+```json
     [
       "address"     (string) zaddr
       ,...
     ]
 ```
 Result
-```
+```json
 [                             (array of json object)
   {
     "txid" : "txid",          (string) the transaction id
@@ -2862,9 +4212,16 @@ Result
 ]
 ```
 
+Examples
+```bash
+> verus z_listunspent
+> verus z_listunspent 6 9999999 false "[\"ztbx5DLDxa5ZLFTchHhoPNkKs57QzSyib6UqXpEdy76T1aUdFxJt1w9318Z8DJ73XzbnWHKEZP9Yjg712N5kMmP4QzS9iC9\",\"ztfaW34Gj9FrnGUEf833ywDVL62NWXBM81u6EQnM6VR45eYnXhwztecW1SjxA7JrmAXKJhxhj3vDNEpVCQoSvVoSpmbhtjf\"]"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_listunspent", "params": [6 9999999 false "[\"ztbx5DLDxa5ZLFTchHhoPNkKs57QzSyib6UqXpEdy76T1aUdFxJt1w9318Z8DJ73XzbnWHKEZP9Yjg712N5kMmP4QzS9iC9\",\"ztfaW34Gj9FrnGUEf833ywDVL62NWXBM81u6EQnM6VR45eYnXhwztecW1SjxA7JrmAXKJhxhj3vDNEpVCQoSvVoSpmbhtjf\"]"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `z_mergetoaddress ["fromaddress", ... ] "toaddress" ( fee ) ( transparent_limit ) ( shielded_limit ) ( memo )`
 WARNING: z_mergetoaddress is disabled.
-To enable it, restart zcashd with the `-experimentalfeatures` and
+To enable it, restart verusd with the `-experimentalfeatures` and
 `-zmergetoaddress` commandline options, or add these two lines
 to the `VRSC.conf` file:
 ```
@@ -2875,9 +4232,9 @@ Merge multiple UTXOs and notes into a single UTXO or note. Protected coinbase UT
 
 This is an asynchronous operation, and UTXOs selected for merging will be locked.  If there is an error, they are unlocked.  The RPC call `listlockunspent` can be used to return a list of locked UTXOs.
 
-The number of UTXOs and notes selected for merging can be limited by the caller.  If the transparent limit parameter is set to zero, and Overwinter is not yet active, the -mempooltxinputlimit option will determine the number of UTXOs. After Overwinter has activated -mempooltxinputlimit is ignored and having a transparent input limit of zero will mean limit the number of UTXOs based on the size of the transaction.  Any limit is constrained by the consensus rule defining a maximum transaction size of 100000 bytes before Sapling, and 2000000 bytes once Sapling activates.
+The number of UTXOs and notes selected for merging can be limited by the caller.  If the transparent limit parameter is set to zero, and Overwinter is not yet active, the `-mempooltxinputlimit` option will determine the number of UTXOs. After Overwinter has activated `-mempooltxinputlimit` is ignored and having a transparent input limit of zero will mean limit the number of UTXOs based on the size of the transaction.  Any limit is constrained by the consensus rule defining a maximum transaction size of 100000 bytes before Sapling, and 2000000 bytes once Sapling activates.
 
-Arguments:
+#### Arguments:
 1. fromaddresses         (array, required) A JSON array with addresses.
                          The following special strings are accepted inside the array:
                              - "ANY_TADDR":   Merge UTXOs from any t-addrs belonging to the wallet.
@@ -2886,7 +4243,7 @@ Arguments:
                          While it is possible to use a variety of different combinations of addresses and the above values,
                          it is not possible to send funds from both sprout and sapling addresses simultaneously. If a special
                          string is given, any given addresses of that type will be counted as duplicates and cause an error.
-```
+```json
     [
       "address"          (string) Can be a t-addr or a zaddr
       ,...
@@ -2898,8 +4255,8 @@ Arguments:
 5. shielded_limit        (numeric, optional, default=20 Sprout or 200 Sapling Notes) Limit on the maximum number of notes to merge.  Set to 0 to merge as many as will fit in the transaction.
 6. "memo"                (string, optional) Encoded as hex. When toaddress is a zaddr, this will be stored in the memo field of the new note.
 
-Result:
-```
+#### Result:
+```json
 {
   "remainingUTXOs": xxx               (numeric) Number of UTXOs still available for merging.
   "remainingTransparentValue": xxx    (numeric) Value of UTXOs still available for merging.
@@ -2913,16 +4270,22 @@ Result:
 }
 ```
 
+Examples
+```bash
+> verus z_mergetoaddress '["ANY_SAPLING", "RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV"]' ztfaW34Gj9FrnGUEf833ywDVL62NWXBM81u6EQnM6VR45eYnXhwztecW1SjxA7JrmAXKJhxhj3vDNEpVCQoSvVoSpmbhtjf
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_mergetoaddress", "params": [["ANY_SAPLING", "RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV"], "ztfaW34Gj9FrnGUEf833ywDVL62NWXBM81u6EQnM6VR45eYnXhwztecW1SjxA7JrmAXKJhxhj3vDNEpVCQoSvVoSpmbhtjf"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `z_sendmany "fromaddress" [{"address":... ,"amount":...},...] ( minconf ) ( fee )`
 Send multiple times. Amounts are decimal numbers with at most 8 digits of precision.
 Change generated from a taddr flows to a new taddr address, while change generated from a zaddr returns to itself.
 When sending coinbase UTXOs to a zaddr, change is not allowed. The entire value of the UTXO(s) must be consumed.
 Before Sapling activates, the maximum number of zaddr outputs is 54 due to transaction size limits.
 
-Arguments:
+#### Arguments:
 1. "fromaddress"         (string, required) The taddr or zaddr to send the funds from.
 2. "amounts"             (array, required) An array of json objects representing the amounts to send.
-```
+```json
     [{
       "address":address  (string, required) The address is a taddr or zaddr
       "amount":amount    (numeric, required) The numeric amount in KMD is the value
@@ -2932,25 +4295,34 @@ Arguments:
 3. minconf               (numeric, optional, default=1) Only use funds confirmed at least this many times.
 4. fee                   (numeric, optional, default=0.0001) The fee amount to attach to this transaction.
 
-Result:
+#### Result:
 "operationid"          (string) An operationid to pass to z_getoperationstatus to get the result of the operation.
+
+Examples:
+```bash
+> verus z_sendmany "RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV" '[{"address": "ztfaW34Gj9FrnGUEf833ywDVL62NWXBM81u6EQnM6VR45eYnXhwztecW1SjxA7JrmAXKJhxhj3vDNEpVCQoSvVoSpmbhtjf" ,"amount": 5.0}]'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_sendmany", "params": ["RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV", [{"address": "ztfaW34Gj9FrnGUEf833ywDVL62NWXBM81u6EQnM6VR45eYnXhwztecW1SjxA7JrmAXKJhxhj3vDNEpVCQoSvVoSpmbhtjf" ,"amount": 5.0}]] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
 
 ### `z_setmigration enabled`
 When enabled the Sprout to Sapling migration will attempt to migrate all funds from this wallet’s Sprout addresses to either the address for Sapling account 0 or the address specified by the parameter `-migrationdestaddress`.
 
 This migration is designed to minimize information leakage. As a result for wallets with a significant Sprout balance, this process may take several weeks. The migration works by sending, up to 5, as many transactions as possible whenever the blockchain reaches a height equal to 499 modulo 500. The transaction amounts are picked according to the random distribution specified in ZIP 308. The migration will end once the wallet’s Sprout balance is below 0.01 VRSC.
 
+#### Arguments:
+1. enabled  (boolean, required) 'true' or 'false' to enable or disable respectively.
+
 ### `z_shieldcoinbase "fromaddress" "tozaddress" ( fee ) ( limit )`
 Shield transparent coinbase funds by sending to a shielded zaddr.  This is an asynchronous operation and utxos selected for shielding will be locked.  If there is an error, they are unlocked.  The RPC call `listlockunspent` can be used to return a list of locked utxos.  The number of coinbase utxos selected for shielding can be limited by the caller.  If the limit parameter is set to zero, and Overwinter is not yet active, the `-mempooltxinputlimit` option will determine the number of uxtos.  Any limit is constrained by the consensus rule defining a maximum transaction size of 100000 bytes before Sapling, and 2000000 bytes once Sapling activates.
 
-Arguments:
+#### Arguments:
 1. "fromaddress"         (string, required) The address is a taddr or "`*`" for all taddrs belonging to the wallet.
 2. "toaddress"           (string, required) The address is a zaddr.
 3. fee                   (numeric, optional, default=0.0001) The fee amount to attach to this transaction.
 4. limit                 (numeric, optional, default=50) Limit on the maximum number of utxos to shield.  Set to 0 to use node option -mempooltxinputlimit (before Overwinter), or as many as will fit in the transaction (after Overwinter).
 
-Result:
-```
+#### Result:
+```json
 {
   "remainingUTXOs": xxx       (numeric) Number of coinbase utxos still available for shielding.
   "remainingValue": xxx       (numeric) Value of coinbase utxos still available for shielding.
@@ -2960,14 +4332,20 @@ Result:
 }
 ```
 
+Examples:
+```bash
+> verus z_shieldcoinbase "RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV" "ztfaW34Gj9FrnGUEf833ywDVL62NWXBM81u6EQnM6VR45eYnXhwztecW1SjxA7JrmAXKJhxhj3vDNEpVCQoSvVoSpmbhtjf"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_shieldcoinbase", "params": ["RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV", "ztfaW34Gj9FrnGUEf833ywDVL62NWXBM81u6EQnM6VR45eYnXhwztecW1SjxA7JrmAXKJhxhj3vDNEpVCQoSvVoSpmbhtjf"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `z_viewtransaction "txid"`
 Get detailed shielded information about in-wallet transaction <txid>
 
-Arguments:
+#### Arguments:
 1. "txid" (string, required) The transaction id
 
-Result:
-```
+#### Result:
+```json
 {
   "txid" : "transactionid",   (string) The transaction id
   "spends" : [
@@ -3004,12 +4382,18 @@ Result:
 }
 ```
 
+Examples:
+```bash
+> verus z_viewtransaction "1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_viewtransaction", "params": ["1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `zcbenchmark benchmarktype samplecount`
 Runs a benchmark of the selected type samplecount times,
 returning the running times of each sample.
 
-Output:
-```
+#### Result:
+```json
 [
   {
     "runningtime": runningtime
@@ -3031,7 +4415,7 @@ Outputs are confidential between sender/receiver. The vpub_old and vpub_new valu
 Note: The caller is responsible for delivering the output enc1 and enc2 to the appropriate recipients, as well as signing rawtxout and ensuring it is mined. (A future RPC call will deliver the confidential payments in-band on the blockchain.)
 
 Output:
-```
+```json
 {
 "encryptednote1": enc1,
 "encryptednote2": enc2,
@@ -3043,7 +4427,7 @@ Output:
 DEPRECATED. Generate a zcaddr which can send and receive confidential values.
 
 Output:
-```
+```json
 {
   "zcaddress": zcaddr,
   "zcsecretkey": zcsecretkey,
@@ -3056,7 +4440,7 @@ DEPRECATED. Decrypts encryptednote and checks if the coin commitments
 are in the blockchain as indicated by the "exists" result.
 
 Output:
-```
+```json
 {
   "amount": value,
   "note": noteplaintext,
@@ -3070,4 +4454,4 @@ Perform a joinsplit and return the JSDescription.
 
 compiled by Oink.vrsc@
 
-Note: last revision date 2020-07-14.
+Note: last revision date 2020-09-22.

@@ -2,7 +2,7 @@
 
 ## Important General Information
 
-#### Verus Daemon version 0.7.1
+#### Verus Daemon version 0.7.2
 
 Usage: `verusd [options]` Start Verus Daemon
 
@@ -349,7 +349,7 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
   `-mineraddress`
       Send mined coins to a specific single address or ID.
 
-  `defaultid`
+  `-defaultid`
       Set a default destination ID for your staking rewards.
 
   `-genproclimit=<n>`
@@ -415,4 +415,4 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
 compiled by Oink.vrsc@
 
-Note: last revision date 2020-7-17.
+Note: last revision date 2020-9-21.
