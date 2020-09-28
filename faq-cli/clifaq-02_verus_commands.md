@@ -1173,10 +1173,30 @@ Examples:
 
 ### `updateidentity "jsonidentity" (returntx)`
 #### Arguments:
-       "returntx"                        (bool,   optional) defaults to false and transaction is sent, if true, transaction is signed by this wallet and returned
+```json
+{
+	  "version": n,                   (integer, optional) version number
+      "flags": n,                     (integer, required) flag
+      "primaryaddresses": [
+        "xxxx", ...                   (text, required) Public addresses that control this ID
+      ],
+      "minimumsignatures": n,         (integer, required) Amount of signatures required to spend UTXOs on this ID
+      "identityaddress": "xxxx",      (text, optional) i-address of the ID
+      "parent": "xxxx",               (text, optional) Parent ID of the chain the ID is on
+      "name": "xxxx",                 (text, required) the identity name
+      "contentmap": {
+      },
+      "revocationauthority": "xxxx",  (text, optional) the i-address of the identity that can revoke this ID
+      "recoveryauthority": "xxxx",    (text, optional) the i-address of the identity that can recover this ID when revoked
+      "timelock": 0,                  (integer, optional) timelock
+			"privateaddress": "xxxx"        (text, optional) private address attached to the ID
+}
 
-#### Result: ***`updated info`***
-transactionid                   (hexstr)
+feeoffer                           (amount, optional) amount to offer miner/staker for the registration fee, if missing, uses standard price
+```
+
+#### Result:
+   transactionid                   (hexstr)
 
 Examples:
 ```bash
