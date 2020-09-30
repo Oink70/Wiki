@@ -2,11 +2,11 @@
 
 ## Important General Information
 
-Your Verus `wallet.dat` is standard located in:
-
- * On windows this is located at `%AppData%\Komodo\VRSC`.
- * On linux it is located at `~/.komodo/VRSC`.
- * On MacOS it is located at `~/Library/Application Support/komodo/VRSC`
+### Verus `Wallet.dat`, Chaindata & `VRSC.conf` standard locations
+ * Linux:		`~/.Komodo/VRSC`
+ * Mac OS: 	`~/Library/Application Support/Komodo/VRSC`
+ * Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
+ * OS independent through Verus Desktop: Click `help`, `Show Verus data folder (default)`
 
 Note: For Komodo the base directory is `komodo`.
 For Komodo asset chains it is a folder/directory in the `komodo` base directory (eg `komodo/PIRATE`) with the **official** coin designation.
@@ -53,4 +53,4 @@ The exported wallet should be a file called `<mywalletexport>`, standard in the 
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-09-19.
+Note: revision date 2020-09-30.

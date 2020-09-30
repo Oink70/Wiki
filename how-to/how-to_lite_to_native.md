@@ -4,10 +4,11 @@ Attention: Read completely before use.
 
 #### Important General Information
 
-`VRSC wallet & data location` on different OS:
-Linux GUI: `~/.Komodo/VRSC`
-Mac OS: `/Users//Library/Application Support/Komodo/VRSC`
-Windows 10: `%AppData%\Roaming\Komodo\VRSC\`
+### Verus `Wallet.dat`, Chaindata & `VRSC.conf` standard locations
+ * Linux:		`~/.Komodo/VRSC`
+ * Mac OS: 	`~/Library/Application Support/Komodo/VRSC`
+ * Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
+ * OS independent through Verus Desktop: Click `help`, `Show Verus data folder (default)`
 
 #### Necessary files & links:
 
@@ -39,4 +40,4 @@ If you followed these steps, installed the bootstrap, switched from Lite to Nati
 
 Created by Oink.vrsc@
 
-Note: last revision date 2020-04-24.
+Note: last revision date 2020-09-30.

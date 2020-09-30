@@ -2,10 +2,11 @@
 
 note: Read it completely before use.
 
-#### Wallet & blockchain location:
-Linux GUI:    `~/.Komodo/VRSC`
-Mac OS:       `/Users//Library/Application Support/Komodo/VRSC`
-Windows 10:   `%AppData%\Komodo\VRSC\`
+### Verus `Wallet.dat`, Chaindata & `VRSC.conf` standard locations
+ * Linux:		`~/.Komodo/VRSC`
+ * Mac OS: 	`~/Library/Application Support/Komodo/VRSC`
+ * Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
+ * OS independent through Verus Desktop: Click `help`, `Show Verus data folder (default)`
 
 #### Usefull links:
 Link 1: [Download latest Wallet](https://veruscoin.io/wallet.html)

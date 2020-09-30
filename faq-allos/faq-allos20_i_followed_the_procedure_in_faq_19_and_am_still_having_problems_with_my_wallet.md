@@ -2,11 +2,11 @@
 
 To completely reset your wallet in the event of a fork, particularly if you've already followed [this procedure](#!faq-allos/faq-allos19_what_should_i_do_if_i_end_up_on_my_own_fork_because_of_a_network_issue_or_having_an_old_version_of_the_wallet.md), follow the steps below.
 
-Tip: `VRSC.conf` is standard located in:
-
- * On windows this is located at `%AppData%\Komodo\VRSC\VRSC.conf`
- * On linux it is located at `~/.komodo/VRSC/VRSC.conf`
- * On MacOS it is located at `~/Library/Application Support/Komodo/VRSC`
+### Verus `Wallet.dat`, Chaindata & `VRSC.conf` standard locations
+ * Linux:		`~/.Komodo/VRSC`
+ * Mac OS: 	`~/Library/Application Support/Komodo/VRSC`
+ * Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
+ * OS independent through Verus Desktop: Click `help`, `Show Verus data folder (default)`
 
 ### Important General Information
 
@@ -58,4 +58,4 @@ The exported wallet should be a file called `mywalletexport` in the location you
 
 Depending on the number of addresses in your wallet and how far along you are on re-syncing, this may take several minutes to complete. Your balances will adjust as the chain syncs, as it only knows about the transactions that have happened in the blocks it has received and scanned. That means your balance will adjust as new blocks are scanned and won't reflect an accurate balance until you are fully synced.
 
-Note: last revision date 2020-04-12.
+Note: last revision date 2020-09-30.

@@ -2,11 +2,11 @@
 
 ## Important General Information
 
-Your `wallet.dat` is standard located in:
-
- * On windows this is located at `%AppData%\Komodo\VRSC` or as **absolute path** `c:\Users\LOGINNAME\AppData\Roaming\`.
- * On linux it is located at `~/.komodo/VRSC` or as **absolute path** `/home/LOGINNAME/.komodo/VRSC`.
- * On MacOS it is located at `~/Library/Application Support/Komodo/VRSC` or as **absolute path** `/Users/LOGINNAME/Library/Application\ Support/Komodo/VRSC`.
+### Verus `Wallet.dat`, Chaindata & `VRSC.conf` standard locations
+ * Linux:		`~/.Komodo/VRSC`
+ * Mac OS: 	`~/Library/Application Support/Komodo/VRSC`
+ * Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
+ * OS independent through Verus Desktop: Click `help`, `Show Verus data folder (default)`
 
 `verus command "<userinput>"` needs to be entered literally, with `<userinput>` replaced by your specific userdata. So if the text directs you to use for example `"<Public Address>"`, you replace that (including the `<` and `>`) with the address,
 so it looks similar to this: `"RYX6RYU3AAvwVCNyNM4cVyGUhSMUPvKs3r"`.
@@ -44,4 +44,4 @@ Importing individual keys is explained in detail in this wiki: [import your Lite
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-07-17
+Note: revision date 2020-09-30

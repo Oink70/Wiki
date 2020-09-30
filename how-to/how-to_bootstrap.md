@@ -4,10 +4,11 @@ Attention: Read it completely before using.
 
 ## Important General Information
 
-`VRSC Wallet location` on different OS:
-Linux: `~/.komodo/VRSC`
-Mac OS: `~/Library/Application Support/Komodo/VRSC`
-Windows 10: `%AppData%\Komodo\VRSC\`
+### Verus `Wallet.dat`, Chaindata & `VRSC.conf` standard locations
+ * Linux:		`~/.Komodo/VRSC`
+ * Mac OS: 	`~/Library/Application Support/Komodo/VRSC`
+ * Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
+ * OS independent through Verus Desktop: Click `help`, `Show Verus data folder (default)`
 
 Tip: The easiest way is to copy the location above and paste it into your address bar of your file browser. Your operation system will accept the input, interpret where that location is and bring you there.
 
@@ -49,4 +50,4 @@ If you followed these steps, you will have installed/updated the latest version 
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-08-07.
+Note: revision date 2020-09-30.

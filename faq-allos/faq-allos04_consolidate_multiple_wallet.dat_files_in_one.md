@@ -3,9 +3,10 @@
 Attention: Read it completely before using.
 
 ### Verus `Wallet.dat`, Chaindata & `VRSC.conf` standard locations
-Linux:		`~/.Komodo/VRSC`
-Mac OS: 	`~/Library/Application Support/Komodo/VRSC`
-Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
+ * Linux:		`~/.Komodo/VRSC`
+ * Mac OS: 	`~/Library/Application Support/Komodo/VRSC`
+ * Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
+ * OS independent through Verus Desktop: Click `help`, `Show Verus data folder (default)`
 
 ## Procedure
 
@@ -23,4 +24,4 @@ note: Older versions of verusd required `expordir` to be set in VRSC.conf before
 
 (submitted by @TexWiller, revised by @englal)
 
-note: last revision date 2020-05-25.
+note: last revision date 2020-09-30.
