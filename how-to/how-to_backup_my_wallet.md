@@ -2,6 +2,10 @@
 
 ## Important General Information
 
+## Optional:
+Watch this video with an explanation how to accomplish the steps below: [Backup your wallet](https://youtu.be/ygPsdK8Trck)
+
+
 ### Verus `Wallet.dat`, Chaindata & `VRSC.conf` standard locations
  * Linux:		`~/.Komodo/VRSC`
  * Mac OS: 	`~/Library/Application Support/Komodo/VRSC`
@@ -53,4 +57,4 @@ The exported wallet should be a file called `<mywalletexport>`, standard in the 
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-09-30.
+Note: revision date 2020-10-01.

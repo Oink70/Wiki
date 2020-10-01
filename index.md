@@ -16,9 +16,9 @@ If you have any questions about the information here, need help or have suggesti
 [Bootstrap video](https://youtu.be/ILr8vDgfPHI) ***`Video`***
 
 ## How-To
-[Backup, Install or Update and Bootstrap your wallet](#!how-to/how-to_bootstrap.md) ***`UPDATED`***
+[Backup, Install or Update and Bootstrap your wallet](#!how-to/how-to_bootstrap.md)
 [Verifying the signature of an updated wallet](#!how-to/how-to_check_signatures.md)
-[Backing up my wallet](#!how-to/how-to_backup_my_wallet.md)
+[Backing up my wallet](#!how-to/how-to_backup_my_wallet.md) ***`Updated`***
 [Restoring my wallet](#!how-to/how-to_restore_my_wallet.md)
 [Change Verus-Desktop from Lite Mode to Native Mode](#!how-to/how-to_lite_to_native.md)
 [import your Lite wallet address into your native Verus Desktop](#!how-to/how-to_convert-seed-to-wif.md)
@@ -77,7 +77,7 @@ If you have any questions about the information here, need help or have suggesti
 [MacOS pool-mining on low priority](#!faq-macos/mac-faq04_low_priority_mining.md)
 
 ## Frequently Asked Questions (ARM specific)
-[Hardware and software requirements](#!faq-arm/armfaq-02_requirements.md) ***`NEW`***
+[Hardware and software requirements](#!faq-arm/armfaq-02_requirements.md)
 [error while loading shared libraries: libgomp.so.1](#!faq-arm/armfaq-01_libgomp.so.1.md)
 
 ## CLI wallet specific Information
@@ -89,4 +89,4 @@ If you have any questions about the information here, need help or have suggesti
 [Q&A questions channel Verus-WhiteBIT 2020-07-28](https://wiki.veruscoin.io/q-a/veruscoin-q-a-questions-20200728.html)
 [Q&A reward channel Verus-WhiteBIT 2020-07-28](https://wiki.veruscoin.io/q-a/veruscoin-q-a-reward-20200728.html)
 
-Note: last revision date 2020-09-30.
+Note: last revision date 2020-10-01.
