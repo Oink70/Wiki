@@ -46,4 +46,4 @@ Importing individual keys is explained in detail in this wiki: [import your Lite
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-09-30
+Note: revision date 2020-10-02
