@@ -10,8 +10,8 @@ specific distribution.
 
 There are 3 active branches in ccminer github repo:
   `ARM`             (for 64bit ARM chips with AES intrinsic)
-  `Verus2.1`        (standard x86-64 pc's)
-  `Verus2.1gpu`     (GPUs)
+  `Verus2.2`        (standard x86-64 pc's)
+  `Verus2.2gpu`     (GPUs)
 
 Note: Replace `ARM` in the `git clone` line below with the branchname above you want to use.
 
@@ -42,4 +42,4 @@ And finally starting the miner (Change pool, address & workername to your own li
 
 Info from @Chris - Monkins1010 LOUD Mining.
 
-Note: last revision date 2020-05-13.
+Note: last revision date 2020-10-02.
