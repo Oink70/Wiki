@@ -12,10 +12,6 @@ Attention: Read it completely before using.
 
 Tip: The easiest way is to copy the location above and paste it into your address bar of your file browser. Your operation system will accept the input, interpret where that location is and bring you there.
 
-## Necessary files:
-
-Link 1: [Download latest Wallet](https://veruscoin.io/wallet.html)
-Link 2: [Download Verus Bootstrap](https://bootstrap.veruscoin.io/)
 
 ## Verus-Desktop Procedure
 1. In Verus-Desktop, go to  `help`,  `Show binary folder`. That opens up a file explorer
@@ -37,6 +33,12 @@ Watch this video with an explanation how to accomplish the steps above: [Bootstr
 
 ## Advanced Issue Resolving Procedure
 
+### Necessary files:
+
+Link 1: [Download latest Wallet](https://veruscoin.io/wallet.html)
+Link 2: [Download Verus Bootstrap](https://bootstrap.veruscoin.io/)
+
+### Procedure:
 1. Make sure your wallet is not active.
 2. If you already had you wallet running, backup essential files:
 	a. Go to `VRSC Wallet location`
