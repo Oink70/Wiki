@@ -19,7 +19,7 @@ Note: Replace `ARM` in the `git clone` line below with the branchname above you 
 
 Install dependencies (specific for Debian-based distributions):
 ```bash
-sudo apt-get install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential`
+sudo apt-get install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential
 ```
 For GPU-miner compilation additional sources are required (Not needed for CPU or ARM):
 ```bash
@@ -28,7 +28,7 @@ sudo sh cuda_10.2.89_440.33.01_linux.run
 ```
 Download the source and compile:
 ```bash
-git clone --single-branch -b ARM https://github.com/monkins1010/ccminer.git`
+git clone --single-branch -b ARM https://github.com/monkins1010/ccminer.git
 cd ccminer
 chmod +x build.sh
 chmod +x configure.sh
@@ -42,4 +42,4 @@ And finally starting the miner (Change pool, address & workername to your own li
 
 Info from @Chris - Monkins1010 LOUD Mining.
 
-Note: last revision date 2020-10-02.
+Note: last revision date 2020-10-05.
