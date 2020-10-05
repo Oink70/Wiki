@@ -17,11 +17,25 @@ Tip: The easiest way is to copy the location above and paste it into your addres
 Link 1: [Download latest Wallet](https://veruscoin.io/wallet.html)
 Link 2: [Download Verus Bootstrap](https://bootstrap.veruscoin.io/)
 
+## Verus-Desktop Procedure
+1. In Verus-Desktop, go to  `help`,  `Show binary folder`. That opens up a file explorer
+2. doubleclick `verusd` to get into that folder
+3. Shutdown Verus Desktop and wait for it to close completely
+4. doubleclick `fetch-bootstrap` in your file browser.
+5. Follow the instructions and when finished, start Verus Desktop
+
+## Verus CLI Procedure
+1. Go to the folder where your daemon is extracted (standard `verus-cli`)
+3. Shutdown `verusd` and wait for it to close completely
+4. doubleclick `fetch-bootstrap` in your file browser.
+5. Follow the instructions and when finished, start your `verusd` daemon as usual
+
+
 ## Optional:
-Watch this video with an explanation how to accomplish the steps below: [Bootstrapping your wallet](https://youtu.be/ILr8vDgfPHI)
+Watch this video with an explanation how to accomplish the steps above: [Bootstrapping your wallet using the supplied script](https://youtu.be/xgLxzel5t04)
+
 
 ## Advanced Issue Resolving Procedure
-### As of version 0.7.0-3 this procedure is standard
 
 1. Make sure your wallet is not active.
 2. If you already had you wallet running, backup essential files:
@@ -47,7 +61,10 @@ Watch this video with an explanation how to accomplish the steps below: [Bootstr
 
 If you followed these steps, you will have installed/updated the latest version of a wallet for verus, made a backup of your wallet and installed the bootstrap. If desired you can remove the downloaded bootstrap archive to free up space on your hard drive.
 
+## Optional:
+Watch this video with an explanation how to accomplish the steps above: [Bootstrapping your wallet manually](https://youtu.be/ILr8vDgfPHI)
+
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-09-30.
+Note: revision date 2020-10-05.
