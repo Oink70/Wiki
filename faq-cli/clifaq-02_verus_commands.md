@@ -1017,7 +1017,7 @@ Using json rpc
 ```
     "name"              ID name or ID i-address
 ```
-#### Result: ***`updated info`***
+#### Result: ***`UPDATED INFO`***
 ```json
 {
   "identity": {
@@ -1057,7 +1057,7 @@ Examples:
     "includecansign"     (bool, optional, default=true)    Include identities that we can only sign for but not spend
     "includewatchonly"   (bool, optional, default=false)   Include identities that we can neither sign nor spend, but are either watched or are co-signers with us
 
-#### Result: ***`updated info`***
+#### Result: ***`UPDATED INFO`***
 ```json
 [
   {
@@ -1105,23 +1105,61 @@ Examples:
 ```
 
 ### `registeridentity "jsonidregistration" feeoffer`
-Arguments
+`registeridentity` needs the values from `RegisterNameCommitment` output to register a VerusID
+
+#### Arguments:  ***`UPDATED INFO`***
 ```json
 {
-    "txid" : "hexid",          (hex)    the transaction ID of the name committment for this ID name
-    "namereservation" :
-    {
-        "name": "namestr",     (string) the unique name in this commitment
-        "salt": "hexstr",      (hex)    salt used to hide the commitment
-        "referrer": "identityID", (name@ or address) must be a valid ID to use as a referrer to receive a discount
+    "txid": "hexid",               (hex, required)
+                                            the transaction ID of the name committment for this ID name -
+                                            Take fromRegisterNameCommitment's output - txid
+    "namereservation": {
+      "name": "namestr",           (string, required)
+                                            the unique name in this commitment - Take from
+                                            output - name
+      "salt": "hexstr",            (hex, required)
+                                            salt used to hide the commitment - Take from
+                                            RegisterNameCommitment's output - salt
+      "referral": "identityID",    (name@ or address, required)
+                                            must be a valid ID to use as a referrer to receive a
+                                            discount - Take from RegisterNameCommitment's
+                                            output - referral
+      "parent": "",                (name@ or address, required)
+                                            must be a valid ID. This ID can be used to revoke and recover
+                                            the nameID we regsiter with this current command - Take from
+                                            RegisterNameCommitment's output - parent
+      "nameid": "nameID"           (base58, required)
+                                            identity address for this identity if it is created -
+                                            Take from RegisterNameCommitment's output - nameid
     },
-    "identity" :
-    {
-        "name": "namestr",     (string) the unique name for this identity
-        ...
+    "identity": {
+      "name": "namestr",           (string, required)
+                                            the unique name for this identity - Take from
+                                            RegisterNameCommitment's output - name
+      "primaryaddresses": [        (array of strings, required) the trasparent/public address(es)
+        "hexstr"
+      ],
+      "minimumsignatures": 1,      (int, required)
+                                            MofN signatures required out of the primary addresses list
+                                            to sign transactions
+      "privateaddress": "hexstr",  (string, optional)
+                                            shielded address associated with the VerusID being made
+      "revocationauthority": "identityID", (name@ or address, optional)
+                                            The ID entered here will be able to disable your created ID
+                                            in case of loss or theft. It is some existing ID which either
+                                            is under your own control or the ID you trust can help you
+                                            revoke in case of this ID's theft.
+      "recoveryauthority": "identityID"    (name@ or address, optional, required if "revocationauthority"
+                                           is used)
+                                            The ID entered here will be able to revive your created ID
+                                            if it is revoked. It is some existing ID which either is
+                                            under your own control or the ID you trust can help you
+                                            revive in case of this ID's revoked.
     }
 }
-feeoffer                           (amount, optional) amount to offer miner/staker for the registration fee, if missing, uses standard price
+feeoffer                           (amount, optional)
+                                            amount to offer miner/staker for the registration
+                                            fee, if missing, uses standard price
 ```
 
 #### Result:
@@ -1162,7 +1200,7 @@ Examples:
 #### Arguments:
        "returntx"                        (bool,   optional) defaults to false and transaction is sent, if true, transaction is signed by this wallet and returned
 
-#### Result: ***`updated info`***
+#### Result: ***`UPDATED INFO`***
 transactionid                   (hexstr)
 
 Examples:
@@ -4472,6 +4510,6 @@ Output:
 Perform a joinsplit and return the JSDescription.
 
 
-compiled by Oink.vrsc@
+compiled by Oink.vrsc@, additions by grewalsatinder@ and allbits@
 
-Note: last revision date 2020-09-22.
+Note: last revision date 2020-10-09.

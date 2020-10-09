@@ -16,9 +16,9 @@ Tip: The easiest way is to copy the location above and paste it into your addres
 ## Verus-Desktop Procedure
 1. In Verus-Desktop, go to  `help`,  `Show binary folder`. That opens up a file explorer
 2. doubleclick `verusd` to get into that folder
-3. Shutdown Verus Desktop and wait for it to close completely
+3. exit your Verus Desktop profile so you get back to the initial login screen where you can select your profiles.
 4. doubleclick `fetch-bootstrap` in your file browser.
-5. Follow the instructions and when finished, start Verus Desktop
+5. Follow the instructions and when finished, select your preferred profile and enter Verus Desktop.
 
 ## Verus CLI Procedure
 1. Go to the folder where your daemon is extracted (standard `verus-cli`)
@@ -69,4 +69,4 @@ Watch this video with an explanation how to accomplish the steps above: [Bootstr
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-10-05.
+Note: revision date 2020-10-09.
