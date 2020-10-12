@@ -790,6 +790,11 @@ Verifies blockchain database.
 #### Arguments:
 ```
 1. checklevel   (numeric, optional, 0-4, default=3) How thorough the block verification is.
+                check level 0: read from disk
+                check level 1: verify block validity
+                check level 2: verify undo validity
+                check level 3: check for inconsistencies during memory-only disconnect of tip blocks
+                heck level 4: try reconnecting blocks
 2. numblocks    (numeric, optional, default=288, 0=all) The number of blocks to check.
 ```
 #### Result:
@@ -4510,6 +4515,6 @@ Output:
 Perform a joinsplit and return the JSDescription.
 
 
-compiled by Oink.vrsc@, additions by grewalsatinder@ and allbits@
+compiled by Oink.vrsc@, additions by Mike@, grewalsatinder@ and allbits@
 
-Note: last revision date 2020-10-09.
+Note: last revision date 2020-10-12.
