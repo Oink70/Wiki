@@ -1,15 +1,15 @@
-# Question: What are the pools that I can join?
+# Question: What are the mining pools that I can join?
 
-[https://luckpool.net](https://luckpool.net/verus)
-[https://pool.veruscoin.io/](https://luckpool.net/verus)
-[https://zergpool.com/](https://zergpool.com/)
-[https://wattpool.net/](https://wattpool.net/ui/verus/stats)
-[https://vrsc.ciscotech.dk/](https://vrsc.ciscotech.dk/)
-[http://www.lepool.com.cn](http://www.lepool.com.cn:8088/)
-[http://zergpool.com/](http://zergpool.com/)
-[http://www.zhuaao.com](http://www.zhuaao.com:8880/)
-[https://aod-tech.com/](https://cryptopools.aod-tech.com/)
-[https://verus.alphatechit.co.uk/](https://verus.alphatechit.co.uk/getting_started)
+[luckpool.net](https://luckpool.net/verus)
+[pool.veruscoin.io](https://luckpool.net/verus)
+[zergpool.com](https://zergpool.com/)
+[wattpool.net](https://wattpool.net/ui/verus/stats)
+[vrsc.ciscotech.dk](https://vrsc.ciscotech.dk/)
+[www.lepool.com.cn](http://www.lepool.com.cn:8088/)
+[www.zhuaao.com](http://www.zhuaao.com:8880/)
+[aod-tech.com](https://cryptopools.aod-tech.com/)
+[verus.alphatechit.co.uk](https://verus.alphatechit.co.uk/getting_started)
+[MadCatMining (currently inactive)](https://vrsc.mcmpool.eu/)
 
 The statistics of the known public pools can be checked here:
 [Mining Pool Stats](https://miningpoolstats.stream/veruscoin)
