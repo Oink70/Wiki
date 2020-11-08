@@ -8,7 +8,7 @@
 [www.lepool.com.cn](http://www.lepool.com.cn:8088/)
 [www.zhuaao.com](http://www.zhuaao.com:8880/)
 [aod-tech.com](https://cryptopools.aod-tech.com/)
-[verus.alphatechit.co.uk](https://verus.alphatechit.co.uk/getting_started)
+[verus.alphatechit.co.uk](https://verus.alphatechit.co.uk/)
 [MadCatMining (currently inactive)](https://vrsc.mcmpool.eu/)
 
 The statistics of the known public pools can be checked here:
@@ -16,4 +16,4 @@ The statistics of the known public pools can be checked here:
 
 Payouts from mining pools do not need to be shielded first. The mining pool has already taken care of that.
 
-Note: last revision date 2020-10-14.
+Note: last revision date 2020-11-08.
