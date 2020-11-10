@@ -1,9 +1,9 @@
-# ![Verus Coin](https://wiki.veruscoin.io/img/favicon.png "Verus Coin Wiki") Verus Coin Wiki
+# ![Verus Coin](https://wiki.verus.io/img/favicon.png "Verus Coin Wiki") Verus Coin Wiki
 In this WIKI we collected the most frequently asked questions and useful guides that are related to Verus.
 
 On the bottom of each document, you may find a revision and/or creation date. If no date is mentioned the document originates from before february 12th, 2020 and may apply to older situations.
 
-If you have any questions about the information here, need help or have suggestions on the content, don't hesitate to contact us through [Discord](https://veruscoin.io/discord).
+If you have any questions about the information here, need help or have suggestions on the content, don't hesitate to contact us through [Discord](https://verus.io/discord).
 
 
 ## Information
@@ -26,8 +26,8 @@ If you have any questions about the information here, need help or have suggesti
 [Verus Beginners Mining guide (External)](https://medium.com/veruscoin/how-to-start-cpu-mining-verus-coin-vrsc-from-your-laptop-in-under-5-minutes-f69c9aae340e)
 [Verus Beginners Staking guide (External)](https://medium.com/veruscoin/how-to-earn-vrsc-solo-mining-with-your-cpu-and-staking-mined-coins-aa27da76882c)
 [Shield Verus Coins via Command Line Interface](#!how-to/how-to_shield_via_cli.md)
-[Create an ID on Verus Desktop (pdf)](https://wiki.veruscoin.io/how-to/how-to_create_verus_id_with_verus_desktop.pdf)
-[Create an ID on command Line (pdf)](http://wiki.veruscoin.io/how-to/how-to_create_verus_id_with_cli.pdf)
+[Create an ID on Verus Desktop (pdf)](https://wiki.verus.io/how-to/how-to_create_verus_id_with_verus_desktop.pdf)
+[Create an ID on command Line (pdf)](http://wiki.verus.io/how-to/how-to_create_verus_id_with_cli.pdf)
 [Join Verus Testnet](#!how-to/how-to_join_testnet.md)
 
 ## Frequently Asked Questions (General)
@@ -86,7 +86,7 @@ If you have any questions about the information here, need help or have suggesti
 [Remarks on Windows command line formatting](#!faq-windows/winfaq-01_cli_formatting.md)
 
 ## Q&A Archive
-[Q&A questions channel Verus-WhiteBIT 2020-07-28](https://wiki.veruscoin.io/q-a/veruscoin-q-a-questions-20200728.html)
-[Q&A reward channel Verus-WhiteBIT 2020-07-28](https://wiki.veruscoin.io/q-a/veruscoin-q-a-reward-20200728.html)
+[Q&A questions channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-questions-20200728.html)
+[Q&A reward channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-reward-20200728.html)
 
-Note: last revision date 2020-11-08.
+Note: last revision date 2020-11-11.

@@ -13,7 +13,7 @@ This method is confirmed to work on Verus and all Komodo assetchains.
 
 In order to convert your seedphrase into a Private key (WIF), you need to have a running native wallet first, that is fully synchronized. The earliest wallet that supports these functions is **Verus Desktop v0.6.4-beta-1**.
 
-If needed, use this guide to quickly synchronize your wallet: https://wiki.veruscoin.io/#!how-to/how-to_bootstrap.md
+If needed, use this guide to quickly synchronize your wallet: https://wiki.verus.io/#!how-to/how-to_bootstrap.md
 
 ## Converting Seed to WIF
 If you have a seed, you can retrieve your Private key (WIF) by having the Verus Desktop wallet convert it for you.
@@ -96,5 +96,4 @@ Note: Don't use the WIF from the example above, but use the one from the CLI-int
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-08-31.
-
+Note: revision date 2020-11-11.

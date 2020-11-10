@@ -9,8 +9,8 @@ note: Read it completely before use.
  * OS independent through Verus Desktop: Click `help`, `Show Verus data folder (default)`
 
 #### Usefull links:
-Link 1: [Download latest Wallet](https://veruscoin.io/wallet.html)
-Link 2: [Show current blockheight](https://explorer.veruscoin.io/api/getblockcount)
+Link 1: [Download latest Wallet](https://verus.io/wallet.html)
+Link 2: [Show current blockheight](https://explorer.verus.io/api/getblockcount)
 
 ## Procedure:
 In case your wallet is not synchronized with the blockchain and restarting Agama doesn't connect to any peers:
@@ -37,4 +37,4 @@ Then start your wallet as you're used to.
 
 Submitted by Oink.vrsc@ & Thoskk.vrsc@
 
-Note: last revision date 2020-04-24.
+Note: last revision date 2020-11-11.

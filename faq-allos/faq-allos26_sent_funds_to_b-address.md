@@ -9,7 +9,7 @@ Warning: DO NOT send to a b-address, unless you kow what you're doing.
 ### First you need to determine the **TXID** of the locked funds.
 
 1. The easiest way is to obtain the TXID from the send transaction you did in Verus-Desktop to the b-address. Make a copy of the TXID: you will need it for this procedure
-2. The next easiest way is look up the b-address on the [explorer](https://explorer.veruscoin.io) and examine the transactions to this address. The youngest transaction is usually the one you need. On the explorer the hash in the transaction is the TXID. Make a copy of the TXID: you will need it for this procedure
+2. The next easiest way is look up the b-address on the [explorer](https://explorer.verus.io) and examine the transactions to this address. The youngest transaction is usually the one you need. On the explorer the hash in the transaction is the TXID. Make a copy of the TXID: you will need it for this procedure
 3. In Verus Desktop, go to `Settings` --> `Coin Settings` and make sure `VRSC` is selected in the top right. Run the command:
 ```bash
 run listunspent 0 <BLOCKCOUNT> '["<YOUR-b-ADDRESS"]'
@@ -75,7 +75,7 @@ and your command will show a result similar to this example:
 ```json
 4a5202327e6ed2ce20d3b146155ec92e52fae6c4481362faf6f8a072017b41f1
 ```
-The result of this command is the TXID of the coins moving out of your b-address. You can monitor the progress in your wallet or look up the TXID in the [explorer](https://explorer.veruscoin.io).
+The result of this command is the TXID of the coins moving out of your b-address. You can monitor the progress in your wallet or look up the TXID in the [explorer](https://explorer.verus.io).
 
 note: The above command and its result are examples. ***DO NOT*** use data from it. Use the results from your own wallet!
 
@@ -83,4 +83,4 @@ Some words of advice after succesfully removing funds locked in a b-address:
 * Pay attention to which addresses you send.
 * It may be an idea to import the addresses you use into a fresh wallet, omitting all unused (b-) addresses.
 
-note: Created 2020-02-18 by Oink.vrsc@
+note: Created 2020-11-11 by Oink.vrsc@

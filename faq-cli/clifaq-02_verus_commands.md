@@ -1689,13 +1689,47 @@ Returns all pending export transfers that are not yet provable with confirmed no
 1. "chainname"                     (string, optional) name of the chain to look for. no parameter returns current chain in daemon.
 ```
 #### Result:
-```
+```json
+[
   {
-  }
+    "blockheight": n,                    (numeric) block height
+    "exportid": "hash",                  (hexstring) transaction ID
+    "description": {
+      "version": n,                      (int) version of this chain definition
+      "exportcurrencyid": "xxxx",        (text) i-address of the currency ID
+      "numinputs": n,                    (numeric) Amount of inputs in this export
+      "totalamounts": {
+        "xxxx": xxx.xxxxxxxx,            (text) i-address of the currency ID, (numeric) the total value of the export
+                                         of the currency
+        ....
+      },
+      "totalfees": {
+        "xxxx": xxx.xxxxxxxx,            (text) i-address of the currency ID, (numeric) the total fees for the export
+                                         of the currency
+        ....
+      }
+    },
+    "transfers": [
+      {
+        "version": n,                    (int) version of this chain definition
+        "currencyid": "xxxx",            (text) i-address of the currency ID
+        "value": n,                      (numeric) the value this transaction
+        "flags": n,                      (hex) flags for the currency
+        "preconvert": true|false,        (boolean) Shows whether the transaction is a preconversion
+        "fees": xxx.xxxxxxxx,            (numeric) the fees for this transaction
+        "destinationcurrencyid": "xxxx", (text) i-address of the currency ID
+        "destination": "xxxx"            (text) address of the transaction
+      },
+      ....
+    ]
+  },
+  {},
+  ...
+]
 ```
 Examples:
 ```bash
-> verus getimports "chainname"
+> verus getexports "chainname"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getexports", "params": ["chainname"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
@@ -1706,9 +1740,43 @@ Returns all imports from a specific chain.
 1. "chainname"                     (string, optional) name of the chain to look for. no parameter returns current chain in daemon.
 ```
 #### Result:
-```
+```json
+[
   {
-  }
+    "blockheight": n,                    (numeric) block height
+    "importid": "hash",                  (hexstring) transaction ID
+    "description": {
+      "version":n,                       (int) version of this chain definition
+      "sourcesystemid": "xxxx",          (text) i-address of the source system
+      "importcurrencyid": "xxxx",        (text) i-address of the currency ID
+      "valuein": {
+        "xxxx": xxx.xxxxxxxx,            (text) i-address of the currency ID, (numeric) the total value of the import
+                                         of the currency
+        ....
+      },
+      "tokensout": {
+        "xxxx": xxx.xxxxxxxx,            (text) i-address of the currency ID, (numeric) the total value of the import
+                                         into the currency into this currency
+      }
+    },
+    "transfers": [
+      {
+        "version": n,                    (int) version of this chain definition
+        "currencyid": "xxxx",            (text) i-address of the currency ID
+        "value": n,                      (numeric) the value this transaction
+        "flags": n,                      (hex) flags for the currency
+        "preconvert": true|false,        (boolean) Shows whether the transaction is a preconversion
+        "fees": xxx.xxxxxxxx,            (numeric) the fees for this transaction
+        "destinationcurrencyid": "xxxx", (text) i-address of the currency ID
+        "destination": "xxxx"            (text) address of the transaction
+      },
+      ....
+      }
+    ]
+  },
+  {},
+  ...
+]
 ```
 Examples:
 ```bash
@@ -1727,15 +1795,32 @@ This should be used to get information about chains that are not this chain, but
 #### Result:
 ```json
    [
-       {
-           "flags" : n,
-           "initialratio" : n,
-           "initialsupply" : n,
-           "emitted" : n,
-           "supply" : n,
-           "reserve" : n,
-           "currentratio" : n,
+     {
+       "flags": n,                      (hex) flags for the currency
+       "currencyid": "xxxx",            (text) i-address of the currency ID
+       "reservecurrencies": [
+         {
+     			 "currencyid": "xxxx",        (text) i-address of the currency ID
+     			 "weight": n,                 (numeric) The weight of this currence
+     			 "reserves": xxx.xxxxxxxx,    (numeric) The initial amount of this currency in reserve
+     			 "priceinreserve": n          (numeric) The initial conversion rate of this reserve currency
+     	   },
+       ],
+       "initialsupply" : xxx.xxxxxxxx,  (numeric) The initial supply of this currency
+       "emitted" : xxx.xxxxxxx,         (numeric) The currently emitted coins of this currency
+       "supply" : xxx.xxxxxxxx,         (numeric) The current supply of this currency
+       "currencies": {
+         "xxxx": {                      (text) i-address of the currency ID
+       	 "reservein": xxx.xxxxxxxx,     
+       	 "nativein": 0.00000000,
+       	 "reserveout": 249.99900299,
+       	 "lastconversionprice": 1.00000000,
+       	 "viaconversionprice": 0.99981249,
+       	 "fees": 250.06291562,
+       	 "conversionfees": 250.06251562
+       	 },
        },
+     },
    ]
 ```
 Examples:

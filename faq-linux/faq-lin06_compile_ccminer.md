@@ -37,9 +37,9 @@ chmod +x autogen.sh
 ```
 And finally starting the miner (Change pool, address & workername to your own liking):
 ```bash
-./ccminer -a verus -o stratum+tcp://pool.veruscoin.io:9999 -u RVjvbZuqSGLGDm1B9BFkbHWySPKEx4tfjQ.donator -p x
+./ccminer -a verus -o stratum+tcp://pool.verus.io:9999 -u RVjvbZuqSGLGDm1B9BFkbHWySPKEx4tfjQ.donator -p x
 ```
 
 Info from @Chris - Monkins1010 LOUD Mining.
 
-Note: last revision date 2020-10-05.
+Note: last revision date 2020-11-11.

@@ -1,7 +1,7 @@
 # Question: What are the mining pools that I can join?
 
 [luckpool.net](https://luckpool.net/verus)
-[pool.veruscoin.io](https://luckpool.net/verus)
+[pool.verus.io](https://pool.verus.io)
 [zergpool.com](https://zergpool.com/)
 [wattpool.net](https://wattpool.net/ui/verus/stats)
 [vrsc.ciscotech.dk](https://vrsc.ciscotech.dk/)

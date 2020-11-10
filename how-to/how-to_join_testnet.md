@@ -24,7 +24,7 @@ For windows substitute the shown `"`-character with the `\"`-characters.
 
 ### Necessary files:
 
-Link 1: [Download latest Wallet](https://veruscoin.io/wallet.html)
+Link 1: [Download latest Wallet](https://verus.io/wallet.html)
 
 ## Procedure:
 
@@ -59,4 +59,4 @@ Linux and MacOS. If you already have a wallet verify that the wallet is the most
 
 Created by Oink.vrsc@, inspired by 0x03.vrsc@.
 
-Note: revision date 2020-02-12.
+Note: revision date 2020-11-11.

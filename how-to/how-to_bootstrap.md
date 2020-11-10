@@ -35,8 +35,8 @@ Watch this video with an explanation how to accomplish the steps above: [Bootstr
 
 ### Necessary files:
 
-Link 1: [Download latest Wallet](https://veruscoin.io/wallet.html)
-Link 2: [Download Verus Bootstrap](https://bootstrap.veruscoin.io/)
+Link 1: [Download latest Wallet](https://verus.io/wallet.html)
+Link 2: [Download Verus Bootstrap](https://bootstrap.verus.io/)
 
 ### Procedure:
 1. Make sure your wallet is not active.

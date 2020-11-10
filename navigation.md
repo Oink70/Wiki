@@ -1,3 +1,3 @@
-[Home](https://wiki.veruscoin.io/#!index.md)
-[Website](https://veruscoin.io)
-[Explorer](https://explorer.veruscoin.io)
+[Home](https://wiki.verus.io/#!index.md)
+[Website](https://verus.io)
+[Explorer](https://explorer.verus.io)

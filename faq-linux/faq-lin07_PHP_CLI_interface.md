@@ -5,8 +5,8 @@ Attention: Read it completely before using.
 `VRSC Wallet and Data location` on Linux: `~/.Komodo/VRSC`
 
 ### Necessary files:
-Link 1: [Download latest Wallet](https://veruscoin.io/wallet.html)
-Link 2: [Download Bootstrap](https://bootstrap.veruscoin.io/)
+Link 1: [Download latest Wallet](https://verus.io/wallet)
+Link 2: [Download Bootstrap](https://bootstrap.verus.io/)
 Link 3: [Go to Verus-Staking-CLI](https://github.com/kbs1/verus-staking-cli)
 
 ## Procedure:
@@ -25,3 +25,5 @@ Initial Verus daemon configuration
   Do not stake with the same `wallet.dat` on multiple nodes.
 
 Submitted by @kbs1
+
+Note: last revision date 2020-11-11.

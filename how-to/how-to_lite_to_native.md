@@ -12,8 +12,8 @@ Attention: Read completely before use.
 
 #### Necessary files & links:
 
-Link 1: [Download Verus Bootstrap](https://bootstrap.veruscoin.io)
-Link 2: [Import Lite wallet address in Verus Desktop native](https://wiki.veruscoin.io/#!how-to/how-to_convert-seed-to-wif.md)
+Link 1: [Download Verus Bootstrap](https://bootstrap.verus.io)
+Link 2: [Import Lite wallet address in Verus Desktop native](https://wiki.verus.io/#!how-to/how-to_convert-seed-to-wif.md)
 
 ## Procedure:
 1. Make sure you have your seed phrase and password you use to log into your Lite mode wallet available.
@@ -23,7 +23,7 @@ Link 2: [Import Lite wallet address in Verus Desktop native](https://wiki.verusc
  2. Verify the SHA256 checksum of your download, so you have an untampered installer.
  3. Run the file you just downloaded to install it.
 4. Installing the bootstrap:
-  1. Download the bootstrap from [Link 1](https://bootstrap.veruscoin.io).
+  1. Download the bootstrap from [Link 1](https://bootstrap.verus.io).
   2. Verify the SHA256 checksum of your download, to verify you have an untampered Bootstrap.
   3. Unpack the downloaded archive to `VRSC wallet & data location`.
 5. Getting Verus-Desktop ready for Native mode:
@@ -34,7 +34,7 @@ Link 2: [Import Lite wallet address in Verus Desktop native](https://wiki.verusc
 	5. You may get a red warning message about Zcash params. (Verus Desktop will detect if you have the necessary ZCash parameter files and download them if needed)
 	6. As soon as the download is finished, Verus-Desktop will continu and bring you into your wallet. It will automatically start to synchronize the blockchain. Since we already put the majority of the chain in place, this will take just a few minutes.
 6. Importing your existing Address:
-	* This procedure is described in detail in: [Import Lite wallet address in Verus Desktop native](https://wiki.veruscoin.io/#!how-to/how-to_convert-seed-to-wif.md).
+	* This procedure is described in detail in: [Import Lite wallet address in Verus Desktop native](https://wiki.verus.io/#!how-to/how-to_convert-seed-to-wif.md).
 
 If you followed these steps, installed the bootstrap, switched from Lite to Native mode and imported your existing address into Verus-Desktop. You can now stake your balance and use Private (sapling) addresses.
 

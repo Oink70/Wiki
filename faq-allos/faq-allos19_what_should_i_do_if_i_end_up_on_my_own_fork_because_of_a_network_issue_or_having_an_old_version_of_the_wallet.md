@@ -18,7 +18,7 @@ For all GUI or CLI users.
     `run getblockhash <suspected blocknumber>` will show you the blockhash for the blocknumber you filled in
     The response shown in the *Native Client Terminal* will be similar to this:
     `5cc7844973fb95ef17f1772ea4aba579f0d8273fb0ee6064cd8e707d1056c646`
-3.  Check the blockhash your command gave you against the blockhash the [explorer](https://explorer.veruscoin.io) shows.
+3.  Check the blockhash your command gave you against the blockhash the [explorer](https://explorer.verus.io) shows.
 4.  If the blockhash from the explorer is different than yours, repeat steps 2 & 3 until you find the earliest block that is different.
 5.  Use the **earliest incorrect blockhash** from your system to invalidate that block:
     `run invalidateblock <earliest incorrect blockhash>`
@@ -34,7 +34,7 @@ For all GUI or CLI users.
     `./verus getblockhash <suspected blocknumber>` will show you the blockhash for the blocknumber you filled in
     The response will be similar to this:
     `5cc7844973fb95ef17f1772ea4aba579f0d8273fb0ee6064cd8e707d1056c646`
-2.  Check the blockhash your command gave you against the blockhash the [explorer](https://explorer.veruscoin.io) shows.
+2.  Check the blockhash your command gave you against the blockhash the [explorer](https://explorer.verus.io) shows.
 3.  If the blockhash from the explorer is different than yours, repeat steps 1 & 2 until you find the earliest block that is different.
 4.  Use the **earliest incorrect blockhash** from your system to invalidate that block:
     `./verus invalidateblock <earliest incorrect blockhash>`
@@ -48,4 +48,4 @@ For all GUI or CLI users.
 
 (submitted by @jimboscott, Edited by Oink.vrsc@)
 
-Note: last revision date 2020-04-24.
+Note: last revision date 2020-11-11.

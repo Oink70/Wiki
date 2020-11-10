@@ -28,11 +28,11 @@ Amazingly, everything is done at the __protocol level__ on a decentralized netwo
 ## Getting started:
 ### Important links:
 
-Website: [*https://veruscoin.io*](https://veruscoin.io/index.html)
-Wallet: [*https://veruscoin.io/wallet*](https://veruscoin.io/wallet)
-GitHub: [*https://github.com/veruscoin/veruscoin*](https://github.com/veruscoin/veruscoin)
-Explorer: [*https://explorer.veruscoin.io*](https://explorer.veruscoin.io)
-Discord: [*https://veruscoin.io/discord*](veruscoin.io/discord) Check [https://youtu.be/YVOfIMjRf30](Human Verification) if you only see one empty channel.
+Website: [*https://verus.io*](https://verus.io)
+Wallet: [*https://verus.io/wallet*](https://verus.io/wallet)
+GitHub: [*https://github.com/veruscoin*](https://github.com/veruscoin)
+Explorer: [*https://explorer.verus.io*](https://explorer.verus.io)
+Discord: [*https://verus.io/discord*](https://verus.io/discord) Check [https://youtu.be/YVOfIMjRf30](Human Verification) if you only see one empty channel.
 Bitcointalk: [*https://bitcointalk.org/index.php?topic=4070404.0*](https://bitcointalk.org/index.php?topic=4070404.0)
 
 Max Supply: 83,540,184
@@ -41,7 +41,7 @@ Block time: 1 minute
 Proof-of-Stake (PoS) ROI is currently between 20% and 28%
 Halving Frequency: roughly every two years
 Next Halving: Current ETA: Mon Sep 14 04:53:40 UTC 2020 (Block \#1,278,000)
-Halving Countdown: [*https:/countdown.veruscoin.io/halving*](https://countdown.veruscoin.io/halving)
+Halving Countdown: [*https:/countdown.verus.io/halving*](https://countdown.verus.io/halving)
 
 ## VerusID
 
@@ -88,7 +88,7 @@ We are all working together to realize something great. If you’d like to join 
 
 Facebook - [*https://www.facebook.com/VerusCoin/*](http://www.facebook.com/VerusCoin/)
 YouTube - [*https://www.youtube.com/channel/UC_-KCHBxaDwSgNMdE3LMThg*](https://www.youtube.com/channel/UC_-KCHBxaDwSgNMdE3LMThg)
-Discord -[*https://veruscoin.io/discord*](https://veruscoin.io/discord)
+Discord -[*https://verus.io/discord*](https://verus.io/discord)
 Twitter -[*https://twitter.com/veruscoin*](https://twitter.com/veruscoin)
 Medium - [*https://medium.com/@veruscoin*](https://medium.com/%40veruscoin)
 Reddit -[*https://reddit.com/r/veruscoin*](https://reddit.com/r/veruscoin)
@@ -101,4 +101,4 @@ As a community project of just regular Joes, it can’t be stressed enough how i
 
 created by Rozo@ and Godballz@
 
-Note: last revision date 2020-05-26.
+Note: last revision date 2020-10-11.

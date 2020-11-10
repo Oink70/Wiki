@@ -1,19 +1,19 @@
 # Verus Links
 ### General Welcome Information
 
-[***Welcome information***](https://wiki.veruscoin.io/#!information/verus-welcome.md)
+[***Welcome information***](https://wiki.verus.io/#!information/verus-welcome.md)
 
 **Information** about Verus can be found in here:
 
-[***Verus website***](https://veruscoin.io)
+[***Verus website***](https://verus.io)
 
-[***Verus Wallet download***](https://veruscoin.io/wallet)
+[***Verus Wallet download***](https://verus.io/wallet)
 
-[***Verus Whitepaper***](https://veruscoin.io/downloads/VerusPhaseI.pdf)
+[***Verus Whitepaper***](https://verus.io/downloads/VerusPhaseI.pdf)
 
-[***Verus Visionpaper***](https://veruscoin.io/downloads/VerusVision.pdf)
+[***Verus Visionpaper***](https://verus.io/downloads/VerusVision.pdf)
 
-[***Verus WIKI***](https://wiki.veruscoin.io)
+[***Verus WIKI***](https://wiki.verus.io)
 
 [***Reddit***](https://reddit.com/r/veruscoin)
 
@@ -21,7 +21,7 @@
 
 Useful **links** about Verus:
 
-[***Veruscoin Explorer***](https://explorer.veruscoin.io)
+[***Veruscoin Explorer***](https://explorer.verus.io)
 
 [***Verus GitHub repositories***](https://github.com/veruscoin/veruscoin)
 
@@ -33,4 +33,4 @@ Useful **links** about Verus:
 
 [***Verus Community website***](https://www.veruscommunity.io)
 
-[***Verus Countdowns***](https://countdown.veruscoin.io)
+[***Verus Countdowns***](https://countdown.verus.io)

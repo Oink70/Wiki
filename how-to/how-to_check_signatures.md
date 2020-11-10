@@ -3,7 +3,7 @@
 Attention: Read it completely before using.
 
 ## Important General Information
-Wallet download page: [https://veruscoin.io/wallet](https://veruscoin.io/wallet)
+Wallet download page: [https://verus.io/wallet](https://verus.io/wallet)
 
 ## Using Verus-Desktop
 
@@ -26,4 +26,4 @@ Wallet download page: [https://veruscoin.io/wallet](https://veruscoin.io/wallet)
 
 Compiled by: Oink@
 
-Note: creation date 2020-07-17.
+Note: creation date 2020-11-11.

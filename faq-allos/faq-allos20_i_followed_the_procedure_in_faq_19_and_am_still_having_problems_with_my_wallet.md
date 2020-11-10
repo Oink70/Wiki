@@ -42,7 +42,7 @@ Note: The filename you replace`<mywalletexport>` with, can only contain letters 
 The exported wallet should be a file called `mywalletexport` in the location you set for exportdir in `VRSC.conf`. Keep this file secure, it has your plaintext private keys. Verify that the file is there and isn't empty.
 7. Stop Verus again by closing Verus-Desktop, Agama or running `./verus stop` for the linux CLI or `verus.bat stop` for the windows CLI.
 8. Making ABSOLUTELY SURE you have both the `mywalletexport` file and your `wallet.dat` backup in a safe place, delete your komodo/VRSC directory and everything in it (you can optionally leave your VRSC.conf file, but everything else there should be deleted.
-9. At this point make sure you're on the latest version for your wallet by going to https://veruscoin.io/ and checking the downloads section. If you need to upgrade do so now, before starting your wallet again.
+9. At this point make sure you're on the latest version for your wallet by going to https://verus.io/ and checking the downloads section. If you need to upgrade do so now, before starting your wallet again.
 10. Restart your wallet by launching Verus-Desktop, Agama or running verusd for the CLI. Allow it to start syncing.
 11. Once it has begun syncing, you can import your wallet. In either case, replace <PATHTOWALLETEXPORT with the full path to your wallet export file - on windows this might look like `c:\Users\John\Desktop\mywalletexport` , on linux or mac it would look something like `/home/john/mywalletexport`.
  * Verus-Desktop:
@@ -58,4 +58,4 @@ The exported wallet should be a file called `mywalletexport` in the location you
 
 Depending on the number of addresses in your wallet and how far along you are on re-syncing, this may take several minutes to complete. Your balances will adjust as the chain syncs, as it only knows about the transactions that have happened in the blocks it has received and scanned. That means your balance will adjust as new blocks are scanned and won't reflect an accurate balance until you are fully synced.
 
-Note: last revision date 2020-09-30.
+Note: last revision date 2020-11-11.

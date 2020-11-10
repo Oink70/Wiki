@@ -4,7 +4,7 @@ Attention: Read it completely before use.
 
 ### Links to VRSC miners:
 
-[Miners download page](https://veruscoin.io/getVRSC.html#download)
+[Miners download page](https://verus.io/get-vrsc)
 
 ## Procedure:
 
@@ -20,8 +20,8 @@ Now we'll need to adjust the batchfile to run on low priority:
 
   - Run your miner as you normally would, with `nice -n 19 ` placed in front of the command you normally use,
     for example:
-      `nice -n 19 ./nheqminer -v -l pool.veruscoin.io:9999 -u RVjvbZuqSGLGDm1B9BFkbHWySPKEx4tfjQ.Donator -p x -t 6`
-  - make sure you replace the pool (`pool.veruscoin.io:9999`) with your prefered pool and the address
+      `nice -n 19 ./nheqminer -v -l pool.verus.io:9999 -u RVjvbZuqSGLGDm1B9BFkbHWySPKEx4tfjQ.Donator -p x -t 6`
+  - make sure you replace the pool (`pool.verus.io:9999`) with your prefered pool and the address
     (`RVjvbZuqSGLGDm1B9BFkbHWySPKEx4tfjQ`) with your own address. The address shown in this line is the veruscoin
     foundation donation address. If desired change the identifier (`Donator`) to a name that easily identifies the
     miner to you.
@@ -30,8 +30,8 @@ Now we'll need to adjust the batchfile to run on low priority:
 
   - Run your miner as you normally would, with `nice -n 19 ` placed in front of the command you normally use,
     for example:
-      `nice -n 19 ./ccminer -a verus -o stratum+tcp://pool.veruscoin.io:9999 -u RVjvbZuqSGLGDm1B9BFkbHWySPKEx4tfjQ.Donator -t 6`
-  - make sure you replace the pool (`stratum+tcp://pool.veruscoin.io:9999`) with your prefered pool and the address
+      `nice -n 19 ./ccminer -a verus -o stratum+tcp://pool.verus.io:9999 -u RVjvbZuqSGLGDm1B9BFkbHWySPKEx4tfjQ.Donator -t 6`
+  - make sure you replace the pool (`stratum+tcp://pool.verus.io:9999`) with your prefered pool and the address
     (`RVjvbZuqSGLGDm1B9BFkbHWySPKEx4tfjQ`) with your own address. The address shown in this line is the veruscoin
     foundation donation address. If desired change the identifier (`Donator`) to a name that easily identifies the
     miner to you.
@@ -39,4 +39,4 @@ Now we'll need to adjust the batchfile to run on low priority:
 
 Created by Oink.vrsc@.
 
-Note: last revision date 2020-02-26.
+Note: last revision date 2020-11-11.

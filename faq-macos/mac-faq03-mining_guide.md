@@ -6,8 +6,8 @@ Attention: Read it completely before use.
 
 ### Software needed to mine
 
-Prerequisite: [VerusCoin wallets](https://veruscoin.io/wallet.html)
-Needed: [VerusCoin miners](https://veruscoin.io/getVRSC.html)
+Prerequisite: [VerusCoin wallets](https://verus.io/wallet.html)
+Needed: [VerusCoin miners](https://verus.io/getVRSC.html)
 
 ## Prerequisites:
 
@@ -29,7 +29,7 @@ To start mining on your Mac, you should already have a wallet and and access to 
 
 Now we need to configure things so the miner connects to a mining pool (listed on the download page, below the miner download) and mines to your address. In the instructions below I will use the VerusCoin community pool and the address for the Veruscoin foundation. make sure to use your own address and if desired the details of a different pool:
   5. click `start.sh` and open with `TextEdit.app`
-  6. On the 2nd line, change `PoolHost=` into `Poolhost=pool.veruscoin.io`
+  6. On the 2nd line, change `PoolHost=` into `Poolhost=pool.verus.io`
   7. On the 3rd line, change `Port=` into 'Port=9999'
   8. On the 4th line, change 'PublicVerusCoinAddress=' into `PublicVerusCoinAddress=RVjvbZuqSGLGDm1B9BFkbHWySPKEx4tfjQ`
         (make sure you use your own address!!!!)

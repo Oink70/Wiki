@@ -2,7 +2,7 @@
 
 ## Links to VRSC miners:
 
-[Miners download page](https://veruscoin.io/getVRSC.html)
+[Miners download page](https://verus.io/getVRSC.html)
 
 ## Procedure:
 
@@ -38,8 +38,8 @@ Now we'll need to adjust the batchfile to run on low priority:
   - The line, that needs to be adjusted:
       `ccminer -a verus -o stratum+tcp://na.luckpool.net:3956 -u REoPcdGXthL5yeTCrJtrQv5xhYTknbFbec.Donator -p d=6 -t 8`
   - adjust the line, so it looks like:
-      `C:\Windows\System32\cmd.exe /c start "ccminerCPUv3.5 VerusPool" /Low "c:\Miners\CCminer 2.0 CPU Release 3.5\ccminer.exe" -a verus -o stratum+tcp://pool.veruscoin.io:9999 -u RVjvbZuqSGLGDm1B9BFkbHWySPKEx4tfjQ.Donator -t 16`
-  - make sure you replace the pool (`stratum+tcp://pool.veruscoin.io:9999`) with your prefered pool and the address
+      `C:\Windows\System32\cmd.exe /c start "ccminerCPUv3.5 VerusPool" /Low "c:\Miners\CCminer 2.0 CPU Release 3.5\ccminer.exe" -a verus -o stratum+tcp://pool.verus.io:9999 -u RVjvbZuqSGLGDm1B9BFkbHWySPKEx4tfjQ.Donator -t 16`
+  - make sure you replace the pool (`stratum+tcp://pool.verus.io:9999`) with your prefered pool and the address
     (`RVjvbZuqSGLGDm1B9BFkbHWySPKEx4tfjQ`) with your own address. The address shown in this line is the veruscoin
     foundation donation address. If desired change the identifier (`Donator`) to a name that easily identifies the
     miner to you.
@@ -47,3 +47,4 @@ Now we'll need to adjust the batchfile to run on low priority:
   - run `run.verushhash.bat` to start mining.
 
 Submitted by Oink.vrsc@
+Note: last revision date 2020-11-11.

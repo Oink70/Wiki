@@ -30,13 +30,13 @@ Linux Komodo (and asset chains) binaries: `\resources\app\assets\bin\linux64\` c
 
 #### Various links:
 
-Website: [Official VerusCoin website](https://veruscoin.io)
+Website: [Official VerusCoin website](https://verus.io)
 GitHub: [VerusCoin source code for the VerusCoin wallet, miner and explorer](https://github.com/veruscoin)
-Block explorer: [Main VerusCoin Explorer](https://explorer.veruscoin.io)
+Block explorer: [Main VerusCoin Explorer](https://explorer.verus.io)
 Block explorer: [VerusCoin Backup Explorer](https://explorer.vrsc.0x03.services/)
 Block explorer: [Explorer for all Komodo Ecosystem chains](https://dex.explorer.dexstats.info/)
 Social Media: [Bitcointalk](https://bitcointalk.org/index.php?topic=4070404.0)
-Social Media: [Discord](https://discord.gg/VRKMP2S)
+Social Media: [Discord](https://verus.io/discord)
 Social Media: [Twitter](https://twitter.com/veruscoin)
 Social Media: [Medium](https://medium.com/@veruscoin)
 Social Media: [Reddit](https://reddit.com/r/veruscoin)
@@ -45,7 +45,7 @@ Miner: [Monkins ccminer for CPU (recommended) or GPU](https://github.com/monkins
 Miner: [nheqminer for Windows, Linux, and MacOS](https://github.com/VerusCoin/nheqminer/releases)
 Reported mining speeds: [spreadsheet to compare hashrates](https://docs.google.com/spreadsheets/d/1RrSYJDV0Mjj3X-myMC3aQDGkcipivxHsD7ZxJ3r5f_A/edit#gid=201266774)
 Mining pool: https://luckpool.net/verus
-Mining pool: https://pool.veruscoin.io/
+Mining pool: https://pool.verus.io/
 Mining pool: https://zergpool.com/
 Mining pool: https://vrsc.mcmpool.eu/
 Mining pool: https://wattpool.net/
@@ -54,10 +54,7 @@ Mining pool: https://vrsc.dev-codex.com/
 Mining pool: http://vrsc.52hash.com/
 Mining pool: https://vrsc.ciscotech.dk/
 Mining pool: http://www.lepool.com.cn:8088/
-Mining pool: https://zpool.ca/
 Mining pool: http://verus.bcmonster.com/
-Staking pool: http://www.ginasismining.com/
-Staking pool: https://www.aacoin.com/#/trade?symbol=VRSC_BTC (Technically not a pool, but it stakes your VRSC on the exchange)
 Exchange: https://atomicdex.io/ (VRSC/any listed coin)
 Exchange: https://app.stex.com/de/trade/pair/BTC/VRSC/1D (VRSC/BTC)
 Exchange: https://safe.trade/trading/vrscbtc (VRSC/BTC, VRSC/SAFE)
@@ -69,8 +66,8 @@ Wallet: [Verus Desktop releases](https://github.com/VerusCoin/Verus-Desktop/rele
 Wallet: [CLI wallet releases](https://github.com/VerusCoin/VerusCoin/releases/)
 Mobile wallet: [Android Mobile Wallet](https://github.com/VerusCoin/Verus-Mobile/releases/tag/v0.1.6-beta)
 Mobile wallet: [iOS Mobile Wallet](https://testflight.apple.com/join/ZS43lYcw)
-Paper wallet: [Verus Paper wallet](https://paperwallet.veruscoin.io/)
-Bootstrap: [Download Verus Bootstrap](https://bootstrap.veruscoin.io)
+Paper wallet: [Verus Paper wallet](https://paperwallet.verus.io/)
+Bootstrap: [Download Verus Bootstrap](https://bootstrap.verus.io)
 VerusPay: [VerusPay setup guide](https://veruspay.io/setup/)
 
 ## Information:
@@ -82,9 +79,9 @@ VerusPay: [VerusPay setup guide](https://veruspay.io/setup/)
 |                    |Open source, fair launch, no ICO|
 |                    |Community driven project|
 |Privacy:            |Sapling enhanced, zk-SNARKs zero knowledge proofs|
-|Website:            |https://veruscoin.io/|
+|Website:            |https://verus.io/|
 |Github:             |https://github.com/veruscoin There is the VerusCoin source code for the VerusCoin wallet, miner and explorer.|
-|Block explorers:    |https://explorer.veruscoin.io/|
+|Block explorers:    |https://explorer.verus.io/|
 |                    |https://explorer.vrsc.0x03.services/|
 |                    |https://dex.explorer.dexstats.info/|
 |Announcement:       |https://bitcointalk.org/index.php?topic=4070404.0|
@@ -116,7 +113,7 @@ A spreadsheet to compare hashrates can be found here: https://docs.google.com/sp
 You can also compare older and current algos
 
 ##### Mining pools:
-https://pool.veruscoin.io/ (fees will go to VERUS foundation)
+https://pool.verus.io/ (fees will go to VERUS foundation)
 https://luckpool.net/verus
 https://zergpool.com/
 https://vrsc.mcmpool.eu/
@@ -155,10 +152,10 @@ There's also possibilities to test coming PBaaS functionality in this wallet.
 A beta version of the Android mobile wallet can be found here: https://github.com/VerusCoin/Verus-Mobile/releases
 A beta version of the iOS mobile wallet can be accessed via this Apple TestFlight invite https://testflight.apple.com/join/ZS43lYcw
 
-Our Paper Wallet can be accessed here: https://paperwallet.veruscoin.io
+Our Paper Wallet can be accessed here: https://paperwallet.verus.io
 
-If you need a bootstrap, you can find it here: https://bootstrap.veruscoin.io
-(a guide how to apply is pinned in #community-support channel in Discord: https://discord.gg/VRKMP2S or in the HOW-TO & FAQ section of our website https://veruscoin.io/downloads/how-to/how-to_bootstrap.html)
+If you need a bootstrap, you can find it here: https://bootstrap.verus.io
+(a guide how to apply is pinned in #community-support channel in Discord: https://discord.gg/VRKMP2S or in the HOW-TO & FAQ section of our website https://wiki.verus.io/how-to/how-to_bootstrap.md)
 
 For those interested in VerusPay, a guide can be found here: https://veruspay.io/setup/
 And finally for those interested in running various Veruscoin services: https://github.com/VerusCoin/VerusServicesSetup
@@ -166,4 +163,4 @@ And finally for those interested in running various Veruscoin services: https://
 
 Information compiled by Thoskk.vrsc@, complemented by Godballz.vrsc@ and Oink.vrsc@.
 
-Note: revision date 2020-04-24.
+Note: revision date 2020-11-11.
