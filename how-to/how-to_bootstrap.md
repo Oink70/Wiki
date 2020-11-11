@@ -7,7 +7,7 @@ Attention: Read it completely before using.
 ### Verus `Wallet.dat`, Chaindata & `VRSC.conf` standard locations
  * Linux:		`~/.Komodo/VRSC`
  * Mac OS: 	`~/Library/Application Support/Komodo/VRSC`
- * Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
+ * Windows 10: 	`%AppData%\Komodo\VRSC\`
  * OS independent through Verus Desktop: Click `help`, `Show Verus data folder (default)`
 
 Tip: The easiest way is to copy the location above and paste it into your address bar of your file browser. Your operation system will accept the input, interpret where that location is and bring you there.
