@@ -16,7 +16,7 @@ If you have any questions about the information here, need help or have suggesti
 [Bootstrap video](https://youtu.be/xgLxzel5t04) ***`Video`***
 
 ## How-To
-[Backup, Install or Update and Bootstrap your wallet](#!how-to/how-to_bootstrap.md) ***`UPDATED`***
+[Backup, Install or Update and Bootstrap your wallet](#!how-to/how-to_bootstrap.md) ***`TIP`***
 [Verifying the signature of an updated wallet](#!how-to/how-to_check_signatures.md)
 [Backing up my wallet](#!how-to/how-to_backup_my_wallet.md)
 [Restoring my wallet](#!how-to/how-to_restore_my_wallet.md)
@@ -48,7 +48,7 @@ If you have any questions about the information here, need help or have suggesti
 [ERROR: Your wallet.dat is not matching the blockchain. Please restart the wallet with -reindex param.](#!faq-allos/faq-allos18_your_wallet.dat_is_not_matching_the_blockchain._please_restart_the_wallet_with_-reindex_param.md)
 [What should I do if I end up on my own fork because of a network issue or having an old version of the wallet?](#!faq-allos/faq-allos19_what_should_i_do_if_i_end_up_on_my_own_fork_because_of_a_network_issue_or_having_an_old_version_of_the_wallet.md)
 [I followed the previous procedure and am still having problems with my wallet.](#!faq-allos/faq-allos20_i_followed_the_procedure_in_faq_19_and_am_still_having_problems_with_my_wallet.md)
-[What are the mining pools that I can join?](#!faq-allos/faq-allos21_mining_pools.md) ***`UPDATED`***
+[What are the mining pools that I can join?](#!faq-allos/faq-allos21_mining_pools.md)
 [What are the staking pools that I can join?](#!faq-allos/faq-allos22_staking_pools.md)
 [Verus Wallet & VRSC.conf standard locations](#!faq-allos/faq-allos24_wallet.dat_and_vrsc.conf_location.md)
 [My wallet is stuck on block number XXXX. It does not synchronize properly anymore.](#!faq-allos/faq-allos25_wallet_not_synced.md)
@@ -82,11 +82,11 @@ If you have any questions about the information here, need help or have suggesti
 
 ## CLI wallet specific Information
 [Verusd options list](#!faq-cli/clifaq-01_verusd_options.md)
-[Verus command list](#!faq-cli/clifaq-02_verus_commands.md)
+[Verus command list](#!faq-cli/clifaq-02_verus_commands.md) ***`UPDATED`***
 [Remarks on Windows command line formatting](#!faq-windows/winfaq-01_cli_formatting.md)
 
 ## Q&A Archive
 [Q&A questions channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-questions-20200728.html)
 [Q&A reward channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-reward-20200728.html)
 
-Note: last revision date 2020-11-11.
+Note: last revision date 2020-12-02.

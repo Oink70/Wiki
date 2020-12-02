@@ -2,7 +2,7 @@
 
 ## Important General Information
 
-### Verus CLI version 0.7.2
+### Verus CLI version 0.7.2-6
 
 Usage: `verus [command]` Issue a command to the coindaemon
 
@@ -1022,7 +1022,7 @@ Using json rpc
 ```
     "name"              ID name or ID i-address
 ```
-#### Result: ***`UPDATED INFO`***
+#### Result:
 ```json
 {
   "identity": {
@@ -1062,7 +1062,7 @@ Examples:
     "includecansign"     (bool, optional, default=true)    Include identities that we can only sign for but not spend
     "includewatchonly"   (bool, optional, default=false)   Include identities that we can neither sign nor spend, but are either watched or are co-signers with us
 
-#### Result: ***`UPDATED INFO`***
+#### Result:
 ```json
 [
   {
@@ -1112,7 +1112,7 @@ Examples:
 ### `registeridentity "jsonidregistration" feeoffer`
 `registeridentity` needs the values from `RegisterNameCommitment` output to register a VerusID
 
-#### Arguments:  ***`UPDATED INFO`***
+#### Arguments:
 ```json
 {
     "txid": "hexid",               (hex, required)
@@ -1205,7 +1205,7 @@ Examples:
 #### Arguments:
        "returntx"                        (bool,   optional) defaults to false and transaction is sent, if true, transaction is signed by this wallet and returned
 
-#### Result: ***`UPDATED INFO`***
+#### Result:
 transactionid                   (hexstr)
 
 Examples:
@@ -1496,7 +1496,7 @@ To create a currency of any kind, the identity it is named after must be minted 
 
 All funds to start the currency and for initial conversion amounts must be available to spend from the identity with the same name and ID as the currency being defined.
 
-#### Arguments: ***`Updated`***
+#### Arguments:
 ```json
 {
    "options" : n,                  (int,    optional) bits:
@@ -2066,9 +2066,9 @@ Funds are sourced automatically from the current wallet, which must be present, 
   {
      "toreserve"      : "bool",  (bool,   optional) if present, conversion is to the underlying reserve (Verus), if false, from Verus
      "recipient"      : "Rxxx",  (string, required) recipient of converted funds or funds that failed to convert
-     "amount"         : n,     (int64,  required) amount of source coins that will be converted, depending on the toreserve flag, the rest is change
-     "limit"          : n,     (int64,  optional) price in reserve limit, below which for buys and above which for sells, execution will occur
-     "validbefore"    : n,     (int,    optional) block before which this can execute as a conversion, otherwise, it executes as a send with normal network fee
+     "amount"         : n,       (int64,  required) amount of source coins that will be converted, depending on the toreserve flag, the rest is change
+     "limit"          : n,       (int64,  optional) price in reserve limit, below which for buys and above which for sells, execution will occur
+     "validbefore"    : n,       (int,    optional) block before which this can execute as a conversion, otherwise, it executes as a send with normal network fee
      "subtractfee"    : "bool",  (bool,   optional) if true, reduce amount to destination by the fee amount, otherwise, add from inputs to cover fee
   }
 ```
@@ -2082,26 +2082,29 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "reserveexchange", "params": ['[{"name": "PBAASCHAIN", "paymentaddress": "RRehdmUV7oEAqoZnzEGBH34XysnWaBatct", "amount": 5.0}]'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `sendcurrency "fromaddress" '[{"address":... ,"amount":...},...]' (returntx)`
+### `sendcurrency "fromaddress" '[{"address":... ,"amount":...},...]' (feeamount)`  ***`UPDATED INFO`***
 This sends one or many Verus outputs to one or many addresses on the same or another chain.
 Funds are sourced automatically from the current wallet, which must be present, as in sendtoaddress.
 If "fromaddress" is specified, all funds will be taken from that address, otherwise funds may come from any source set of UTXOs controlled by the wallet.
 #### Arguments:
-1. "fromaddress"             (string, required) The VerusID or address to send the funds from. "\*" means all addresses
+1. "fromaddress"             (string, required) The VerusID or address to send the funds from. "\*", "z\*", "R\*" and "i\*"
+                                                wildcards are supported. Also `"idname@:private"` can be used
+                                                to source from a balance of a private address attached to an ID.
 2. "outputs"                 (array, required) An array of json objects representing currencies, amounts, and destinations to send.
     ```json
     [{
-      "currency": "name"   (string, required) Name of the source currency to send in this output, defaults to native of chain
-      "amount":amount        (numeric, required) The numeric amount of currency, denominated in source currency
-      "convertto":"name",  (string, optional) Valid currency to convert to, either a reserve of a native source, or fractional of reserve
-      "address":"dest"     (string, required) The address and optionally chain/system after the "@" as a system specific destination
-      "refundto":"dest"    (string, optional) For pre-conversions, this is where refunds will go, defaults to fromaddress
-      "memo":memo            (string, optional) If destination is a zaddr (not supported on testnet), a string message (not hexadecimal) to include.
+      "currency": "name"    (string, required) Name of the source currency to send in this output, defaults to native of chain
+      "amount":amount       (numeric, required) The numeric amount of currency, denominated in source currency
+      "convertto":"name",   (string, optional) Valid currency to convert to, either a reserve of a native source, or fractional of reserve
+      "address":"dest"      (string, required) The address and optionally chain/system after the "@" as a system specific destination
+      "refundto":"dest"     (string, optional) For pre-conversions, this is where refunds will go, defaults to fromaddress
+      "memo":memo           (string, optional) If destination is a zaddr (not supported on testnet), a string message (not hexadecimal) to include.
       "preconvert":"false", (bool,   optional) auto-convert to PBaaS currency at market price, this only works if the order is mined before block start of the chain
       "subtractfee":"bool", (bool,   optional) if true, output must be of native or convertible reserve currency, and output will be reduced by share of fee
     }, ... ]
     ```
-3. "returntx"                (bool,   optional) defaults to false and transaction is sent, if true, transaction is signed and returned
+3. "feeamount"              (bool,   optional) specific fee amount requested instead of default miner's fee
+
 #### Result:
 ```
    "txid" : "transactionid" (string) The transaction id if (returntx) is false
@@ -2799,10 +2802,10 @@ Permanently marks a block as invalid, as if it violated a consensus rule.
 
 #### Result:
 
-#### jumblr_deposit "depositaddress"
-#### jumblr_pause
-#### jumblr_resume
-#### jumblr_secret "secretaddress"
+### jumblr_deposit "depositaddress"
+### jumblr_pause
+### jumblr_resume
+### jumblr_secret "secretaddress"
 ### `reconsiderblock "hash"`
 Removes invalidity status of a block and its descendants, reconsider them for activation.
 This can be used to undo the effects of invalidateblock.
@@ -3091,7 +3094,7 @@ As a json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "encryptwallet", "params": ["my pass phrase"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getaccount "VRSC_address"`
+### `getaccount "VRSCTEST_address"`
 DEPRECATED. Returns the account associated with the given address.
 
 #### Arguments:
@@ -3167,6 +3170,36 @@ The total amount in the wallet at least 5 blocks confirmed
 As a json rpc call
 ```bash
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getbalance", "params": ["*", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
+### `getcurrencybalance "address" ( minconf ) ( friendlynames )`  ***`NEW COMMAND`***
+
+Returns the balance in all currencies of a taddr, zaddr, iaddr or ID belonging to the node's wallet.
+
+CAUTION: If the wallet has only an incoming viewing key for this address, then spends cannot be
+detected, and so the returned balance may be larger than the actual balance.
+
+#### Arguments:
+1. "address"        (string) The selected address. It may be a transparent, private or identity address and include z*, R*, and i* wildcards.
+2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.
+3. friendlynames    (boolean, optional, default=true) use friendly names instead of i-addresses.
+
+#### Result:
+amount              (numeric) The total amount in VRSCTEST received for this address.
+
+#### Examples:
+
+The total amount received by address "myaddress"
+```bash
+> verus getcurrencybalance "myaddress"
+```
+The total amount received by address "myaddress" at least 5 blocks confirmed
+```bash
+> verus getcurrencybalance "myaddress" 5
+```
+As a json rpc call
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getcurrencybalance", "params": ["myaddress", 5] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ### `getnewaddress ( "account" )`
@@ -4035,14 +4068,16 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_exportwallet", "params": ["test"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `z_getbalance "address" ( minconf )`
+### `z_getbalance "address" ( minconf )` ***`UPDATED INFO`***
 Returns the balance of a taddr or zaddr belonging to the node's wallet.
 
 CAUTION: If the wallet has only an incoming viewing key for this address, then spends cannot be
 detected, and so the returned balance may be larger than the actual balance.
 
 #### Arguments:
-1. "address"      (string) The selected address. It may be a transparent or private address.
+1. "address"        (string) The selected address.  It may be a transparent or private address and
+                    include "z\*" "R\*" and "i\*" wildcards. Also `"idname@:private"` can be used
+                    to get the balance of a private address attached to an ID.
 2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.
 
 #### Result:
@@ -4430,12 +4465,14 @@ Change generated from a taddr flows to a new taddr address, while change generat
 When sending coinbase UTXOs to a zaddr, change is not allowed. The entire value of the UTXO(s) must be consumed.
 Before Sapling activates, the maximum number of zaddr outputs is 54 due to transaction size limits.
 
-#### Arguments:
-1. "fromaddress"         (string, required) The taddr or zaddr to send the funds from.
+#### Arguments: `***Updated Info***`
+1. "fromaddress"         (string, required) The taddr or zaddr to send the funds from. Also `"idname@:private"` can be used
+                         to get the source from a private address attached to an ID.
 2. "amounts"             (array, required) An array of json objects representing the amounts to send.
 ```json
     [{
-      "address":address  (string, required) The address is a taddr or zaddr
+      "address":address  (string, required) The address is a taddr or zaddr. Also `"idname@:private"` can be used
+                         to send to a private address attached to an ID.
       "amount":amount    (numeric, required) The numeric amount in KMD is the value
       "memo":memo        (string, optional) If the address is a zaddr, raw data represented in hexadecimal string format
     }, ... ]
@@ -4602,4 +4639,4 @@ Perform a joinsplit and return the JSDescription.
 
 compiled by Oink.vrsc@, additions by Mike@, grewalsatinder@ and allbits@
 
-Note: last revision date 2020-10-12.
+Note: last revision date 2020-12-02.
