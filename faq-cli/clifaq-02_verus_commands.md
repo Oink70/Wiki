@@ -2789,7 +2789,7 @@ n :    (numeric) estimated priority
 -1.0 is returned if not enough transactions and
 blocks have been observed to make an estimate.
 
-Example:
+#### Example:
 ```bash
 > verus estimatepriority 6
 ```
@@ -2800,12 +2800,10 @@ Permanently marks a block as invalid, as if it violated a consensus rule.
 #### Arguments:
 1. hash   (string, required) the hash of the block to mark as invalid
 
-#### Result:
-
-### jumblr_deposit "depositaddress"
-### jumblr_pause
-### jumblr_resume
-### jumblr_secret "secretaddress"
+### `jumblr_deposit "depositaddress"`
+### `jumblr_pause`
+### `jumblr_resume`
+### `jumblr_secret "secretaddress"`
 ### `reconsiderblock "hash"`
 Removes invalidity status of a block and its descendants, reconsider them for activation.
 This can be used to undo the effects of invalidateblock.
@@ -2815,7 +2813,7 @@ This can be used to undo the effects of invalidateblock.
 
 #### Result:
 
-Examples:
+#### Examples:
 ```bash
 > verus invalidateblock "blockhash"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "invalidateblock", "params": ["blockhash"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
@@ -2840,7 +2838,7 @@ Return information about the given Verus address.
   "account" : "account"         (string) DEPRECATED. The account associated with the address, "" is the default account
 }
 ```
-Examples:
+#### Examples:
 ```bash
 > verus validateaddress "RTZMZHDFSTFQst8XmX2dR4DaH87cEUs3gC"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "validateaddress", "params": ["RTZMZHDFSTFQst8XmX2dR4DaH87cEUs3gC"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
@@ -2859,8 +2857,7 @@ Verify a signed file
 #### Result:
 true|false   (boolean) If the signature is verified or not.
 
-Examples:
-
+#### Examples:
 Create the signature
 ```bash
 > verus signfile "RNKiEBduBru6Siv1cZRVhp4fkZNyPska6z" "filepath/filename"
