@@ -78,7 +78,7 @@ When an order is submitted via the VerusPay gateway, the order will be placed "o
 
 VerusPay uses limited API functionality for Manual Mode, to communicate with the blockchain explorer in verifying payments and with the veruspay.io API to get up-to-date price data. These API's do not receive any private data either about the store owner, store, or customer. The only data sent to the block explorer API is the public/transparent blockchain transaction and address used. For VerusPay.io API price data, only the store-set currency is sent to retrieve the current fiat exchange rate for Verus Coin.
 
-[*VerusPay installation instructions*](https://github.com/monkins1010/Verusguideassets/wiki)
+[*VerusPay installation instructions*](https://github.com/monkins1010/VerusPay/wiki)
 
 ## Be a part of it all
 

@@ -12,7 +12,7 @@ If you have any questions about the information here, need help or have suggesti
 [VerusIDs](#!information/verusid.md)
 [Verus Digital Signatures](#!information/signatures.md)
 [VerusHash 2.1](#!information/verushash_2.1.md)
-[VerusPay](https://github.com/monkins1010/Verusguideassets/wiki)
+[VerusPay](https://github.com/monkins1010/VerusPay/wiki)
 [Verus Discord verification](https://youtu.be/YVOfIMjRf30) ***`Video`***
 [Bootstrap video](https://youtu.be/xgLxzel5t04) ***`Video`***
 
