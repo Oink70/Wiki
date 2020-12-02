@@ -68,6 +68,18 @@ Verus IDs will cost Verus to acquire, 100 Verus per ID to be exact, which can be
 
 As you might expect from looking at the fact that anywhere from 20 to 100 Verus goes to miners and stakers of Verus for each new identity once identities hit mainnet, some Verus blocks may have VERY high rewards for some time. The best thing about that is that regardless of how much the Verus blockchain rewards miners over and above the pre-determined coinbase reward, it will be as a result of the **on-chain economy**, paid for by people buying identities with **no inflation** of the money supply\! If you or your friends missed the early days of the Verus launch, **you don't want to miss this** new opportunity to be mining, staking or referring now **Verus IDs are activated on the mainnet\!**.
 
+## VerusPay
+
+#### Blockchain-integrated payment gateway for accepting Verus Coin (VRSC) in a WooCommerce ecommerce store
+
+This plugin extends *WooCommerce* on *Wordpress*, adding the ability to accept cryptocurrency payments in Verus Coin (VRSC) using either an on-store wallet daemon (best for VPS or dedicated hosting stores) or manually configured VRSC addresses (best for shared hosting stores).
+
+When an order is submitted via the VerusPay gateway, the order will be placed "on-hold" while awaiting payment from the customer. The customer has a limited time wherein to send the payment and the store monitors the wallet/address to confirm payment received before releasing the order and redirecting the customer to the Thank You page.
+
+VerusPay uses limited API functionality for Manual Mode, to communicate with the blockchain explorer in verifying payments and with the veruspay.io API to get up-to-date price data. These API's do not receive any private data either about the store owner, store, or customer. The only data sent to the block explorer API is the public/transparent blockchain transaction and address used. For VerusPay.io API price data, only the store-set currency is sent to retrieve the current fiat exchange rate for Verus Coin.
+
+[*VerusPay installation instructions*](https://github.com/monkins1010/Verusguideassets/wiki)
+
 ## Be a part of it all
 
 Focus on Verus’ social media presence has picked up with new, fresh looking Facebook and YouTube channels so check them out and feel free to post something or simply explore the content. There’s so much going on, plenty to learn about.
@@ -101,4 +113,4 @@ As a community project of just regular Joes, it can’t be stressed enough how i
 
 created by Rozo@ and Godballz@
 
-Note: last revision date 2020-10-11.
+Note: last revision date 2020-12-02.
