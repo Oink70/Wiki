@@ -58,7 +58,7 @@ If you have any questions about the information here, need help or have suggesti
 ## Frequently Asked Questions (Windows specific)
 [Remarks on Windows command line formatting](#!faq-windows/winfaq-01_cli_formatting.md)
 [Windows pool-mining on low priority](#!faq-windows/winfaq-02_low_priority_mining.md)
-[Standard locations for Verus-Desktop installations](#!faq-windows/winfaq-03_verus_desktop_locations.md)
+[Standard locations for Verus-Desktop installations](#!faq-windows/winfaq-03_verus_desktop_locations.md) ***`UPDATED`***
 
 ## Frequently Asked Questions (Linux specific)
 **[Install the Linux CLI wallet](#!faq-linux/faq-lin01_install_linux_cli.md)** ***`TIP`***
@@ -70,12 +70,14 @@ If you have any questions about the information here, need help or have suggesti
 [PHP staking interface for coinshielding nodes](#!faq-linux/faq-lin07_PHP_CLI_interface.md)
 [Low priority pool-mining](#!faq-linux/faq-lin08_low_priority_mining.html.md)
 [error while loading shared libraries: libgomp.so.1](#!faq-linux/faq-lin09_libgomp.so.1.md)
+[Standard locations for Verus Desktop installations](#!faq-linux/faq-lin10_verus_desktop_locations.md) ***`NEW`***
 
 ## Frequently Asked Questions (MacOS specific)
 [ERROR: Cannot Get a lock on data directory /root/.komodo/VRSC.](#!faq-macos/mac-faq01_obtain_lock.md)
 [What versions of OSX/macOS are supported?](#!faq-macos/mac-faq02_what_versions_osx.md)
 [Start mining on MacOS](#!faq-macos/mac-faq03-mining_guide.md)
 [MacOS pool-mining on low priority](#!faq-macos/mac-faq04_low_priority_mining.md)
+[Standard locations for Verus Desktop installations](#!faq-macos/mac-faq05_verus_desktop_locations.md) ***`NEW`***
 
 ## Frequently Asked Questions (ARM specific)
 [Hardware and software requirements](#!faq-arm/armfaq-02_requirements.md)
@@ -90,4 +92,4 @@ If you have any questions about the information here, need help or have suggesti
 [Q&A questions channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-questions-20200728.html)
 [Q&A reward channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-reward-20200728.html)
 
-Note: last revision date 2020-12-02.
+Note: last revision date 2020-12-03.
