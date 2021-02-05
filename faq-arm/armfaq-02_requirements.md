@@ -26,6 +26,8 @@ The listed requirements are for running **one** chain. Additional PBaaS chains r
 * 2 GB memory + 4 GB Swap available to the Verus Desktop Wallet
 * 10 GB storage space for Verus Blockchain and Verus Desktop.
 * internet connectivity
+* `libgomp1` and `zlib1g-dev` libraries installed
+
 
 #### Recommended requirements
 * 64-bit processor with AES functions enabled
@@ -60,4 +62,4 @@ The listed requirements are for running **one** chain. Additional PBaaS chains r
 * A public address to mine to
 * A public mining pool to connect to
 
-Note: creation date 2020-08-13.
+Note: creation date 2021-02-05.
