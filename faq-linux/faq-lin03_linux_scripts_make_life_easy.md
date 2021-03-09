@@ -51,13 +51,6 @@ fi
 
 For this script I recommend setting up a new Protonmail account with no association to any other service or your name, 2FA secure it.
 
-##### backupwallet.sh
-
-```bash
-echo "Attached Backup" | mail -s "Merry Backup" -A /home/user/.komodo/VRSC/wallet.dat -a "From: user@yourfullyqualifieddomain.tld" you@youremail.tld
-```
-Again, these scripts are a little rudementary but they do work! If you're curious my crontab, I'll post it next...to set your cron jobs use the command crontab -e
-
 #### Schedule script in CRONTAB
 
 In the following, the `*/5` is every 5 min, the `0` is on the hour every hour, the `0 12` is every day at 12 PM.
@@ -75,4 +68,4 @@ Note: For any emails sent (for backup of dat file for example) make sure to enfo
 
 (submitted by @J Oliver Westbrook)
 
-Note: last revision date 2020-02-25.
+Note: last revision date 2021-03-09.
