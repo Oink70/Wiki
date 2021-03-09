@@ -24,7 +24,7 @@ If you have any questions about the information here, need help or have suggesti
 [Change Verus-Desktop from Lite Mode to Native Mode](#!how-to/how-to_lite_to_native.md)
 [import your Lite wallet address into your native Verus Desktop](#!how-to/how-to_convert-seed-to-wif.md)
 [Verus Wallet installation guide (Linux)](#!faq-linux/faq-lin01_install_linux_cli.md)
-[Verus Beginners Mining guide (External)](https://medium.com/veruscoin/how-to-start-cpu-mining-verus-coin-vrsc-from-your-laptop-in-under-5-minutes-f69c9aae340e)
+[Verus Beginners Mining guide (External)](https://medium.com/veruscoin/verus-beginners-staking-guide-efbbdc4de951) ***`NEW`***
 [Verus Beginners Staking guide (External)](https://medium.com/veruscoin/how-to-earn-vrsc-solo-mining-with-your-cpu-and-staking-mined-coins-aa27da76882c)
 [Shield Verus Coins via Command Line Interface](#!how-to/how-to_shield_via_cli.md)
 [Create an ID on Verus Desktop (pdf)](https://wiki.verus.io/how-to/how-to_create_verus_id_with_verus_desktop.pdf)
@@ -92,4 +92,4 @@ If you have any questions about the information here, need help or have suggesti
 [Q&A questions channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-questions-20200728.html)
 [Q&A reward channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-reward-20200728.html)
 
-Note: last revision date 2021-02-05.
+Note: last revision date 2021-03-09.
