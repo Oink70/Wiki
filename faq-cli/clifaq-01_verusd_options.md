@@ -346,10 +346,7 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
   `-gen`
        Mine/generate coins (default: 0)
 
-  `-mineraddress`
-      Send mined coins to a specific single address or ID.
-
-  `-defaultid`
+  `-defaultid=<ID@>`
       Set a default destination ID for your staking rewards.
 
   `-genproclimit=<n>`
@@ -365,6 +362,9 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
   `-minetolocalwallet`
        Require that mined blocks use a coinbase address in the local wallet
        (default: 1)
+
+  `-pubkey=<public key>`
+      Redirect all coinbase rewards to the address belonging to the publickey.
 
 ## RPC server options:
 
