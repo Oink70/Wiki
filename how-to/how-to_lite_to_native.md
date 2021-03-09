@@ -14,13 +14,14 @@ Attention: Read completely before use.
 
 Link 1: [Download Verus Bootstrap](https://bootstrap.verus.io)
 Link 2: [Import Lite wallet address in Verus Desktop native](https://wiki.verus.io/#!how-to/how-to_convert-seed-to-wif.md)
+Link 3: [Checking the signature](https://verus.io/verify-signatures)
 
 ## Procedure:
 1. Make sure you have your seed phrase and password you use to log into your Lite mode wallet available.
 2. First of all make a notition of your address and balance of VRSC you have in your wallet, before closing Verus Desktop.
 3. Make sure the latest version of Verus-Desktop is installed.
  1. Download the latest Verus-Desktop.
- 2. Verify the SHA256 checksum of your download, so you have an untampered installer.
+ 2. Verify the signature of your download, so you have an untampered installer. [Link 3](https://verus.io/verify-signatures) or [Video](https://youtu.be/sFUnKCnHx98)
  3. Run the file you just downloaded to install it.
 4. Installing the bootstrap:
   1. Download the bootstrap from [Link 1](https://bootstrap.verus.io).
@@ -40,4 +41,4 @@ If you followed these steps, installed the bootstrap, switched from Lite to Nati
 
 Created by Oink.vrsc@
 
-Note: last revision date 2020-09-30.
+Note: last revision date 2021-03-03.
