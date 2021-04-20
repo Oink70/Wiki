@@ -19,7 +19,7 @@ Note: Replace `ARM` in the `git clone` line below with the branchname above you 
 
 Install dependencies (specific for Debian-based distributions):
 ```bash
-sudo apt-get install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential
+sudo apt-get install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential git
 ```
 For GPU-miner compilation additional sources are required (Not needed for CPU or ARM):
 ```bash
@@ -42,4 +42,4 @@ And finally starting the miner (Change pool, address & workername to your own li
 
 Info from @Chris - Monkins1010 LOUD Mining.
 
-Note: last revision date 2020-11-11.
+Note: last revision date 2021-04-20.
