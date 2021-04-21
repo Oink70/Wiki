@@ -17,7 +17,7 @@ If you have any questions about the information here, need help or have suggesti
 [Bootstrap video](https://youtu.be/xgLxzel5t04) ***`Video`***
 
 ## How-To
-[Backup, Install or Update and Bootstrap your wallet](#!how-to/how-to_bootstrap.md) ***`TIP`***
+[Bootstrap your wallet](#!how-to/how-to_bootstrap.md) ***`TIP`***
 [Verifying the signature of an updated wallet](#!how-to/how-to_check_signatures.md)
 **[Backing up my wallet](#!how-to/how-to_backup_my_wallet.md)**
 **[Restoring my wallet](#!how-to/how-to_restore_my_wallet.md)**
@@ -92,4 +92,4 @@ If you have any questions about the information here, need help or have suggesti
 [Q&A questions channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-questions-20200728.html)
 [Q&A reward channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-reward-20200728.html)
 
-Note: last revision date 2021-04-20.
+Note: last revision date 2021-04-21.
