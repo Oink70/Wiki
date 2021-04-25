@@ -19,8 +19,8 @@ If you have any questions about the information here, need help or have suggesti
 ## How-To
 [Bootstrap your wallet](#!how-to/how-to_bootstrap.md) ***`TIP`***
 [Verifying the signature of an updated wallet](#!how-to/how-to_check_signatures.md)
-**[Backing up my wallet](#!how-to/how-to_backup_my_wallet.md)**
-**[Restoring my wallet](#!how-to/how-to_restore_my_wallet.md)**
+**[Backing up my wallet](#!how-to/how-to_backup_my_wallet.md)** ***`Video added`***
+**[Restoring my wallet](#!how-to/how-to_restore_my_wallet.md)** ***`Video added`***
 [Change Verus-Desktop from Lite Mode to Native Mode](#!how-to/how-to_lite_to_native.md)
 [import your Lite wallet address into your native Verus Desktop](#!how-to/how-to_convert-seed-to-wif.md)
 [Verus Wallet installation guide (Linux)](#!faq-linux/faq-lin01_install_linux_cli.md)
@@ -66,7 +66,7 @@ If you have any questions about the information here, need help or have suggesti
 [Linux Bash scripts to make mining life easier](#!faq-linux/faq-lin03_linux_scripts_make_life_easy.md)
 [ERROR: Cannot obtain lock on data directory](#!faq-linux/faq-lin04_cannot_obtain_lock.md)
 [Cloud daily backup of Wallet.dat](#!faq-linux/faq-lin05_daily_cloud_backup.md)
-[Compile Monkins Verus enhanced CCMiner for various hardware](#!faq-linux/faq-lin06_compile_ccminer.md) ***`UPDATED`***
+[Compile Monkins Verus enhanced CCMiner for various hardware](#!faq-linux/faq-lin06_compile_ccminer.md)
 [PHP staking interface for coinshielding nodes](#!faq-linux/faq-lin07_PHP_CLI_interface.md)
 [Low priority pool-mining](#!faq-linux/faq-lin08_low_priority_mining.html.md)
 [error while loading shared libraries: libgomp.so.1](#!faq-linux/faq-lin09_libgomp.so.1.md)
@@ -92,4 +92,4 @@ If you have any questions about the information here, need help or have suggesti
 [Q&A questions channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-questions-20200728.html)
 [Q&A reward channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-reward-20200728.html)
 
-Note: last revision date 2021-04-21.
+Note: last revision date 2021-04-25.

@@ -11,8 +11,8 @@
 `verus command "<userinput>"` needs to be entered literally, with `<userinput>` replaced by your specific userdata. So if the text directs you to use for example `"<Public Address>"`, you replace that (including the `<` and `>`) with the address,
 so it looks similar to this: `"RYX6RYU3AAvwVCNyNM4cVyGUhSMUPvKs3r"`.
 
-## Optional:
-Watch this video with an explanation how to accomplish the steps below: https://youtu.be/EO6EdPY32Rk
+### Instruction Video
+External YouTube link: [Restoring the Verus Desktop wallet](https://youtu.be/EO6EdPY32Rk)
 
 ## Procedure
 ### Using a backup of your `wallet.dat`.
@@ -46,4 +46,4 @@ Importing individual keys is explained in detail in this wiki: [import your Lite
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-10-02
+Note: revision date 2021-04-25

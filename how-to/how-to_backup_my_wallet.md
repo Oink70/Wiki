@@ -12,6 +12,9 @@ Watch this video with an explanation how to accomplish the steps below: [Backup 
  * Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
  * OS independent through Verus Desktop: Click `help`, `Show Verus data folder (default)`
 
+### Instruction Video
+External YouTube link: [Backing up the Verus Desktop wallet](https://youtu.be/ygPsdK8Trck)
+
 ## Preferred method: Exporting your wallet
 
 Note: The filename you replace`<mywalletexport>` with, can only contain letters and figures, no other characters, so it **cannot** have a file-extension!*
@@ -67,4 +70,4 @@ For Komodo asset chains it is a folder/directory in the `komodo` base directory 
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-10-07.
+Note: revision date 2021-04-25.
