@@ -22,7 +22,7 @@ If you have any questions about the information here, need help or have suggesti
 **[Backing up my wallet](#!how-to/how-to_backup_my_wallet.md)** ***`Video added`***
 **[Restoring my wallet](#!how-to/how-to_restore_my_wallet.md)** ***`Video added`***
 [Change Verus-Desktop from Lite Mode to Native Mode](#!how-to/how-to_lite_to_native.md)
-[import your Lite wallet address into your native Verus Desktop](#!how-to/how-to_convert-seed-to-wif.md)
+[import your Lite wallet address into your native Verus Desktop](#!how-to/how-to_convert-seed-to-wif.md) ***`UPDATED`***
 [Verus Wallet installation guide (Linux)](#!faq-linux/faq-lin01_install_linux_cli.md)
 [Verus Beginners Staking guide (External)](https://medium.com/veruscoin/verus-beginners-staking-guide-efbbdc4de951) ***`NEW`***
 [Verus Beginners Mining guide (External)](https://medium.com/veruscoin/how-to-earn-vrsc-solo-mining-with-your-cpu-and-staking-mined-coins-aa27da76882c)

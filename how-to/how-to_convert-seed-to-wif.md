@@ -19,10 +19,10 @@ If needed, use this guide to quickly synchronize your wallet: https://wiki.verus
 If you have a seed, you can retrieve your Private key (WIF) by having the Verus Desktop wallet convert it for you.
 To convert your *seed phrase* in Verus Desktop, go to `settings` --> `Coin Settings`, select the chain you want to use in the top-right corner and enter the following command:
 ```
-run convertpassphrase "<seedphrase>"
+run convertpassphrase "word_1 word_2 word_3 ... word_n"
 ```
 
-Note: Make sure you replace `<seedphrase>` with the actual seedphrase of the address you want to import!
+Note: Make sure you replace `Word1 word2 word3 ... word_n` with the actual seedphrase (12 or 24 words) of the address you want to import!
 
 You will receive a response __similar__ to this:
 ```
@@ -48,7 +48,7 @@ Replace `<wif>` with the actual **wif** you got from the `convertpassphrase` com
 
 Note: Don't use the WIF from the example above, but use the one from the CLI-interface in Verus Desktop.
 
-The GUI wallet will not show any progress on the import and may give messages that the RPC daemon is not reacting. It will take quite some time for the process to finish in the background, especially if the address has many transaction on it.
+Note: The GUI wallet will not show any progress on the import and may give messages that the RPC daemon is not reacting. It will take quite some time for the process to finish in the background, especially if the address has many transaction on it.
 
 ## Importing multiple WIFs in one batch for public (transparent) addresses
 To import your address, go to `settings` --> `Coin Settings`, select the chain you want to use in the top-right corner and enter the following command for every WIF except for the final one:
@@ -96,4 +96,4 @@ Note: Don't use the WIF from the example above, but use the one from the CLI-int
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2020-11-11.
+Note: revision date 2021-05-02.
