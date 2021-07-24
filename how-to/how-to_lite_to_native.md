@@ -29,11 +29,12 @@ Link 3: [Checking the signature](https://verus.io/verify-signatures)
   3. Unpack the downloaded archive to `VRSC wallet & data location`.
 5. Getting Verus-Desktop ready for Native mode:
 	1. Start Verus-Desktop and enter your profile (if not loaded automatically).
-  2. Click `+ Add Coin`, select **Verus** from the dropdown list and continue.
-  3. Select **Native** and optionallu tick the options `Start staking`, `Start Mining` and fill in the amount of threads to mine with.
-  4. Click `Add Coin`. Verus-Desktop will add Verus as Native chain to your screens.
-	5. You may get a red warning message about Zcash params. (Verus Desktop will detect if you have the necessary ZCash parameter files and download them if needed)
-	6. As soon as the download is finished, Verus-Desktop will continu and bring you into your wallet. It will automatically start to synchronize the blockchain. Since we already put the majority of the chain in place, this will take just a few minutes.
+  2. If present in your profile, `deactivate` Verus Lite.
+  3. Click `+ Add Coin`, select **Verus** from the dropdown list and continue.
+  4. Select **Native** and optionallu tick the options `Start staking`, `Start Mining` and fill in the amount of threads to mine with.
+  5. Click `Add Coin`. Verus-Desktop will add Verus as Native chain to your screens.
+	6. You may get a red warning message about Zcash params. (Verus Desktop will detect if you have the necessary ZCash parameter files and download them if needed)
+	7. As soon as the download is finished, Verus-Desktop will continu and bring you into your wallet. It will automatically start to synchronize the blockchain. Since we already put the majority of the chain in place, this will take just a few minutes.
 6. Importing your existing Address:
 	* This procedure is described in detail in: [Import Lite wallet address in Verus Desktop native](https://wiki.verus.io/#!how-to/how-to_convert-seed-to-wif.md).
 
@@ -41,4 +42,4 @@ If you followed these steps, installed the bootstrap, switched from Lite to Nati
 
 Created by Oink.vrsc@
 
-Note: last revision date 2021-03-03.
+Note: last revision date 2021-07-24.
