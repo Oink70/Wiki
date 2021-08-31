@@ -20,7 +20,7 @@ If you want to know how profitable it is, you need to know a few important detai
 If you know the answer to the hardware, you can look op a comparable one in the Spreadsheat from Link 1, to give you an
 idea of the performance.
 
-If you know your energy price also, you can [calculate](#!02_average_time_to_find_a_block_manual_calculation.md) an estimation of how much your hardware can earn you at this moment.
+If you know your energy price also, you can [calculate](#!faq-allos/faq-allos02_average_time_to_find_a_block_manual_calculation.md) an estimation of how much your hardware can earn you at this moment.
 
 If you have to get new hardware just to mine, think about it for a moment: would you have bought new hardware anyway? If so,
 you can use this information to get an idea what kind of hardware you want to buy.
