@@ -22,7 +22,7 @@ If you have any questions about the information here, need help or have suggesti
 **[Backing up my wallet](#!how-to/how-to_backup_my_wallet.md)**
 **[Restoring my wallet](#!how-to/how-to_restore_my_wallet.md)**
 [Change Verus-Desktop from Lite Mode to Native Mode](#!how-to/how-to_lite_to_native.md)
-[import your Lite wallet address into your native Verus Desktop](#!how-to/how-to_convert-seed-to-wif.md) ***`UPDATED`***
+[import your Lite wallet address into your native Verus Desktop](#!how-to/how-to_convert-seed-to-wif.md)
 [Verus Wallet installation guide (Linux)](#!faq-linux/faq-lin01_install_linux_cli.md)
 [Verus Beginners Staking guide (External)](https://medium.com/veruscoin/verus-beginners-staking-guide-efbbdc4de951)
 [Verus Beginners Mining guide (External)](https://medium.com/veruscoin/how-to-earn-vrsc-solo-mining-with-your-cpu-and-staking-mined-coins-aa27da76882c)
@@ -80,17 +80,17 @@ If you have any questions about the information here, need help or have suggesti
 [Standard locations for Verus Desktop installations](#!faq-macos/mac-faq05_verus_desktop_locations.md)
 
 ## Frequently Asked Questions (ARM specific)
-**[Updating CLI wallet](#!faq-arm/armfaq-03_updating.md)** ***`NEW`***
+**[Updating CLI wallet](#!faq-arm/armfaq-03_updating.md)**
 [Hardware and software requirements](#!faq-arm/armfaq-02_requirements.md)
 [error while loading shared libraries: libgomp.so.1 and/or libz.so](#!faq-arm/armfaq-01_libgomp.so.1.md)
 
 ## CLI wallet specific Information
-[Verusd options list](#!faq-cli/clifaq-01_verusd_options.md)
-[Verus command list](#!faq-cli/clifaq-02_verus_commands.md)
+[Verusd options list](#!faq-cli/clifaq-01_verusd_options.md) ***`UPDATED`***
+[Verus command list](#!faq-cli/clifaq-02_verus_commands.md) ***`UPDATED`***
 [Remarks on Windows command line formatting](#!faq-windows/winfaq-01_cli_formatting.md)
 
 ## Q&A Archive
 [Q&A questions channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-questions-20200728.html)
 [Q&A reward channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-reward-20200728.html)
 
-Note: last revision date 2021-07-24.
+Note: last revision date 2021-11-16.
