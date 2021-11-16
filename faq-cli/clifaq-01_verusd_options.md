@@ -347,7 +347,7 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
        Mine/generate coins (default: 0)
 
   `-defaultid=<ID@>`
-      Set a default destination ID for your staking rewards.
+      Set a default destination ID for your staking rewards. (**Not** shown in standard daemon `--help` command)
 
   `-genproclimit=<n>`
        Set the number of threads for coin mining if enabled (-1 = all cores,
@@ -364,7 +364,10 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
        (default: 1)
 
   `-pubkey=<public key>`
-      Redirect all coinbase rewards to the address belonging to the publickey.
+      Redirect all coinbase rewards to the address belonging to the publickey. (**Must** be a commandline option. Does **not** work if included in the `VRSC.conf`,  **not** shown in standard daemon `--help` command)
+
+  `-cheatcatcher=<private z-address>`
+      Checks mempool for spending a TXID multiple times for staking. If found the blockreward of the offending stake transaction will be sent to the provate address entered. (**Must** be a commandline option. Does **not** work if included in the `VRSC.conf`,  **not** shown in standard daemon `--help` command)
 
 ## RPC server options:
 
@@ -413,6 +416,6 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
 
 
-compiled by Oink.vrsc@
+compiled by Oink.vrsc@.
 
-Note: last revision date 2020-9-21.
+Note: last revision date 2021-11-16.
