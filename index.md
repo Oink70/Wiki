@@ -81,7 +81,7 @@ If you have any questions about the information here, need help or have suggesti
 
 ## Frequently Asked Questions (ARM specific)
 **[Updating CLI wallet](#!faq-arm/armfaq-03_updating.md)**
-[Hardware and software requirements](#!faq-arm/armfaq-02_requirements.md)
+[Hardware and software requirements](#!faq-arm/armfaq-02_requirements.md) ***`UPDATED`***
 [error while loading shared libraries: libgomp.so.1 and/or libz.so](#!faq-arm/armfaq-01_libgomp.so.1.md)
 
 ## CLI wallet specific Information
@@ -93,4 +93,4 @@ If you have any questions about the information here, need help or have suggesti
 [Q&A questions channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-questions-20200728.html)
 [Q&A reward channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-reward-20200728.html)
 
-Note: last revision date 2021-11-16.
+Note: last revision date 2021-11-29.
