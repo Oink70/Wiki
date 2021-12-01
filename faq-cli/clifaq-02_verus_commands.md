@@ -2,7 +2,7 @@
 
 ## Important General Information
 
-### Verus CLI version 0.9.0
+### Verus CLI version 0.9.0-2
 
 Usage: `verus [command]` Issue a command to the coindaemon
 
@@ -541,7 +541,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getchaintips", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getchaintxstats` ***`NEW`***
+### `getchaintxstats`
 
 Compute statistics about the total number and rate of transactions in the chain.
 
@@ -1286,6 +1286,38 @@ transactionid                   (hexstr)
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "revokeidentity", "params": ["nameorID"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
+### `setidentitytimelock "id@" '{"unlockatblock":absoluteblockheight || "setunlockdelay":numberofblocksdelayafterunlock}' (returntx)` ***`NEW`***
+Enables timelocking and unlocking of funds access for an on-chain VerusID. This does not affect the lock status of VerusIDs on other chains,
+including VerusIDs with the same identity as this one, which has been exported to another chain.
+
+Use "setunlockdelay" to set a time unlock delay on an identity, which means that once the identity has been unlocked,
+numberofblocksdelayafterunlock must then pass before the identity will be able to spend funds on this blockchain. Services
+which support VerusID authentication and recognize this setting may also choose to prevent funds transfers when an ID is locked.
+
+Use "unlockatblock" to either unlock, by passing the current block, which will still require waiting for the specified unlock
+delay, or to set a future unlock height that immediately begins counting down. Unlike an unlock delay, which only starts counting
+down when the ID is unlocked, an "unlockatblock" time lock is absolute and will automatically unlock when the specified
+block passes.
+
+#### Arguments - either "unlockatblock" or "setunlockdelay" must be specified and not both
+```json
+{
+  "unlockatblock"                (number, optional) unlock at an absolute block height, countdown starts when mined into a block
+  "setunlockdelay"               (number, optional) delay this many blocks after unlock request to unlock, can only be
+                                                      circumvented by revoke/recover
+}
+```
+#### Result:
+   Hex string of either the txid if returnhex is false or the hex serialized transaction if returntx is true.
+   If returntx is true, the transaction will not have been submitted and must be sent with "sendrawtransaction"
+   after any necessary signatures are applied in the case of multisig.
+
+Examples:
+```bash
+> verus setidentitytimelock "id@" '{"unlockatblock":absoluteblockheight || "setunlockdelay":numberofblocksdelayafterunlock}' (returntx)
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "setidentitytimelock", "params": ["id@" '{"unlockatblock":absoluteblockheight || "setunlockdelay":numberofblocksdelayafterunlock}' (returntx)] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `signfile "address or identity" "filepath/filename" "curentsig"`
 Generates a SHA256D hash of the file, returns the hash, and signs the hash with the private key specified
 
@@ -1941,7 +1973,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getcurrency", "params": ["chainname"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### getcurrencyconverters ["currency1","currency2",...]' ***`NEW`***
+### `getcurrencyconverters ["currency1","currency2",...]`
 Retrieves all currencies that have at least 1000 VRSC in reserve, are >10% VRSC reserve ratio, and have all listed currencies as reserves
 
 #### Arguments:
@@ -1990,7 +2022,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getcurrencystate", "params": [name] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getexports "chainname" (heightstart) (heightend)` ***`UPDATED`***
+### `getexports "chainname" (heightstart) (heightend)`
 Returns pending export transfers to the specified currency from start height to end height if specified
 
 ###$ Arguments:
@@ -2046,7 +2078,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getexports", "params": ["chainname"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getimports "chainname" (startheight) (endheight)` ***`UPDATED`***
+### `getimports "chainname" (startheight) (endheight)`
 Returns all imports into a specific currency, optionally that were imported between a specific block range.
 #### Arguments:
 ```
@@ -2145,7 +2177,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getinitialcurrencystate", "params": [name] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getlastimportfrom "systemname"`***`UPDATED`***
+### `getlastimportfrom "systemname"`
 Returns the last import from a specific originating system.
 
 #### Arguments:
@@ -2169,7 +2201,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getlastimportfrom", "params": "systemname" }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getlaunchinfo "currencyid"` ***`NEW COMMAND`***
+### `getlaunchinfo "currencyid"`
 Returns the launch notarization data and partial transaction proof of the launch notarization for the specifed currencyid.
 
 #### Arguments:
@@ -2193,7 +2225,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getlaunchinfo", "params": ["currencyid"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getblocktemplate ( "jsonrequestobject" )` ***`UPDATED`***
+### `getblocktemplate ( "jsonrequestobject" )`
 If the request parameters include a 'mode' key, that is used to explicitly select between the default 'template' request or a 'proposal'.
 It returns data needed to construct a block to work on.
 See https://en.bitcoin.it/wiki/BIP_0022 for full specification.
@@ -2255,7 +2287,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblocktemplate", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getnotarizationdata "currencyid"` ***`UPDATED`***
+### `getnotarizationdata "currencyid"`
 Returns the latest PBaaS notarization data for the specifed currencyid.
 
 Arguments
@@ -2291,7 +2323,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getpendingtransfers", "params": ["chainname"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getreservedeposits "currencyname"` ***`NEW COMMAND`***
+### `getreservedeposits "currencyname"`
 Returns all deposits under control of the specified currency or chain. If the currency is of an external system
 or chain, all deposits will be under the control of that system or chain only, not its independent currencies.
 
@@ -2334,7 +2366,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getsaplingtree", "params": [name] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `listcurrencies ({query object}) startblock endblock` ***`UPDATED`***
+### `listcurrencies ({query object}) startblock endblock`
 Returns a complete definition for any given chain if it is registered on the blockchain. If the chain requested is NULL, chain definition of the current chain is returned.
 
 #### Arguments:
@@ -2393,7 +2425,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "refundfailedlaunch", "params": ["currencyid"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `sendcurrency "fromaddress" '[{"address":... ,"amount":...},...]' (feeamount)`  ***`UPDATED`***
+### `sendcurrency "fromaddress" '[{"address":... ,"amount":...},...]' (feeamount)`
 This sends one or many Verus outputs to one or many addresses on the same or another chain.
 Funds are sourced automatically from the current wallet, which must be present, as in sendtoaddress.
 If "fromaddress" is specified, all funds will be taken from that address, otherwise funds may come from any source set of UTXOs controlled by the wallet.
@@ -2433,7 +2465,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sendcurrency", "params": ["bob@" '[{"currency":"btc", "address":"alice@quad", "amount":500.0},...]'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `submitacceptednotarization "{earnednotarization}" "{notaryevidence}"` ***`UPDATED`***
+### `submitacceptednotarization "{earnednotarization}" "{notaryevidence}"`
 Finishes an almost complete notarization transaction based on the notary chain and the current wallet or pubkey.
 
 If successful in submitting the transaction based on all rules, a transaction ID is returned, otherwise, NULL.
@@ -2453,7 +2485,7 @@ Examples:
 
 ### `submitimports '{"sourcesystemid":"systemid", "notarizationtxid":"txid", "notarizationtxoutnum":n,
 "exports":[{"txid":"hexid", "txoutnum":n, "partialtransactionproof":"hexstr",
-"transfers": [{transfer1}, {transfer2},...]}, ...]}'` ***`NEW COMMAND`***
+"transfers": [{transfer1}, {transfer2},...]}, ...]}'`
 Accepts a set of exports from another system to post to the VRSC network.
 
 #### Arguments:
