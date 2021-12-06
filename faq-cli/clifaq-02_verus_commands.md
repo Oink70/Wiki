@@ -4906,4 +4906,4 @@ Perform a joinsplit and return the JSDescription.
 
 compiled by Oink.vrsc@, additions by Mike@, grewalsatinder@ and allbits@
 
-Note: last revision date 2021-11-16.
+Note: last revision date 2021-12-01.
