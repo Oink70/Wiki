@@ -2462,7 +2462,7 @@ If "fromaddress" is specified, all funds will be taken from that address, otherw
 Examples:
 ```bash
 > verus sendcurrency "*" '[{"currency":"btc","address":"RRehdmUV7oEAqoZnzEGBH34XysnWaBatct" ,"amount":500.0},...]'
-> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sendcurrency", "params": ["bob@" '[{"currency":"btc", "address":"alice@quad", "amount":500.0},...]'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sendcurrency", "params": ["bob@", [{"currency":"btc", "address":"alice@quad", "amount":500.0},...]] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ### `submitacceptednotarization "{earnednotarization}" "{notaryevidence}"`
