@@ -8,7 +8,7 @@ The listed requirements are for running **one** chain. Additional PBaaS chains r
 #### Absolute minimum requirements:
 * 64-bit processor
 * 64-bit Operating system (Raspbian is standard 32 bit)
-* 2 GB memory + 4 GB Swap available to the CLI Wallet
+* 2 GB memory + 6 GB Swap available to the CLI Wallet
 * 15 GB storage space for Verus Blockchain and CLI wallet
 * internet connectivity
 * `libgomp1` and `zlib1g-dev` libraries installed
@@ -16,8 +16,8 @@ The listed requirements are for running **one** chain. Additional PBaaS chains r
 #### Recommended requirements
 * 64-bit processor with AES functions enabled
 * 64-bit Operation system (Raspbian is standard 32 bit)
-* 4 GB memory or more + 4 GB Swap available to the CLI Wallet
-* 30 GB storage on a *fast* medium (like NVMe device) for the Verus Blockchain & CLI wallet. This supplies room for blockchain growth over time and the ability to bootstrap the wallet.
+* 4 GB memory or more + 6 GB Swap available to the CLI Wallet
+* 50 GB storage on a *fast* medium (like NVMe device) for the Verus Blockchain & CLI wallet. This supplies room for blockchain growth over time and the ability to bootstrap the wallet.
 * internet connectivity
 * `libgomp1` and `zlib1g-dev` libraries installed
 
@@ -25,8 +25,8 @@ The listed requirements are for running **one** chain. Additional PBaaS chains r
 #### Absolute minimum requirements:
 * 64-bit processor
 * 64-bit Operating system (Raspbian is standard 32 bit) with GUI interface
-* 2 GB memory + 6 GB Swap available to the Verus Desktop Wallet
-* 15 GB storage space for Verus Blockchain and Verus Desktop.
+* 2 GB memory + 8 GB Swap available to the Verus Desktop Wallet
+* 20 GB storage space for Verus Blockchain and Verus Desktop.
 * internet connectivity
 * `libgomp1` and `zlib1g-dev` libraries installed
 
@@ -34,8 +34,8 @@ The listed requirements are for running **one** chain. Additional PBaaS chains r
 #### Recommended requirements
 * 64-bit processor with AES functions enabled
 * 64-bit Operation system (Raspbian is standard 32 bit) ) with GUI interface
-* 8 GB memory or more + 4 GB Swap available to the CLI Wallet
-* 30 GB storage on a *fast* medium (like NVMe device) for the Verus Blockchain & CLI wallet. This supplies room for blockchain growth over time and the ability to bootstrap the wallet.
+* 8 GB memory or more + 6 GB Swap available to the CLI Wallet
+* 50 GB storage on a *fast* medium (like NVMe device) for the Verus Blockchain & CLI wallet. This supplies room for blockchain growth over time and the ability to bootstrap the wallet.
 * internet connectivity
 * `libgomp1` and `zlib1g-dev` libraries installed
 
@@ -65,4 +65,4 @@ The listed requirements are for running **one** chain. Additional PBaaS chains r
 * A public address to mine to
 * A public mining pool to connect to
 
-Note: Revision date 2021-11-29.
+Note: Revision date 2022-02-03.

@@ -69,7 +69,7 @@ If you have any questions about the information here, need help or have suggesti
 [Compile Monkins Verus enhanced CCMiner for various hardware](#!faq-linux/faq-lin06_compile_ccminer.md)
 [PHP staking interface for coinshielding nodes](#!faq-linux/faq-lin07_PHP_CLI_interface.md)
 [Low priority pool-mining](#!faq-linux/faq-lin08_low_priority_mining.html.md)
-[error while loading shared libraries: libgomp.so.1 and/or zlib1g-dev](#!faq-linux/faq-lin09_libgomp.so.1.md) ***`updated`***
+[error while loading shared libraries: libgomp.so.1 and/or zlib1g-dev](#!faq-linux/faq-lin09_libgomp.so.1.md)
 [Standard locations for Verus Desktop installations](#!faq-linux/faq-lin10_verus_desktop_locations.md)
 
 ## Frequently Asked Questions (MacOS specific)
@@ -81,7 +81,7 @@ If you have any questions about the information here, need help or have suggesti
 
 ## Frequently Asked Questions (ARM specific)
 **[Updating CLI wallet](#!faq-arm/armfaq-03_updating.md)**
-[Hardware and software requirements](#!faq-arm/armfaq-02_requirements.md)
+[Hardware and software requirements](#!faq-arm/armfaq-02_requirements.md) ***`UPDATED`***
 [error while loading shared libraries: libgomp.so.1 and/or libz.so](#!faq-arm/armfaq-01_libgomp.so.1.md)
 
 ## CLI wallet specific Information
@@ -93,4 +93,4 @@ If you have any questions about the information here, need help or have suggesti
 [Q&A questions channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-questions-20200728.html)
 [Q&A reward channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-reward-20200728.html)
 
-Note: last revision date 2022-01-27.
+Note: last revision date 2022-02-03.
