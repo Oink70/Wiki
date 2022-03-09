@@ -104,7 +104,6 @@ Discord -[*https://verus.io/discord*](https://verus.io/discord)
 Twitter -[*https://twitter.com/veruscoin*](https://twitter.com/veruscoin)
 Medium - [*https://medium.com/@veruscoin*](https://medium.com/%40veruscoin)
 Reddit -[*https://reddit.com/r/veruscoin*](https://reddit.com/r/veruscoin)
-Community website - [*https://www.veruscommunity.io/*](https://www.veruscommunity.io/)
 Community twitter - [*https://twitter.com/VerusCommunity*](https://twitter.com/VerusCommunity)
 
 ## Closing Thoughts
@@ -113,4 +112,4 @@ As a community project of just regular Joes, it can’t be stressed enough how i
 
 created by Rozo@ and Godballz@
 
-Note: last revision date 2020-12-02.
+Note: last revision date 2022-03-09.
