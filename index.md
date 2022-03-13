@@ -19,7 +19,7 @@ If you have any questions about the information here, need help or have suggesti
 ## How-To
 [Bootstrap your wallet](#!how-to/how-to_bootstrap.md) ***`TIP`***
 [Verifying the signature of an updated wallet](#!how-to/how-to_check_signatures.md)
-**[Backing up my wallet](#!how-to/how-to_backup_my_wallet.md)**
+**[Backing up my wallet](#!how-to/how-to_backup_my_wallet.md)** ***`HIGHLY RECOMMENDED`***
 **[Restoring my wallet](#!how-to/how-to_restore_my_wallet.md)**
 [Change Verus-Desktop from Lite Mode to Native Mode](#!how-to/how-to_lite_to_native.md)
 [import your Lite wallet address into your native Verus Desktop](#!how-to/how-to_convert-seed-to-wif.md)
@@ -81,7 +81,7 @@ If you have any questions about the information here, need help or have suggesti
 
 ## Frequently Asked Questions (ARM specific)
 **[Updating CLI wallet](#!faq-arm/armfaq-03_updating.md)**
-[Hardware and software requirements](#!faq-arm/armfaq-02_requirements.md) ***`UPDATED`***
+[Hardware and software requirements](#!faq-arm/armfaq-02_requirements.md)
 [error while loading shared libraries: libgomp.so.1 and/or libz.so](#!faq-arm/armfaq-01_libgomp.so.1.md)
 
 ## CLI wallet specific Information
@@ -93,4 +93,4 @@ If you have any questions about the information here, need help or have suggesti
 [Q&A questions channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-questions-20200728.html)
 [Q&A reward channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-reward-20200728.html)
 
-Note: last revision date 2022-03-09.
+Note: last revision date 2022-03-13.

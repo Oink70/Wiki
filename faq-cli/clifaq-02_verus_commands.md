@@ -1822,8 +1822,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "addmergedblock", "params": ["hexdata" '{"currencyid" : "hexstring", "rpchost" : "127.0.0.1", "rpcport" : portnum, "estimatedroi" : (verusreward/hashrate)}'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `definecurrency '{"name": "coinortokenname", ..., "nodes":[{"networkaddress":"identity"},..]}'\
-                    '({"name": "fractionalgatewayname", ..., })' ({"name": "reserveonename", ..., }) ...`
+### `definecurrency '{"name": "coinortokenname", ..., "nodes":[{"networkaddress":"identity"},..]}' '({"name": "fractionalgatewayname", ..., })' ({"name": "reserveonename", ..., }) ...`
 This defines a blockchain currency, either as an independent blockchain, or as a token on this blockchain. It also spends the identity after which this currency is named and sets a bit indicating that it has a currently active blockchain in its name.
 
 To create a currency of any kind, the identity it is named after must be minted on the blockchain on which the currency is created.
@@ -2483,9 +2482,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "submitacceptednotarization", "params": ["{earnednotarization}" "{notaryevidence}"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `submitimports '{"sourcesystemid":"systemid", "notarizationtxid":"txid", "notarizationtxoutnum":n,
-"exports":[{"txid":"hexid", "txoutnum":n, "partialtransactionproof":"hexstr",
-"transfers": [{transfer1}, {transfer2},...]}, ...]}'`
+### `submitimports '{"sourcesystemid":"systemid", "notarizationtxid":"txid", "notarizationtxoutnum":n, "exports":[{"txid":"hexid", "txoutnum":n, "partialtransactionproof":"hexstr", Fresendw"transfers": [{transfer1}, {transfer2},...]}, ...]}'`
 Accepts a set of exports from another system to post to the VRSC network.
 
 #### Arguments:
@@ -4153,6 +4150,26 @@ As a json rpc call
 ```bash
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "move", "params": ["timotei", "akiko", 0.01, 6, "happy birthday!"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
+### `rescanfromheight (height)`
+
+Rescans the current wallet from a specified height
+
+#### Arguments: ***`NEW`***
+1. "height"      (int, optional) Defaults to 0, height to start rescanning from
+
+Note: This call can take minutes or even hours to complete on very large wallets and rescans
+
+Examples:
+
+Initiate rescan of entire chain
+```bash
+> verus rescanfromheight
+```
+Initiate rescan from block 1000000
+```bash
+> verus rescanfromheight 1000000
+```
+
 
 ### `resendwallettransactions`
 Immediately re-broadcast unconfirmed wallet transactions to all peers.
@@ -4324,7 +4341,7 @@ Exports all wallet keys, for taddr and zaddr, in a human-readable format.  Overw
 #### Arguments:
 1. "filename"            (string, required) The filename, saved in folder set by verusd -exportdir option
 2. "omitemptytaddresses" (boolean, optional) Defaults to false. If true, export only addresses with indexed UTXOs or that control IDs in the wallet
-                                               (do not use this option without being sure that all addresses of interest are included)
+                         (do not use this option without being sure that all addresses of interest are included)
 
 #### Result:
 "path"           (string) The full path of the destination file
@@ -4363,26 +4380,6 @@ The total amount received by address "myaddress" at least 5 blocks confirmed
 As a json rpc call
 ```bash
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_getbalance", "params": ["myaddress", 5] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
-```
-
-### `z_getmigrationstatus`
-Returns information about the status of the Sprout to Sapling migration.
-Note: A transaction is defined as finalized if it has at least ten confirmations.
-Also, it is possible that manually created transactions involving this wallet
-will be included in the result.
-
-#### Result:
-```json
-{
-  "enabled": true|false,                    (boolean) Whether or not migration is enabled
-  "destination_address": "zaddr",           (string) The Sapling address that will receive Sprout funds
-  "unmigrated_amount": nnn.n,               (numeric) The total amount of unmigrated VRSC
-  "unfinalized_migrated_amount": nnn.n,     (numeric) The total amount of unfinalized VRSC
-  "finalized_migrated_amount": nnn.n,       (numeric) The total amount of finalized VRSC
-  "finalized_migration_transactions": nnn,  (numeric) The number of migration transactions involving this wallet
-  "time_started": ttt,                      (numeric, optional) The block time of the first migration transaction as a Unix timestamp
-  "migration_txids": [txids]                (json array of strings) An array of all migration txids involving this wallet
-}
 ```
 
 ### `z_getnewaddress ( type )`
@@ -4756,14 +4753,6 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_sendmany", "params": ["RD6GgnrMpPaTSMn8vai6yiGA7mN4QGPV", [{"address": "ztfaW34Gj9FrnGUEf833ywDVL62NWXBM81u6EQnM6VR45eYnXhwztecW1SjxA7JrmAXKJhxhj3vDNEpVCQoSvVoSpmbhtjf" ,"amount": 5.0}]] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `z_setmigration enabled`
-When enabled the Sprout to Sapling migration will attempt to migrate all funds from this wallet’s Sprout addresses to either the address for Sapling account 0 or the address specified by the parameter `-migrationdestaddress`.
-
-This migration is designed to minimize information leakage. As a result for wallets with a significant Sprout balance, this process may take several weeks. The migration works by sending, up to 5, as many transactions as possible whenever the blockchain reaches a height equal to 499 modulo 500. The transaction amounts are picked according to the random distribution specified in ZIP 308. The migration will end once the wallet’s Sprout balance is below 0.01 VRSC.
-
-#### Arguments:
-1. enabled  (boolean, required) 'true' or 'false' to enable or disable respectively.
-
 ### `z_shieldcoinbase "fromaddress" "tozaddress" ( fee ) ( limit )`
 Shield transparent coinbase funds by sending to a shielded zaddr.  This is an asynchronous operation and utxos selected for shielding will be locked.  If there is an error, they are unlocked.  The RPC call `listlockunspent` can be used to return a list of locked utxos.  The number of coinbase utxos selected for shielding can be limited by the caller.  If the limit parameter is set to zero, and Overwinter is not yet active, the `-mempooltxinputlimit` option will determine the number of uxtos.  Any limit is constrained by the consensus rule defining a maximum transaction size of 100000 bytes before Sapling, and 2000000 bytes once Sapling activates.
 
@@ -4906,4 +4895,4 @@ Perform a joinsplit and return the JSDescription.
 
 compiled by Oink.vrsc@, additions by Mike@, grewalsatinder@ and allbits@
 
-Note: last revision date 2021-12-01.
+Note: last revision date 2022-03-13.
