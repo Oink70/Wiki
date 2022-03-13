@@ -1835,14 +1835,16 @@ All funds to start the currency and for initial conversion amounts must be avail
 ```json
 {
    "options" : n,                  (int,    optional) bits (in hexadecimal):
-                                               1 = FRACTIONAL
-                                               2 = IDRESTRICTED
-                                               4 = IDSTAKING
-                                               8 = IDREFERRALS
-                                               0x10 = IDREFERRALSREQUIRED
-                                               0x20 = TOKEN
-                                               0x40 = RESERVED
-                                               0x100 = IS_PBAAS_CHAIN
+                                          OPTION_FRACTIONAL = 1            // allows reserve conversion using base calculations when set
+                                          OPTION_ID_ISSUANCE = 2           // clear is permissionless, if set, IDs may only be created by controlling ID
+                                          OPTION_ID_STAKING = 4            // all IDs on chain stake equally, rather than value-based staking
+                                          OPTION_ID_REFERRALS = 8          // if   set, this chain supports referrals
+                                          OPTION_ID_REFERRALREQUIRED = 16  // if set, this chain requires referrals
+                                          OPTION_TOKEN = 32                // if set, this is a token, not a native currency
+                                          OPTION_SINGLECURRENCY = 64       // for PBaaS chains or gateways to potentially restrict to single currency
+                                          OPTION_GATEWAY = 128             // if set, this routes external currencies
+                                          OPTION_PBAAS = 256               // this is a PBaaS chain definition
+                                          OPTION_PBAAS_CONVERTER = 512     // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
   "name" : "xxxx",                 (string, required) name of existing identity with no active or pending blockchain
   "idregistrationfees" : "xx.xx",  (value, required) price of an identity in native currency
   "idreferrallevels" : n,          (int, required) how many levels ID referrals go back in reward
