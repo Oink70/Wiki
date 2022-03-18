@@ -4,7 +4,7 @@ Notice: Read it completely before use.
 
 #### Important General Information
 
-`wallet.dat` location on Linux: `~/.Komodo/VRSC`
+`wallet.dat` location on Linux: `~/.komodo/VRSC`
 
 #### Necessary files:
 

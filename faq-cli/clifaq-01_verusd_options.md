@@ -24,7 +24,7 @@ addnode=195.253.48.236:27485
 
 ## Verus `Wallet.dat`, Chaindata & `VRSC.conf` standard locations
 
-Linux:		`~/.Komodo/VRSC`
+Linux:		`~/.komodo/VRSC`
 Mac OS: 	`~/Library/Application Support/Komodo/VRSC`
 Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 

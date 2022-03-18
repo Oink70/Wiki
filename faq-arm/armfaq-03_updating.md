@@ -7,11 +7,11 @@ Attention: Read it completely before use.
 Link 1: [Download latest Wallet](https://verus.io/wallet)
 
 ## Verus `Wallet.dat`, Chaindata & `VRSC.conf` standard locations
- * ARM Linux:		`~/.Komodo/VRSC`
+ * ARM Linux:		`~/.komodo/VRSC`
 
 Note: Due to the size of the blockchain, on an ARM installation this directory is usually stored on a mounted external hard drive.
 This will have its own file path that was specified when the drive was mounted.
-Thus the path to `~/.Komodo/VRSC` directory is likely to be user-specified & thus non-standard on an ARM.
+Thus the path to `~/.komodo/VRSC` directory is likely to be user-specified & thus non-standard on an ARM.
 
 ---
 

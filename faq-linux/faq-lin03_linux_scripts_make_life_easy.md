@@ -2,7 +2,7 @@
 Following are some bash scriptse to help make managing your Linux-based CLI miner a bit easier. Prereq is to install mailutils (postfix) and configure with your server's FQDN and set inet_interfaces=localhost in the postfix/main.cf file.
 
 ### Important General Information
-`VRSC Wallet & data location` on Linux: `~/.Komodo/VRSC`
+`VRSC Wallet & data location` on Linux: `~/.komodo/VRSC`
 for wallet version prior to 0.5.7, replace verusd with komodod.
 
 ## Scripts:

@@ -5,7 +5,7 @@ Attention: Read it completely before using.
 #### Important General Information
 
 `VRSCTEST data location`:
-Linux GUI: `~/.Komodo/VRSCTEST`
+Linux GUI: `~/.komodo/VRSCTEST`
 Mac OS: `/Users//Library/Application Support/Komodo/VRSCTEST`
 Windows 10: `%AppData%\Roaming\Komodo\VRSCTEST\`
 

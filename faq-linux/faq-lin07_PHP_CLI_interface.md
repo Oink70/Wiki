@@ -2,7 +2,7 @@
 Attention: Read it completely before using.
 
 ### Important General Information
-`VRSC Wallet and Data location` on Linux: `~/.Komodo/VRSC`
+`VRSC Wallet and Data location` on Linux: `~/.komodo/VRSC`
 
 ### Necessary files:
 Link 1: [Download latest Wallet](https://verus.io/wallet)

@@ -3,7 +3,7 @@
 To completely reset your wallet in the event of a fork, particularly if you've already followed [this procedure](#!faq-allos/faq-allos19_what_should_i_do_if_i_end_up_on_my_own_fork_because_of_a_network_issue_or_having_an_old_version_of_the_wallet.md), follow the steps below.
 
 ### Verus `Wallet.dat`, Chaindata & `VRSC.conf` standard locations
- * Linux:		`~/.Komodo/VRSC`
+ * Linux:		`~/.komodo/VRSC`
  * Mac OS: 	`~/Library/Application Support/Komodo/VRSC`
  * Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
  * OS independent through Verus Desktop: Click `help`, `Show Verus data folder (default)`

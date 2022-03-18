@@ -2,7 +2,7 @@
 Note: I use Google Cloud for my staking wallet and backups but the script works regardless of what you use; if you have timelocked coins, you will have to keep your wallet.dat file secure for a long, long time: it's crucial to maintain secure the staking instance as well as the storage..
 
 ### Important General Information
-`VRSC Wallet and Data location` on Linux: `~/.Komodo/VRSC`
+`VRSC Wallet and Data location` on Linux: `~/.komodo/VRSC`
 
 ## Procedure:
 If you use GCloud:
