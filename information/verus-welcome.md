@@ -38,9 +38,9 @@ Bitcointalk: [*https://bitcointalk.org/index.php?topic=4070404.0*](https://bitco
 Max Supply: 83,540,184
 Algorithm: VerusHash 2.1 PoW/PoS - 50/50
 Block time: 1 minute
-Proof-of-Stake (PoS) ROI is currently between 20% and 28%
+Proof-of-Stake (PoS) ROI is currently between 6% and 8%
 Halving Frequency: roughly every two years
-Next Halving: Current ETA: Sep 2022 (Block \#2,329,920)
+Next Halving: Current ETA: Dec 2022 (Block \#2,329,920)
 Halving Countdown: [*https:/countdown.verus.io/halving*](https://countdown.verus.io/halving)
 
 ## VerusID

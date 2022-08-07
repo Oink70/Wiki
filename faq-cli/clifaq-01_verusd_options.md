@@ -44,6 +44,9 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
   `-blocknotify=<cmd>`
        Execute command when the best block changes (%s in cmd is replaced by block hash)
 
+  `-bootstrap`
+       Removes previous chain data (if present), downloads and extracts the bootstrap archive.
+
   `-checkblocks=<n>`
        How many blocks to check at startup (default: 288, 0 = all)
 
@@ -64,6 +67,14 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
   `-dbcache=<n>`
        Set database cache size in megabytes (4 to 16384, default: 450)
+
+  `-dbmaxopenfiles=<n>`
+       Set database maximum number of files that can be opened
+        (**Not** shown in standard daemon `--help` command)
+
+  `-dbcompression=<0|1>`
+       Enable or disable compression (Boolean, standard enabled)
+        (**Not** shown in standard daemon `--help` command)
 
   `-loadblock=<file>`
        Imports blocks from external blk000??.dat file on startup
@@ -99,19 +110,24 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
   `-txindex`
        Maintain a full transaction index, used by the getrawtransaction rpc
-       call (default: 0)
+       call (default: 1)
 
   `-addressindex`
        Maintain a full address index, used to query for the balance, txids and
-       unspent outputs for addresses (default: 0)
+       unspent outputs for addresses (default: 1)
 
   `-timestampindex`
        Maintain a timestamp index for block hashes, used to query blocks hashes
-       by a range of timestamps (default: 0)
+       by a range of timestamps (default: 1)
 
   `-spentindex`
        Maintain a full spent index, used to query the spending txid and input
-       index for an outpoint (default: 0)
+       index for an outpoint (default: 1)
+
+  `-insightexplorer`
+       If enabled, forces addressindex, spentindex and timestampindex to enabled
+       If disabled, forces timestampindex to disabled
+       (default: 1)
 
 ## Connection options:
 
@@ -200,6 +216,34 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
   `-torpassword=<pass>`
        Tor control port password (default: empty)
+
+  `-tlsenforcement=<0 or 1>`
+      Only connect to TLS compatible peers. (default: 0)
+
+  `-tlsfallbacknontls=<0 or 1>`
+      If a TLS connection fails, the next connection attempt of the same peer
+      (based on IP address) takes place without TLS (default: 1)
+
+  `-tlsvalidate=<0 or 1>`
+      Connect to peers only with valid certificates (default: 0)
+
+  `-tlskeypath=<path>`
+      Full path to a private key
+
+  `-tlskeypwd=<password>`
+      Password for a private key encryption (default: not set, i.e. private
+      key will be stored unencrypted)
+
+  `-tlscertpath=<path>`
+      Full path to a certificate
+
+  `-tlstrustdir=<path>`
+      Full path to a trusted certificates directory
+
+  `-uacomment=<string>`
+       Set a User Agent to your daemon. (default: disabled/none)
+       Shows as appended text in the `"subver"` string on connected nodes
+       Using this option has implications on your anonymity!
 
   `-whitebind=<addr>`
        Bind to given address and whitelist peers connecting to it. Use
@@ -341,13 +385,19 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 ## Mining options:
 
   `-mint`
-       Mint/stake coins automatically (default: 0)
+      Mint/stake coins automatically (default: 0)
 
   `-gen`
-       Mine/generate coins (default: 0)
+      Mine/generate coins (default: 0)
+
+  `-cheatcatcher=<zs1-address>`
+      Checks the blockchain for multiple staked block submissions by a single UTXO. Prevents staking with the same address on multiple nodes.
 
   `-defaultid=<ID@>`
       Set a default destination ID for your staking rewards. (**Not** shown in standard daemon `--help` command)
+
+  `-defaultzaddr=<zs1-address>`
+       Set the default address to return change from the `sendcurrency` command, if enabled by `-privatechange`. Defaults to the address supplied in `-cheatcatcher`
 
   `-genproclimit=<n>`
        Set the number of threads for coin mining if enabled (-1 = all cores,
@@ -363,11 +413,21 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
        Require that mined blocks use a coinbase address in the local wallet
        (default: 1)
 
+  `-nodeid=<ID@>`
+       (Undocumented) Used in the notarization process
+
+  `-notaryid=<ID@>`
+      (Undocumented) Used in the notarization process
+
+  `-privatechange=<0|1>`
+      Enable sending change from a `sendcurrency` command to a private zs1-address. default 0.
+
   `-pubkey=<public key>`
-      Redirect all coinbase rewards to the address belonging to the publickey. (**Must** be a commandline option. Does **not** work if included in the `VRSC.conf`,  **not** shown in standard daemon `--help` command)
+      Redirect all coinbase rewards to the address belonging to the publickey.
 
   `-cheatcatcher=<private z-address>`
-      Checks mempool for spending a TXID multiple times for staking. If found the blockreward of the offending stake transaction will be sent to the provate address entered. (**Must** be a commandline option. Does **not** work if included in the `VRSC.conf`,  **not** shown in standard daemon `--help` command)
+      Checks mempool for spending a TXID multiple times for staking. If found the blockreward of the offending stake transaction will be sent to the private address entered.
+
 
 ## RPC server options:
 
@@ -418,4 +478,4 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
 compiled by Oink.vrsc@.
 
-Note: last revision date 2021-11-16.
+Note: last revision date 2022-08-06.

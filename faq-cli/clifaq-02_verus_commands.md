@@ -1,16 +1,50 @@
-# Options available to the Verusd coindaemon.
+# Options available to the Verus RPC client.
 
 ## Important General Information
 
-### Verus CLI version 0.9.0-2
+### Verus CLI version 0.9.3
 
-Usage: `verus [command]` Issue a command to the coindaemon
+#### Usage:
+`verus [options] [command]` Issue a command to the coindaemon
+`verus [options] help` List commands
+`verus [options] help <command>` Get help for a command
 
 ### Verus `Wallet.dat`, Chaindata & `VRSC.conf` standard locations
 
 Linux:		`~/.komodo/VRSC`
 Mac OS: 	`~/Library/Application Support/Komodo/VRSC`
 Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
+
+# Options:
+
+  `-?` This help message
+
+  `-conf=<file>` Specify configuration file (default: komodo.conf)
+
+  `-datadir=<dir>` Specify data directory
+
+  `-testnet` Use the test network
+
+  `-regtest` Enter regression test mode, which uses a special chain in which blocks
+       can be solved instantly. This is intended for regression testing tools
+       and app development.
+
+  `-rpcconnect=<ip>` Send commands to node running on <ip> (default: 127.0.0.1)
+
+  `-rpcport=<port>` Connect to JSON-RPC on <port> (default: 8232 or testnet: 18232)
+
+  `-rpcwait` Wait for RPC server to start
+
+  `-rpcuser=<user>` Username for JSON-RPC connections
+
+  `-rpcpassword=<pw>` Password for JSON-RPC connections
+
+  `-rpcclienttimeout=<n>` Timeout in seconds during HTTP requests, or 0 for no timeout.
+       (default: 900)
+
+  `-stdin` Read extra arguments from standard input, one per line until EOF/Ctrl-D
+       (recommended for sensitive information such as passphrases)
+
 
 # Commands:
 
@@ -1028,7 +1062,7 @@ Generate 11 blocks
 ### `getgenerate`
 Return if the server is set to mine and/or mint coins or not. The default is false.
 It is set with the command line argument `-gen` (or `VRSC.conf` setting `gen`) and `-mint`
-It can also be set with the setgenerate call.
+It can also be set with the `setgenerate` call.
 
 Result
 ```json
@@ -1079,7 +1113,7 @@ Using json rpc
 
 ## Identity
 
-### `getidentity "name@ || iid" (height) (txproof) (txproofheight)` ***`UPDATED`***
+### `getidentity "name@ || iid" (height) (txproof) (txproofheight)`
 #### Arguments:
 ```
   "name@ || iid"                       (string, required) name followed by "@" or i-address of an identity
@@ -1116,9 +1150,9 @@ Using json rpc
 ```
 ####Examples:
 ```bash
-> verus getidentityname "name@"
-> verus getidentityname "i5v3h9FWVdRFbNHU7DfcpGykQjRaHtMqu7"
-> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getidentityname", "params": ["name@"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+> verus getidentity "name@"
+> verus getidentity "i5v3h9FWVdRFbNHU7DfcpGykQjRaHtMqu7"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getidentity", "params": ["name@"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ### `listidentities (includecansign) (includewatchonly)`
@@ -1174,7 +1208,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "recoveridentity", "params": ['{"name" : "myname"}'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `registeridentity "jsonidregistration" feeoffer` ***`UPDATED`***
+### `registeridentity "jsonidregistration" feeoffer`
 `registeridentity` needs the values from `RegisterNameCommitment` output to register a VerusID
 
 #### Arguments:
@@ -1353,7 +1387,7 @@ As json rpc
 Sign a message with the private key of a t-addr or the authorities present in this wallet for an identity
 
 #### Arguments:
-1. "t-addr or identity" (string, required) The transparent address or identity to use for signing.
+1. "t-addr or identity"        (string, required) The transparent address or identity to use for signing.
 2. "message"                   (string, required) The message to create a signature of.
 2. "cursig"                    (string) The current signature of the message encoded in base 64 if multisig ID
 
@@ -1417,9 +1451,9 @@ Verify a signed file
 
 #### Arguments:
 1. "t-addr or identity" (string, required) The transparent address or identity that signed the file.
-2. "signature"       (string, required) The signature provided by the signer in base 64 encoding (see signfile).
-3. "filename"        (string, required) The file, which must be available locally to the daemon and that was signed.
-3. "checklatest"     (bool, optional)   If true, checks signature validity based on latest identity. defaults to false, which determines validity of signing height stored in signature.
+2. "signature"          (string, required) The signature provided by the signer in base 64 encoding (see signfile).
+3. "filename"           (string, required) The file, which must be available locally to the daemon and that was signed.
+3. "checklatest"        (bool, optional)   If true, checks signature validity based on latest identity. defaults to false, which determines validity of signing height stored in signature.
 
 #### Result:
 true|false   (boolean) If the signature is verified or not.
@@ -1443,9 +1477,9 @@ Verify a signed message
 
 #### Arguments:
 1. "t-addr or identity" (string, required) The transparent address or identity that signed the data.
-2. "signature"       (string, required) The signature provided by the signer in base 64 encoding (see signmessage/signfile).
-3. "hexhash"         (string, required) Hash of the message or file that was signed.
-3. "checklatest"     (bool, optional)   If true, checks signature validity based on latest identity. defaults to false, which determines validity of signing height stored in signature.
+2. "signature"          (string, required) The signature provided by the signer in base 64 encoding (see signmessage/signfile).
+3. "hexhash"            (string, required) Hash of the message or file that was signed.
+3. "checklatest"        (bool, optional)   If true, checks signature validity based on latest identity. defaults to false, which determines validity of signing height stored in signature.
 
 #### Result:
 true|false   (boolean) If the signature is verified or not.
@@ -1472,9 +1506,9 @@ Verify a signed message
 
 #### Arguments:
 1. "t-addr or identity" (string, required) The transparent address or identity that signed the message.
-2. "signature"       (string, required) The signature provided by the signer in base 64 encoding (see signmessage).
-3. "message"         (string, required) The message that was signed.
-3. "checklatest"     (bool, optional)   If true, checks signature validity based on latest identity. defaults to false, which determines validity of signing height stored in signature.
+2. "signature"          (string, required) The signature provided by the signer in base 64 encoding (see signmessage).
+3. "message"            (string, required) The message that was signed.
+3. "checklatest"        (bool, optional)   If true, checks signature validity based on latest identity. defaults to false, which determines validity of signing height stored in signature.
 
 #### Result:
 true|false   (boolean) If the signature is verified or not.
@@ -1499,7 +1533,12 @@ As json rpc
 Closes all offers listed, if they are still valid and belong to this wallet.
 Always closes expired offers, even if no parameters are given
 #### Arguments
+1. `["offer1_txid", "offer2_txid", ...]`        (array, optional) array of hex tx ids of offers to close
+2. transparentorprivatefundsdestination       (transparent or private address, optional) destination for closing funds
+3. privatefundsdestination                    (private address, optional) destination for native funds only
+
 #### Results
+null return
 
 ### `getoffers "currencyorid" (iscurrency) (withtx)`
 Returns all open offers for a specific currency or ID
@@ -1522,7 +1561,10 @@ Examples:
 Shows offers outstanding in this wallet
 
 #### Arguments
+1. unexpired                (bool, optional) default=true, list those offers in the wallet which are not expired
+2. expired                  (bool, optional) default=true, list those offers in the wallet which are expired
 #### Result
+All open offers
 
 ### `makeoffer fromaddress '{"changeaddress":"transparentoriaddress", "expiryheight":blockheight, "offer":{"currency":"anycurrency", "amount":...} | {"identity":"idnameoriaddress",...}', "for":{"address":..., "currency":"anycurrency", "amount":...} | {"name":"identityforswap","parent":"parentid","primaryaddresses":["R-address(s)"],"minimumsignatures":1,...}}' (returntx) (feeamount)`
 This sends a transaction which provides a completely decentralized, fully on-chain an atomic swap offer for
@@ -1532,7 +1574,7 @@ This sends a transaction which provides a completely decentralized, fully on-cha
 the specific asset.
 
 #### Arguments
-1. "fromaddress"             (string, required) The VerusID, or wildcard address to send funds from. "*", "R*", or "i*" are valid wildcards
+1. "fromaddress"             (string, required) The VerusID, or wildcard address to send funds from. "\*", "R\*", or "i\*" are valid wildcards
 2. {
      "changeaddress"         (string, required) Change destination when constructing transactions
      "offer"                 (object, required) Funds description or identity name, "address" in this object should be an address of the person making an offer for change
@@ -1561,7 +1603,7 @@ to execute it, and posts the transaction to the blockchain.
 
 #### Arguments:
 1. "fromaddress"            (string, required) The Sapling, VerusID, or wildcard address to send funds from, including fees for ID swaps.
-"\*", "R*", or "i*" are valid wildcards
+"\*", "R\*", or "i\*" are valid wildcards
 2. {
     "txid"               (string, required) The transaction ID for the offer to accept
     "tx"                 (string, required) The hex transaction to complete in order to accept the offer
@@ -1600,7 +1642,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockubsidy", "params": [1000] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getblocktemplate ( "jsonrequestobject" )`
+### `getblocktemplate ( "jsonrequestobject" )` `***Updated Info***`
 If the request parameters include a 'mode' key, that is used to explicitly select between the default 'template' request or a 'proposal'.
 It returns data needed to construct a block to work on.
 See https://en.bitcoin.it/wiki/BIP_0022 for full specification.
@@ -1610,6 +1652,11 @@ See https://en.bitcoin.it/wiki/BIP_0022 for full specification.
 ```
      {
        "mode":"template"    (string, optional) This must be set to "template" or omitted
+       "rewarddistribution":{
+           "(recipientaddress)":n,  (addressorid, relativeweight) key value to determine distribution
+           "(recipientaddress)":n,
+           "...
+       "},
        "capabilities":[       (array, optional) A list of strings
            "support"           (string) client side supported feature, 'longpoll', 'coinbasetxn', 'coinbasevalue', 'proposal', 'serverlist', 'workid'
            ,...
@@ -1835,16 +1882,16 @@ All funds to start the currency and for initial conversion amounts must be avail
 ```json
 {
    "options" : n,                  (int,    optional) bits (in hexadecimal):
-                                          OPTION_FRACTIONAL = 1            // allows reserve conversion using base calculations when set
-                                          OPTION_ID_ISSUANCE = 2           // clear is permissionless, if set, IDs may only be created by controlling ID
-                                          OPTION_ID_STAKING = 4            // all IDs on chain stake equally, rather than value-based staking
-                                          OPTION_ID_REFERRALS = 8          // if   set, this chain supports referrals
-                                          OPTION_ID_REFERRALREQUIRED = 16  // if set, this chain requires referrals
-                                          OPTION_TOKEN = 32                // if set, this is a token, not a native currency
-                                          OPTION_SINGLECURRENCY = 64       // for PBaaS chains or gateways to potentially restrict to single currency
-                                          OPTION_GATEWAY = 128             // if set, this routes external currencies
-                                          OPTION_PBAAS = 256               // this is a PBaaS chain definition
-                                          OPTION_PBAAS_CONVERTER = 512     // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
+                                          1 = FRACTIONAL                  // allows reserve conversion using base calculations when set
+                                          2 = IDRESTRICTED                // clear is permissionless, if set, IDs may only be created by controlling ID
+                                          4 = IDSTAKING                    // all IDs on chain stake equally, rather than value-based staking
+                                          8 = IDREFERRALS                  // if   set, this chain supports referrals
+                                          0x10 = IDREFERRALSREQUIRED       // if set, this chain requires referrals
+                                          0x20 = TOKEN                     // if set, this is a token, not a native currency
+                                          0x40 = RESERVED                  // for PBaaS chains or gateways to potentially restrict to single currency
+                                          0x80 = GATEWAY                   // if set, this routes external currencies
+                                          0x100 = IS_PBAAS_CHAIN           // this is a PBaaS chain definition
+                                          0x200 = PBAAS_CONVERTER          // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
   "name" : "xxxx",                 (string, required) name of existing identity with no active or pending blockchain
   "idregistrationfees" : "xx.xx",  (value, required) price of an identity in native currency
   "idreferrallevels" : n,          (int, required) how many levels ID referrals go back in reward
@@ -1939,27 +1986,44 @@ Returns a complete definition for any given chain if it is registered on the blo
 #### Result:
 ```json
 {
-  "version" : "n",             (int) version of this chain definition
-  "name" : "string",           (string) name or symbol of the chain, same as passed
-  "address" : "string",        (string) cryptocurrency address to send fee and non-converted premine
-  "currencyid" : "i-address",  (string) string that represents the currency ID, same as the ID behind the currency
-  "premine" : "n",             (int) amount of currency paid out to the premine address in block #1, may be smart distribution
-  "convertible" : "xxxx"       (bool) if this currency is a fractional reserve currency of Verus
-  "startblock" : "n",          (int) block # on this chain, which must be notarized into block one of the chain
-  "endblock" : "n",            (int) block # after which, this chain's useful life is considered to be over
-  "eras" : "[obj, ...]",       (objarray) different chain phases of rewards and convertibility
+  "version" : n,                         (int) version of this chain definition
+  "name" : "string",                     (string) name or symbol of the chain, same as passed
+  "fullyqualifiedname" : "string",       (string) name or symbol of the chain with all parent namespaces, separated by "."
+  "currencyid" : "i-address",            (string) string that represents the currency ID, same as the ID behind the currency
+  "currencyidhex" : "hex",               (string) hex representation of currency ID, getcurrency API supports "hex:currencyidhex"
+  "parent" : "i-address",                (string) parent blockchain ID
+  "systemid" : "i-address",              (string) system on which this currency is considered to run
+  "launchsystemid" : "i-address",        (string) system from which this currency was launched
+  "notarizationprotocol" : n             (int) protocol number that determines variations in cross-chain or bridged notarizations
+  "proofprotocol" : n                    (int) protocol number that determines variations in cross-chain or bridged proofs
+  "startblock" : n,                      (int) block # on this chain, which must be notarized into block one of the chain
+  "endblock" : n,                        (int) block # after which, this chain's useful life is considered to be over
+  "currencies" : "["i-address", ...]",   (stringarray) currencies that can be converted to this currency at launch or makeup a liquidity basket
+  "weights" : "[n, ...]",                (numberarray) relative currency weights (only returned for a liquidity basket)
+  "conversions" : "[n, ...]",            (numberarray) pre-launch conversion rates for non-fractional currencies
+  "minpreconversion" : "[n, ...]",       (numberarray) minimum amounts required in pre-conversions for currency to launch
+  "currencies" : "["i-address", ...]",   (stringarray) currencies that can be converted to this currency at launch or makeup a liquidity basket
+  "currencynames" : "{"i-address":"fullname",...}", (obj) i-addresses mapped to fully qualified names of all sub-currencies
+  "initialsupply" : n,                   (number) initial currency supply for fractional currencies before preallocation or issuance
+  "prelaunchcarveout" : n,               (number) pre-launch percentage of proceeds for fractional currency sent to launching ID
+  "preallocations" : "[{"i-address":n}, ...]", (objarray) VerusIDs and amounts for pre-allocation at launch
+  "initialcontributions" : "[n, ...]",   (numberarray) amounts of pre-conversions reserved for launching ID
+  "idregistrationfees" : n,              (number) base cost of IDs for this currency namespace in this currency
+  "idreferrallevels" : n,                (int) levels of ID referrals (only for native PBaaS chains and IDs)
+  "idimportfees" : n,                    (number) fees required to import an ID to this system (only for native PBaaS chains and IDs)
+  "eras" : "[obj, ...]",                 (objarray) different chain phases of rewards and convertibility
   {
-    "reward" : "[n, ...]",     (int) reward start for each era in native coin
-    "decay" : "[n, ...]",      (int) exponential or linear decay of rewards during each era
-    "halving" : "[n, ...]",    (int) blocks between halvings during each era
-    "eraend" : "[n, ...]",     (int) block marking the end of each era
-    "eraoptions" : "[n, ...]", (int) options (reserved)
+    "reward" : "[n, ...]",               (int) reward start for each era in native coin
+    "decay" : "[n, ...]",                (int) exponential or linear decay of rewards during each era
+    "halving" : "[n, ...]",              (int) blocks between halvings during each era
+    "eraend" : "[n, ...]",               (int) block marking the end of each era
+    "eraoptions" : "[n, ...]",           (int) options (reserved)
   }
-  "nodes"      : "[obj, ..]",  (objectarray, optional) up to 8 nodes that can be used to connect to the blockchain      [{
+  "nodes"      : "[obj, ..]",    (objectarray, optional) up to 8 nodes that can be used to connect to the blockchain      [{
        "nodeidentity" : "txid", (string,  optional) internet, TOR, or other supported address for node
-       "paymentaddress" : "n", (int,     optional) rewards payment address
+       "paymentaddress" : n,     (int,     optional) rewards payment address
      }, .. ]
-  "bestnotarization" : {
+  "lastconfirmedcurrencystate" : {
    }
   "besttxid" : "txid"
    }
@@ -1991,13 +2055,13 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getcurrencyconverters", "params": ['["currency1","currency2",...]'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getcurrencystate "n"`
+### `getcurrencystate "currencynameorid" ("n") ("connectedsystemid")`
 Returns the total amount of preconversions that have been confirmed on the blockchain for the specified chain.
 
 #### Arguments:
-```
-   "n" or "m,n" or "m,n,o"         (int or string, optional) height or inclusive range with optional step at which to get the currency state. If not specified, the latest currency state and height is returned
-```
+1.   "currencynameorid"              (string) name or i-address of currency in question
+2.   "n" or "m,n" or "m,n,o"         (int or string, optional) height or inclusive range with optional step at which to get the currency state. If not specified, the latest currency state and height is returned
+3.   "connectedchainid"              (string) optional
 
 #### Result:
 ```json
@@ -2019,8 +2083,8 @@ Returns the total amount of preconversions that have been confirmed on the block
 ```
 Examples:
 ```bash
-> verus getcurrencystate name
-> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getcurrencystate", "params": [name] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+> verus getcurrencystate "currencynameorid" ("n") ("connectedchainid")
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getcurrencystate", "params": ["currencynameorid" ("n") ("connectedchainid")] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ### `getexports "chainname" (heightstart) (heightend)`
@@ -2383,26 +2447,50 @@ Returns a complete definition for any given chain if it is registered on the blo
 ```json
 [
   {
-    "version" : n,               (int) version of this chain definition
-    "name" : "string",           (string) name or symbol of the chain, same as passed
-    "address" : "string",        (string) cryptocurrency address to send fee and non-converted premine
-    "currencyid" : "hex-string", (string) i-address that represents the chain ID, same as the ID that launched the chain
-    "premine" : n,               (int) amount of currency paid out to the premine address in block #1, may be smart distribution
-    "convertible" : "xxxx"       (bool) if this currency is a fractional reserve currency of Verus
-    "startblock" : n,            (int) block # on this chain, which must be notarized into block one of the chain
-    "endblock" : n,              (int) block # after which, this chain's useful life is considered to be over
-    "eras" : "[obj, ...]",       (objarray) different chain phases of rewards and convertibility
+    "version" : n,                         (int) version of this chain definition
+    "name" : "string",                     (string) name or symbol of the chain, same as passed
+    "fullyqualifiedname" : "string",       (string) name or symbol of the chain with all parent namespaces, separated by "."
+    "currencyid" : "i-address",            (string) string that represents the currency ID, same as the ID behind the currency
+    "currencyidhex" : "hex",               (string) hex representation of currency ID, getcurrency API supports "hex:currencyidhex"
+    "parent" : "i-address",                (string) parent blockchain ID
+    "systemid" : "i-address",              (string) system on which this currency is considered to run
+    "launchsystemid" : "i-address",        (string) system from which this currency was launched
+    "notarizationprotocol" : n             (int) protocol number that determines variations in cross-chain or bridged notarizations
+    "proofprotocol" : n                    (int) protocol number that determines variations in cross-chain or bridged proofs
+    "startblock" : n,                      (int) block # on this chain, which must be notarized into block one of the chain
+    "endblock" : n,                        (int) block # after which, this chain's useful life is considered to be over
+    "currencies" : "["i-address", ...]",   (stringarray) currencies that can be converted to this currency at launch or makeup a liquidity basket
+    "weights" : "[n, ...]",                (numberarray) relative currency weights (only returned for a liquidity basket)
+    "conversions" : "[n, ...]",            (numberarray) pre-launch conversion rates for non-fractional currencies
+    "minpreconversion" : "[n, ...]",       (numberarray) minimum amounts required in pre-conversions for currency to launch
+    "currencies" : "["i-address", ...]",   (stringarray) currencies that can be converted to this currency at launch or makeup a liquidity basket
+    "currencynames" : "{"i-address":"fullname",...}", (obj) i-addresses mapped to fully qualified names of all sub-currencies
+    "initialsupply" : n,                   (number) initial currency supply for fractional currencies before preallocation or issuance
+    "prelaunchcarveout" : n,               (number) pre-launch percentage of proceeds for fractional currency sent to launching ID
+    "preallocations" : "[{"i-address":n}, ...]", (objarray) VerusIDs and amounts for pre-allocation at launch
+    "initialcontributions" : "[n, ...]",   (numberarray) amounts of pre-conversions reserved for launching ID
+    "idregistrationfees" : n,              (number) base cost of IDs for this currency namespace in this currency
+    "idreferrallevels" : n,                (int) levels of ID referrals (only for native PBaaS chains and IDs)
+    "idimportfees" : n,                    (number) fees required to import an ID to this system (only for native PBaaS chains and IDs)
+    "eras" : "[obj, ...]",                 (objarray) different chain phases of rewards and convertibility
     {
-      "reward" : "[n, ...]",     (int) reward start for each era in native coin
-      "decay" : "[n, ...]",      (int) exponential or linear decay of rewards during each era
-      "halving" : "[n, ...]",    (int) blocks between halvings during each era
-      "eraend" : "[n, ...]",     (int) block marking the end of each era
-      "eraoptions" : "[n, ...]", (int) options (reserved)
+      "reward" : "[n, ...]",               (int) reward start for each era in native coin
+      "decay" : "[n, ...]",                (int) exponential or linear decay of rewards during each era
+      "halving" : "[n, ...]",              (int) blocks between halvings during each era
+      "eraend" : "[n, ...]",               (int) block marking the end of each era
+      "eraoptions" : "[n, ...]",           (int) options (reserved)
     }
-    "nodes"      : "[obj, ..]",  (objectarray, optional) up to 2 nodes that can be used to connect to the blockchain      [{
-         "nodeaddress" : "txid", (string,  optional) internet, TOR, or other supported address for node
-         "paymentaddress" : n,   (int,     optional) rewards payment address
+    "nodes"      : "[obj, ..]",            (objectarray, optional) up to 8 nodes that can be used to connect to the blockchain      [{
+         "nodeidentity" : "txid",          (string,  optional) internet, TOR, or other supported address for node
+         "paymentaddress" : n,             (int,     optional) rewards payment address
        }, .. ]
+    "lastconfirmedcurrencystate" : {
+     }
+    "besttxid" : "txid"
+     }
+    "confirmednotarization" : {
+     }
+    "confirmedtxid" : "txid"
   }, ...
 ]
 ```
@@ -2426,7 +2514,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "refundfailedlaunch", "params": ["currencyid"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `sendcurrency "fromaddress" '[{"address":... ,"amount":...},...]' (feeamount)`
+### `sendcurrency "fromaddress" '[{"address":... ,"amount":...},...]' (minconfs) (feeamount)`
 This sends one or many Verus outputs to one or many addresses on the same or another chain.
 Funds are sourced automatically from the current wallet, which must be present, as in sendtoaddress.
 If "fromaddress" is specified, all funds will be taken from that address, otherwise funds may come from any source set of UTXOs controlled by the wallet.
@@ -2442,6 +2530,7 @@ If "fromaddress" is specified, all funds will be taken from that address, otherw
       "convertto":"name",    (string,  optional) Valid currency to convert to, either a reserve of a fractional, or fractional
       "exportto":"name",     (string,  optional) Valid chain or system name or ID to export to
       "exportid":"false",    (bool,    optional) if cross-chain ID, export the ID to the destination chain (will cost to export)
+      "exportcurrency":"false", (bool, optional) if cross-chain export, export the currency definition (will cost to export)
       "feecurrency":"name",  (string,  optional) Valid currency that should be pulled from the current wallet and used to pay fee
       "via":"name",          (string,  optional) If source and destination currency are reserves, via is a common fractional to convert through
       "address":"dest"       (string,  required) The address and optionally chain/system after the "@" as a system specific destination
@@ -2456,10 +2545,8 @@ If "fromaddress" is specified, all funds will be taken from that address, otherw
 4. "feeamount"               (bool,   optional) specific fee amount requested instead of default miner's fee
 
 #### Result:
-```
-   "txid" : "transactionid"  (string) The transaction id if (returntx) is false
-   "hextx" : "hex"           (string) The hexadecimal, serialized transaction if (returntx) is true
-```
+1. "operationid"          (string) An operationid to pass to z_getoperationstatus to get the result of the operation.
+
 Examples:
 ```bash
 > verus sendcurrency "*" '[{"currency":"btc","address":"RRehdmUV7oEAqoZnzEGBH34XysnWaBatct" ,"amount":500.0},...]'
@@ -3477,7 +3564,7 @@ Examples:
 Returns the server's total available balance.
 
 #### Arguments:
-1. "account"      (string, optional) DEPRECATED. If provided, it MUST be set to the empty string "" or to the string "`*`", either of which will give the total available balance. Passing any other string will result in an error.
+1. "account"      (string, optional) DEPRECATED. If provided, it MUST be set to the empty string "" or to the string "\*", either of which will give the total available balance. Passing any other string will result in an error.
 2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.
 3. includeWatchonly (bool, optional, default=false) Also include balance in watchonly addresses (see 'importaddress')
 
@@ -3512,7 +3599,7 @@ detected, and so the returned balance may be larger than the actual balance.
 3. friendlynames    (boolean, optional, default=true) use friendly names instead of i-addresses.
 
 #### Result:
-amount              (numeric) The total amount in VRSCTEST received for this address.
+amount              (numeric) The total amount in VRSC received for this address.
 
 Examples:
 
@@ -3922,8 +4009,8 @@ List balances by receiving address.
 [
   {
     "involvesWatchonly" : true,        (bool) Only returned if imported addresses were involved in transaction
-    "address" : "receivingaddress",  (string) The receiving address
-    "account" : "accountname",       (string) DEPRECATED. The account of the receiving address. The default account is "".
+    "address" : "receivingaddress",    (string) The receiving address
+    "account" : "accountname",         (string) DEPRECATED. The account of the receiving address. The default account is "".
     "amount" : x.xxx,                  (numeric) The total amount in VRSC received by the address
     "confirmations" : n                (numeric) The number of confirmations of the most recent transaction included
   }
@@ -3981,7 +4068,7 @@ Examples:
 Returns up to 'count' most recent transactions skipping the first 'from' transactions for account 'account'.
 
 #### Arguments:
-1. "account"    (string, optional) DEPRECATED. The account name. Should be "`*`".
+1. "account"    (string, optional) DEPRECATED. The account name. Should be "\*".
 2. count          (numeric, optional, default=10) The number of transactions to return
 3. from           (numeric, optional, default=0) The number of transactions to skip
 4. includeWatchonly (bool, optional, default=false) Include transactions to watchonly addresses (see 'importaddress')
@@ -4731,7 +4818,7 @@ Change generated from a taddr flows to a new taddr address, while change generat
 When sending coinbase UTXOs to a zaddr, change is not allowed. The entire value of the UTXO(s) must be consumed.
 Before Sapling activates, the maximum number of zaddr outputs is 54 due to transaction size limits.
 
-#### Arguments: `***Updated Info***`
+#### Arguments:
 1. "fromaddress"         (string, required) The taddr or zaddr to send the funds from. Also `"idname@:private"` can be used
                          to get the source from a private address attached to an ID.
 2. "amounts"             (array, required) An array of json objects representing the amounts to send.
@@ -4897,4 +4984,4 @@ Perform a joinsplit and return the JSDescription.
 
 compiled by Oink.vrsc@, additions by Mike@, grewalsatinder@ and allbits@
 
-Note: last revision date 2022-03-13.
+Note: last revision date 2022-08-07.
