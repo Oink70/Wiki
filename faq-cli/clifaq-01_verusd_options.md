@@ -257,6 +257,10 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
 ## Wallet options:
 
+  `-defaultzaddr=<zs1-address>`
+       Set the default address to return change from the `sendcurrency` command, if enabled by `-privatechange`.
+	   Defaults to the address supplied in `-cheatcatcher` if that is set.
+
   `-disablewallet`
        Do not load the wallet and disable wallet RPC calls
 
@@ -296,6 +300,10 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
   `-maxtxfee=<amt>`
        Maximum total fees (in VRSC) to use in a single wallet transaction;
        setting this too low may abort large transactions (default: 0.10)
+
+  `-privatechange=<0|1>`
+       Enable sending change from a `sendcurrency` command to a private zs1-address. default 0.
+	   Requires a private address to be specified in either `-defaultzaddr=<zs1-address>` or `-cheatcatcher=<zs1-address>`.
 
   `-upgradewallet`
        Upgrade wallet to latest format on startup
@@ -396,9 +404,6 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
   `-defaultid=<ID@>`
       Set a default destination ID for your staking rewards. (**Not** shown in standard daemon `--help` command)
 
-  `-defaultzaddr=<zs1-address>`
-       Set the default address to return change from the `sendcurrency` command, if enabled by `-privatechange`. Defaults to the address supplied in `-cheatcatcher`
-
   `-genproclimit=<n>`
        Set the number of threads for coin mining if enabled (-1 = all cores,
        default: 0)
@@ -418,9 +423,6 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
   `-notaryid=<ID@>`
       (Undocumented) Used in the notarization process
-
-  `-privatechange=<0|1>`
-      Enable sending change from a `sendcurrency` command to a private zs1-address. default 0.
 
   `-pubkey=<public key>`
       Redirect all coinbase rewards to the address belonging to the publickey.
@@ -478,4 +480,4 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
 compiled by Oink.vrsc@.
 
-Note: last revision date 2022-08-06.
+Note: last revision date 2022-08-12.
