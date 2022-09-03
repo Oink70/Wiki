@@ -1882,16 +1882,18 @@ All funds to start the currency and for initial conversion amounts must be avail
 ```json
 {
    "options" : n,                  (int,    optional) bits (in hexadecimal):
-                                          1 = FRACTIONAL                  // allows reserve conversion using base calculations when set
-                                          2 = IDRESTRICTED                // clear is permissionless, if set, IDs may only be created by controlling ID
-                                          4 = IDSTAKING                    // all IDs on chain stake equally, rather than value-based staking
-                                          8 = IDREFERRALS                  // if   set, this chain supports referrals
-                                          0x10 = IDREFERRALSREQUIRED       // if set, this chain requires referrals
-                                          0x20 = TOKEN                     // if set, this is a token, not a native currency
-                                          0x40 = RESERVED                  // for PBaaS chains or gateways to potentially restrict to single currency
-                                          0x80 = GATEWAY                   // if set, this routes external currencies
-                                          0x100 = IS_PBAAS_CHAIN           // this is a PBaaS chain definition
-                                          0x200 = PBAAS_CONVERTER          // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
+                                          OPTION_FRACTIONAL = 1                  // allows reserve conversion using base calculations when set
+                                          OPTION_ID_ISSUANCE = 2                 // clear is permissionless, if set, IDs may only be created by controlling ID
+                                          OPTION_ID_STAKING = 4                  // all IDs on chain stake equally, rather than value-based staking
+                                          OPTION_ID_REFERRALS = 8                // if set, this chain supports referrals
+                                          OPTION_ID_REFERRALREQUIRED = 16        // if set, this chain requires referrals
+                                          OPTION_TOKEN = 32                      // if set, this is a token, not a native currency
+                                          OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potentially restrict to single currency
+                                          OPTION_GATEWAY = 128                   // if set, this routes external currencies
+                                          OPTION_PBAAS = 256                     // this is a PBaaS chain definition
+                                          OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
+                                          OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+                                          OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
   "name" : "xxxx",                 (string, required) name of existing identity with no active or pending blockchain
   "idregistrationfees" : "xx.xx",  (value, required) price of an identity in native currency
   "idreferrallevels" : n,          (int, required) how many levels ID referrals go back in reward
@@ -4984,4 +4986,4 @@ Perform a joinsplit and return the JSDescription.
 
 compiled by Oink.vrsc@, additions by Mike@, grewalsatinder@ and allbits@
 
-Note: last revision date 2022-08-07.
+Note: last revision date 2022-09-03.
