@@ -20,8 +20,9 @@ External YouTube link: [Backing up the Verus Desktop wallet](https://youtu.be/yg
 Note: The filename you replace`<mywalletexport>` with, can only contain letters and figures, no other characters, so it **cannot** have a file-extension!*
 
 #### Verus Desktop:
-  Go to `Settings`, `Coin Settings` and click in the textbox shown there.
-  Enter `run z_exportwallet "<mywalletexport>"` and press enter to execute the command.
+  Go to `Settings`, `Coin Settings` and click `Export native wallet backup`.
+  Confirm that you want to export after reading the pop-up.
+  The green message will tell you where the backup is and what it's name is.
 #### linux/MacOS CLI:
   run `./verus z_exportwallet "<mywalletexport>"`
 #### windows CLI:
@@ -36,8 +37,8 @@ The exported wallet should be a file called `<mywalletexport>`, standard in the 
 Note: The filename you replace`<DestinationFileName>` with, can only contain letters and figures, no other characters, so it **cannot** have an file-extension
 
 #### Verus Desktop:
-   Go to `Settings`, `Coin Settings` and click in the textbox shown there.
-   Enter `run backupwallet "<DestinationFileName>"` and press enter to execute the command.
+   Go to `Settings`, `Coin Settings` and click the text box
+   type `run backupwallet "<DestinationFileName>"`
 #### linux/MacOS CLI:
    run `./verus backupwallet "<DestinationFileName>"`
 #### windows CLI:
@@ -70,4 +71,4 @@ For Komodo asset chains it is a folder/directory in the `komodo` base directory 
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2021-04-25.
+Note: revision date 2022-09-12.

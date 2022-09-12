@@ -31,8 +31,9 @@ Rescanning your wallet may take a considerable time, during which your wallet ma
 The `<PATH>` in the `z_importwallet` command needs to be the **full absolute** path to the file. replace `LOGINNAME` with the actual loginname.
 
 #### Verus Desktop:
-   Go to `Settings`, `Coin Settings` en click in the textbox shown there.
-   Enter `run z_importwallet "<PATH><mywalletimport>"` en press enter to execute the command.
+   Go to `Settings`, `Coin Settings` and click `Import native wallet backup`.
+   Click `Choose file`, browse to your backup file, select it and click `Open`
+   Click `Import` to start the inport process
 #### Agama:
    Go to settings, scroll to the bottom and click CLI, select VRSC in that section.
    Then below type `z_importwallet "<PATH><mywalletimport>"` and click the button below to run it.
@@ -46,4 +47,4 @@ Importing individual keys is explained in detail in this wiki: [import your Lite
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2021-04-25
+Note: revision date 2022-09-12.
