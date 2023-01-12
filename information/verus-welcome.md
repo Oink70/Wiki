@@ -40,7 +40,7 @@ Algorithm: VerusHash 2.1 PoW/PoS - 50/50
 Block time: 1 minute
 Proof-of-Stake (PoS) ROI is currently between 6% and 8%
 Halving Frequency: roughly every two years
-Next Halving: Current ETA: Dec 2022 (Block \#2,329,920)
+Next Halving: Current ETA: Jan 2025 (Block \#3,381,840)
 Halving Countdown: [*https:/countdown.verus.io/halving*](https://countdown.verus.io/halving)
 
 ## VerusID
