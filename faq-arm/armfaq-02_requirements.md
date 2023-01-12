@@ -9,7 +9,7 @@ The listed requirements are for running **one** chain. Additional PBaaS chains r
 * 64-bit processor
 * 64-bit Operating system (Raspbian is standard 32 bit)
 * 2 GB memory + 6 GB Swap available to the CLI Wallet
-* 15 GB storage space for Verus Blockchain and CLI wallet
+* 20 GB storage space for Verus Blockchain and CLI wallet
 * internet connectivity
 * `libgomp1` and `zlib1g-dev` libraries installed
 
@@ -26,7 +26,7 @@ The listed requirements are for running **one** chain. Additional PBaaS chains r
 * 64-bit processor
 * 64-bit Operating system (Raspbian is standard 32 bit) with GUI interface
 * 2 GB memory + 8 GB Swap available to the Verus Desktop Wallet
-* 20 GB storage space for Verus Blockchain and Verus Desktop.
+* 25 GB storage space for Verus Blockchain and Verus Desktop.
 * internet connectivity
 * `libgomp1` and `zlib1g-dev` libraries installed
 
@@ -65,4 +65,4 @@ The listed requirements are for running **one** chain. Additional PBaaS chains r
 * A public address to mine to
 * A public mining pool to connect to
 
-Note: Revision date 2022-02-03.
+Note: Revision date 2023-01-12.
