@@ -1240,6 +1240,8 @@ Examples:
       "name": "namestr",           (string, required)
                                             the unique name for this identity - Take from
                                             RegisterNameCommitment's output - name
+      "parent": "IDParent",        (string, required for IDs with parents other than VRSC)
+					    the parents friendly name e.g. gravity
       "primaryaddresses": [        (array of strings, required) the trasparent/public address(es)
         "hexstr"
       ],
