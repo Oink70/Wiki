@@ -2,7 +2,7 @@
 
 ## Important General Information
 
-#### Verus Daemon version 0.7.2
+#### Verus Daemon version 0.9.6-1
 
 Usage: `verusd [options]` Start Verus Daemon
 
@@ -112,6 +112,11 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
        Maintain a full transaction index, used by the getrawtransaction rpc
        call (default: 1)
 
+  `-idindex`
+       Maintain a full identity index, enabling queries to select IDs with
+       addresses, revocation or recovery IDs (default: 0)
+       !!! Activating requires reindexing, not compatible with bootstrap!!!
+
   `-addressindex`
        Maintain a full address index, used to query for the balance, txids and
        unspent outputs for addresses (default: 1)
@@ -119,6 +124,7 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
   `-timestampindex`
        Maintain a timestamp index for block hashes, used to query blocks hashes
        by a range of timestamps (default: 0)
+       !!! Activating requires reindexing, not compatible with bootstrap!!!
 
   `-spentindex`
        Maintain a full spent index, used to query the spending txid and input
@@ -128,6 +134,7 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
        If enabled, forces addressindex, spentindex and timestampindex to enabled
        If disabled, forces timestampindex to disabled
        (default: 0)
+       !!! Activating requires reindexing, not compatible with bootstrap!!!
 
 ## Connection options:
 
@@ -257,10 +264,6 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
 ## Wallet options:
 
-  `-defaultzaddr=<zs1-address>`
-       Set the default address to return change from the `sendcurrency` command, if enabled by `-privatechange`.
-	   Defaults to the address supplied in `-cheatcatcher` if that is set.
-
   `-disablewallet`
        Do not load the wallet and disable wallet RPC calls
 
@@ -300,10 +303,6 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
   `-maxtxfee=<amt>`
        Maximum total fees (in VRSC) to use in a single wallet transaction;
        setting this too low may abort large transactions (default: 0.10)
-
-  `-privatechange=<0|1>`
-       Enable sending change from a `sendcurrency` command to a private zs1-address. default 0.
-	   Requires a private address to be specified in either `-defaultzaddr=<zs1-address>` or `-cheatcatcher=<zs1-address>`.
 
   `-upgradewallet`
        Upgrade wallet to latest format on startup
@@ -366,21 +365,30 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
   `-printtoconsole`
        Send trace/debug info to console instead of debug.log file
 
-  `-testnet`
-       loads PBaaS network in testmode
-  
+  `-mineraddress=<address>`
+       Mining rewards will go to this address
+
+  `-pubkey=<hexpubkey>`
+       If set, mining and staking rewards will go to this address by default
+
+  `-defaultid=<i-address>`
+       VerusID used for default change out and staking reward recipient
+
   `-defaultzaddr=<sapling-address>`
        sapling address to receive fraud proof rewards and if used with
        "-privatechange=1", z-change address for the sendcurrency command
-  
+
+  `-cheatcatcher=<sapling-address>`
+       same as "-defaultzaddr"
+
   `-privatechange`
        directs all change from sendcurency or z_sendmany APIs to the
        defaultzaddr set, if it is a valid sapling address
-  
+
   `-miningdistribution={"addressorid":<n>,...}`
        destination addresses and relative amounts used as ratios to divide
        total rewards + fees
-	   
+
   `-miningdistributionpassthrough`
        uses the same miningdistribution values and addresses/IDs as Verus when
        merge mining
@@ -401,7 +409,10 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
        Set minimum spacing consensus between cross-chain notarization, in
        blocks (default: 10, min 10 min)
 
-   
+  `-testnet`
+       loads PBaaS network in testmode
+
+
 ## Node relay options:
 
   `-datacarrier`
@@ -431,12 +442,6 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
   `-gen`
       Mine/generate coins (default: 0)
 
-  `-cheatcatcher=<sapling-address>`
-      same as "-defaultzaddr"
-
-  `-defaultid=<i-address>`
-      VerusID used for default change out and staking reward recipient
-
   `-genproclimit=<n>`
        Set the number of threads for coin mining if enabled (-1 = all cores,
        default: 0)
@@ -456,13 +461,6 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
   `-notaryid=<ID@>`
       (Undocumented) Used in the notarization process
-
-  `-pubkey=<public key>`
-      Redirect all coinbase rewards to the address belonging to the publickey.
-
-  `-cheatcatcher=<private z-address>`
-      Checks mempool for spending a TXID multiple times for staking. If found the blockreward of the offending stake transaction will be sent to the private address entered.
-
 
 ## RPC server options:
 
@@ -513,4 +511,4 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
 compiled by Oink.vrsc@.
 
-Note: last revision date 2022-10-11.
+Note: last revision date 2023-02-12.
