@@ -2906,9 +2906,6 @@ Examples:
 ```
 #### Result
 no return on success, else error
-#### Examples:
-```bash
-```
 
 ### `submitacceptednotarization "{earnednotarization}" "{notaryevidence}"`
 Finishes an almost complete notarization transaction based on the notary chain and the current wallet or pubkey.
