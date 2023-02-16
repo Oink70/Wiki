@@ -1452,7 +1452,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "revokeidentity", "params": ["nameorID"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `setidentitytimelock "id@" '{"unlockatblock":absoluteblockheight || "setunlockdelay":numberofblocksdelayafterunlock}' (returntx)`
+### `setidentitytimelock "id@" '{"unlockatblock":absoluteblockheight || "setunlockdelay":numberofblocksdelayafterunlock}' (returntx) (feeoffer) (sourceoffunds)`
 Enables timelocking and unlocking of funds access for an on-chain VerusID. This does not affect the lock status of VerusIDs on other chains,
 including VerusIDs with the same identity as this one, which has been exported to another chain.
 
@@ -1472,6 +1472,9 @@ block passes.
   "setunlockdelay"               (number, optional) delay this many blocks after unlock request to unlock, can only be
                                                       circumvented by revoke/recover
 }
+"returntx"                       (bool,   optional) defaults to false and transaction is sent, if true, transaction is signed by this wallet and returned
+"feeoffer"                       (bool,   optional) non-standard fee amount to pay for the transaction
+"sourceoffunds"                  (string,   optional) transparent or private address to source all funds for fees to preserve privacy of the identity
 ```
 #### Result:
    Hex string of either the txid if returnhex is false or the hex serialized transaction if returntx is true.
@@ -1488,13 +1491,11 @@ Examples:
 #### Arguments:
 ```json
 {
-  "unlockatblock"                (number, optional) unlock at an absolute block height, countdown starts when mined into a block
-  "setunlockdelay"               (number, optional) delay this many blocks after unlock request to unlock, can only be
-                                                      circumvented by revoke/recover
+    "clearall": bool                             (bool, optional) clears all wallet identity trust lists before adding, removing, or trust mode operations
+    "setratings":{"id":JSONRatingObject,...}     (obj, optional) replaces ratings for specified IDs with those given
+    "removeratings":["id",...]                   (strarray, optional) erases ratings for IDs specified
+    "identitytrustmode": <n>                     (number, optional) 0 = no restriction on sync, 1 = only sync to IDs rated approved, 2 = sync to all IDs but those on block list
 }
-"returntx"                        (bool,   optional) defaults to false and transaction is sent, if true, transaction is signed by this wallet and returned
-"feeoffer"                        (bool,   optional) non-standard fee amount to pay for the transaction
-"sourceoffunds"                   (string,   optional) transparent or private address to source all funds for fees to preserve privacy of the identity
 ```
 
 #### Result
@@ -2161,18 +2162,19 @@ All funds to start the currency and for initial conversion amounts must be avail
 ```json
 {
    "options" : n,                  (int,    optional) bits (in hexadecimal):
-                                          OPTION_FRACTIONAL = 1                  // allows reserve conversion using base calculations when set
-                                          OPTION_ID_ISSUANCE = 2                 // clear is permissionless, if set, IDs may only be created by controlling ID
-                                          OPTION_ID_STAKING = 4                  // all IDs on chain stake equally, rather than value-based staking
-                                          OPTION_ID_REFERRALS = 8                // if set, this chain supports referrals
-                                          OPTION_ID_REFERRALREQUIRED = 16        // if set, this chain requires referrals
-                                          OPTION_TOKEN = 32                      // if set, this is a token, not a native currency
-                                          OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potentially restrict to single currency
-                                          OPTION_GATEWAY = 128                   // if set, this routes external currencies
-                                          OPTION_PBAAS = 256                     // this is a PBaaS chain definition
-                                          OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-                                          OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
-                                          OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
+                                          OPTION_FRACTIONAL = 1                  // (1 decimal )allows reserve conversion using base calculations when set
+                                          OPTION_ID_ISSUANCE = 2                 // (2 decimal) clear is permissionless, if set, IDs may only be created by controlling ID
+                                          OPTION_ID_STAKING = 4                  // (4 decimal) all IDs on chain stake equally, rather than value-based staking
+                                          OPTION_ID_REFERRALS = 8                // (8 decimal) if set, this chain supports referrals
+                                          OPTION_ID_REFERRALREQUIRED = 0x10      // (16 decimal) if set, this chain requires referrals
+                                          OPTION_TOKEN = 0x20                    // (32 decimal) if set, this is a token, not a native currency
+                                          OPTION_SINGLECURRENCY = 0x40           // (64 decimal) for PBaaS chains or gateways to potentially restrict to single currency
+                                          OPTION_GATEWAY = 0x80                  // (128 decimal) if set, this routes external currencies
+                                          OPTION_PBAAS = 0x100                   // (256 decimal) this is a PBaaS chain definition
+                                          OPTION_GATEWAY_CONVERTER = 0x200       // (512 decimal) this means that for a specific PBaaS gateway, this is the default converter and will publish prices
+                                          OPTION_GATEWAY_NAMECONTROLLER = 0x400  // (1024 decimal) when not set on a gateway, top level ID and currency registration happen on launch chain
+                                          OPTION_NFT_TOKEN = 0x800               // (2048 decimal) single satoshi NFT token, tokenizes control over the root ID
+										  OPTIONS_FLAG_MASK = 0xfff
   "name" : "xxxx",                 (string, required) name of existing identity with no active or pending blockchain
   "idregistrationfees" : "xx.xx",  (value, required) price of an identity in native currency
   "idreferrallevels" : n,          (int, required) how many levels ID referrals go back in reward
