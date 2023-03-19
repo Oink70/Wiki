@@ -853,6 +853,32 @@ Examples:
 
 ### `notaries height timestamp`
 
+### `processupgradedata {upgradedata}`
+Returns the txid and index where an output is spent.
+
+#### Arguments:
+```json
+{
+  "upgradeid"                (string) The VDXF key identifier
+  "minimumdaemonversion"     (string) The minimum version required for the upgrade
+  "activationheight"         (number) The block height to activate
+  "activationtime"           (number) Epoch time to activate, depending on upgrade
+}
+```
+#### Result:
+```json
+{
+  "txid"  (string) The transaction id
+  "index"  (number) The spending input index
+  ,...
+}
+```
+Examples:
+```bash
+> verus processupgradedata '{"txid": "0437cd7f8525ceed2324359c2d0ba26006d92d856a9c20fa0241106ee5a597c9", "index": 0}'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "processupgradedata", "params": [{"txid": "0437cd7f8525ceed2324359c2d0ba26006d92d856a9c20fa0241106ee5a597c9", "index": 0}] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
 ### `verifychain ( checklevel numblocks )`
 Verifies blockchain database.
 
@@ -1248,7 +1274,44 @@ Using json rpc
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getidentity", "params": ["name@"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getidentitytrust '["id",...]'` ***`NEW`***
+### `getidentitycontent "name@ || iid" (heightstart) (heightend) (txproofs) (txproofheight) (vdxfkey)`
+
+#### Arguments:
+    "name@ || iid"       (string, required) name followed by "@" or i-address of an identity
+    "heightstart"        (number, optional) default=0, only return content from this height forward, inclusive
+    "heightend"          (number, optional) default=0 which means max height, only return content up to this height,
+                                            inclusive. -1 means also return values from the mempool.
+    "txproofs"           (bool, optional) default=false, if true, returns proof of ID
+    "txproofheight"      (number, optional) default="height", height from which to generate a proof
+    "vdxfkey"            (vdxf key, optional) default=null, more selective search for specific content in ID
+
+#### Result:
+
+#### Examples:
+```bash
+> verus getidentitycontent "name@"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getidentitycontent", "params": ["name@"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
+### `getidentityhistory "name@ || iid" (heightstart) (heightend) (txproofs) (txproofheight)`
+
+#### Arguments:
+    "name@ || iid"       (string, required) name followed by "@" or i-address of an identity
+    "heightstart"        (number, optional) default=0, only return content from this height forward, inclusive
+    "heightend"          (number, optional) default=0 which means max height, only return content up to this height,
+                         inclusive. -1 means also return values from the mempool.
+    "txproofs"           (bool, optional) default=false, if true, returns proof of ID
+    "txproofheight"      (number, optional) default="height", height from which to generate a proof
+
+#### Result:
+
+#### Examples:
+```bash
+> verus getidentityhistory "name@"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getidentityhistory", "params": ["name@"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
+### `getidentitytrust '["id",...]'`
 #### Arguments:
 ```json
 "["id",...]"                                       (strarray, optional) if specified, only returns rating values for specified IDs, otherwise all
@@ -1946,20 +2009,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblocktemplate", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getlocalsolps`
-Returns the average local solutions per second since this node was started.
-This is the same information shown on the metrics screen (if enabled).
-
-#### Result:
-xxx.xxxxx     (numeric) Solutions per second average
-
-Examples:
-```bash
-> verus getlocalsolps
-> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getlocalsolps", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
-```
-
-### `getlastmininingdistribution` ***`NEW`***
+### `getlastmininingdistribution`
 Retrieves the last used mining distribution when making a block
 
 #### Arguments
@@ -1978,6 +2028,38 @@ none
 ```bash
 > verus getlastminingdistribution
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getlastminingdistribution", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
+### `getlocalsolps`
+Returns the average local solutions per second since this node was started.
+This is the same information shown on the metrics screen (if enabled).
+
+#### Result:
+xxx.xxxxx     (numeric) Solutions per second average
+
+Examples:
+```bash
+> verus getlocalsolps
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getlocalsolps", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
+### `getminingdistribution`
+Retrieves current mining distribution
+
+#### Arguments:
+    "name@ || iid"        (string, required) name followed by "@" or i-address of an identity
+    "heightstart"         (number, optional) default=0, only return content from this height forward, inclusive
+    "heightend"           (number, optional) default=0 which means max height, only return content up to this height,
+                          inclusive. -1 means also return values from the mempool.
+    "txproofs"            (bool, optional) default=false, if true, returns proof of ID
+    "txproofheight"       (number, optional) default="height", height from which to generate a proof
+
+#### Result:
+
+#### Examples:
+```bash
+> verus getidentityhistory "name@"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getidentityhistory", "params": ["name@"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ### `getmininginfo`
@@ -2627,7 +2709,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getlaunchinfo", "params": ["currencyid"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getblocktemplate ( "jsonrequestobject" )`
+### `getmergedblocktemplate ( "jsonrequestobject" )`
 If the request parameters include a 'mode' key, that is used to explicitly select between the default 'template' request or a 'proposal'.
 It returns data needed to construct a block to work on.
 See https://en.bitcoin.it/wiki/BIP_0022 for full specification.
@@ -2637,11 +2719,6 @@ See https://en.bitcoin.it/wiki/BIP_0022 for full specification.
 ```
 {
   "mode":"template"   (string, optional) This must be set to "template" or omitted
-  "rewarddistribution":{
-      "(recipientaddress)":n,  (addressorid, relativeweight) key value to determine distribution
-      "(recipientaddress)":n,
-      "...
-  "}
   "capabilities":[      (array, optional) A list of strings
       "support"         (string) client side supported feature, 'longpoll', 'coinbasetxn', 'coinbasevalue', 'proposal', 'serverlist', 'workid'
       ,...
@@ -2652,14 +2729,14 @@ See https://en.bitcoin.it/wiki/BIP_0022 for full specification.
 ```json
 {
   "version" : n,                     (numeric) The block version
-  "previousblockhash" : "xxxx",    (string) The hash of current highest block
-  "finalsaplingroothash" : "xxxx", (string) The hash of the final sapling root
+  "previousblockhash" : "xxxx",      (string) The hash of current highest block
+  "finalsaplingroothash" : "xxxx",   (string) The hash of the final sapling root
   "transactions" : [                 (array) contents of non-coinbase transactions that should be included in the next block
       {
-         "data" : "xxxx",          (string) transaction data encoded in hexadecimal (byte-for-byte)
-         "hash" : "xxxx",          (string) hash/id encoded in little-endian hexadecimal
-         "depends" : [              (array) array of numbers
-             n                        (numeric) transactions before this one (by 1-based index in 'transactions' list) that must be present in the final block if this one is
+         "data" : "xxxx",            (string) transaction data encoded in hexadecimal (byte-for-byte)
+         "hash" : "xxxx",            (string) hash/id encoded in little-endian hexadecimal
+         "depends" : [               (array) array of numbers
+             n                       (numeric) transactions before this one (by 1-based index in 'transactions' list) that must be present in the final block if this one is
              ,...
          ],
          "fee": n,                   (numeric) difference in value between transaction inputs and outputs (in Satoshis); for coinbase transactions, this is a negative Number of the total collected block fees (ie, not including the block subsidy); if key is not present, fee is unknown and clients MUST NOT assume there isn't one
@@ -2669,24 +2746,25 @@ See https://en.bitcoin.it/wiki/BIP_0022 for full specification.
       ,...
   ],
   "coinbasetxn" : { ... },           (json object) information for coinbase transaction
-  "target" : "xxxx",               (string) The hash target
+  "target" : "xxxx",                 (string) The hash target
   "mintime" : xxx,                   (numeric) The minimum timestamp appropriate for next block time in seconds since epoch (Jan 1 1970 GMT)
   "mutable" : [                      (array of string) list of ways the block template may be changed
      "value"                         (string) A way the block template may be changed, e.g. 'time', 'transactions', 'prevblock'
      ,...
   ],
-  "noncerange" : "00000000ffffffff",   (string) A range of valid nonces
-  "sigoplimit" : n,                 (numeric) limit of sigops in blocks
-  "sizelimit" : n,                  (numeric) limit of block size
-  "curtime" : ttt,                  (numeric) current timestamp in seconds since epoch (Jan 1 1970 GMT)
-  "bits" : "xxx",                 (string) compressed target of next block
-  "height" : n                      (numeric) The height of the next block
+  "noncerange" : "00000000ffffffff", (string) A range of valid nonces
+  "sigoplimit" : n,                  (numeric) limit of sigops in blocks
+  "sizelimit" : n,                   (numeric) limit of block size
+  "curtime" : ttt,                   (numeric) current timestamp in seconds since epoch (Jan 1 1970 GMT)
+  "bits" : "xxx",                    (string) compressed target of next block
+  "merged_bits": "xxx",              (string) compressed target of next merged block
+  "height" : n                       (numeric) The height of the next block
 }
 ```
 Examples:
 ```bash
-> verus getblocktemplate
-> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblocktemplate", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+> verus getmergedblocktemplate
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockmergedtemplate", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ### `getnotarizationdata "currencyid"`
@@ -2706,6 +2784,63 @@ Examples:
 ```bash
 > verus getnotarizationdata "currencyid"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnotarizationdata", "params": ["currencyid"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
+### 'getnotarizationproofs {json object}'
+Returns proofs to a caller for requested challenges. Some proofs can either independently or in combination
+with other proofs over time invalidate or force a competing chain to provide more proofs in order to confirm
+any pending cross-chain notarization of an alternate chain that may not agree with us.
+
+* It is not valid to have a challenge request with both confirmnotarization and confirmroot.
+
+#### Arguments:
+  "challengerequests"            (array, required) one or more challenge requests for unconfirmed notarizations on a bridged system
+```json
+[
+  {
+    "type":"vrsc::evidence.skipchallenge" || "iCwxpRL6h3YeCRtGjgQSsqoKdZCuM4Dxaf",
+    "evidence":{CNotaryEvidence},
+    "entropyhash":"hex",
+    "proveheight":n,
+    "atheight":n
+  },
+  {
+    "type":"vrsc::evidence.validitychallenge" || "iCPb8ywQna7jYV2SHrGZ6vQMj7kuyWFxvb",
+    "evidence":{CNotaryEvidence},
+    "entropyhash":"hex",
+    "fromheight":n,
+    "toheight":n,
+    "challengedroot":{CPRoofRoot},
+    "confirmnotarization":{expectednotarization}, | "confirmroot":{CPRoofRoot}
+  },
+  {"type":"vrsc::evidence.primaryproof" || "iKDesmiEkEjDG61nQSZJSGhWvC8x8xA578",
+      "priornotarizationref":{CUTXORef} || "priorroot":{CProofRoot
+  },
+  "challengeroots":
+  [
+    {
+      "indexkey":{object},
+      "proofroot":{CProofRoot}
+    },
+  ...
+  ],
+  "evidence":{CNotaryEvidence},
+  "entropyhash":"hex",
+  "confirmnotarization":{newnotarization}, |
+  "confirmroot":{CPRoofRoot}},
+  "fromheight":n,
+  "toheight":n},
+  ...
+]
+```
+#### Results:
+```json
+{"evidence":[{CNotaryEvidence}, ...]   (array) notary evidence challenges, including proofs for challenges requested
+```
+#### Examples:
+```bash
+> verus getnotarizationproofs '[{"type":"iCwxpRL6h3YeCRtGjgQSsqoKdZCuM4Dxaf", "evidence":{CNotaryEvidence}, "proveheight":n, "atheight":n}, ...]'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnotarizationproofs", "params": [[{"type":"iCwxpRL6h3YeCRtGjgQSsqoKdZCuM4Dxaf", "evidence":{CNotaryEvidence}, "proveheight":n, "atheight":n}, ...]] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ### `getpendingtransfers "chainname"`
@@ -2925,6 +3060,41 @@ Examples:
 ```bash
 > verus submitacceptednotarization "{earnednotarization}" "{notaryevidence}"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "submitacceptednotarization", "params": ["{earnednotarization}" "{notaryevidence}"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
+### `submitchallenges [json array]`
+Submits one or more cryptographic challenges to existing, unconfirmed notarizations, proving the existence
+of an alternate chain. Whether the alternate chain has more power than the chain with a pending notarization
+is not required, only that it has moved forward multiple blocks since the prior notarization.
+
+Requires that the local wallet have funds for fees.
+
+#### Arguments:
+"challenges"                 (array, required) one or more challenges to unconfirmed notarizations on this system
+```json
+[
+  {
+    "type":"vrsc::evidence.skipchallenge" || "iCwxpRL6h3YeCRtGjgQSsqoKdZCuM4Dxaf" ||
+                       "type":"vrsc::evidence.validitychallenge" || "iCPb8ywQna7jYV2SHrGZ6vQMj7kuyWFxvb",
+    "notarizationref":{"txid":"hexvalue","voutnum":n},
+    "forkroot":{},
+    "challengeroot":{},
+    "evidence":{}
+  },
+  {...},
+   ...
+]
+```
+
+#### Result:
+```json
+[{"txid":"hex"}, {"error":"errorstring"}, ...]   (array) results of submitted challenge transactions
+```
+
+#### Examples:
+```bash
+> verus submitchallenges '[{"notarizationref":{"txid":"hexvalue","voutnum":n},"challengeroot":{},"evidence":{}}]'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "submitchallenges", "params": [[{"notarizationref":{"txid":"hexvalue","voutnum":n},"challengeroot":{},"evidence":{}}]] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ### `submitimports '{"sourcesystemid":"systemid", "notarizationtxid":"txid", "notarizationtxoutnum":n, "exports":[{"txid":"hexid", "txoutnum":n, "partialtransactionproof":"hexstr", Fresendw"transfers": [{transfer1}, {transfer2},...]}, ...]}'`
@@ -5353,4 +5523,4 @@ Perform a joinsplit and return the JSDescription.
 
 compiled by Oink.vrsc@, additions by Mike@, grewalsatinder@ and allbits@
 
-Note: last revision date 2023-02-12.
+Note: last revision date 2023-03-19.

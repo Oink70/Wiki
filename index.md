@@ -86,7 +86,7 @@ If you have any questions about the information here, need help or have suggesti
 
 ## CLI wallet specific Information
 [Verusd options list](#!faq-cli/clifaq-01_verusd_options.md) ***`UPDATED to v0.9.9-2`***
-[Verus command list](#!faq-cli/clifaq-02_verus_commands.md) ***`UPDATED to v0.9.6-1`***
+[Verus command list](#!faq-cli/clifaq-02_verus_commands.md) ***`UPDATED to v0.9.9-2`***
 [Remarks on Windows command line formatting](#!faq-windows/winfaq-01_cli_formatting.md)
 
 ## Q&A Archive
