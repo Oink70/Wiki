@@ -2,7 +2,7 @@
 
 ## Important General Information
 
-#### Verus Daemon version 0.9.6-1
+#### Verus Daemon version 0.9.9-2
 
 Usage: `verusd [options]` Start Verus Daemon
 
@@ -62,19 +62,11 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
   `-datadir=<dir>`
        Specify data directory
 
-  `-exportdir=<dir>`
-       Specify directory to be used when exporting data
-
   `-dbcache=<n>`
        Set database cache size in megabytes (4 to 16384, default: 450)
 
-  `-dbmaxopenfiles=<n>`
-       Set database maximum number of files that can be opened
-        (**Not** shown in standard daemon `--help` command)
-
-  `-dbcompression=<0|1>`
-       Enable or disable compression (Boolean, standard enabled)
-        (**Not** shown in standard daemon `--help` command)
+  `-exportdir=<dir>`
+       Specify directory to be used when exporting data
 
   `-loadblock=<file>`
        Imports blocks from external blk000??.dat file on startup
@@ -108,23 +100,25 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
        Create new files with system default permissions, instead of umask 077
        (only effective with disabled wallet functionality)
 
-  `-txindex`
-       Maintain a full transaction index, used by the getrawtransaction rpc
-       call (default: 1)
+## Index options:
+
+  `-addressindex`
+       Maintain a full address index, used to query for the balance, txids and
+       unspent outputs for addresses (default: 1)
 
   `-idindex`
        Maintain a full identity index, enabling queries to select IDs with
        addresses, revocation or recovery IDs (default: 0)
        !!! Activating requires reindexing, not compatible with bootstrap!!!
 
-  `-addressindex`
-       Maintain a full address index, used to query for the balance, txids and
-       unspent outputs for addresses (default: 1)
-
   `-timestampindex`
        Maintain a timestamp index for block hashes, used to query blocks hashes
        by a range of timestamps (default: 0)
        !!! Activating requires reindexing, not compatible with bootstrap!!!
+
+   `-txindex`
+       Maintain a full transaction index, used by the getrawtransaction rpc
+       call (default: 1)
 
   `-spentindex`
        Maintain a full spent index, used to query the spending txid and input
@@ -264,11 +258,25 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
 ## Wallet options:
 
+  `-cheatcatcher=<sapling-address>`
+       same as "-defaultzaddr"
+
+  `-defaultid=<i-address>`
+       VerusID used for default change out and staking reward recipient
+
+  `-defaultzaddr=<sapling-address>`
+       sapling address to receive fraud proof rewards and if used with
+       "-privatechange=1", z-change address for the sendcurrency command
+
   `-disablewallet`
        Do not load the wallet and disable wallet RPC calls
 
   `-keypool=<n>`
        Set key pool size to <n> (default: 100)
+
+  `-maxtxfee=<amt>`
+       Maximum total fees (in VRSC) to use in a single wallet transaction;
+       setting this too low may abort large transactions (default: 0.10)
 
   `-migration`
        Enable the Sprout to Sapling migration
@@ -278,6 +286,10 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
   `-paytxfee=<amt>`
        Fee (in VRSC/kB) to add to transactions you send (default: 0.0001)
+
+  `-privatechange`
+      directs all change from sendcurency or z_sendmany APIs to the
+      defaultzaddr set, if it is a valid sapling address
 
   `-rescan`
        Rescan the block chain for missing wallet transactions on startup
@@ -299,10 +311,6 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
        Set the number of blocks after which a transaction that has not been
        mined will become invalid (min: 4, default: 20 (pre-Blossom) or 40
        (post-Blossom))
-
-  `-maxtxfee=<amt>`
-       Maximum total fees (in VRSC) to use in a single wallet transaction;
-       setting this too low may abort large transactions (default: 0.10)
 
   `-upgradewallet`
        Upgrade wallet to latest format on startup
@@ -336,6 +344,21 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
   `-zmqpubrawtx=<address>`
        Enable publish raw transaction in <address>
 
+## AMQP 1.0 notification options:
+all AMQP support options require `-experimentalfeatures`.
+
+  `-amqppubhashblock=<address>`
+      Enable publish hash block in <address>
+
+  `-amqppubhashtx=<address>`
+      Enable publish hash transaction in <address>
+
+  `-amqppubrawblock=<address>`
+      Enable publish raw block in <address>
+
+  `-amqppubrawtx=<address>`
+      Enable publish raw transaction in <address>
+
 ## Debugging/Testing options:
 
   `-debug=<category>`
@@ -365,54 +388,6 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
   `-printtoconsole`
        Send trace/debug info to console instead of debug.log file
 
-  `-mineraddress=<address>`
-       Mining rewards will go to this address
-
-  `-pubkey=<hexpubkey>`
-       If set, mining and staking rewards will go to this address by default
-
-  `-defaultid=<i-address>`
-       VerusID used for default change out and staking reward recipient
-
-  `-defaultzaddr=<sapling-address>`
-       sapling address to receive fraud proof rewards and if used with
-       "-privatechange=1", z-change address for the sendcurrency command
-
-  `-cheatcatcher=<sapling-address>`
-       same as "-defaultzaddr"
-
-  `-privatechange`
-       directs all change from sendcurency or z_sendmany APIs to the
-       defaultzaddr set, if it is a valid sapling address
-
-  `-miningdistribution={"addressorid":<n>,...}`
-       destination addresses and relative amounts used as ratios to divide
-       total rewards + fees
-
-  `-miningdistributionpassthrough`
-       uses the same miningdistribution values and addresses/IDs as Verus when
-       merge mining
-
-  `-chain=pbaaschainname`
-       loads either mainnet or resolves and loads a PBaaS chain if not vrsc or
-       vrsctest
-
-  `-blocktime=<n>`
-       Set target block time (in seconds) for difficulty adjustment (default:
-       60)
-
-  `-powaveragingwindow=<n>`
-       Set averaging window for PoW difficulty adjustment, in blocks (default:
-       45)
-
-  `-notarizationperiod=<n>`
-       Set minimum spacing consensus between cross-chain notarization, in
-       blocks (default: 10, min 10 min)
-
-  `-testnet`
-       loads PBaaS network in testmode
-
-
 ## Node relay options:
 
   `-datacarrier`
@@ -436,8 +411,11 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
 ## Mining options:
 
-  `-mint`
-      Mint/stake coins automatically (default: 0)
+  `-defaultid=<i-address>`
+      VerusID used for default change out and staking reward recipient
+
+  `-equihashsolver=<name>`
+      Specify the Equihash solver to be used if enabled (default: "default")
 
   `-gen`
       Mine/generate coins (default: 0)
@@ -446,9 +424,6 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
        Set the number of threads for coin mining if enabled (-1 = all cores,
        default: 0)
 
-  `-equihashsolver=<name>`
-       Specify the Equihash solver to be used if enabled (default: "default")
-
   `-mineraddress=<addr>`
        Send mined coins to a specific single address
 
@@ -456,11 +431,47 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
        Require that mined blocks use a coinbase address in the local wallet
        (default: 1)
 
-  `-nodeid=<ID@>`
-       (Undocumented) Used in the notarization process
+  `-miningdistribution={"addressorid":<n>,...}`
+       destination addresses and relative amounts used as ratios to divide
+       total rewards + fees
+
+  `-mint`
+       Mint/stake coins automatically (default: 0)
+
+  `-pubkey=<hexpubkey>`
+       If set, mining and staking rewards will go to this address by default
+
+## PBaaS options:
+
+  `-allowdelayednotarizations`
+       Do not notarize in order to prevent slower notarizations (default = %u, notarize to prevent slowing down)
+
+  `-alwayssubmitnotarizations`
+       Submit notarizations to notary chain whenevever merge mining/staking and eligible (default = %u, only as needed)
+
+  `-blocktime=<n>`
+       Set target block time (in seconds) for difficulty adjustment (default: 60)
+
+  `-chain=pbaaschainname`
+       loads either mainnet or resolves and loads a PBaaS chain if not vrsc or vrsctest
+
+  `-miningdistributionpassthrough`
+      uses the same miningdistribution values and addresses/IDs as Verus when merge mining
+
+  `-notarizationperiod=<n>`
+      Set minimum spacing consensus between cross-chain notarization, in blocks (default: 10, min 10 min)
 
   `-notaryid=<ID@>`
-      (Undocumented) Used in the notarization process
+      VerusID used for PBaaS and Ethereum cross-chain notarization
+
+  `-notificationoracle=<i-address>`
+      VerusID monitored for network alerts, triggers, and signals. Current default is "Verus Coin Foundation@" for Verus and the chain ID for PBaaS chains
+
+  `-powaveragingwindow=<n>`
+      Set averaging window for PoW difficulty adjustment, in blocks (default: 45)
+
+  `-testnet`
+           loads PBaaS network in testmode
 
 ## RPC server options:
 
@@ -507,8 +518,78 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
        Number of seconds between metrics refreshes (default: 1 if running in a
        console, 600 otherwise)
 
+# Additional debug options:
+These are options for developers to debug/test the chain or daemon. These options are **not** for general use on users daemons.
+
+## General options:
+
+  `-enforcenodebloom`
+       Enforce minimum protocol version to limit use of Bloom filters (default: 1)
+
+## Debugging/Testing options:
+
+  `-checkpoints`
+       Disable expensive verification for known chain history (default: 1)
+
+  `-dblogsize=<n>`
+       Flush database activity from memory pool to disk log every <n> megabytes (default: 100)
+
+  `-disablesafemode`
+       Disable safemode, override a real safe mode event (default: 0)
+
+  `-testsafemode`
+       Force safe mode (default: 0)
+
+  `dropmessagestest=<n>`
+       Randomly drop 1 of every <n> network messages
+
+  `-fuzzmessagestest=<n>`
+       Randomly fuzz 1 of every <n> network messages
+
+  `-flushwallet`
+       Run a thread to flush wallet periodically (default: 1)
+
+  `-stopafterblockimport`
+       Stop running after importing blocks from disk (default: 0)
+
+  `-nuparams=hexBranchId:activationHeight`
+       Use given activation height for specified network upgrade (regtest-only)
+
+  `-limitfreerelay=<n>`
+       Continuously rate-limit free transactions to <n>*1000 bytes per minute (default: 15)
+
+  `-relaypriority`
+       Require high priority for relaying free or low-fee transactions (default: 0)
+
+  `-maxsigcachesize=<n>`
+       Limit size of signature cache to <n> MiB (default: 40)
+
+  `-maxtipage=<n>`
+       Maximum tip age in seconds to consider node in initial block download (default: 86400)
+
+  `-printpriority`
+       Log transaction priority and fee per kB when mining blocks (default: 0)
+
+  `-privdb`
+       Sets the DB_PRIVATE flag in the wallet db environment (default: 1)
+
+  `-regtest`
+       Enter regression test mode, which uses a special chain in which blocks can be solved instantly. This is intended for regression testing tools and app development.
+
+## Node relay options:
+
+  `-blockversion=<n>`
+       Override block version to test forking scenarios (default: 4)
+
+## RPC options:
+
+  `-rpcworkqueue=<n>`
+       Set the depth of the work queue to service RPC calls (default: 16)
+
+  `-rpcservertimeout=<n>`
+       Timeout during HTTP requests (default: 30)
 
 
 compiled by Oink.vrsc@.
 
-Note: last revision date 2023-02-12.
+Note: last revision date 2023-03-19.
