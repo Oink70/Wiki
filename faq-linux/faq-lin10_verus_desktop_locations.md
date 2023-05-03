@@ -1,7 +1,7 @@
 
 # Standard file location for Verus Desktop
 
-The Linux version of Verus Desktop is supplied as an AppImaga, so it does not get installed, but mounted in the `/tmp` folder on execution.
+The Linux version of Verus Desktop is supplied as an AppImage, so it does not get installed, but mounted in the `/tmp` folder on execution.
 The folder it is mounted to will look like `.mount_Verus-xxxxx` where the `xxxxx` part will be a random set of characters, changing on every start of the wallet.
 (It is a hidden folder: in order to see it, `<CTRL>-H` will toggle the display of hidden folders)
 
