@@ -29,7 +29,7 @@ Add a similar list to the bottom of your `VRSC.conf`, just below `rpcallowip=127
   addnode=95.217.1.76
 ```
 Save and exit the file.
-An up-to-date list of working nodes can be found in Verus Discord in the #tipbot channel, by messaging `!vrsctip peers` in that channel.
+An up-to-date list of working nodes can be found in Verus Discord in the #tipbot channel, by messaging `/peerinfo` in that channel.
 
 After you added nodes, remove `peers.dat` that is in the VRSC folder.
 (At least rename or move to a different location).
@@ -40,4 +40,4 @@ If the problem persists, continue with this WIKI: [Recover from forking, network
 
 Submitted by Oink.vrsc@ & Thoskk.vrsc@
 
-Note: last revision date 2022-01-27.
+Note: last revision date 2023-05-13.
