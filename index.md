@@ -9,6 +9,7 @@ If you have any questions about the information here, need help or have suggesti
 ## Information
 [Verus Welcome Information](#!information/verus-welcome.md)
 [Verus Information Page](#!how-to/how-to_verus_info.md)
+[Verus Release Notes](#!information/release_notes.md) ***`NEW`***
 [VerusIDs](#!information/verusid.md)
 [Verus Digital Signatures](#!information/signatures.md)
 [VerusHash 2.1](#!information/verushash_2.1.md)
@@ -30,6 +31,7 @@ If you have any questions about the information here, need help or have suggesti
 [Create an ID on Verus Desktop (pdf)](https://wiki.verus.io/how-to/how-to_create_verus_id_with_verus_desktop.pdf)
 [Create an ID on command Line (pdf)](http://wiki.verus.io/how-to/how-to_create_verus_id_with_cli.pdf)
 [Join Verus Testnet](#!how-to/how-to_join_testnet.md)
+[Reset Verus Testnet](#!how-to/how-to_reset_testnet.md) ***`NEW`***
 
 ## Frequently Asked Questions (General)
 [How do I know when an immature block will "unlock" (mature)?](#!faq-allos/faq-allos01_immature_block_unlock_time_calculation_manual_calculation.md)
