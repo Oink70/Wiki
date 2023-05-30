@@ -2,7 +2,7 @@
 
 ## Important General Information
 
-#### Verus Daemon version 0.9.9-2
+#### Verus Daemon version 1.0.6
 
 Usage: `verusd [options]` Start Verus Daemon
 
@@ -217,6 +217,9 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
   `-torpassword=<pass>`
        Tor control port password (default: empty)
+  
+  `-tlsdisable=<0 or 1>`
+       Disable TLS connections. (default: 0)
 
   `-tlsenforcement=<0 or 1>`
       Only connect to TLS compatible peers. (default: 0)
@@ -443,11 +446,19 @@ all AMQP support options require `-experimentalfeatures`.
 
 ## PBaaS options:
 
+  `-acceptfreeimportsfrom=<i-address>,<i-address>,...`
+       "%s" no spaces - accept underpaid imports from these PBaaS chains or
+       networks - default is empty
+
   `-allowdelayednotarizations`
        Do not notarize in order to prevent slower notarizations (default = %u, notarize to prevent slowing down)
 
   `-alwayssubmitnotarizations`
        Submit notarizations to notary chain whenevever merge mining/staking and eligible (default = %u, only as needed)
+
+  `-approvecontractupgrade=<0xf09...>`
+       When validating blocks, vote to agree to upgrade to the specific
+       contract. Default is no upgrade.
 
   `-blocktime=<n>`
        Set target block time (in seconds) for difficulty adjustment (default: 60)
@@ -592,4 +603,4 @@ These are options for developers to debug/test the chain or daemon. These option
 
 compiled by Oink.vrsc@.
 
-Note: last revision date 2023-03-19.
+Note: last revision date 2023-05-30.
