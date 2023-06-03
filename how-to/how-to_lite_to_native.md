@@ -23,18 +23,14 @@ Link 3: [Checking the signature](https://verus.io/verify-signatures)
  1. Download the latest Verus-Desktop.
  2. Verify the signature of your download, so you have an untampered installer. [Link 3](https://verus.io/verify-signatures) or [Video](https://youtu.be/sFUnKCnHx98)
  3. Run the file you just downloaded to install it.
-4. Installing the bootstrap:
-  1. Download the bootstrap from [Link 1](https://bootstrap.verus.io).
-  2. Verify the SHA256 checksum of your download, to verify you have an untampered Bootstrap.
-  3. Unpack the downloaded archive to `VRSC wallet & data location`.
-5. Getting Verus-Desktop ready for Native mode:
+4. Getting Verus-Desktop ready for Native mode:
 	1. Start Verus-Desktop and enter your profile (if not loaded automatically).
   2. If present in your profile, `deactivate` Verus Lite.
   3. Click `+ Add Coin`, select **Verus** from the dropdown list and continue.
-  4. Select **Native** and optionallu tick the options `Start staking`, `Start Mining` and fill in the amount of threads to mine with.
+  4. Select **Native**, tick the option `bootstrap` and optionally tick the options `Start staking`, `Start Mining` and fill in the amount of threads to mine with.
   5. Click `Add Coin`. Verus-Desktop will add Verus as Native chain to your screens.
 	6. You may get a red warning message about Zcash params. (Verus Desktop will detect if you have the necessary ZCash parameter files and download them if needed)
-	7. As soon as the download is finished, Verus-Desktop will continu and bring you into your wallet. It will automatically start to synchronize the blockchain. Since we already put the majority of the chain in place, this will take just a few minutes.
+	7. As soon as the download is finished, Verus-Desktop will continue and bring you into your wallet. It will automatically start to synchronize the blockchain. Since we already put the majority of the chain in place, this will take just a few minutes.
 6. Importing your existing Address:
 	* This procedure is described in detail in: [Import Lite wallet address in Verus Desktop native](https://wiki.verus.io/#!how-to/how-to_convert-seed-to-wif.md).
 
@@ -42,4 +38,4 @@ If you followed these steps, installed the bootstrap, switched from Lite to Nati
 
 Created by Oink.vrsc@
 
-Note: last revision date 2021-07-24.
+Note: last revision date 2023-06-03.
