@@ -9,7 +9,7 @@ If you have any questions about the information here, need help or have suggesti
 ## Information
 [Verus Welcome Information](#!information/verus-welcome.md)
 [Verus Information Page](#!how-to/how-to_verus_info.md)
-[Verus Release Notes](#!information/release_notes.md) ***`NEW`***
+[Verus Release Notes](#!information/release_notes.md) ***`UPDATED to v1.0.7`***
 [VerusIDs](#!information/verusid.md)
 [Verus Digital Signatures](#!information/signatures.md)
 [VerusHash 2.1](#!information/verushash_2.1.md)
@@ -95,4 +95,4 @@ If you have any questions about the information here, need help or have suggesti
 [Q&A questions channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-questions-20200728.html)
 [Q&A reward channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-reward-20200728.html)
 
-Note: last revision date 2023-05-30.
+Note: last revision date 2023-06-03.

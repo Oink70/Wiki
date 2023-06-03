@@ -1,5 +1,312 @@
 # Release Notes
 
+## v1.0.7
+Announcing v1.0.7 - UPGRADE HIGHLY RECOMMENDED FOR MAINNET, MANDATORY FOR CONTINUED TESTNET USE
+
+ALL PBAAS AND DEFI FUNCTIONS HAVE NOW RESUMED ON MAINNET. PLEASE MAKE SURE YOU ARE RUNNING v1.0.6 OR LATER AT THIS TIME
+
+TESTNET USERS SHOULD UPGRADE ASAP, AS USUAL. THERE WILL BE A FORKING CHANGE ON TESTNET THAT WILL ACTIVATE TO RE-ENABLE ZERO EMISSION PBAAS CHAIN CHALLENGES TOMORROW, AFTER 19:00 UTC
+
+This release marks the completion and full resolution of the investigations that led to the PBaaS and DeFi pauses. As mentioned, all LP fees from exiting a DeFi basket’s primary currency will now be properly burned into those currencies before conversion operations take place.
+
+Shortly before this announcement, all oracle notarizations that were suppressing DeFi, currency sub-ID registrations, and PBaaS chain launches were lifted from the network. That means all PBaaS functions are now live and fully operational!
+
+Please note: Though the last mandatory upgrade was v1.0.6, and this is not technically a mandatory upgrade, it does address the known and understood issue only affecting zero reward PBaaS chains that can create issues with cross-chain challenges.
+
+Until everyone is known to be on v1.0.7 or later, and we announce that such PBaaS configurations are well supported on the network, we recommend that no one launch a PBaaS chain that has zero block reward emissions. If you choose to do so anyhow, your chain should properly launch, but for about the next month, you may have issues with cross-chain function, unless you understand and plan appropriately. If launching a chain with zero emissions is important to you, and you seriously can’t wait, please discuss with someone in development or support to understand your options. We don’t believe that this is a critical early use case, so we actually don’t expect it to be an issue for anyone.
+
+Our next step is the testnet rollout of the Ethereum bridge, and after a few days of that proving out in final testing and review, we will deploy it on mainnet as soon as we believe it is ready for permanent use. Once the Ethereum bridge is live on mainnet, if we do ever need a contract upgrade, we will announce and coordinate with network validators, as each Ethereum contract upgrade will be independently subject to Verus miner and staker approval.
+
+Thanks everyone for upgrading as soon as you are able!
+
+### Additional Verus Capabilities
+- On-chain Launches of Token, Centralized Currency, and Liquidity Basket AMMs
+- On-chain Launches and Merge Mining of Independent, Connected, Interoperable Blockchains without Programming
+- On-chain Self Sovereign, Provable Identities, NFTs, and Individual or Organizational Profiles
+
+#### Verus ID and NFT Marketplace
+Buy and sell VerusIDs on-chain, advertising your offer directly to the owner of an ID or NFT, or posting the sale of your NFT on the worldwide blockchain for all the world to see. Execute transactions in a completely decentralized way. Pay or offer to pay from a transparent or zero-knowledge private address, still auditable by you. Accept payment to either as well, and best of all, execute your transactions directly, peer-to-peer without any intermediary necessary. Don’t worry the on-chain model still makes room for owners to select and share proceeds with value added agents, marketing organizations, or other participants in a new economy of provable digital ownership. It’s the next step in the evolution of VerusID, the most powerful self-sovereign identity and secure storage model for funds in the digital world.
+
+#### Verus Vault
+With Verus Vault you can now protect funds on a VerusID, even from theft of a private key! If you lock your VerusID with Vault you cannot spend funds from that identity at all until it is again unlocked. While locked, you can still stake those same funds on the Verus network and earn by doing so. Of course, you can also still receive funds.
+
+IT IS IMPORTANT TO NOTE THAT ENABLING REVOCATION, RECOVERY, AND ALL VERUS VAULT CAPABILITIES REQUIRE YOU TO HAVE ONE PRIMARY IDENTITY, AND AT LEAST ONE REVOCATION/RECOVERY ID CONFIGURED.
+
+A locked VerusID can always be revoked and recovered by its revocation and recovery authority identities, which circumvents the lock. At the same time, anyone with only the primary keys, even a multisig of primary keys must first unlock, then wait for the predetermined unlock time before they can spend or access funds. This gives you, or maybe a company that specializes in watching the blockchain to whom you've assigned the revocation ID to revoke and recover whenever an unauthorized unlock occurs. That means that like a bank, setting a 24 hour unlock delay on your locked IDs actually provides the first decentralized solution to the infamous 5 dollar wrench attack.
+
+In addition to a new level of blockchain protection and decentralized funds recovery, Verus Vault provides the same security for your IDs and NFTs as well as time locks for other purposes, such as vesting schedules, trusts, and inheritance. With Verus Vault, you can now protect and recover your funds, preserving all your assets and generational blockchain wealth from common forms of crypto loss or theft, no bank required.
+
+#### New Verus Multicurrency, Multichain, DeFi Enabled Testnet
+With an easy GUI for basic operations or command line for more advanced functions. Without any programming, you can now create new identities, currencies, liquidity pools, and blockchains for your business, your government, your projects, a worthy cause, your family, or your next decentralized application suite. Send currencies worldwide on the same chain, or across blockchains with ease. Even convert currencies to others on the network without an exchange by sending to yourself and converting along the way.
+
+The new Verus testnet is a full-featured, intrinsically decentralized multi-chain blockchain platform with an unlimited number of identities, currencies, liquidity pools, and blockchains. It is accessible from the released versions of Verus Desktop and Verus CLI wallets, and it is the beginning of a new age in crypto. There are so many things you can do with Verus that you cannot with any other cryptocurrency platform, and you can try them all today.
+
+As Verus PBaaS offers completely new capabilities that go beyond today’s decentralized platforms in many fundamental ways, the worldwide Verus community put its energy into creation, rather than convincing everyone that its capabilities are possible. Members across the Verus worldwide community have worked hard to make this all possible, and we are more than excited that you can now experience it firsthand. If you have an interest in the future of crypto, you owe it to yourself to learn about Verus, an unlimited scale, decentralized future with truth and privacy for all.
+
+#### The Verus testnet, available in the Verus Desktop or cli wallets as the VRSCTEST coin, has the following capabilities, which to our knowledge are unique in crypto today.
+
+#### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
+- Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
+### Staking-capable time locking and theft prevention (Verus Vault)
+- Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
+### Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
+- Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
+### Consensus integrated DeFi liquidity pools and fractional currency baskets
+- Any ID owner may define Verus DeFi fractional basket currencies with one or more asset currencies backing the liquidity pool at a fractional percentage ranging from 5% to 100% backing. The Verus DeFi protocol ensures that all currency conversions that use a particular liquidity pool and are mined into one block are solved and priced simultaneously, addressing the problems of miner extracted value (MEV) and front-running, while providing fee-based DeFi integrated incentives to miners and stakers, ensuring smooth consensus operation and fee conversion capabilities by integrating DeFi liquidity pools directly into the consensus and cross-chain bridge protocols.
+### Simultaneous blockchain and blockchain liquidity pool launches
+- Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
+### Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
+- Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
+### An interoperable, multichain network for new use cases and unlimited scale**
+- The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
+#### Locking and Unlocking IDs
+- **Time Lock:**
+  The unlockatblock parameter defines the unlock height of the identity.
+```
+verus -chain=VRSCTEST setidentitytimelock "id@" '{"unlockatblock": <Unlock block height>}'
+```
+- **Time Delay:**
+  The setunlockdelay parameter defines how many blocks to delay an ID's unlock when the flags are set back to an unlocked state.
+```
+verus -chain=VRSCTEST setidentitytimelock "id@" '{"setunlockdelay": <Unlock block delay>}'
+```
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
+- A locked identity cannot revoke itself.
+### Conversion Queries
+The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
+- **E.g. BTC ETH:**
+```
+verus -chain=VRSCTEST getcurrencyconverters btc eth
+```
+Will return all currencies that have btc/eth markets at or above the liquidity threshold.
+
+
+#### Sending and Converting Currency
+**Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
+
+The `sendcurrency` API can be used to send and convert funds.
+- **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
+```
+verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
+```
+- **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
+```
+verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
+```
+- **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
+```
+verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
+```
+- **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
+```
+verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
+```
+- **Preconverting to new currency, NEWCOIN, before it is active:**
+```
+verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
+```
+- **Sending VRSCTEST cross-chain to PBaaSChain:**
+```
+verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "exportto":"Bridge.PBaaSChain"}]'
+```
+- **Converting VRSCTEST cross-chain to PBaaSChain:**
+```
+verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
+```
+- **Converting PBaaSChain to VRSCTEST:**
+```
+verus -chain=PBaaSChain sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"VRSCTEST","exportto":"VRSCTEST","via":"Bridge.PBaaSChain"}]'
+```
+### Defining a Currency
+### Currency Options
+```
+OPTION_FRACTIONAL = 1                  // allows reserve conversion using base calculations when set
+OPTION_ID_ISSUANCE = 2                 // clear is permissionless, if set, IDs may only be created by controlling ID
+OPTION_ID_STAKING = 4                  // all IDs on chain stake equally, rather than value-based staking
+OPTION_ID_REFERRALS = 8                // if set, this chain supports referrals
+OPTION_ID_REFERRALREQUIRED = 16        // if set, this chain requires referrals
+OPTION_TOKEN = 32                      // if set, this is a token, not a native currency
+OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potentially restrict to single currency
+OPTION_GATEWAY = 128                   // if set, this routes external currencies
+OPTION_PBAAS = 256                     // this is a PBaaS chain definition
+OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
+```
+
+To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
+I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
+First, I could define the currency "gold" as follows:
+  ```
+./verus -chain=VRSCTEST definecurrency '{"name":"gold","options":32,"currencies":["vrsctest"],"conversions":[0.01],"minpreconversion":[1000],"preallocations":[{"mike@":50000000.00000000}]}'
+```
+of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
+initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
+all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
+After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
+  ```
+./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
+```
+that would effectively park my conversion until the token launches, at which point, I will either find 0.975 GOLD in my wallet, or I will have my VRSCTEST back.
+Assuming it launches, and I later want to create mycoin, which can be converted to with either GOLD or VRSCTEST, I can create mycoin with:
+
+  ```
+./verus -chain=VRSCTEST definecurrency '{"name":"mycoin","options":33, "proofprotocol":2,"currencies":["vrsctest", "gold"],"minpreconversion":[10000,5.1298]}, "initialsupply":20000'
+```
+In "mycoin", I set proofprotocol to 2, which is PROOF_CHAINID. That means that the controller of the chain ID can mint new coins as follows:
+
+  ```
+./verus -chain=VRSCTEST sendcurrency "mycoin@" '[{"address":"mike@","currency":"mycoin","mintnew":1,"amount":10000}]'
+```
+
+#### Defining a PBaaS blockchain
+```json
+  {
+  "name": "PBaaSChain",
+  "options": 264,
+  "currencies": [
+    "VRSCTEST"
+  ],
+  "conversions": [
+    1
+  ],
+  "eras": [
+    {
+      "reward": 1200000000,
+      "decay": 0,
+      "halving": 0,
+      "eraend": 0
+    }
+  ],
+  "notaries": [
+    "Notary1@",
+    "Notary2@",
+    "Notary3@"
+  ],
+  "minnotariesconfirm": 2,
+  "nodes": [
+    {
+      "networkaddress": "111.111.111.111:10000",
+      "nodeidentity": "Node1@"
+    },
+    {
+      "networkaddress": "111.111.111.112:10000",
+      "nodeidentity": "Node2@"
+    }
+  ],
+  "gatewayconvertername": "Bridge",
+  "gatewayconverterissuance": 1000000
+}
+```
+The bridge definition has overridable defaults
+```json
+  {
+  "currencies": [
+    "VRSCTEST",
+    "PBaaSChain",
+    "USD"
+  ],
+  "initialcontributions": [
+    380228.12033701,
+    0,
+    1000000
+  ],
+  "initialsupply": 3000000
+}
+```
+
+Now pass those definitions to `definecurrency`
+```shell
+./verus -chain=vrsctest definecurrency '{"name":"PBaaSChain","options":264,"currencies":["VRSCTEST"],"conversions":[1],"eras":[{"reward":1200000000,"decay":0,"halving":0,"eraend":0}],"notaries":["Notary1@","Notary2@","Notary3@"],"minnotariesconfirm":2,"nodes":[{"networkaddress":"111.111.111.111:10000","nodeidentity":"Node1@"},{"networkaddress":"111.111.111.112:10000","nodeidentity":"Node2@"}],"gatewayconvertername":"Bridge","gatewayconverterissuance":1000000}' '{"currencies":["VRSCTEST","PBaaSChain","USD"],"initialcontributions":[371747.20398827,0,1000000],"initialsupply":3000000}'
+```
+#### Exporting an ID to a PBaaS chain
+```
+verus -chain=VRSCTEST sendcurrency "*" '[{"address":"IDNAME@","exportto":"PBaaSChainName","exportid":"true","amount":100,"currency":"vrsctest"}]'
+```
+
+### Signing transactions from multi-signature IDs (testnet and mainnet)
+Create transaction, get raw transaction data:
+  ```
+verus sendcurrency <multi-signature-ID>@ '[{"address":"<destination_address>","amount":<transaction_amount>}]'
+verus z_getoperationstatus <operation_id_returned_by_sendcurrency>
+```
+Take the raw hex transaction data provided by z_getoperationstatus to each additional wallet(s) containing the additional signing addresses/IDs:
+  ```
+verus signrawtransaction <raw_hex_transaction>
+```
+After the last necessary signature is applied, broadcast on the network using:
+  ```
+verus sendrawtransaction <raw_hex_signed_transaction>
+```
+
+### Tokenizing ID control (next generation NFT):
+The currency definition have flags OPTION_NFT_TOKEN + OPTION_TOKEN, and a max supply of 1 satoshi that is either pre allocated or pre-converted to. If the token is pre-allocated, then the maximum pre-conversion must be 0.
+```
+verus -chain=vrsctest definecurrency '{"name":"ID","options":2080,"preallocations":[{"ControlTokenRecipient@":0.00000001}],"maxpreconversion":[0]}'
+```
+
+### Creating an identity with a fractional currency as its parent
+`registernamecommitment` now takes two more positional arguments to specify a currency parent and a funding address. Use quotes `""` to leave fields blank, the example below specifies a parent currency, vrsc-btc , but no referrer. We're now able to use z_addresses to fund the name commitment and identity registration
+
+```
+# verus -chain=vrsctest registernamecommitment name controladdress referral parent sourceoffunds
+verus -chain=vrsctest registernamecommitment subID RDnf7mH7RQki9b7PqdBD2Er6WXv3DTawGr "" vrsc-btc zs1s2mteau9tcalvk55cnepw3aq7dr6w7f447pqqkxczat3a02208d3ersx60wz9srw3nkd25ppfny
+````
+Specify the parent in the identity definition. Enter `false` for `returntx` to sign and submit the id registration, `0` for the `feeoffer` to use the default fee, and the funding identity, transparent address, or z-address
+```
+# verus -chain=vrsctest registeridentity '{ID registration with name commitment}' returntx feeoffer sourceoffunds
+
+verus -chain=vrsctest registeridentity '{"txid": "67635331cbccb7a2cbf408a9e97b3f8986133964e0315a8b9fd237a5fd95ac8f","namereservation": { "version": 1,  "name": "ID",  "parent": "i84mndBk2Znydpgm9T9pTjVvBnHkhErzLt", "salt": "b7070f2ca7495e49c85ab41b5a368150e2c217be6d08cc4102a1b682cddb6f01", "referral": ""},"identity":{"primaryaddresses":["RDnf7mH7RQki9b7PqdBD2Er6WXv3DTawGr"],"minimumsignatures":1,"name":"ID","parent":"vrsc-btc@"}}' false 0 zs1s2mteau9tcalvk55cnepw3aq7dr6w7f447pqqkxczat3a02208d3ersx60wz9srw3nkd25ppfny
+```
+If a currency's ID issuance require permission from the currency's identity then it must sign the name commitment and identity registration. Either use the parent identity to fund those transactions, or receive a raw transaction to give the identity owner to sign by setting `returntx` to `true`
+
+#### Limitations in multi-currency to be aware of:
+1. (GUI and CLI) You will not be able to make a currency from an ID that has a properly encoded i-address as its actual name, not its calculated ID. Generally, the advice is “don’t do that”. Using an i-address when referring to a currency will only be interpreted as referring to the currency or identity which has that i-address calculated based on its name registration. As a general rule, making an ID with an i-address as its name is not prevented by the protocol, but will cause problems whenever an i-address or name may be used (many cases) and will not be supported for creating currencies. To reduce any potential for user confusion, even though the naming system provides will also be expanding the set of characters that will not be allowed for currency registrations.
+
+2. (GUI) If a currency is supported in the Verus Desktop already, such as BTC or ETH, you will not be able to use those same named currencies as a PBaaS chain. This limitation is considered errata for this testnet release and will not be a limitation before mainnet availability.
+
+### Disclaimer
+
+This is experimental and unfinished software. Use at your own risk! No warranty for any kind of damage!
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The enclosed copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+**MacOS:** https://www.virustotal.com/gui/file/cf8b55cb1d903919589ec6954af80fea1b67004e5ae6e752f728e2cfe7662861/detection
+**Linux-x86-64:** https://www.virustotal.com/gui/file/342afc6824046998f49587aa723cc37e5d1f2289bf31a8cf3a23b1204053cfb2/detection
+**Linux-ARM64:** https://www.virustotal.com/gui/file/5e7924bdeb5e3c8a5522d1872893eba0d999b0a3cd800e3d41c4bf1fa0f61046/detection
+**Windows:** https://www.virustotal.com/gui/file/57d7a108ae21ac31ead138becdb2585c3fcf3381029024668aa6f4c803164c30/detection
+
+Avast and Kaspersky may flag the software as "not-a-virus" or "PUP". These are warnings that you are installing mining software, which may be installed by a third party to exploit your PC.
+To find out more about the false positives, review the following resources:
+https://blog.malwarebytes.com/detections/pup-optional-bitcoinminer/
+https://www.kaspersky.com/blog/not-a-virus/18015/
+
+### Verifying Downloads
+A txt file containing the signer, standard sha256 file checksum, and signature, is included for each download. These packages have been signed with the identity "Verus Coin Foundation Releases@".
+1) Extract downloaded archive
+2) Verify signature for the extracted archive using the extracted text file.
+3) Extract archive to desired directory
+#### CLI examples
+**Verifying file directly**
+```
+./verus verifyfile "Verus Coin Foundation Releases@" "AScPJwABQSBrd4sGek1xRmjez42/qbPn75Wf/nAyvZOQnJ8MUGk4BAk7TOVCdMJlUs/NSKes2qPpFiudO7vi78yU2FKNak3V" "/Downloads/Verus-CLI-Linux-v1.0.7-x86_64/Verus-CLI-Linux-v1.0.7-x86_64.tar.gz"
+```
+**Verifying using a checksum**
+```
+./verus verifyhash "Verus Coin Foundation Releases@" "AScPJwABQSBrd4sGek1xRmjez42/qbPn75Wf/nAyvZOQnJ8MUGk4BAk7TOVCdMJlUs/NSKes2qPpFiudO7vi78yU2FKNak3V" c1fca5893785a38496af34b4cdd982cd6e8cc180992e620eaddd02fedc0ca348
+```
+
+**The result will be true if the signature is valid.**
+```
+true
+```
+
 ## v1.0.6
 Announcing v1.0.6 - MANDATORY MAINNET UPGRADE WITH COMMUNITY AGREED DEADLINE ON TUESDAY, MAY 30th, 19:00 UTC
 
@@ -130,7 +437,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -306,7 +613,7 @@ A txt file containing the signer, standard sha256 file checksum, and signature, 
 ```
 true
 ```
-## V1.0.5
+## v1.0.5
 Announcing v1.0.5 - MANDATORY MAINNET UPGRADE WITH DEADLINE TBD BY COMMUNITY (STRAWMAN SUGGESTION MONDAY, MAY 29th, 19:00 UTC)
 
 While preparing the cross-chain VRSC currency launch and as part of continual review, we determined that one numeric function that is used in the cross-chain challenges and is calculated differently for mainnet, due to the original launch that included the deprecated time locked rewards, was incorrect. This had never been hit, as it would have been calculated incorrectly only if multiple chains experienced a challenge of two competing forks, but in that case, it would falsely reject any challenge proof. That would mean cross-chain challenges on mainnet, even though they were fine and fully tested on testnet, could fail and block a bridge until that calculation was made correct and the network upgraded.
@@ -431,7 +738,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -607,7 +914,7 @@ A txt file containing the signer, standard sha256 file checksum, and signature, 
 ```
 true
 ```
-## V1.0.4
+## v1.0.4
 Announcing v1.0.4 - CRITICAL, NON-MANDATORY MAINNET UPGRADE
 THIS UPDATE IS CRITICAL FOR MAINNET DEFI OR CROSSCHAIN WALLET FUNCTIONS, AS IT RECTIFIES POTENTIAL REFUND FAILURES IN EDGE CASES - IT IS NOT REQUIRED FOR MAINNET SYNCHRONIZATION OR MAINNET FUNCTION PAST PBAAS ACTIVATION, BUT IT IS HIGHLY RECOMMENDED.
 
@@ -738,7 +1045,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -914,7 +1221,7 @@ A txt file containing the signer, standard sha256 file checksum, and signature, 
 ```
 true
 ```
-# V1.0.3
+## v1.0.3
 Announcing v1.0.3 - MANDATORY MAINNET UPGRADE - HOPEFULLY THE LAST IN A WHILE - ACTIVATION DATE HAS BEEN PUSHED BY 2 DAYS
 
 FOR CONTINUED MAINNET USE, UPGRADE TO v1.0.3 OR LATER BEFORE MAY 23, 2023, EXPECTED BLOCK #2549420
@@ -1043,7 +1350,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -1219,7 +1526,7 @@ A txt file containing the signer, standard sha256 file checksum, and signature, 
 ```
 true
 ```
-## V1.0.2
+## v1.0.2
 Announcing v1.0.2 - MANDATORY MAINNET UPGRADE
 UPGRADE TO v1.0.2 OR LATER IS MANDATORY FOR CONTINUED MAINNET AND TESTNET USE AFTER MAY 21, 2023, EXPECTED BLOCK #2546600
 
@@ -1267,7 +1574,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
 ### Consensus integrated DeFi liquidity pools and fractional currency baskets
 - Any ID owner may define Verus DeFi fractional basket currencies with one or more asset currencies backing the liquidity pool at a fractional percentage ranging from 5% to 100% backing. The Verus DeFi protocol ensures that all currency conversions that use a particular liquidity pool and are mined into one block are solved and priced simultaneously, addressing the problems of miner extracted value (MEV) and front-running, while providing fee-based DeFi integrated incentives to miners and stakers, ensuring smooth consensus operation and fee conversion capabilities by integrating DeFi liquidity pools directly into the consensus and cross-chain bridge protocols.
-## Simultaneous blockchain and blockchain liquidity pool launches
+### Simultaneous blockchain and blockchain liquidity pool launches
 - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ### Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
@@ -1344,7 +1651,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -1648,7 +1955,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -1950,7 +2257,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -2047,7 +2354,7 @@ Now pass those definitions to `definecurrency`
 verus -chain=VRSCTEST sendcurrency "*" '[{"address":"IDNAME@","exportto":"PBaaSChainName","exportid":"true","amount":100,"currency":"vrsctest"}]'
 ```
 
-## Signing transactions from multi-signature IDs (testnet and mainnet)
+### Signing transactions from multi-signature IDs (testnet and mainnet)
 Create transaction, get raw transaction data:
   ```
 verus sendcurrency <multi-signature-ID>@ '[{"address":"<destination_address>","amount":<transaction_amount>}]'
@@ -2062,13 +2369,13 @@ After the last necessary signature is applied, broadcast on the network using:
 verus sendrawtransaction <raw_hex_signed_transaction>
 ```
 
-## Tokenizing ID control (next generation NFT):
+### Tokenizing ID control (next generation NFT):
 The currency definition have flags OPTION_NFT_TOKEN + OPTION_TOKEN, and a max supply of 1 satoshi that is either pre allocated or pre-converted to. If the token is pre-allocated, then the maximum pre-conversion must be 0.
 ```
 verus -chain=vrsctest definecurrency '{"name":"ID","options":2080,"preallocations":[{"ControlTokenRecipient@":0.00000001}],"maxpreconversion":[0]}'
 ```
 
-## Creating an identity with a fractional currency as its parent
+### Creating an identity with a fractional currency as its parent
 `registernamecommitment` now takes two more positional arguments to specify a currency parent and a funding address. Use quotes `""` to leave fields blank, the example below specifies a parent currency, vrsc-btc , but no referrer. We're now able to use z_addresses to fund the name commitment and identity registration
 
 ```
@@ -2088,7 +2395,7 @@ If a currency's ID issuance require permission from the currency's identity then
 
 2. (GUI) If a currency is supported in the Verus Desktop already, such as BTC or ETH, you will not be able to use those same named currencies as a PBaaS chain. This limitation is considered errata for this testnet release and will not be a limitation before mainnet availability.
 
-# Disclaimer
+### Disclaimer
 
 This is experimental and unfinished software. Use at your own risk! No warranty for any kind of damage!
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -2107,7 +2414,7 @@ To find out more about the false positives, review the following resources:
 https://blog.malwarebytes.com/detections/pup-optional-bitcoinminer/
 https://www.kaspersky.com/blog/not-a-virus/18015/
 
-## Verifying Downloads
+### Verifying Downloads
 A txt file containing the signer, standard sha256 file checksum, and signature, is included for each download. These packages have been signed with the identity "Verus Coin Foundation Releases@".
 1) Extract downloaded archive
 2) Verify signature for the extracted archive using the extracted text file.
@@ -2126,9 +2433,10 @@ A txt file containing the signer, standard sha256 file checksum, and signature, 
 ```
 true
 ```
+## v1.0.0
 Announcing v1.0.0 - PBaaS Mainnet Upgrade, UPGRADE TO v1.0.0-x MANDATORY FOR CONTINUED MAINNET AND TESTNET USE AFTER MAY 21, 2023, EXPECTED BLOCK #2546600
 
-## What’s New
+### What’s New
 This release delivers on every part of the vision (and most stretch goals) either described in the vision paper of June 2018 or ever planned for the PBaaS release. Thanks to the incredible combined efforts of so many people in the community ranging from development, companies and projects joining and their open contributions (Valu/Arkeytyp, CHIPS, vDEX, VaultAlert, cragslist, and more) to community members supporting users to helping educate others who can contribute as well, we have run these protocols now for years as we’ve improved them, and all of these capabilities will go live on the Verus mainnet May 21, 2023, with the activation expected targeting block 2546600.
 
 As a community, we’ve discussed what the Verus PBaaS protocol can do for years. Now that it has existed on testnet for as long as it has, only those who have either been part of those conversations or experienced it first hand have a real sense for how much better Verus PBaaS is as a solution for cross-chain, DeFi AMMs, decentralized markets, self-sovereign provable recoverable IDs, NFT capabilities, anti-phishing, anti-MEV, scale, or just about any of the challenges people have on crypto platforms today. In fact, as we prepare for activation of this protocol that enables so many new use cases for crypto, not to mention easy onboarding when entrepreneurs discover how to really leverage VerusIDs, PBaaS is so far beyond what people are experiencing on any crypto platform today that it has been easy to dismiss our community as describing the impossible.
@@ -2157,15 +2465,15 @@ For those who actually understand the challenges actual users have in crypto tod
 
 As always, we do not promise, we describe a vision and welcome contributors from everywhere. Now that we, as a community, have delivered on the original phases of the vision together, it is time for all of us to consider what we might want to build over this incredible, geoscale, ID-enabled, fully decentralized platform. Our next efforts across the community should be to realize the promise of this network in the use cases we create, use cases that we will have an advantage creating on Verus over any other platform because it really is that much better.
 
-# Additional Verus Capabilities
+### Additional Verus Capabilities
 - On-chain Launches of Token, Centralized Currency, and Liquidity Basket AMMs
 - On-chain Launches and Merge Mining of Independent, Connected, Interoperable Blockchains without Programming
 - On-chain Self Sovereign, Provable Identities, NFTs, and Individual or Organizational Profiles
 
-### Verus ID and NFT Marketplace
+#### Verus ID and NFT Marketplace
 Buy and sell VerusIDs on-chain, advertising your offer directly to the owner of an ID or NFT, or posting the sale of your NFT on the worldwide blockchain for all the world to see. Execute transactions in a completely decentralized way. Pay or offer to pay from a transparent or zero-knowledge private address, still auditable by you. Accept payment to either as well, and best of all, execute your transactions directly, peer-to-peer without any intermediary necessary. Don’t worry the on-chain model still makes room for owners to select and share proceeds with value added agents, marketing organizations, or other participants in a new economy of provable digital ownership. It’s the next step in the evolution of VerusID, the most powerful self-sovereign identity and secure storage model for funds in the digital world.
 
-### Verus Vault
+#### Verus Vault
 With Verus Vault you can now protect funds on a VerusID, even from theft of a private key! If you lock your VerusID with Vault you cannot spend funds from that identity at all until it is again unlocked. While locked, you can still stake those same funds on the Verus network and earn by doing so. Of course, you can also still receive funds.
 
 IT IS IMPORTANT TO NOTE THAT ENABLING REVOCATION, RECOVERY, AND ALL VERUS VAULT CAPABILITIES REQUIRE YOU TO HAVE ONE PRIMARY IDENTITY, AND AT LEAST ONE REVOCATION/RECOVERY ID CONFIGURED.
@@ -2174,30 +2482,30 @@ A locked VerusID can always be revoked and recovered by its revocation and recov
 
 In addition to a new level of blockchain protection and decentralized funds recovery, Verus Vault provides the same security for your IDs and NFTs as well as time locks for other purposes, such as vesting schedules, trusts, and inheritance. With Verus Vault, you can now protect and recover your funds, preserving all your assets and generational blockchain wealth from common forms of crypto loss or theft, no bank required.
 
-### New Verus Multicurrency, Multichain, DeFi Enabled Testnet
+#### New Verus Multicurrency, Multichain, DeFi Enabled Testnet
 With an easy GUI for basic operations or command line for more advanced functions. Without any programming, you can now create new identities, currencies, liquidity pools, and blockchains for your business, your government, your projects, a worthy cause, your family, or your next decentralized application suite. Send currencies worldwide on the same chain, or across blockchains with ease. Even convert currencies to others on the network without an exchange by sending to yourself and converting along the way.
 
 The new Verus testnet is a full-featured, intrinsically decentralized multi-chain blockchain platform with an unlimited number of identities, currencies, liquidity pools, and blockchains. It is accessible from the released versions of Verus Desktop and Verus CLI wallets, and it is the beginning of a new age in crypto. There are so many things you can do with Verus that you cannot with any other cryptocurrency platform, and you can try them all today.
 
 As Verus PBaaS offers completely new capabilities that go beyond today’s decentralized platforms in many fundamental ways, the worldwide Verus community put its energy into creation, rather than convincing everyone that its capabilities are possible. Members across the Verus worldwide community have worked hard to make this all possible, and we are more than excited that you can now experience it firsthand. If you have an interest in the future of crypto, you owe it to yourself to learn about Verus, an unlimited scale, decentralized future with truth and privacy for all.
 
-### The Verus testnet, available in the Verus Desktop or cli wallets as the VRSCTEST coin, has the following capabilities, which to our knowledge are unique in crypto today.
+#### The Verus testnet, available in the Verus Desktop or cli wallets as the VRSCTEST coin, has the following capabilities, which to our knowledge are unique in crypto today.
 
-### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
+#### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault)
+### Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
-## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
+### Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
 - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
-## Consensus integrated DeFi liquidity pools and fractional currency baskets
+### Consensus integrated DeFi liquidity pools and fractional currency baskets
 - Any ID owner may define Verus DeFi fractional basket currencies with one or more asset currencies backing the liquidity pool at a fractional percentage ranging from 5% to 100% backing. The Verus DeFi protocol ensures that all currency conversions that use a particular liquidity pool and are mined into one block are solved and priced simultaneously, addressing the problems of miner extracted value (MEV) and front-running, while providing fee-based DeFi integrated incentives to miners and stakers, ensuring smooth consensus operation and fee conversion capabilities by integrating DeFi liquidity pools directly into the consensus and cross-chain bridge protocols.
-## Simultaneous blockchain and blockchain liquidity pool launches
+### Simultaneous blockchain and blockchain liquidity pool launches
 - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
-## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
+### Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale**
+### An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
-### Locking and Unlocking IDs
+#### Locking and Unlocking IDs
 - **Time Lock:**
   The timelock parameter defines the unlock height of the identity.
 ```
@@ -2210,7 +2518,7 @@ verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <U
 ```
 - Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
-## Conversion Queries
+### Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
 - **E.g. BTC ETH:**
 ```
@@ -2219,7 +2527,7 @@ verus -chain=VRSCTEST getcurrencyconverters btc eth
 Will return all currencies that have btc/eth markets at or above the liquidity threshold.
 
 
-### Sending and Converting Currency
+#### Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
 The `sendcurrency` API can be used to send and convert funds.
@@ -2255,8 +2563,8 @@ verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCr
 ```
 verus -chain=PBaaSChain sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"VRSCTEST","exportto":"VRSCTEST","via":"Bridge.PBaaSChain"}]'
 ```
-## Defining a Currency
-### Currency Options
+### Defining a Currency
+#### Currency Options
 ```
 OPTION_FRACTIONAL = 1                  // allows reserve conversion using base calculations when set
 OPTION_ID_ISSUANCE = 2                 // clear is permissionless, if set, IDs may only be created by controlling ID
@@ -2268,7 +2576,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -2300,7 +2608,7 @@ In "mycoin", I set proofprotocol to 2, which is PROOF_CHAINID. That means that t
 ./verus -chain=VRSCTEST sendcurrency "mycoin@" '[{"address":"mike@","currency":"mycoin","mintnew":1,"amount":10000}]'
 ```
 
-### Defining a PBaaS blockchain
+#### Defining a PBaaS blockchain
 ```json
   {
   "name": "PBaaSChain",
@@ -2360,12 +2668,12 @@ Now pass those definitions to `definecurrency`
 ```shell
 ./verus -chain=vrsctest definecurrency '{"name":"PBaaSChain","options":264,"currencies":["VRSCTEST"],"conversions":[1],"eras":[{"reward":1200000000,"decay":0,"halving":0,"eraend":0}],"notaries":["Notary1@","Notary2@","Notary3@"],"minnotariesconfirm":2,"nodes":[{"networkaddress":"111.111.111.111:10000","nodeidentity":"Node1@"},{"networkaddress":"111.111.111.112:10000","nodeidentity":"Node2@"}],"gatewayconvertername":"Bridge","gatewayconverterissuance":1000000}' '{"currencies":["VRSCTEST","PBaaSChain","USD"],"initialcontributions":[371747.20398827,0,1000000],"initialsupply":3000000}'
 ```
-### Exporting an ID to a PBaaS chain
+#### Exporting an ID to a PBaaS chain
 ```
 verus -chain=VRSCTEST sendcurrency "*" '[{"address":"IDNAME@","exportto":"PBaaSChainName","exportid":"true","amount":100,"currency":"vrsctest"}]'
 ```
 
-## Signing transactions from multi-signature IDs (testnet and mainnet)
+### Signing transactions from multi-signature IDs (testnet and mainnet)
 Create transaction, get raw transaction data:
   ```
 verus sendcurrency <multi-signature-ID>@ '[{"address":"<destination_address>","amount":<transaction_amount>}]'
@@ -2380,13 +2688,13 @@ After the last necessary signature is applied, broadcast on the network using:
 verus sendrawtransaction <raw_hex_signed_transaction>
 ```
 
-## Tokenizing ID control (next generation NFT):
+### Tokenizing ID control (next generation NFT):
 The currency definition have flags OPTION_NFT_TOKEN + OPTION_TOKEN, and a max supply of 1 satoshi that is either pre allocated or pre-converted to. If the token is pre-allocated, then the maximum pre-conversion must be 0.
 ```
 verus -chain=vrsctest definecurrency '{"name":"ID","options":2080,"preallocations":[{"ControlTokenRecipient@":0.00000001}],"maxpreconversion":[0]}'
 ```
 
-## Creating an identity with a fractional currency as its parent
+### Creating an identity with a fractional currency as its parent
 `registernamecommitment` now takes two more positional arguments to specify a currency parent and a funding address. Use quotes `""` to leave fields blank, the example below specifies a parent currency, vrsc-btc , but no referrer. We're now able to use z_addresses to fund the name commitment and identity registration
 
 ```
@@ -2401,12 +2709,12 @@ verus -chain=vrsctest registeridentity '{"txid": "67635331cbccb7a2cbf408a9e97b3f
 ```
 If a currency's ID issuance require permission from the currency's identity then it must sign the name commitment and identity registration. Either use the parent identity to fund those transactions, or receive a raw transaction to give the identity owner to sign by setting `returntx` to `true`
 
-### Limitations in multi-currency to be aware of:
+#### Limitations in multi-currency to be aware of:
 1. (GUI and CLI) You will not be able to make a currency from an ID that has a properly encoded i-address as its actual name, not its calculated ID. Generally, the advice is “don’t do that”. Using an i-address when referring to a currency will only be interpreted as referring to the currency or identity which has that i-address calculated based on its name registration. As a general rule, making an ID with an i-address as its name is not prevented by the protocol, but will cause problems whenever an i-address or name may be used (many cases) and will not be supported for creating currencies. To reduce any potential for user confusion, even though the naming system provides will also be expanding the set of characters that will not be allowed for currency registrations.
 
 2. (GUI) If a currency is supported in the Verus Desktop already, such as BTC or ETH, you will not be able to use those same named currencies as a PBaaS chain. This limitation is considered errata for this testnet release and will not be a limitation before mainnet availability.
 
-# Disclaimer
+### Disclaimer
 
 This is experimental and unfinished software. Use at your own risk! No warranty for any kind of damage!
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -2425,12 +2733,12 @@ To find out more about the false positives, review the following resources:
 https://blog.malwarebytes.com/detections/pup-optional-bitcoinminer/
 https://www.kaspersky.com/blog/not-a-virus/18015/
 
-## Verifying Downloads
+### Verifying Downloads
 A txt file containing the signer, standard sha256 file checksum, and signature, is included for each download. These packages have been signed with the identity "Verus Coin Foundation Releases@".
 1) Extract downloaded archive
 2) Verify signature for the extracted archive using the extracted text file.
 3) Extract archive to desired directory
-### CLI examples
+#### CLI examples
 **Verifying file directly**
 ```
 ./verus verifyfile "Verus Coin Foundation Releases@" "AY8+JgABQSBR3wd5yPxBDCKh5vnf6hc3EGmgvR9ZcfIHIlw9P1V5eCNG9jxkOMFx3Gh9s2DUIM1HDdJw7UGlNAPYWJmcnA8/" "/Downloads/Verus-CLI-Linux-v1.0.0-x86_64/Verus-CLI-Linux-v1.0.0-x86_64.tar.gz"
@@ -2444,29 +2752,30 @@ A txt file containing the signer, standard sha256 file checksum, and signature, 
 ```
 true
 ```
+## v0.9.9-5
 Announcing v0.9.9-5 - CRITICAL PRIVACY FIX PARSING FRIENDLY PRIVATE NAMES, CRITICAL UPDATE FOR RELIABLE TESTNET OPERATION
 
-## Mainnet Changes - Wallet Hardening
+### Mainnet Changes - Wallet Hardening
 v0.9.9-5 Fixes an issue introduced in v0.9.9 during the ID name hardening work that prevented parsing id@:private to the z-address of id@ when running a native node. Instead, such an address parsed to the main id@. Since this issue could impact on-chain privacy of someone intending to send to or from a private address and using friendly names, we are considering this a critical privacy release.
 
 This version also prevents the wallet from crediting transactions that can be constructed to make a burn look like a spendable output, ensuring that unspendable funds are not added to a wallet or address balance. @Alrighttt, who has been focusing on Verus security testing, reported a way that someone might create such an output, and we appreciate that it is before we have ever seen such transactions on the public or test networks. Thanks @Alrighttt for the report and discretion that helps keep them off the network(s) altogether! We recommend that everyone update as soon as possible to version 0.9.9-5 or later.
 
 We are working towards the mainnet PBaaS upgrade version 1.0.0, but we cannot put a specific date beyond 🔜 on its release.
 
-## What’s New for TestNet
+### What’s New for TestNet
 This release fixes hopefully the last remaining issue that was causing testnet users to experience sync issues on PBaaS chains.
 
 There are no other significant changes.
 
-# Additional Verus Capabilities
+### Additional Verus Capabilities
 - On-chain Launches of Token, Centralized Currency, and Liquidity Basket AMMs
 - On-chain Launches and Merge Mining of Independent, Connected, Interoperable Blockchains without Programming
 - On-chain Self Sovereign, Provable Identities, NFTs, and Individual or Organizational Profiles
 
-### Verus ID and NFT Marketplace
+#### Verus ID and NFT Marketplace
 Buy and sell VerusIDs on-chain, advertising your offer directly to the owner of an ID or NFT, or posting the sale of your NFT on the worldwide blockchain for all the world to see. Execute transactions in a completely decentralized way. Pay or offer to pay from a transparent or zero-knowledge private address, still auditable by you. Accept payment to either as well, and best of all, execute your transactions directly, peer-to-peer without any intermediary necessary. Don’t worry the on-chain model still makes room for owners to select and share proceeds with value added agents, marketing organizations, or other participants in a new economy of provable digital ownership. It’s the next step in the evolution of VerusID, the most powerful self-sovereign identity and secure storage model for funds in the digital world.
 
-### Verus Vault
+#### Verus Vault
 With Verus Vault you can now protect funds on a VerusID, even from theft of a private key! If you lock your VerusID with Vault you cannot spend funds from that identity at all until it is again unlocked. While locked, you can still stake those same funds on the Verus network and earn by doing so. Of course, you can also still receive funds.
 
 IT IS IMPORTANT TO NOTE THAT ENABLING REVOCATION, RECOVERY, AND ALL VERUS VAULT CAPABILITIES REQUIRE YOU TO HAVE ONE PRIMARY IDENTITY, AND AT LEAST ONE REVOCATION/RECOVERY ID CONFIGURED.
@@ -2475,30 +2784,30 @@ A locked VerusID can always be revoked and recovered by its revocation and recov
 
 In addition to a new level of blockchain protection and decentralized funds recovery, Verus Vault provides the same security for your IDs and NFTs as well as time locks for other purposes, such as vesting schedules, trusts, and inheritance. With Verus Vault, you can now protect and recover your funds, preserving all your assets and generational blockchain wealth from common forms of crypto loss or theft, no bank required.
 
-### New Verus Multicurrency, Multichain, DeFi Enabled Testnet
+#### New Verus Multicurrency, Multichain, DeFi Enabled Testnet
 With an easy GUI for basic operations or command line for more advanced functions. Without any programming, you can now create new identities, currencies, liquidity pools, and blockchains for your business, your government, your projects, a worthy cause, your family, or your next decentralized application suite. Send currencies worldwide on the same chain, or across blockchains with ease. Even convert currencies to others on the network without an exchange by sending to yourself and converting along the way.
 
 The new Verus testnet is a full-featured, intrinsically decentralized multi-chain blockchain platform with an unlimited number of identities, currencies, liquidity pools, and blockchains. It is accessible from the released versions of Verus Desktop and Verus CLI wallets, and it is the beginning of a new age in crypto. There are so many things you can do with Verus that you cannot with any other cryptocurrency platform, and you can try them all today.
 
 As Verus PBaaS offers completely new capabilities that go beyond today’s decentralized platforms in many fundamental ways, the worldwide Verus community put its energy into creation, rather than convincing everyone that its capabilities are possible. Members across the Verus worldwide community have worked hard to make this all possible, and we are more than excited that you can now experience it firsthand. If you have an interest in the future of crypto, you owe it to yourself to learn about Verus, an unlimited scale, decentralized future with truth and privacy for all.
 
-### The Verus testnet, available in the Verus Desktop or cli wallets as the VRSCTEST coin, has the following capabilities, which to our knowledge are unique in crypto today.
+#### The Verus testnet, available in the Verus Desktop or cli wallets as the VRSCTEST coin, has the following capabilities, which to our knowledge are unique in crypto today.
 
 ### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault)
+### Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
-## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
+### Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
 - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
-## Consensus integrated DeFi liquidity pools and fractional currency baskets
+### Consensus integrated DeFi liquidity pools and fractional currency baskets
 - Any ID owner may define Verus DeFi fractional basket currencies with one or more asset currencies backing the liquidity pool at a fractional percentage ranging from 5% to 100% backing. The Verus DeFi protocol ensures that all currency conversions that use a particular liquidity pool and are mined into one block are solved and priced simultaneously, addressing the problems of miner extracted value (MEV) and front-running, while providing fee-based DeFi integrated incentives to miners and stakers, ensuring smooth consensus operation and fee conversion capabilities by integrating DeFi liquidity pools directly into the consensus and cross-chain bridge protocols.
-## Simultaneous blockchain and blockchain liquidity pool launches
+### Simultaneous blockchain and blockchain liquidity pool launches
 - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
-## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
+### Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale**
+### An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
-### Locking and Unlocking IDs
+#### Locking and Unlocking IDs
 - **Time Lock:**
   The timelock parameter defines the unlock height of the identity.
 ```
@@ -2511,7 +2820,7 @@ verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <U
 ```
 - Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
-## Conversion Queries
+### Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
 - **E.g. BTC ETH:**
 ```
@@ -2520,7 +2829,7 @@ verus -chain=VRSCTEST getcurrencyconverters btc eth
 Will return all currencies that have btc/eth markets at or above the liquidity threshold.
 
 
-### Sending and Converting Currency
+#### Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
 The `sendcurrency` API can be used to send and convert funds.
@@ -2556,7 +2865,7 @@ verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCr
 ```
 verus -chain=PBaaSChain sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"VRSCTEST","exportto":"VRSCTEST","via":"Bridge.PBaaSChain"}]'
 ```
-## Defining a Currency
+### Defining a Currency
 ### Currency Options
 ```
 OPTION_FRACTIONAL = 1                  // allows reserve conversion using base calculations when set
@@ -2569,7 +2878,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -2601,7 +2910,7 @@ In "mycoin", I set proofprotocol to 2, which is PROOF_CHAINID. That means that t
 ./verus -chain=VRSCTEST sendcurrency "mycoin@" '[{"address":"mike@","currency":"mycoin","mintnew":1,"amount":10000}]'
 ```
 
-### Defining a PBaaS blockchain
+#### Defining a PBaaS blockchain
 ```json
   {
   "name": "PBaaSChain",
@@ -2661,12 +2970,12 @@ Now pass those definitions to `definecurrency`
 ```shell
 ./verus -chain=vrsctest definecurrency '{"name":"PBaaSChain","options":264,"currencies":["VRSCTEST"],"conversions":[1],"eras":[{"reward":1200000000,"decay":0,"halving":0,"eraend":0}],"notaries":["Notary1@","Notary2@","Notary3@"],"minnotariesconfirm":2,"nodes":[{"networkaddress":"111.111.111.111:10000","nodeidentity":"Node1@"},{"networkaddress":"111.111.111.112:10000","nodeidentity":"Node2@"}],"gatewayconvertername":"Bridge","gatewayconverterissuance":1000000}' '{"currencies":["VRSCTEST","PBaaSChain","USD"],"initialcontributions":[371747.20398827,0,1000000],"initialsupply":3000000}'
 ```
-### Exporting an ID to a PBaaS chain
+#### Exporting an ID to a PBaaS chain
 ```
 verus -chain=VRSCTEST sendcurrency "*" '[{"address":"IDNAME@","exportto":"PBaaSChainName","exportid":"true","amount":100,"currency":"vrsctest"}]'
 ```
 
-## Signing transactions from multi-signature IDs (testnet and mainnet)
+### Signing transactions from multi-signature IDs (testnet and mainnet)
 Create transaction, get raw transaction data:
   ```
 verus sendcurrency <multi-signature-ID>@ '[{"address":"<destination_address>","amount":<transaction_amount>}]'
@@ -2681,13 +2990,13 @@ After the last necessary signature is applied, broadcast on the network using:
 verus sendrawtransaction <raw_hex_signed_transaction>
 ```
 
-## Tokenizing ID control (next generation NFT):
+### Tokenizing ID control (next generation NFT):
 The currency definition have flags OPTION_NFT_TOKEN + OPTION_TOKEN, and a max supply of 1 satoshi that is either pre allocated or pre-converted to. If the token is pre-allocated, then the maximum pre-conversion must be 0.
 ```
 verus -chain=vrsctest definecurrency '{"name":"ID","options":2080,"preallocations":[{"ControlTokenRecipient@":0.00000001}],"maxpreconversion":[0]}'
 ```
 
-## Creating an identity with a fractional currency as its parent
+### Creating an identity with a fractional currency as its parent
 `registernamecommitment` now takes two more positional arguments to specify a currency parent and a funding address. Use quotes `""` to leave fields blank, the example below specifies a parent currency, vrsc-btc , but no referrer. We're now able to use z_addresses to fund the name commitment and identity registration
 
 ```
@@ -2702,12 +3011,12 @@ verus -chain=vrsctest registeridentity '{"txid": "67635331cbccb7a2cbf408a9e97b3f
 ```
 If a currency's ID issuance require permission from the currency's identity then it must sign the name commitment and identity registration. Either use the parent identity to fund those transactions, or receive a raw transaction to give the identity owner to sign by setting `returntx` to `true`
 
-### Limitations in multi-currency to be aware of:
+#### Limitations in multi-currency to be aware of:
 1. (GUI and CLI) You will not be able to make a currency from an ID that has a properly encoded i-address as its actual name, not its calculated ID. Generally, the advice is “don’t do that”. Using an i-address when referring to a currency will only be interpreted as referring to the currency or identity which has that i-address calculated based on its name registration. As a general rule, making an ID with an i-address as its name is not prevented by the protocol, but will cause problems whenever an i-address or name may be used (many cases) and will not be supported for creating currencies. To reduce any potential for user confusion, even though the naming system provides will also be expanding the set of characters that will not be allowed for currency registrations.
 
 2. (GUI) If a currency is supported in the Verus Desktop already, such as BTC or ETH, you will not be able to use those same named currencies as a PBaaS chain. This limitation is considered errata for this testnet release and will not be a limitation before mainnet availability.
 
-# Disclaimer
+### Disclaimer
 
 This is experimental and unfinished software. Use at your own risk! No warranty for any kind of damage!
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -2726,12 +3035,12 @@ To find out more about the false positives, review the following resources:
 https://blog.malwarebytes.com/detections/pup-optional-bitcoinminer/
 https://www.kaspersky.com/blog/not-a-virus/18015/
 
-## Verifying Downloads
+### Verifying Downloads
 A txt file containing the signer, standard sha256 file checksum, and signature, is included for each download. These packages have been signed with the identity "Verus Coin Foundation Releases@".
 1) Extract downloaded archive
 2) Verify signature for the extracted archive using the extracted text file.
 3) Extract archive to desired directory
-### CLI examples
+#### CLI examples
 **Verifying file directly**
 ```
 ./verus verifyfile "Verus Coin Foundation Releases@" "Adu/JQABQSB8RI2SQ6GBoJeUrJB1yficCCbEJ8o9oMgjS34zTJv0KD8hMX1urP+vzjMmmtBpsf/Ax1UXW+1Mz/1n665VCrXc" "/Downloads/Verus-CLI-Linux-v0.9.9-5-x86_64/Verus-CLI-Linux-v0.9.9-5-x86_64.tar.gz"
@@ -2745,25 +3054,26 @@ A txt file containing the signer, standard sha256 file checksum, and signature, 
 ```
 true
 ```
+## v0.9.9-4
 Announcing v0.9.9-4 - RECOMMENDED FOR MAINNET, MANDATORY UPDATE FOR RELIABLE TESTNET OPERATION
 
-## Mainnet Changes
+### Mainnet Changes
 Low level stakeguard improvements, no functional changes
 
-## What’s New for TestNet
+### What’s New for TestNet
 This release fixes an issue that was causing testnet users to experience sync issues on chains that had more than one oracle upgrade for the same capability activated.
 
 There are no other significant changes.
 
-# Additional Verus Capabilities
+### Additional Verus Capabilities
 - On-chain Launches of Token, Centralized Currency, and Liquidity Basket AMMs
 - On-chain Launches and Merge Mining of Independent, Connected, Interoperable Blockchains without Programming
 - On-chain Self Sovereign, Provable Identities, NFTs, and Individual or Organizational Profiles
 
-### Verus ID and NFT Marketplace
+#### Verus ID and NFT Marketplace
 Buy and sell VerusIDs on-chain, advertising your offer directly to the owner of an ID or NFT, or posting the sale of your NFT on the worldwide blockchain for all the world to see. Execute transactions in a completely decentralized way. Pay or offer to pay from a transparent or zero-knowledge private address, still auditable by you. Accept payment to either as well, and best of all, execute your transactions directly, peer-to-peer without any intermediary necessary. Don’t worry the on-chain model still makes room for owners to select and share proceeds with value added agents, marketing organizations, or other participants in a new economy of provable digital ownership. It’s the next step in the evolution of VerusID, the most powerful self-sovereign identity and secure storage model for funds in the digital world.
 
-### Verus Vault
+#### Verus Vault
 With Verus Vault you can now protect funds on a VerusID, even from theft of a private key! If you lock your VerusID with Vault you cannot spend funds from that identity at all until it is again unlocked. While locked, you can still stake those same funds on the Verus network and earn by doing so. Of course, you can also still receive funds.
 
 IT IS IMPORTANT TO NOTE THAT ENABLING REVOCATION, RECOVERY, AND ALL VERUS VAULT CAPABILITIES REQUIRE YOU TO HAVE ONE PRIMARY IDENTITY, AND AT LEAST ONE REVOCATION/RECOVERY ID CONFIGURED.
@@ -2772,30 +3082,30 @@ A locked VerusID can always be revoked and recovered by its revocation and recov
 
 In addition to a new level of blockchain protection and decentralized funds recovery, Verus Vault provides the same security for your IDs and NFTs as well as time locks for other purposes, such as vesting schedules, trusts, and inheritance. With Verus Vault, you can now protect and recover your funds, preserving all your assets and generational blockchain wealth from common forms of crypto loss or theft, no bank required.
 
-### New Verus Multicurrency, Multichain, DeFi Enabled Testnet
+#### New Verus Multicurrency, Multichain, DeFi Enabled Testnet
 With an easy GUI for basic operations or command line for more advanced functions. Without any programming, you can now create new identities, currencies, liquidity pools, and blockchains for your business, your government, your projects, a worthy cause, your family, or your next decentralized application suite. Send currencies worldwide on the same chain, or across blockchains with ease. Even convert currencies to others on the network without an exchange by sending to yourself and converting along the way.
 
 The new Verus testnet is a full-featured, intrinsically decentralized multi-chain blockchain platform with an unlimited number of identities, currencies, liquidity pools, and blockchains. It is accessible from the released versions of Verus Desktop and Verus CLI wallets, and it is the beginning of a new age in crypto. There are so many things you can do with Verus that you cannot with any other cryptocurrency platform, and you can try them all today.
 
 As Verus PBaaS offers completely new capabilities that go beyond today’s decentralized platforms in many fundamental ways, the worldwide Verus community put its energy into creation, rather than convincing everyone that its capabilities are possible. Members across the Verus worldwide community have worked hard to make this all possible, and we are more than excited that you can now experience it firsthand. If you have an interest in the future of crypto, you owe it to yourself to learn about Verus, an unlimited scale, decentralized future with truth and privacy for all.
 
-### The Verus testnet, available in the Verus Desktop or cli wallets as the VRSCTEST coin, has the following capabilities, which to our knowledge are unique in crypto today.
+#### The Verus testnet, available in the Verus Desktop or cli wallets as the VRSCTEST coin, has the following capabilities, which to our knowledge are unique in crypto today.
 
-### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
+#### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault)
+### Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
-## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
+### Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
 - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
-## Consensus integrated DeFi liquidity pools and fractional currency baskets
+### Consensus integrated DeFi liquidity pools and fractional currency baskets
 - Any ID owner may define Verus DeFi fractional basket currencies with one or more asset currencies backing the liquidity pool at a fractional percentage ranging from 5% to 100% backing. The Verus DeFi protocol ensures that all currency conversions that use a particular liquidity pool and are mined into one block are solved and priced simultaneously, addressing the problems of miner extracted value (MEV) and front-running, while providing fee-based DeFi integrated incentives to miners and stakers, ensuring smooth consensus operation and fee conversion capabilities by integrating DeFi liquidity pools directly into the consensus and cross-chain bridge protocols.
-## Simultaneous blockchain and blockchain liquidity pool launches
+### Simultaneous blockchain and blockchain liquidity pool launches
 - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
-## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
+### Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale**
+### An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
-### Locking and Unlocking IDs
+#### Locking and Unlocking IDs
 - **Time Lock:**
   The timelock parameter defines the unlock height of the identity.
 ```
@@ -2808,7 +3118,7 @@ verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <U
 ```
 - Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
-## Conversion Queries
+### Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
 - **E.g. BTC ETH:**
 ```
@@ -2817,7 +3127,7 @@ verus -chain=VRSCTEST getcurrencyconverters btc eth
 Will return all currencies that have btc/eth markets at or above the liquidity threshold.
 
 
-### Sending and Converting Currency
+#### Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
 The `sendcurrency` API can be used to send and convert funds.
@@ -2853,8 +3163,8 @@ verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCr
 ```
 verus -chain=PBaaSChain sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"VRSCTEST","exportto":"VRSCTEST","via":"Bridge.PBaaSChain"}]'
 ```
-## Defining a Currency
-### Currency Options
+### Defining a Currency
+#### Currency Options
 ```
 OPTION_FRACTIONAL = 1                  // allows reserve conversion using base calculations when set
 OPTION_ID_ISSUANCE = 2                 // clear is permissionless, if set, IDs may only be created by controlling ID
@@ -2866,7 +3176,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -2898,7 +3208,7 @@ In "mycoin", I set proofprotocol to 2, which is PROOF_CHAINID. That means that t
 ./verus -chain=VRSCTEST sendcurrency "mycoin@" '[{"address":"mike@","currency":"mycoin","mintnew":1,"amount":10000}]'
 ```
 
-### Defining a PBaaS blockchain
+#### Defining a PBaaS blockchain
 ```json
   {
   "name": "PBaaSChain",
@@ -2958,12 +3268,12 @@ Now pass those definitions to `definecurrency`
 ```shell
 ./verus -chain=vrsctest definecurrency '{"name":"PBaaSChain","options":264,"currencies":["VRSCTEST"],"conversions":[1],"eras":[{"reward":1200000000,"decay":0,"halving":0,"eraend":0}],"notaries":["Notary1@","Notary2@","Notary3@"],"minnotariesconfirm":2,"nodes":[{"networkaddress":"111.111.111.111:10000","nodeidentity":"Node1@"},{"networkaddress":"111.111.111.112:10000","nodeidentity":"Node2@"}],"gatewayconvertername":"Bridge","gatewayconverterissuance":1000000}' '{"currencies":["VRSCTEST","PBaaSChain","USD"],"initialcontributions":[371747.20398827,0,1000000],"initialsupply":3000000}'
 ```
-### Exporting an ID to a PBaaS chain
+#### Exporting an ID to a PBaaS chain
 ```
 verus -chain=VRSCTEST sendcurrency "*" '[{"address":"IDNAME@","exportto":"PBaaSChainName","exportid":"true","amount":100,"currency":"vrsctest"}]'
 ```
 
-## Signing transactions from multi-signature IDs (testnet and mainnet)
+### Signing transactions from multi-signature IDs (testnet and mainnet)
 Create transaction, get raw transaction data:
   ```
 verus sendcurrency <multi-signature-ID>@ '[{"address":"<destination_address>","amount":<transaction_amount>}]'
@@ -2978,13 +3288,13 @@ After the last necessary signature is applied, broadcast on the network using:
 verus sendrawtransaction <raw_hex_signed_transaction>
 ```
 
-## Tokenizing ID control (next generation NFT):
+### Tokenizing ID control (next generation NFT):
 The currency definition have flags OPTION_NFT_TOKEN + OPTION_TOKEN, and a max supply of 1 satoshi that is either pre allocated or pre-converted to. If the token is pre-allocated, then the maximum pre-conversion must be 0.
 ```
 verus -chain=vrsctest definecurrency '{"name":"ID","options":2080,"preallocations":[{"ControlTokenRecipient@":0.00000001}],"maxpreconversion":[0]}'
 ```
 
-## Creating an identity with a fractional currency as its parent
+### Creating an identity with a fractional currency as its parent
 `registernamecommitment` now takes two more positional arguments to specify a currency parent and a funding address. Use quotes `""` to leave fields blank, the example below specifies a parent currency, vrsc-btc , but no referrer. We're now able to use z_addresses to fund the name commitment and identity registration
 
 ```
@@ -2999,12 +3309,12 @@ verus -chain=vrsctest registeridentity '{"txid": "67635331cbccb7a2cbf408a9e97b3f
 ```
 If a currency's ID issuance require permission from the currency's identity then it must sign the name commitment and identity registration. Either use the parent identity to fund those transactions, or receive a raw transaction to give the identity owner to sign by setting `returntx` to `true`
 
-### Limitations in multi-currency to be aware of:
+#### Limitations in multi-currency to be aware of:
 1. (GUI and CLI) You will not be able to make a currency from an ID that has a properly encoded i-address as its actual name, not its calculated ID. Generally, the advice is “don’t do that”. Using an i-address when referring to a currency will only be interpreted as referring to the currency or identity which has that i-address calculated based on its name registration. As a general rule, making an ID with an i-address as its name is not prevented by the protocol, but will cause problems whenever an i-address or name may be used (many cases) and will not be supported for creating currencies. To reduce any potential for user confusion, even though the naming system provides will also be expanding the set of characters that will not be allowed for currency registrations.
 
 2. (GUI) If a currency is supported in the Verus Desktop already, such as BTC or ETH, you will not be able to use those same named currencies as a PBaaS chain. This limitation is considered errata for this testnet release and will not be a limitation before mainnet availability.
 
-# Disclaimer
+### Disclaimer
 
 This is experimental and unfinished software. Use at your own risk! No warranty for any kind of damage!
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -3023,12 +3333,12 @@ To find out more about the false positives, review the following resources:
 https://blog.malwarebytes.com/detections/pup-optional-bitcoinminer/
 https://www.kaspersky.com/blog/not-a-virus/18015/
 
-## Verifying Downloads
+### Verifying Downloads
 A txt file containing the signer, standard sha256 file checksum, and signature, is included for each download. These packages have been signed with the identity "Verus Coin Foundation Releases@".
 1) Extract downloaded archive
 2) Verify signature for the extracted archive using the extracted text file.
 3) Extract archive to desired directory
-### CLI examples
+#### CLI examples
 **Verifying file directly**
 ```
 ./verus verifyfile "Verus Coin Foundation Releases@" "AUqqJQABQR9eyv2N6JbDY8HAvGMn5mR2NYLW3sA0jbud0we0KNyGuAV4Upp/qPgl9265PL4ZkjBLY45BrkIstubavegqwn+u" "/Downloads/Verus-CLI-Linux-v0.9.9-4-x86_64/Verus-CLI-Linux-v0.9.9-4-x86_64.tar.gz"
@@ -3042,15 +3352,16 @@ A txt file containing the signer, standard sha256 file checksum, and signature, 
 ```
 true
 ```
+## v0.9.9-3
 Announcing v0.9.9-3 - FULLY OPTIONAL UPDATE FOR MAINNET, MANDATORY UPDATE FOR CONTINUED TESTNET OPERATION
 
-## Mainnet Changes - no protocol changes
+### Mainnet Changes - no protocol changes
 V0.9.9-3 introduces the `prunespentwallettransactions` CLI command and RPC API, providing a method for holders on testnet or mainnet of very large wallets to prune older spent transactions, which can improve performance for wallets that may be slowing down due to size. Thanks @Himu007 for the PR! There are no mainnet protocol changes in v0.9.9-3 over the prior release.
 
-## What’s New for TestNet
+### What’s New for TestNet
 This release includes an activation that allows a major upgrade to the testnet Ethereum bridge contracts that is both not expected to be needed again on testnet and not ever needed on mainnet with the new contract upgrade model. This upgrade should clear all known issues on the bridge to Goerli, meaning any remaining bridge transactions will be delivered, and the ETH bridge should then be fully functional.
 
-## The Path for PBaaS to Mainnet
+### The Path for PBaaS to Mainnet
 This testnet has actually been through a lot already, more than we expected before mainnet, and this last experience, along with its full restoration of cross-chain and all function has been very useful and was the impetus for the Verus Oracle Notification technology. In the process of getting here, we implemented the necessary changes and fixes to get everything back on track, but we also have remnants of these events in the daemon, and on the final protocol, these are there to enable compatibility with the history of testnet, not because we need these upgrades on mainnet PBaaS. It gave us experience, increased confidence, and pushed us to develop a fast, decentralized network response capability. At the same time, it would be best for our code base, both on the Verus side and in the ETH contracts if that testnet history is removed from the code before mainnet activation. Doing so would make the next upgrade incompatible with today’s testnet and its earlier history.
 
 As a result, we have decided that we will create one final testnet, but this time, we would do it a little differently than in the past. We will extend the pre-PBaaS upgrade on the existing testnet to a future date via the oracles. If you have started a chain and control the default oracle on any chain, please check the #pbaas-development channel for instructions on setting your oracle to extend the upgrade.
@@ -3060,15 +3371,15 @@ We will leave the current testnet running and fully functional, as we prepare th
 Thanks for all your help and contributions, both already made and those to come for this historic upcoming release!
 
 
-# Additional Verus Capabilities
+### Additional Verus Capabilities
 - On-chain Launches of Token, Centralized Currency, and Liquidity Basket AMMs
 - On-chain Launches and Merge Mining of Independent, Connected, Interoperable Blockchains without Programming
 - On-chain Self Sovereign, Provable Identities, NFTs, and Individual or Organizational Profiles
 
-### Verus ID and NFT Marketplace
+#### Verus ID and NFT Marketplace
 Buy and sell VerusIDs on-chain, advertising your offer directly to the owner of an ID or NFT, or posting the sale of your NFT on the worldwide blockchain for all the world to see. Execute transactions in a completely decentralized way. Pay or offer to pay from a transparent or zero-knowledge private address, still auditable by you. Accept payment to either as well, and best of all, execute your transactions directly, peer-to-peer without any intermediary necessary. Don’t worry the on-chain model still makes room for owners to select and share proceeds with value added agents, marketing organizations, or other participants in a new economy of provable digital ownership. It’s the next step in the evolution of VerusID, the most powerful self-sovereign identity and secure storage model for funds in the digital world.
 
-### Verus Vault
+#### Verus Vault
 With Verus Vault you can now protect funds on a VerusID, even from theft of a private key! If you lock your VerusID with Vault you cannot spend funds from that identity at all until it is again unlocked. While locked, you can still stake those same funds on the Verus network and earn by doing so. Of course, you can also still receive funds.
 
 IT IS IMPORTANT TO NOTE THAT ENABLING REVOCATION, RECOVERY, AND ALL VERUS VAULT CAPABILITIES REQUIRE YOU TO HAVE ONE PRIMARY IDENTITY, AND AT LEAST ONE REVOCATION/RECOVERY ID CONFIGURED.
@@ -3077,30 +3388,30 @@ A locked VerusID can always be revoked and recovered by its revocation and recov
 
 In addition to a new level of blockchain protection and decentralized funds recovery, Verus Vault provides the same security for your IDs and NFTs as well as time locks for other purposes, such as vesting schedules, trusts, and inheritance. With Verus Vault, you can now protect and recover your funds, preserving all your assets and generational blockchain wealth from common forms of crypto loss or theft, no bank required.
 
-### New Verus Multicurrency, Multichain, DeFi Enabled Testnet
+#### New Verus Multicurrency, Multichain, DeFi Enabled Testnet
 With an easy GUI for basic operations or command line for more advanced functions. Without any programming, you can now create new identities, currencies, liquidity pools, and blockchains for your business, your government, your projects, a worthy cause, your family, or your next decentralized application suite. Send currencies worldwide on the same chain, or across blockchains with ease. Even convert currencies to others on the network without an exchange by sending to yourself and converting along the way.
 
 The new Verus testnet is a full-featured, intrinsically decentralized multi-chain blockchain platform with an unlimited number of identities, currencies, liquidity pools, and blockchains. It is accessible from the released versions of Verus Desktop and Verus CLI wallets, and it is the beginning of a new age in crypto. There are so many things you can do with Verus that you cannot with any other cryptocurrency platform, and you can try them all today.
 
 As Verus PBaaS offers completely new capabilities that go beyond today’s decentralized platforms in many fundamental ways, the worldwide Verus community put its energy into creation, rather than convincing everyone that its capabilities are possible. Members across the Verus worldwide community have worked hard to make this all possible, and we are more than excited that you can now experience it firsthand. If you have an interest in the future of crypto, you owe it to yourself to learn about Verus, an unlimited scale, decentralized future with truth and privacy for all.
 
-### The Verus testnet, available in the Verus Desktop or cli wallets as the VRSCTEST coin, has the following capabilities, which to our knowledge are unique in crypto today.
+#### The Verus testnet, available in the Verus Desktop or cli wallets as the VRSCTEST coin, has the following capabilities, which to our knowledge are unique in crypto today.
 
-### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
+#### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault)
+### Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
-## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
+### Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
 - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
-## Consensus integrated DeFi liquidity pools and fractional currency baskets
+### Consensus integrated DeFi liquidity pools and fractional currency baskets
 - Any ID owner may define Verus DeFi fractional basket currencies with one or more asset currencies backing the liquidity pool at a fractional percentage ranging from 5% to 100% backing. The Verus DeFi protocol ensures that all currency conversions that use a particular liquidity pool and are mined into one block are solved and priced simultaneously, addressing the problems of miner extracted value (MEV) and front-running, while providing fee-based DeFi integrated incentives to miners and stakers, ensuring smooth consensus operation and fee conversion capabilities by integrating DeFi liquidity pools directly into the consensus and cross-chain bridge protocols.
-## Simultaneous blockchain and blockchain liquidity pool launches
+### Simultaneous blockchain and blockchain liquidity pool launches
 - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
-## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
+### Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale**
+### An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
-### Locking and Unlocking IDs
+#### Locking and Unlocking IDs
 - **Time Lock:**
   The timelock parameter defines the unlock height of the identity.
 ```
@@ -3113,7 +3424,7 @@ verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <U
 ```
 - Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
-## Conversion Queries
+### Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
 - **E.g. BTC ETH:**
 ```
@@ -3122,7 +3433,7 @@ verus -chain=VRSCTEST getcurrencyconverters btc eth
 Will return all currencies that have btc/eth markets at or above the liquidity threshold.
 
 
-### Sending and Converting Currency
+#### Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
 The `sendcurrency` API can be used to send and convert funds.
@@ -3158,7 +3469,7 @@ verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCr
 ```
 verus -chain=PBaaSChain sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"VRSCTEST","exportto":"VRSCTEST","via":"Bridge.PBaaSChain"}]'
 ```
-## Defining a Currency
+### Defining a Currency
 ### Currency Options
 ```
 OPTION_FRACTIONAL = 1                  // allows reserve conversion using base calculations when set
@@ -3171,7 +3482,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -3203,7 +3514,7 @@ In "mycoin", I set proofprotocol to 2, which is PROOF_CHAINID. That means that t
 ./verus -chain=VRSCTEST sendcurrency "mycoin@" '[{"address":"mike@","currency":"mycoin","mintnew":1,"amount":10000}]'
 ```
 
-### Defining a PBaaS blockchain
+#### Defining a PBaaS blockchain
 ```json
   {
   "name": "PBaaSChain",
@@ -3263,12 +3574,12 @@ Now pass those definitions to `definecurrency`
 ```shell
 ./verus -chain=vrsctest definecurrency '{"name":"PBaaSChain","options":264,"currencies":["VRSCTEST"],"conversions":[1],"eras":[{"reward":1200000000,"decay":0,"halving":0,"eraend":0}],"notaries":["Notary1@","Notary2@","Notary3@"],"minnotariesconfirm":2,"nodes":[{"networkaddress":"111.111.111.111:10000","nodeidentity":"Node1@"},{"networkaddress":"111.111.111.112:10000","nodeidentity":"Node2@"}],"gatewayconvertername":"Bridge","gatewayconverterissuance":1000000}' '{"currencies":["VRSCTEST","PBaaSChain","USD"],"initialcontributions":[371747.20398827,0,1000000],"initialsupply":3000000}'
 ```
-### Exporting an ID to a PBaaS chain
+#### Exporting an ID to a PBaaS chain
 ```
 verus -chain=VRSCTEST sendcurrency "*" '[{"address":"IDNAME@","exportto":"PBaaSChainName","exportid":"true","amount":100,"currency":"vrsctest"}]'
 ```
 
-## Signing transactions from multi-signature IDs (testnet and mainnet)
+### Signing transactions from multi-signature IDs (testnet and mainnet)
 Create transaction, get raw transaction data:
   ```
 verus sendcurrency <multi-signature-ID>@ '[{"address":"<destination_address>","amount":<transaction_amount>}]'
@@ -3283,13 +3594,13 @@ After the last necessary signature is applied, broadcast on the network using:
 verus sendrawtransaction <raw_hex_signed_transaction>
 ```
 
-## Tokenizing ID control (next generation NFT):
+### Tokenizing ID control (next generation NFT):
 The currency definition have flags OPTION_NFT_TOKEN + OPTION_TOKEN, and a max supply of 1 satoshi that is either pre allocated or pre-converted to. If the token is pre-allocated, then the maximum pre-conversion must be 0.
 ```
 verus -chain=vrsctest definecurrency '{"name":"ID","options":2080,"preallocations":[{"ControlTokenRecipient@":0.00000001}],"maxpreconversion":[0]}'
 ```
 
-## Creating an identity with a fractional currency as its parent
+### Creating an identity with a fractional currency as its parent
 `registernamecommitment` now takes two more positional arguments to specify a currency parent and a funding address. Use quotes `""` to leave fields blank, the example below specifies a parent currency, vrsc-btc , but no referrer. We're now able to use z_addresses to fund the name commitment and identity registration
 
 ```
@@ -3304,12 +3615,12 @@ verus -chain=vrsctest registeridentity '{"txid": "67635331cbccb7a2cbf408a9e97b3f
 ```
 If a currency's ID issuance require permission from the currency's identity then it must sign the name commitment and identity registration. Either use the parent identity to fund those transactions, or receive a raw transaction to give the identity owner to sign by setting `returntx` to `true`
 
-### Limitations in multi-currency to be aware of:
+#### Limitations in multi-currency to be aware of:
 1. (GUI and CLI) You will not be able to make a currency from an ID that has a properly encoded i-address as its actual name, not its calculated ID. Generally, the advice is “don’t do that”. Using an i-address when referring to a currency will only be interpreted as referring to the currency or identity which has that i-address calculated based on its name registration. As a general rule, making an ID with an i-address as its name is not prevented by the protocol, but will cause problems whenever an i-address or name may be used (many cases) and will not be supported for creating currencies. To reduce any potential for user confusion, even though the naming system provides will also be expanding the set of characters that will not be allowed for currency registrations.
 
 2. (GUI) If a currency is supported in the Verus Desktop already, such as BTC or ETH, you will not be able to use those same named currencies as a PBaaS chain. This limitation is considered errata for this testnet release and will not be a limitation before mainnet availability.
 
-# Disclaimer
+### Disclaimer
 
 This is experimental and unfinished software. Use at your own risk! No warranty for any kind of damage!
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -3328,12 +3639,12 @@ To find out more about the false positives, review the following resources:
 https://blog.malwarebytes.com/detections/pup-optional-bitcoinminer/
 https://www.kaspersky.com/blog/not-a-virus/18015/
 
-## Verifying Downloads
+### Verifying Downloads
 A txt file containing the signer, standard sha256 file checksum, and signature, is included for each download. These packages have been signed with the identity "Verus Coin Foundation Releases@".
 1) Extract downloaded archive
 2) Verify signature for the extracted archive using the extracted text file.
 3) Extract archive to desired directory
-### CLI examples
+#### CLI examples
 **Verifying file directly**
 ```
 ./verus verifyfile "Verus Coin Foundation Releases@" "AcKVJQABQR8REvfAnC1o2X3i+ya+XijCwxWtNunasCWLtCP5tZsdDm9Zg0kxb8k95KWLZwH7QZMkirXreo/bNHmo+c5DeKgE" "/Downloads/Verus-CLI-Linux-v0.9.9-3-x86_64/Verus-CLI-Linux-v0.9.9-3-x86_64.tar.gz"
@@ -3347,14 +3658,15 @@ A txt file containing the signer, standard sha256 file checksum, and signature, 
 ```
 true
 ```
+## v0.9.9-2
 Announcing v0.9.9-2 - CRITICAL SECURITY UPDATE FOR MAINNET AND REQUIRED UPDATE TO RESUME SUCCESSFUL MERGE MINING NOTARIZATION ON TESTNET
 
-### Important Mainnet Security Updates**
+#### Important Mainnet Security Updates**
 v0.9.9-2 introduces new mitigation code for the **Rab13s** vulnerability, announced by Halbourne 3 days ago as a zero day vulnerability in over 280 blockchains, including Zcash and Verus, that could allow someone to attack and bring down specific nodes that they may target through exhausting the node’s resources. The Verus fix adapts a fix implemented in Zcash that also does a better job of preserving privacy while gossiping transactions around the network by making it harder to track their node of origin via listening nodes.
 
 This release also includes an important update of the OpenSSL library, which Verus uses for encrypted node connections and addresses a buffer overflow vulnerability in that library.
 
-### What’s New for TestNet
+#### What’s New for TestNet
 This release re-enables cross-chain notarization, and represents the completion of a great deal of learning from the first roll out of auto notarization. Basically, we encountered two issues:
 
 1) There was a notarization bug in a significantly updated approach that caused notarizations to fork, effectively simulating a worst case, unmitigated attack on the notarization system. While that did not cause the system to fail per se, it resulted in the generation of many perceived, although not real, notarization forks on the network.
@@ -3368,15 +3680,15 @@ The good news is that since we have the new Verus Notification Oracle technology
 Once you update, please feel free to resume merge mining all PBaaS chains and Verus. You will need to wait for the BridgeKeeper update to be able to merge mine and stake with Ethereum’s Goerli.
 
 Thanks for all your testing! We’ve learned a great deal from this upgrade, and although it may feel like a delay that we took the time to learn and address it in place on the public network before moving on, this learning and consequent hardening will ensure the mainnet release will be more hardened than ever. Next steps are to upgrade auto notarization to be resilient to anything like this level of buildup over weeks automatically and prepare the mainnet release. Join us in testing everything in the #pbaas-development channel. Contribute as you learn and build, and let's all make history together!
-# Additional Verus Capabilities
+### Additional Verus Capabilities
 - On-chain Launches of Token, Centralized Currency, and Liquidity Basket AMMs
 - On-chain Launches and Merge Mining of Independent, Connected, Interoperable Blockchains without Programming
 - On-chain Self Sovereign, Provable Identities, NFTs, and Individual or Organizational Profiles
 
-### Verus ID and NFT Marketplace
+#### Verus ID and NFT Marketplace
 Buy and sell VerusIDs on-chain, advertising your offer directly to the owner of an ID or NFT, or posting the sale of your NFT on the worldwide blockchain for all the world to see. Execute transactions in a completely decentralized way. Pay or offer to pay from a transparent or zero-knowledge private address, still auditable by you. Accept payment to either as well, and best of all, execute your transactions directly, peer-to-peer without any intermediary necessary. Don’t worry the on-chain model still makes room for owners to select and share proceeds with value added agents, marketing organizations, or other participants in a new economy of provable digital ownership. It’s the next step in the evolution of VerusID, the most powerful self-sovereign identity and secure storage model for funds in the digital world.
 
-### Verus Vault
+#### Verus Vault
 With Verus Vault you can now protect funds on a VerusID, even from theft of a private key! If you lock your VerusID with Vault you cannot spend funds from that identity at all until it is again unlocked. While locked, you can still stake those same funds on the Verus network and earn by doing so. Of course, you can also still receive funds.
 
 IT IS IMPORTANT TO NOTE THAT ENABLING REVOCATION, RECOVERY, AND ALL VERUS VAULT CAPABILITIES REQUIRE YOU TO HAVE ONE PRIMARY IDENTITY, AND AT LEAST ONE REVOCATION/RECOVERY ID CONFIGURED.
@@ -3385,30 +3697,30 @@ A locked VerusID can always be revoked and recovered by its revocation and recov
 
 In addition to a new level of blockchain protection and decentralized funds recovery, Verus Vault provides the same security for your IDs and NFTs as well as time locks for other purposes, such as vesting schedules, trusts, and inheritance. With Verus Vault, you can now protect and recover your funds, preserving all your assets and generational blockchain wealth from common forms of crypto loss or theft, no bank required.
 
-### New Verus Multicurrency, Multichain, DeFi Enabled Testnet
+#### New Verus Multicurrency, Multichain, DeFi Enabled Testnet
 With an easy GUI for basic operations or command line for more advanced functions. Without any programming, you can now create new identities, currencies, liquidity pools, and blockchains for your business, your government, your projects, a worthy cause, your family, or your next decentralized application suite. Send currencies worldwide on the same chain, or across blockchains with ease. Even convert currencies to others on the network without an exchange by sending to yourself and converting along the way.
 
 The new Verus testnet is a full-featured, intrinsically decentralized multi-chain blockchain platform with an unlimited number of identities, currencies, liquidity pools, and blockchains. It is accessible from the released versions of Verus Desktop and Verus CLI wallets, and it is the beginning of a new age in crypto. There are so many things you can do with Verus that you cannot with any other cryptocurrency platform, and you can try them all today.
 
 As Verus PBaaS offers completely new capabilities that go beyond today’s decentralized platforms in many fundamental ways, the worldwide Verus community put its energy into creation, rather than convincing everyone that its capabilities are possible. Members across the Verus worldwide community have worked hard to make this all possible, and we are more than excited that you can now experience it firsthand. If you have an interest in the future of crypto, you owe it to yourself to learn about Verus, an unlimited scale, decentralized future with truth and privacy for all.
 
-### The Verus testnet, available in the Verus Desktop or cli wallets as the VRSCTEST coin, has the following capabilities, which to our knowledge are unique in crypto today.
+#### The Verus testnet, available in the Verus Desktop or cli wallets as the VRSCTEST coin, has the following capabilities, which to our knowledge are unique in crypto today.
 
-### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
+#### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault)
+### Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
-## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
+### Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
 - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
-## Consensus integrated DeFi liquidity pools and fractional currency baskets
+### Consensus integrated DeFi liquidity pools and fractional currency baskets
 - Any ID owner may define Verus DeFi fractional basket currencies with one or more asset currencies backing the liquidity pool at a fractional percentage ranging from 5% to 100% backing. The Verus DeFi protocol ensures that all currency conversions that use a particular liquidity pool and are mined into one block are solved and priced simultaneously, addressing the problems of miner extracted value (MEV) and front-running, while providing fee-based DeFi integrated incentives to miners and stakers, ensuring smooth consensus operation and fee conversion capabilities by integrating DeFi liquidity pools directly into the consensus and cross-chain bridge protocols.
-## Simultaneous blockchain and blockchain liquidity pool launches
+### Simultaneous blockchain and blockchain liquidity pool launches
 - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
-## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
+### Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale**
+### An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
-### Locking and Unlocking IDs
+#### Locking and Unlocking IDs
 - **Time Lock:**
   The timelock parameter defines the unlock height of the identity.
 ```
@@ -3421,7 +3733,7 @@ verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <U
 ```
 - Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
-## Conversion Queries
+### Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
 - **E.g. BTC ETH:**
 ```
@@ -3430,7 +3742,7 @@ verus -chain=VRSCTEST getcurrencyconverters btc eth
 Will return all currencies that have btc/eth markets at or above the liquidity threshold.
 
 
-### Sending and Converting Currency
+#### Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
 The `sendcurrency` API can be used to send and convert funds.
@@ -3466,8 +3778,8 @@ verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCr
 ```
 verus -chain=PBaaSChain sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"VRSCTEST","exportto":"VRSCTEST","via":"Bridge.PBaaSChain"}]'
 ```
-## Defining a Currency
-### Currency Options
+### Defining a Currency
+#### Currency Options
 ```
 OPTION_FRACTIONAL = 1                  // allows reserve conversion using base calculations when set
 OPTION_ID_ISSUANCE = 2                 // clear is permissionless, if set, IDs may only be created by controlling ID
@@ -3479,7 +3791,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -3511,7 +3823,7 @@ In "mycoin", I set proofprotocol to 2, which is PROOF_CHAINID. That means that t
 ./verus -chain=VRSCTEST sendcurrency "mycoin@" '[{"address":"mike@","currency":"mycoin","mintnew":1,"amount":10000}]'
 ```
 
-### Defining a PBaaS blockchain
+#### Defining a PBaaS blockchain
 ```json
   {
   "name": "PBaaSChain",
@@ -3571,12 +3883,12 @@ Now pass those definitions to `definecurrency`
 ```shell
 ./verus -chain=vrsctest definecurrency '{"name":"PBaaSChain","options":264,"currencies":["VRSCTEST"],"conversions":[1],"eras":[{"reward":1200000000,"decay":0,"halving":0,"eraend":0}],"notaries":["Notary1@","Notary2@","Notary3@"],"minnotariesconfirm":2,"nodes":[{"networkaddress":"111.111.111.111:10000","nodeidentity":"Node1@"},{"networkaddress":"111.111.111.112:10000","nodeidentity":"Node2@"}],"gatewayconvertername":"Bridge","gatewayconverterissuance":1000000}' '{"currencies":["VRSCTEST","PBaaSChain","USD"],"initialcontributions":[371747.20398827,0,1000000],"initialsupply":3000000}'
 ```
-### Exporting an ID to a PBaaS chain
+#### Exporting an ID to a PBaaS chain
 ```
 verus -chain=VRSCTEST sendcurrency "*" '[{"address":"IDNAME@","exportto":"PBaaSChainName","exportid":"true","amount":100,"currency":"vrsctest"}]'
 ```
 
-## Signing transactions from multi-signature IDs (testnet and mainnet)
+### Signing transactions from multi-signature IDs (testnet and mainnet)
 Create transaction, get raw transaction data:
   ```
 verus sendcurrency <multi-signature-ID>@ '[{"address":"<destination_address>","amount":<transaction_amount>}]'
@@ -3591,13 +3903,13 @@ After the last necessary signature is applied, broadcast on the network using:
 verus sendrawtransaction <raw_hex_signed_transaction>
 ```
 
-## Tokenizing ID control (next generation NFT):
+### Tokenizing ID control (next generation NFT):
 The currency definition have flags OPTION_NFT_TOKEN + OPTION_TOKEN, and a max supply of 1 satoshi that is either pre allocated or pre-converted to. If the token is pre-allocated, then the maximum pre-conversion must be 0.
 ```
 verus -chain=vrsctest definecurrency '{"name":"ID","options":2080,"preallocations":[{"ControlTokenRecipient@":0.00000001}],"maxpreconversion":[0]}'
 ```
 
-## Creating an identity with a fractional currency as its parent
+### Creating an identity with a fractional currency as its parent
 `registernamecommitment` now takes two more positional arguments to specify a currency parent and a funding address. Use quotes `""` to leave fields blank, the example below specifies a parent currency, vrsc-btc , but no referrer. We're now able to use z_addresses to fund the name commitment and identity registration
 
 ```
@@ -3612,12 +3924,12 @@ verus -chain=vrsctest registeridentity '{"txid": "67635331cbccb7a2cbf408a9e97b3f
 ```
 If a currency's ID issuance require permission from the currency's identity then it must sign the name commitment and identity registration. Either use the parent identity to fund those transactions, or receive a raw transaction to give the identity owner to sign by setting `returntx` to `true`
 
-### Limitations in multi-currency to be aware of:
+#### Limitations in multi-currency to be aware of:
 1. (GUI and CLI) You will not be able to make a currency from an ID that has a properly encoded i-address as its actual name, not its calculated ID. Generally, the advice is “don’t do that”. Using an i-address when referring to a currency will only be interpreted as referring to the currency or identity which has that i-address calculated based on its name registration. As a general rule, making an ID with an i-address as its name is not prevented by the protocol, but will cause problems whenever an i-address or name may be used (many cases) and will not be supported for creating currencies. To reduce any potential for user confusion, even though the naming system provides will also be expanding the set of characters that will not be allowed for currency registrations.
 
 2. (GUI) If a currency is supported in the Verus Desktop already, such as BTC or ETH, you will not be able to use those same named currencies as a PBaaS chain. This limitation is considered errata for this testnet release and will not be a limitation before mainnet availability.
 
-# Disclaimer
+### Disclaimer
 
 This is experimental and unfinished software. Use at your own risk! No warranty for any kind of damage!
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -3636,12 +3948,12 @@ To find out more about the false positives, review the following resources:
 https://blog.malwarebytes.com/detections/pup-optional-bitcoinminer/
 https://www.kaspersky.com/blog/not-a-virus/18015/
 
-## Verifying Downloads
+### Verifying Downloads
 A txt file containing the signer, standard sha256 file checksum, and signature, is included for each download. These packages have been signed with the identity "Verus Coin Foundation Releases@".
 1) Extract downloaded archive
 2) Verify signature for the extracted archive using the extracted text file.
 3) Extract archive to desired directory
-### CLI examples
+#### CLI examples
 **Verifying file directly**
 ```
 ./verus verifyfile "Verus Coin Foundation Releases@" "Ae1xJQABQSCusp3AYTcIlTUklLlDl7goo3n1773y1jIR73JtLLHFgjjwpC/tvuDcJ8hdj/voxmHU2WmTKq7LkVaTAi/EZD1V" "/Downloads/Verus-CLI-Linux-v0.9.9-2-x86_64/Verus-CLI-Linux-v0.9.9-2-x86_64.tar.gz"
@@ -3655,20 +3967,21 @@ A txt file containing the signer, standard sha256 file checksum, and signature, 
 ```
 true
 ```
+## v0.9.9-1
 Announcing v0.9.9-1, MANDATORY FOR TESTNET, no mainnet changes
 
 This release implements a fix for communication with BridgeKeeper for the Testnet Goerli Ethereum Bridge, as well as edge-case notarization improvements. We need every testnet participant to upgrade to this version as soon as possible to resume notarizations for the ETH bridge and the pbaas chains. Once enough people upgrade, the testnet upgrade can be broadcasted via oracle and we can get closer to getting pbaas on mainnet.
 
 
-# Additional Verus Capabilities
+### Additional Verus Capabilities
 - On-chain Launches of Token, Centralized Currency, and Liquidity Basket AMMs
 - On-chain Launches and Merge Mining of Independent, Connected, Interoperable Blockchains without Programming
 - On-chain Self Sovereign, Provable Identities, NFTs, and Individual or Organizational Profiles
 
-### Verus ID and NFT Marketplace
+#### Verus ID and NFT Marketplace
 Buy and sell VerusIDs on-chain, advertising your offer directly to the owner of an ID or NFT, or posting the sale of your NFT on the worldwide blockchain for all the world to see. Execute transactions in a completely decentralized way. Pay or offer to pay from a transparent or zero-knowledge private address, still auditable by you. Accept payment to either as well, and best of all, execute your transactions directly, peer-to-peer without any intermediary necessary. Don’t worry the on-chain model still makes room for owners to select and share proceeds with value added agents, marketing organizations, or other participants in a new economy of provable digital ownership. It’s the next step in the evolution of VerusID, the most powerful self-sovereign identity and secure storage model for funds in the digital world.
 
-### Verus Vault
+#### Verus Vault
 With Verus Vault you can now protect funds on a VerusID, even from theft of a private key! If you lock your VerusID with Vault you cannot spend funds from that identity at all until it is again unlocked. While locked, you can still stake those same funds on the Verus network and earn by doing so. Of course, you can also still receive funds.
 
 IT IS IMPORTANT TO NOTE THAT ENABLING REVOCATION, RECOVERY, AND ALL VERUS VAULT CAPABILITIES REQUIRE YOU TO HAVE ONE PRIMARY IDENTITY, AND AT LEAST ONE REVOCATION/RECOVERY ID CONFIGURED.
@@ -3677,30 +3990,30 @@ A locked VerusID can always be revoked and recovered by its revocation and recov
 
 In addition to a new level of blockchain protection and decentralized funds recovery, Verus Vault provides the same security for your IDs and NFTs as well as time locks for other purposes, such as vesting schedules, trusts, and inheritance. With Verus Vault, you can now protect and recover your funds, preserving all your assets and generational blockchain wealth from common forms of crypto loss or theft, no bank required.
 
-### New Verus Multicurrency, Multichain, DeFi Enabled Testnet
+#### New Verus Multicurrency, Multichain, DeFi Enabled Testnet
 With an easy GUI for basic operations or command line for more advanced functions. Without any programming, you can now create new identities, currencies, liquidity pools, and blockchains for your business, your government, your projects, a worthy cause, your family, or your next decentralized application suite. Send currencies worldwide on the same chain, or across blockchains with ease. Even convert currencies to others on the network without an exchange by sending to yourself and converting along the way.
 
 The new Verus testnet is a full-featured, intrinsically decentralized multi-chain blockchain platform with an unlimited number of identities, currencies, liquidity pools, and blockchains. It is accessible from the released versions of Verus Desktop and Verus CLI wallets, and it is the beginning of a new age in crypto. There are so many things you can do with Verus that you cannot with any other cryptocurrency platform, and you can try them all today.
 
 As Verus PBaaS offers completely new capabilities that go beyond today’s decentralized platforms in many fundamental ways, the worldwide Verus community put its energy into creation, rather than convincing everyone that its capabilities are possible. Members across the Verus worldwide community have worked hard to make this all possible, and we are more than excited that you can now experience it firsthand. If you have an interest in the future of crypto, you owe it to yourself to learn about Verus, an unlimited scale, decentralized future with truth and privacy for all.
 
-### The Verus testnet, available in the Verus Desktop or cli wallets as the VRSCTEST coin, has the following capabilities, which to our knowledge are unique in crypto today.
+#### The Verus testnet, available in the Verus Desktop or cli wallets as the VRSCTEST coin, has the following capabilities, which to our knowledge are unique in crypto today.
 
-### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
+#### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault)
+### Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
-## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
+### Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
 - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
-## Consensus integrated DeFi liquidity pools and fractional currency baskets
+### Consensus integrated DeFi liquidity pools and fractional currency baskets
 - Any ID owner may define Verus DeFi fractional basket currencies with one or more asset currencies backing the liquidity pool at a fractional percentage ranging from 5% to 100% backing. The Verus DeFi protocol ensures that all currency conversions that use a particular liquidity pool and are mined into one block are solved and priced simultaneously, addressing the problems of miner extracted value (MEV) and front-running, while providing fee-based DeFi integrated incentives to miners and stakers, ensuring smooth consensus operation and fee conversion capabilities by integrating DeFi liquidity pools directly into the consensus and cross-chain bridge protocols.
-## Simultaneous blockchain and blockchain liquidity pool launches
+### Simultaneous blockchain and blockchain liquidity pool launches
 - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
-## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
+### Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale**
+### An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
-### Locking and Unlocking IDs
+#### Locking and Unlocking IDs
 - **Time Lock:**
   The timelock parameter defines the unlock height of the identity.
 ```
@@ -3713,7 +4026,7 @@ verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <U
 ```
 - Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
-## Conversion Queries
+### Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
 - **E.g. BTC ETH:**
 ```
@@ -3722,7 +4035,7 @@ verus -chain=VRSCTEST getcurrencyconverters btc eth
 Will return all currencies that have btc/eth markets at or above the liquidity threshold.
 
 
-### Sending and Converting Currency
+#### Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
 The `sendcurrency` API can be used to send and convert funds.
@@ -3758,8 +4071,8 @@ verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCr
 ```
 verus -chain=PBaaSChain sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"VRSCTEST","exportto":"VRSCTEST","via":"Bridge.PBaaSChain"}]'
 ```
-## Defining a Currency
-### Currency Options
+### Defining a Currency
+#### Currency Options
 ```
 OPTION_FRACTIONAL = 1                  // allows reserve conversion using base calculations when set
 OPTION_ID_ISSUANCE = 2                 // clear is permissionless, if set, IDs may only be created by controlling ID
@@ -3771,7 +4084,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -3803,7 +4116,7 @@ In "mycoin", I set proofprotocol to 2, which is PROOF_CHAINID. That means that t
 ./verus -chain=VRSCTEST sendcurrency "mycoin@" '[{"address":"mike@","currency":"mycoin","mintnew":1,"amount":10000}]'
 ```
 
-### Defining a PBaaS blockchain
+#### Defining a PBaaS blockchain
 ```json
   {
   "name": "PBaaSChain",
@@ -3863,12 +4176,12 @@ Now pass those definitions to `definecurrency`
 ```shell
 ./verus -chain=vrsctest definecurrency '{"name":"PBaaSChain","options":264,"currencies":["VRSCTEST"],"conversions":[1],"eras":[{"reward":1200000000,"decay":0,"halving":0,"eraend":0}],"notaries":["Notary1@","Notary2@","Notary3@"],"minnotariesconfirm":2,"nodes":[{"networkaddress":"111.111.111.111:10000","nodeidentity":"Node1@"},{"networkaddress":"111.111.111.112:10000","nodeidentity":"Node2@"}],"gatewayconvertername":"Bridge","gatewayconverterissuance":1000000}' '{"currencies":["VRSCTEST","PBaaSChain","USD"],"initialcontributions":[371747.20398827,0,1000000],"initialsupply":3000000}'
 ```
-### Exporting an ID to a PBaaS chain
+#### Exporting an ID to a PBaaS chain
 ```
 verus -chain=VRSCTEST sendcurrency "*" '[{"address":"IDNAME@","exportto":"PBaaSChainName","exportid":"true","amount":100,"currency":"vrsctest"}]'
 ```
 
-## Signing transactions from multi-signature IDs (testnet and mainnet)
+### Signing transactions from multi-signature IDs (testnet and mainnet)
 Create transaction, get raw transaction data:
   ```
 verus sendcurrency <multi-signature-ID>@ '[{"address":"<destination_address>","amount":<transaction_amount>}]'
@@ -3883,13 +4196,13 @@ After the last necessary signature is applied, broadcast on the network using:
 verus sendrawtransaction <raw_hex_signed_transaction>
 ```
 
-## Tokenizing ID control (next generation NFT):
+### Tokenizing ID control (next generation NFT):
 The currency definition have flags OPTION_NFT_TOKEN + OPTION_TOKEN, and a max supply of 1 satoshi that is either pre allocated or pre-converted to. If the token is pre-allocated, then the maximum pre-conversion must be 0.
 ```
 verus -chain=vrsctest definecurrency '{"name":"ID","options":2080,"preallocations":[{"ControlTokenRecipient@":0.00000001}],"maxpreconversion":[0]}'
 ```
 
-## Creating an identity with a fractional currency as its parent
+### Creating an identity with a fractional currency as its parent
 `registernamecommitment` now takes two more positional arguments to specify a currency parent and a funding address. Use quotes `""` to leave fields blank, the example below specifies a parent currency, vrsc-btc , but no referrer. We're now able to use z_addresses to fund the name commitment and identity registration
 
 ```
@@ -3904,12 +4217,12 @@ verus -chain=vrsctest registeridentity '{"txid": "67635331cbccb7a2cbf408a9e97b3f
 ```
 If a currency's ID issuance require permission from the currency's identity then it must sign the name commitment and identity registration. Either use the parent identity to fund those transactions, or receive a raw transaction to give the identity owner to sign by setting `returntx` to `true`
 
-### Limitations in multi-currency to be aware of:
+#### Limitations in multi-currency to be aware of:
 1. (GUI and CLI) You will not be able to make a currency from an ID that has a properly encoded i-address as its actual name, not its calculated ID. Generally, the advice is “don’t do that”. Using an i-address when referring to a currency will only be interpreted as referring to the currency or identity which has that i-address calculated based on its name registration. As a general rule, making an ID with an i-address as its name is not prevented by the protocol, but will cause problems whenever an i-address or name may be used (many cases) and will not be supported for creating currencies. To reduce any potential for user confusion, even though the naming system provides will also be expanding the set of characters that will not be allowed for currency registrations.
 
 2. (GUI) If a currency is supported in the Verus Desktop already, such as BTC or ETH, you will not be able to use those same named currencies as a PBaaS chain. This limitation is considered errata for this testnet release and will not be a limitation before mainnet availability.
 
-# Disclaimer
+### Disclaimer
 
 This is experimental and unfinished software. Use at your own risk! No warranty for any kind of damage!
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -3928,12 +4241,12 @@ To find out more about the false positives, review the following resources:
 https://blog.malwarebytes.com/detections/pup-optional-bitcoinminer/
 https://www.kaspersky.com/blog/not-a-virus/18015/
 
-## Verifying Downloads
+### Verifying Downloads
 A txt file containing the signer, standard sha256 file checksum, and signature, is included for each download. These packages have been signed with the identity "Verus Coin Foundation Releases@".
 1) Extract downloaded archive
 2) Verify signature for the extracted archive using the extracted text file.
 3) Extract archive to desired directory
-### CLI examples
+#### CLI examples
 **Verifying file directly**
 ```
 ./verus verifyfile "Verus Coin Foundation Releases@" "AVBfJQABQSAcInXeVZTA3kTri4vGTRQjZwceXzhrMY6bMy+vLatPSjONfaXXrDU6N2sHsiYqNuHRs+vzm9brZDmk1NlqNdNl" "/Downloads/Verus-CLI-Linux-v0.9.9-1-x86_64/Verus-CLI-Linux-v0.9.9-1-x86_64.tar.gz"
@@ -3947,6 +4260,7 @@ A txt file containing the signer, standard sha256 file checksum, and signature, 
 ```
 true
 ```
+## v0.9.9
 Announcing v0.9.9 - PBaaS Mainnet Preparation Release, MANDATORY FOR MAINNET AND CONTINUED TESTNET USE
 
 ### What’s New
@@ -3965,15 +4279,15 @@ There is so much new and important in v0.9.9, and we are so close to the mainnet
 5. **Expanding L1 VerusID APIs**: This release provides a major enhancement to the identity content multimap support with two new APIs, `getidentityhistory` and `getidentitycontent` that provide real-time mempool access and also introduce self-sovereign delete operations to identity content that can be used by applications, making it easy for applications to index, organize, and aggregate an unlimited amount of user content referenced by an identity and made available to the application. This is the technology we used for oracle upgrade notifications, as all of this is available at L1, making it possible to imagine future protocols that can deal smoothly with diverse community opinions worldwide, but always respect the sovereignty and decisions of all members on the network. **(Testnet until the #LaunchPBaaS release)**
 
 6. **Introducing Restricted VerusID Staking for PBaaS Chains**: This release enables the stretch goal of restricted ID staking as an option for launching PBaaS chains. This option means that on such a PBaaS chain, only funds controlled by IDs with a parent of that PBaaS chain may stake blocks on that chain. When combined with restricted forms of ID issuance, whether approval or referral required and/or referral rewards, this capability opens up an entire new area for public/private blockchains and applications, as well as government, voting security, corporate, or organizational use cases.**(Testnet until the #LaunchPBaaS release)**
-# Additional Verus Capabilities
+### Additional Verus Capabilities
 - On-chain Launches of Token, Centralized Currency, and Liquidity Basket AMMs
 - On-chain Launches and Merge Mining of Independent, Connected, Interoperable Blockchains without Programming
 - On-chain Self Sovereign, Provable Identities, NFTs, and Individual or Organizational Profiles
 
-### Verus ID and NFT Marketplace
+#### Verus ID and NFT Marketplace
 Buy and sell VerusIDs on-chain, advertising your offer directly to the owner of an ID or NFT, or posting the sale of your NFT on the worldwide blockchain for all the world to see. Execute transactions in a completely decentralized way. Pay or offer to pay from a transparent or zero-knowledge private address, still auditable by you. Accept payment to either as well, and best of all, execute your transactions directly, peer-to-peer without any intermediary necessary. Don’t worry the on-chain model still makes room for owners to select and share proceeds with value added agents, marketing organizations, or other participants in a new economy of provable digital ownership. It’s the next step in the evolution of VerusID, the most powerful self-sovereign identity and secure storage model for funds in the digital world.
 
-### Verus Vault
+#### Verus Vault
 With Verus Vault you can now protect funds on a VerusID, even from theft of a private key! If you lock your VerusID with Vault you cannot spend funds from that identity at all until it is again unlocked. While locked, you can still stake those same funds on the Verus network and earn by doing so. Of course, you can also still receive funds.
 
 IT IS IMPORTANT TO NOTE THAT ENABLING REVOCATION, RECOVERY, AND ALL VERUS VAULT CAPABILITIES REQUIRE YOU TO HAVE ONE PRIMARY IDENTITY, AND AT LEAST ONE REVOCATION/RECOVERY ID CONFIGURED.
@@ -3982,30 +4296,30 @@ A locked VerusID can always be revoked and recovered by its revocation and recov
 
 In addition to a new level of blockchain protection and decentralized funds recovery, Verus Vault provides the same security for your IDs and NFTs as well as time locks for other purposes, such as vesting schedules, trusts, and inheritance. With Verus Vault, you can now protect and recover your funds, preserving all your assets and generational blockchain wealth from common forms of crypto loss or theft, no bank required.
 
-### New Verus Multicurrency, Multichain, DeFi Enabled Testnet
+#### New Verus Multicurrency, Multichain, DeFi Enabled Testnet
 With an easy GUI for basic operations or command line for more advanced functions. Without any programming, you can now create new identities, currencies, liquidity pools, and blockchains for your business, your government, your projects, a worthy cause, your family, or your next decentralized application suite. Send currencies worldwide on the same chain, or across blockchains with ease. Even convert currencies to others on the network without an exchange by sending to yourself and converting along the way.
 
 The new Verus testnet is a full-featured, intrinsically decentralized multi-chain blockchain platform with an unlimited number of identities, currencies, liquidity pools, and blockchains. It is accessible from the released versions of Verus Desktop and Verus CLI wallets, and it is the beginning of a new age in crypto. There are so many things you can do with Verus that you cannot with any other cryptocurrency platform, and you can try them all today.
 
 As Verus PBaaS offers completely new capabilities that go beyond today’s decentralized platforms in many fundamental ways, the worldwide Verus community put its energy into creation, rather than convincing everyone that its capabilities are possible. Members across the Verus worldwide community have worked hard to make this all possible, and we are more than excited that you can now experience it firsthand. If you have an interest in the future of crypto, you owe it to yourself to learn about Verus, an unlimited scale, decentralized future with truth and privacy for all.
 
-### The Verus testnet, available in the Verus Desktop or cli wallets as the VRSCTEST coin, has the following capabilities, which to our knowledge are unique in crypto today.
+#### The Verus testnet, available in the Verus Desktop or cli wallets as the VRSCTEST coin, has the following capabilities, which to our knowledge are unique in crypto today.
 
-### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
+#### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault)
+### Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
-## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
+### Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
 - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
-## Consensus integrated DeFi liquidity pools and fractional currency baskets
+### Consensus integrated DeFi liquidity pools and fractional currency baskets
 - Any ID owner may define Verus DeFi fractional basket currencies with one or more asset currencies backing the liquidity pool at a fractional percentage ranging from 5% to 100% backing. The Verus DeFi protocol ensures that all currency conversions that use a particular liquidity pool and are mined into one block are solved and priced simultaneously, addressing the problems of miner extracted value (MEV) and front-running, while providing fee-based DeFi integrated incentives to miners and stakers, ensuring smooth consensus operation and fee conversion capabilities by integrating DeFi liquidity pools directly into the consensus and cross-chain bridge protocols.
-## Simultaneous blockchain and blockchain liquidity pool launches
+### Simultaneous blockchain and blockchain liquidity pool launches
 - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
-## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
+### Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale**
+### An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
-### Locking and Unlocking IDs
+#### Locking and Unlocking IDs
 - **Time Lock:**
   The timelock parameter defines the unlock height of the identity.
 ```
@@ -4018,7 +4332,7 @@ verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <U
 ```
 - Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
-## Conversion Queries
+### Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
 - **E.g. BTC ETH:**
 ```
@@ -4027,7 +4341,7 @@ verus -chain=VRSCTEST getcurrencyconverters btc eth
 Will return all currencies that have btc/eth markets at or above the liquidity threshold.
 
 
-### Sending and Converting Currency
+#### Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
 The `sendcurrency` API can be used to send and convert funds.
@@ -4063,8 +4377,8 @@ verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCr
 ```
 verus -chain=PBaaSChain sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"VRSCTEST","exportto":"VRSCTEST","via":"Bridge.PBaaSChain"}]'
 ```
-## Defining a Currency
-### Currency Options
+### Defining a Currency
+#### Currency Options
 ```
 OPTION_FRACTIONAL = 1                  // allows reserve conversion using base calculations when set
 OPTION_ID_ISSUANCE = 2                 // clear is permissionless, if set, IDs may only be created by controlling ID
@@ -4076,7 +4390,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -4108,7 +4422,7 @@ In "mycoin", I set proofprotocol to 2, which is PROOF_CHAINID. That means that t
 ./verus -chain=VRSCTEST sendcurrency "mycoin@" '[{"address":"mike@","currency":"mycoin","mintnew":1,"amount":10000}]'
 ```
 
-### Defining a PBaaS blockchain
+#### Defining a PBaaS blockchain
 ```json
   {
   "name": "PBaaSChain",
@@ -4168,12 +4482,12 @@ Now pass those definitions to `definecurrency`
 ```shell
 ./verus -chain=vrsctest definecurrency '{"name":"PBaaSChain","options":264,"currencies":["VRSCTEST"],"conversions":[1],"eras":[{"reward":1200000000,"decay":0,"halving":0,"eraend":0}],"notaries":["Notary1@","Notary2@","Notary3@"],"minnotariesconfirm":2,"nodes":[{"networkaddress":"111.111.111.111:10000","nodeidentity":"Node1@"},{"networkaddress":"111.111.111.112:10000","nodeidentity":"Node2@"}],"gatewayconvertername":"Bridge","gatewayconverterissuance":1000000}' '{"currencies":["VRSCTEST","PBaaSChain","USD"],"initialcontributions":[371747.20398827,0,1000000],"initialsupply":3000000}'
 ```
-### Exporting an ID to a PBaaS chain
+#### Exporting an ID to a PBaaS chain
 ```
 verus -chain=VRSCTEST sendcurrency "*" '[{"address":"IDNAME@","exportto":"PBaaSChainName","exportid":"true","amount":100,"currency":"vrsctest"}]'
 ```
 
-## Signing transactions from multi-signature IDs (testnet and mainnet)
+### Signing transactions from multi-signature IDs (testnet and mainnet)
 Create transaction, get raw transaction data:
   ```
 verus sendcurrency <multi-signature-ID>@ '[{"address":"<destination_address>","amount":<transaction_amount>}]'
@@ -4188,13 +4502,13 @@ After the last necessary signature is applied, broadcast on the network using:
 verus sendrawtransaction <raw_hex_signed_transaction>
 ```
 
-## Tokenizing ID control (next generation NFT):
+### Tokenizing ID control (next generation NFT):
 The currency definition have flags OPTION_NFT_TOKEN + OPTION_TOKEN, and a max supply of 1 satoshi that is either pre allocated or pre-converted to. If the token is pre-allocated, then the maximum pre-conversion must be 0.
 ```
 verus -chain=vrsctest definecurrency '{"name":"ID","options":2080,"preallocations":[{"ControlTokenRecipient@":0.00000001}],"maxpreconversion":[0]}'
 ```
 
-## Creating an identity with a fractional currency as its parent
+### Creating an identity with a fractional currency as its parent
 `registernamecommitment` now takes two more positional arguments to specify a currency parent and a funding address. Use quotes `""` to leave fields blank, the example below specifies a parent currency, vrsc-btc , but no referrer. We're now able to use z_addresses to fund the name commitment and identity registration
 
 ```
@@ -4209,12 +4523,12 @@ verus -chain=vrsctest registeridentity '{"txid": "67635331cbccb7a2cbf408a9e97b3f
 ```
 If a currency's ID issuance require permission from the currency's identity then it must sign the name commitment and identity registration. Either use the parent identity to fund those transactions, or receive a raw transaction to give the identity owner to sign by setting `returntx` to `true`
 
-### Limitations in multi-currency to be aware of:
+#### Limitations in multi-currency to be aware of:
 1. (GUI and CLI) You will not be able to make a currency from an ID that has a properly encoded i-address as its actual name, not its calculated ID. Generally, the advice is “don’t do that”. Using an i-address when referring to a currency will only be interpreted as referring to the currency or identity which has that i-address calculated based on its name registration. As a general rule, making an ID with an i-address as its name is not prevented by the protocol, but will cause problems whenever an i-address or name may be used (many cases) and will not be supported for creating currencies. To reduce any potential for user confusion, even though the naming system provides will also be expanding the set of characters that will not be allowed for currency registrations.
 
 2. (GUI) If a currency is supported in the Verus Desktop already, such as BTC or ETH, you will not be able to use those same named currencies as a PBaaS chain. This limitation is considered errata for this testnet release and will not be a limitation before mainnet availability.
 
-# Disclaimer
+### Disclaimer
 
 This is experimental and unfinished software. Use at your own risk! No warranty for any kind of damage!
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -4233,12 +4547,12 @@ To find out more about the false positives, review the following resources:
 https://blog.malwarebytes.com/detections/pup-optional-bitcoinminer/
 https://www.kaspersky.com/blog/not-a-virus/18015/
 
-## Verifying Downloads
+### Verifying Downloads
 A txt file containing the signer, standard sha256 file checksum, and signature, is included for each download. These packages have been signed with the identity "Verus Coin Foundation Releases@".
 1) Extract downloaded archive
 2) Verify signature for the extracted archive using the extracted text file.
 3) Extract archive to desired directory
-### CLI examples
+#### CLI examples
 **Verifying file directly**
 ```
 ./verus verifyfile "Verus Coin Foundation Releases@" "AbxTJQABQR+xQsQKWDOIJclDMUHezwk6ghlNOrmDZn5YWoYF4tLodgmAdZu9pefSBP4iCjAm5fFG/6qD44bP0vv1dvdEsz6e" "/Downloads/Verus-CLI-Linux-v0.9.9-x86_64/Verus-CLI-Linux-v0.9.9-x86_64.tar.gz"
@@ -4365,7 +4679,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -4678,7 +4992,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -5004,7 +5318,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -5316,7 +5630,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -5636,7 +5950,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -5988,7 +6302,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -6295,7 +6609,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -6604,7 +6918,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -6911,7 +7225,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -7226,7 +7540,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -7535,7 +7849,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -7860,7 +8174,7 @@ OPTION_SINGLECURRENCY = 64             // for PBaaS chains or gateways to potent
 OPTION_GATEWAY = 128                   // if set, this routes external currencies
 OPTION_PBAAS = 256                     // this is a PBaaS chain definition
 OPTION_GATEWAY_CONVERTER = 512         // this means that for a specific PBaaS gateway, this is the default converter and will publish prices
-OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain 
+OPTION_GATEWAY_NAMECONTROLLER = 1024   // when not set on a gateway, top level ID and currency registration happen on launch chain
 OPTION_NFT_TOKEN = 2048                // single satoshi NFT token, tokenizes control over the root ID
 ```
 
@@ -8701,7 +9015,7 @@ Specify the parent in the identity definition. Enter `false` for `returntx` to s
 
 verus -chain=vrsctest registeridentity '{"txid": "67635331cbccb7a2cbf408a9e97b3f8986133964e0315a8b9fd237a5fd95ac8f","namereservation": { "version": 1,  "name": "ID",  "parent": "i84mndBk2Znydpgm9T9pTjVvBnHkhErzLt", "salt": "b7070f2ca7495e49c85ab41b5a368150e2c217be6d08cc4102a1b682cddb6f01", "referral": ""},"identity":{"primaryaddresses":["RDnf7mH7RQki9b7PqdBD2Er6WXv3DTawGr"],"minimumsignatures":1,"name":"ID","parent":"vrsc-btc@"}}' false 0 zs1s2mteau9tcalvk55cnepw3aq7dr6w7f447pqqkxczat3a02208d3ersx60wz9srw3nkd25ppfny
 ```
-If a currency's ID issuance require permission from the currency's identity then it must sign the name commitment and identity registration. Either use the parent identity to fund those transactions, or receive a raw transaction to give the identity owner to sign by setting `returntx` to `true` 
+If a currency's ID issuance require permission from the currency's identity then it must sign the name commitment and identity registration. Either use the parent identity to fund those transactions, or receive a raw transaction to give the identity owner to sign by setting `returntx` to `true`
 
 # Additional Verus Capabilities
 - On-chain Launches of Token, Centralized Currency, and Liquidity Basket AMMs
@@ -8751,7 +9065,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
 - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -8761,7 +9075,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ### Locking and Unlocking IDs
 - **Time Lock:**
@@ -9023,7 +9337,7 @@ Specify the parent in the identity definition. Enter `false` for `returntx` to s
 
 verus -chain=vrsctest registeridentity '{"txid": "67635331cbccb7a2cbf408a9e97b3f8986133964e0315a8b9fd237a5fd95ac8f","namereservation": { "version": 1,  "name": "ID",  "parent": "i84mndBk2Znydpgm9T9pTjVvBnHkhErzLt", "salt": "b7070f2ca7495e49c85ab41b5a368150e2c217be6d08cc4102a1b682cddb6f01", "referral": ""},"identity":{"primaryaddresses":["RDnf7mH7RQki9b7PqdBD2Er6WXv3DTawGr"],"minimumsignatures":1,"name":"ID","parent":"vrsc-btc@"}}' false 0 zs1s2mteau9tcalvk55cnepw3aq7dr6w7f447pqqkxczat3a02208d3ersx60wz9srw3nkd25ppfny
 ```
-If a currency's ID issuance require permission from the currency's identity then it must sign the name commitment and identity registration. Either use the parent identity to fund those transactions, or receive a raw transaction to give the identity owner to sign by setting `returntx` to `true` 
+If a currency's ID issuance require permission from the currency's identity then it must sign the name commitment and identity registration. Either use the parent identity to fund those transactions, or receive a raw transaction to give the identity owner to sign by setting `returntx` to `true`
 
 # Additional Verus Capabilities
 - On-chain Launches of Token, Centralized Currency, and Liquidity Basket AMMs
@@ -9073,7 +9387,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
 - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -9083,7 +9397,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ### Locking and Unlocking IDs
 - **Time Lock:**
@@ -9343,7 +9657,7 @@ Specify the parent in the identity definition. Enter `false` for `returntx` to s
 
 verus -chain=vrsctest registeridentity '{"txid": "67635331cbccb7a2cbf408a9e97b3f8986133964e0315a8b9fd237a5fd95ac8f","namereservation": { "version": 1,  "name": "ID",  "parent": "i84mndBk2Znydpgm9T9pTjVvBnHkhErzLt", "salt": "b7070f2ca7495e49c85ab41b5a368150e2c217be6d08cc4102a1b682cddb6f01", "referral": ""},"identity":{"primaryaddresses":["RDnf7mH7RQki9b7PqdBD2Er6WXv3DTawGr"],"minimumsignatures":1,"name":"ID","parent":"vrsc-btc@"}}' false 0 zs1s2mteau9tcalvk55cnepw3aq7dr6w7f447pqqkxczat3a02208d3ersx60wz9srw3nkd25ppfny
 ```
-If a currency's ID issuance require permission from the currency's identity then it must sign the name commitment and identity registration. Either use the parent identity to fund those transactions, or receive a raw transaction to give the identity owner to sign by setting `returntx` to `true` 
+If a currency's ID issuance require permission from the currency's identity then it must sign the name commitment and identity registration. Either use the parent identity to fund those transactions, or receive a raw transaction to give the identity owner to sign by setting `returntx` to `true`
 
 # Additional Verus Capabilities
 - On-chain Launches of Token, Centralized Currency, and Liquidity Basket AMMs
@@ -9393,7 +9707,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
 - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -9403,7 +9717,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ### Locking and Unlocking IDs
 - **Time Lock:**
@@ -9688,7 +10002,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
 - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -9698,7 +10012,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ### Locking and Unlocking IDs
 - **Time Lock:**
@@ -9985,7 +10299,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
 - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -9995,7 +10309,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ### Locking and Unlocking IDs
 - **Time Lock:**
@@ -10278,7 +10592,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ### Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
 - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -10288,7 +10602,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ### Locking and Unlocking IDs
 - **Time Lock:**
@@ -10577,7 +10891,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ## Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
  - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -10587,7 +10901,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
  - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ## Locking and Unlocking IDs
 - **Time Lock:**
@@ -10600,7 +10914,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ## Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -10617,23 +10931,23 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 - **Sending VRSCTEST cross-chain to PBaaSChain:**
   ```json
@@ -10641,7 +10955,7 @@ The `sendcurrency` API can be used to send and convert funds.
   ```
 - **Converting VRSCTEST cross-chain to PBaaSChain:**
   ```json
-  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]' 
+  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
   ```
 - **Converting PBaaSChain to VRSCTEST:**
   ```json
@@ -10650,8 +10964,8 @@ The `sendcurrency` API can be used to send and convert funds.
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -10660,7 +10974,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -10876,7 +11190,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ## Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
  - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -10886,7 +11200,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
  - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ## Locking and Unlocking IDs
 - **Time Lock:**
@@ -10899,7 +11213,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ## Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -10916,23 +11230,23 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 - **Sending VRSCTEST cross-chain to PBaaSChain:**
   ```json
@@ -10940,7 +11254,7 @@ The `sendcurrency` API can be used to send and convert funds.
   ```
 - **Converting VRSCTEST cross-chain to PBaaSChain:**
   ```json
-  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]' 
+  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
   ```
 - **Converting PBaaSChain to VRSCTEST:**
   ```json
@@ -10949,8 +11263,8 @@ The `sendcurrency` API can be used to send and convert funds.
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -10959,7 +11273,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -11156,7 +11470,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ## Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
  - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -11166,7 +11480,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
  - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ## Locking and Unlocking IDs
 - **Time Lock:**
@@ -11179,7 +11493,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ## Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -11196,23 +11510,23 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 - **Sending VRSCTEST cross-chain to PBaaSChain:**
   ```json
@@ -11220,7 +11534,7 @@ The `sendcurrency` API can be used to send and convert funds.
   ```
 - **Converting VRSCTEST cross-chain to PBaaSChain:**
   ```json
-  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]' 
+  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
   ```
 - **Converting PBaaSChain to VRSCTEST:**
   ```json
@@ -11229,8 +11543,8 @@ The `sendcurrency` API can be used to send and convert funds.
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -11239,7 +11553,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -11435,7 +11749,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ## Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
  - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -11445,7 +11759,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
  - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ## Locking and Unlocking IDs
 - **Time Lock:**
@@ -11458,7 +11772,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ## Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -11475,23 +11789,23 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 - **Sending VRSCTEST cross-chain to PBaaSChain:**
   ```json
@@ -11499,7 +11813,7 @@ The `sendcurrency` API can be used to send and convert funds.
   ```
 - **Converting VRSCTEST cross-chain to PBaaSChain:**
   ```json
-  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]' 
+  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
   ```
 - **Converting PBaaSChain to VRSCTEST:**
   ```json
@@ -11508,8 +11822,8 @@ The `sendcurrency` API can be used to send and convert funds.
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -11518,7 +11832,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -11706,7 +12020,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ## Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
  - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -11716,7 +12030,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
  - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ## Locking and Unlocking IDs
 - **Time Lock:**
@@ -11729,7 +12043,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ## Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -11746,23 +12060,23 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 - **Sending VRSCTEST cross-chain to PBaaSChain:**
   ```json
@@ -11770,7 +12084,7 @@ The `sendcurrency` API can be used to send and convert funds.
   ```
 - **Converting VRSCTEST cross-chain to PBaaSChain:**
   ```json
-  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]' 
+  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
   ```
 - **Converting PBaaSChain to VRSCTEST:**
   ```json
@@ -11779,8 +12093,8 @@ The `sendcurrency` API can be used to send and convert funds.
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -11789,7 +12103,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -11981,7 +12295,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ## Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
  - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -11991,7 +12305,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
  - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ## Locking and Unlocking IDs
 - **Time Lock:**
@@ -12004,7 +12318,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ## Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -12021,23 +12335,23 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 - **Sending VRSCTEST cross-chain to PBaaSChain:**
   ```json
@@ -12045,7 +12359,7 @@ The `sendcurrency` API can be used to send and convert funds.
   ```
 - **Converting VRSCTEST cross-chain to PBaaSChain:**
   ```json
-  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]' 
+  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
   ```
 - **Converting PBaaSChain to VRSCTEST:**
   ```json
@@ -12054,8 +12368,8 @@ The `sendcurrency` API can be used to send and convert funds.
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -12064,7 +12378,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -12259,7 +12573,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ## Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
  - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -12269,7 +12583,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
  - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ## Locking and Unlocking IDs
 - **Time Lock:**
@@ -12282,7 +12596,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ## Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -12299,23 +12613,23 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 - **Sending VRSCTEST cross-chain to PBaaSChain:**
   ```json
@@ -12323,7 +12637,7 @@ The `sendcurrency` API can be used to send and convert funds.
   ```
 - **Converting VRSCTEST cross-chain to PBaaSChain:**
   ```json
-  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]' 
+  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
   ```
 - **Converting PBaaSChain to VRSCTEST:**
   ```json
@@ -12332,8 +12646,8 @@ The `sendcurrency` API can be used to send and convert funds.
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -12342,7 +12656,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -12535,7 +12849,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ## Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
  - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -12545,7 +12859,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
  - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ## Locking and Unlocking IDs
 - **Time Lock:**
@@ -12558,7 +12872,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ## Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -12575,23 +12889,23 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 - **Sending VRSCTEST cross-chain to PBaaSChain:**
   ```json
@@ -12599,7 +12913,7 @@ The `sendcurrency` API can be used to send and convert funds.
   ```
 - **Converting VRSCTEST cross-chain to PBaaSChain:**
   ```json
-  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]' 
+  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
   ```
 - **Converting PBaaSChain to VRSCTEST:**
   ```json
@@ -12608,8 +12922,8 @@ The `sendcurrency` API can be used to send and convert funds.
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -12618,7 +12932,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -12811,7 +13125,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ## Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
  - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -12821,7 +13135,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
  - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ## Locking and Unlocking IDs
 - **Time Lock:**
@@ -12834,7 +13148,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ## Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -12851,23 +13165,23 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 - **Sending VRSCTEST cross-chain to PBaaSChain:**
   ```json
@@ -12875,7 +13189,7 @@ The `sendcurrency` API can be used to send and convert funds.
   ```
 - **Converting VRSCTEST cross-chain to PBaaSChain:**
   ```json
-  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]' 
+  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
   ```
 - **Converting PBaaSChain to VRSCTEST:**
   ```json
@@ -12884,8 +13198,8 @@ The `sendcurrency` API can be used to send and convert funds.
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -12894,7 +13208,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -13086,7 +13400,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ## Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
  - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -13096,7 +13410,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
  - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ## Locking and Unlocking IDs
 - **Time Lock:**
@@ -13109,7 +13423,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ## Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -13126,23 +13440,23 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 - **Sending VRSCTEST cross-chain to PBaaSChain:**
   ```json
@@ -13150,7 +13464,7 @@ The `sendcurrency` API can be used to send and convert funds.
   ```
 - **Converting VRSCTEST cross-chain to PBaaSChain:**
   ```json
-  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]' 
+  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
   ```
 - **Converting PBaaSChain to VRSCTEST:**
   ```json
@@ -13159,8 +13473,8 @@ The `sendcurrency` API can be used to send and convert funds.
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -13169,7 +13483,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -13350,7 +13664,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ## Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
  - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -13360,7 +13674,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
  - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ## Locking and Unlocking IDs
 - **Time Lock:**
@@ -13373,7 +13687,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ## Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -13390,23 +13704,23 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 - **Sending VRSCTEST cross-chain to PBaaSChain:**
   ```json
@@ -13414,7 +13728,7 @@ The `sendcurrency` API can be used to send and convert funds.
   ```
 - **Converting VRSCTEST cross-chain to PBaaSChain:**
   ```json
-  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]' 
+  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
   ```
 - **Converting PBaaSChain to VRSCTEST:**
   ```json
@@ -13423,8 +13737,8 @@ The `sendcurrency` API can be used to send and convert funds.
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -13433,7 +13747,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -13604,7 +13918,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ## Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
  - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -13614,7 +13928,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
  - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ## Locking and Unlocking IDs
 - **Time Lock:**
@@ -13627,7 +13941,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ## Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -13644,23 +13958,23 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 - **Sending VRSCTEST cross-chain to PBaaSChain:**
   ```json
@@ -13668,7 +13982,7 @@ The `sendcurrency` API can be used to send and convert funds.
   ```
 - **Converting VRSCTEST cross-chain to PBaaSChain:**
   ```json
-  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]' 
+  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
   ```
 - **Converting PBaaSChain to VRSCTEST:**
   ```json
@@ -13677,8 +13991,8 @@ The `sendcurrency` API can be used to send and convert funds.
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -13687,7 +14001,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -13863,7 +14177,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ## Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
  - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -13873,7 +14187,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
  - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ## Locking and Unlocking IDs
 - **Time Lock:**
@@ -13886,7 +14200,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ## Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -13903,23 +14217,23 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 - **Sending VRSCTEST cross-chain to PBaaSChain:**
   ```json
@@ -13927,7 +14241,7 @@ The `sendcurrency` API can be used to send and convert funds.
   ```
 - **Converting VRSCTEST cross-chain to PBaaSChain:**
   ```json
-  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]' 
+  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
   ```
 - **Converting PBaaSChain to VRSCTEST:**
   ```json
@@ -13936,8 +14250,8 @@ The `sendcurrency` API can be used to send and convert funds.
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -13946,7 +14260,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -14101,7 +14415,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ## Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
  - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -14111,7 +14425,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
  - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ## Locking and Unlocking IDs
 - **Time Lock:**
@@ -14124,7 +14438,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ## Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -14141,23 +14455,23 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 - **Sending VRSCTEST cross-chain to PBaaSChain:**
   ```json
@@ -14165,7 +14479,7 @@ The `sendcurrency` API can be used to send and convert funds.
   ```
 - **Converting VRSCTEST cross-chain to PBaaSChain:**
   ```json
-  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]' 
+  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
   ```
 - **Converting PBaaSChain to VRSCTEST:**
   ```json
@@ -14174,8 +14488,8 @@ The `sendcurrency` API can be used to send and convert funds.
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -14184,7 +14498,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -14339,7 +14653,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ## Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
  - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -14349,7 +14663,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
  - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ## Locking and Unlocking IDs
 - **Time Lock:**
@@ -14362,7 +14676,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ## Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -14379,23 +14693,23 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 - **Sending VRSCTEST cross-chain to PBaaSChain:**
   ```json
@@ -14403,7 +14717,7 @@ The `sendcurrency` API can be used to send and convert funds.
   ```
 - **Converting VRSCTEST cross-chain to PBaaSChain:**
   ```json
-  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]' 
+  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
   ```
 - **Converting PBaaSChain to VRSCTEST:**
   ```json
@@ -14412,8 +14726,8 @@ The `sendcurrency` API can be used to send and convert funds.
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -14422,7 +14736,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -14577,7 +14891,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ## Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
  - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -14587,7 +14901,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
  - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ## Locking and Unlocking IDs
 - **Time Lock:**
@@ -14600,7 +14914,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ## Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -14617,23 +14931,23 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 - **Sending VRSCTEST cross-chain to PBaaSChain:**
   ```json
@@ -14641,7 +14955,7 @@ The `sendcurrency` API can be used to send and convert funds.
   ```
 - **Converting VRSCTEST cross-chain to PBaaSChain:**
   ```json
-  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]' 
+  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
   ```
 - **Converting PBaaSChain to VRSCTEST:**
   ```json
@@ -14650,8 +14964,8 @@ The `sendcurrency` API can be used to send and convert funds.
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -14660,7 +14974,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -14815,7 +15129,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ## Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
  - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -14825,7 +15139,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
  - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ## Locking and Unlocking IDs
 - **Time Lock:**
@@ -14838,7 +15152,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ## Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -14855,23 +15169,23 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 - **Sending VRSCTEST cross-chain to PBaaSChain:**
   ```json
@@ -14879,7 +15193,7 @@ The `sendcurrency` API can be used to send and convert funds.
   ```
 - **Converting VRSCTEST cross-chain to PBaaSChain:**
   ```json
-  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]' 
+  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
   ```
 - **Converting PBaaSChain to VRSCTEST:**
   ```json
@@ -14888,8 +15202,8 @@ The `sendcurrency` API can be used to send and convert funds.
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -14898,7 +15212,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -15054,7 +15368,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ## Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
  - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -15064,7 +15378,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
  - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ## Locking and Unlocking IDs
 - **Time Lock:**
@@ -15077,7 +15391,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ## Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -15094,23 +15408,23 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 - **Sending VRSCTEST cross-chain to PBaaSChain:**
   ```json
@@ -15118,7 +15432,7 @@ The `sendcurrency` API can be used to send and convert funds.
   ```
 - **Converting VRSCTEST cross-chain to PBaaSChain:**
   ```json
-  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]' 
+  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
   ```
 - **Converting PBaaSChain to VRSCTEST:**
   ```json
@@ -15127,8 +15441,8 @@ The `sendcurrency` API can be used to send and convert funds.
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -15137,7 +15451,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -15295,7 +15609,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
 
 ## Self sovereign, revocable, recoverable identities (currently on mainnet) VerusID
 - Enables permissionless registration of friendly name strong identities and funds addresses that are simultaneously fully self-sovereign, revocable, and recoverable.
-## Staking-capable time locking and theft prevention (Verus Vault) 
+## Staking-capable time locking and theft prevention (Verus Vault)
 - Enables identities to be locked, preventing any funds under their control from being spent while locked, but still allowing seamless staking of funds. When locked, a user specifies an unlock delay, typically long enough to notice when someone who might have compromised a user’s keys would have to unlock the ID before spending. The only way to circumvent the unlock delay is to revoke and recover an ID. Users may also choose to create and use fresh private keys when unlocking an ID as well. This enables virtually theft proof workflow and a solution to inheritance, trusts, vesting schedules, the 5$ wrench attack, and identity theft. IDs may be used as friendly name cryptocurrency addresses for all currencies on all Verus PBaaS blockchains in the Verus network. The VerusID protocol is a protocol, which can also be implemented on non-Verus systems.
 ## Multi-currency, user created, decentralized tokens and merge-mineable, interoperable blockchains without programming
  - Enables any user with an ID to create their own token currency or even full fledged, multi-currency, ID-issuing 50% POW/50% POS, 51% hash attack resistant blockchain that can send and receive from the Verus chain which launched it. All PBaaS chains run from the same daemon, and projects may choose to join the worldwide Verus community in improving the daemon. In doing so, they will start with a complete, multi-currency, ID-capable blockchain with DeFi capabilities that is merge-mineable and stakeable with other blockchains in the Verus network.
@@ -15305,7 +15619,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
  - Launch of a world class, worldwide, merge-mineable blockchain along with a fully decentralized or centralized “bridge” converter liquidity pool as part of defining a new blockchain. Bridge converter currencies have the same flexibility as other fractional 100% asset backed or partially asset backed currencies, but is bound to the launch of the new blockchain, runs on the new blockchain, and all fees generated via cross chain fee conversions or general use of the liquidity pool are earned on the new blockchain with no rent going back to the Verus blockchain, only seamless connectivity.
 ## Blockchain-based, crowdfunding currency launches with minimum participation or automatic refunds, including for dual launches (blockchain and bridge)
 - Set required minimum levels of worldwide participation in your preferred currencies on chain. If by the start time of your blockchain, minimums are not met, all participants will automatically get a refund of all of their pre-conversions, less the network fees. The launch options also provide for maximum participation in one or more currencies, pre-launch discounts, price neutral pre-allocations to select IDs that increase the fractional reserve ratio to issue currencies, similarly price neutral carve-outs of proceeds, and pre-launch discounts for early participants. Using VerusIDs, launches can also include vesting schedules in the pre-allocations as well.
-## An interoperable, multichain network for new use cases and unlimited scale** 
+## An interoperable, multichain network for new use cases and unlimited scale**
 - The Verus multi-currency, multi-chain network allows the creation of an unlimited number of interoperable blockchains in the Verus network. Notary IDs, specified at chain definition, provide decentralized blockchain-specific bridge confirmation, enabling public blockchains available to the world for merge mining and staking, as well as private, internal blockchains, which are easy to setup with easy bridging of public currencies into an organization and onto their internal private network and back, with all features and currencies of the public chain but none of the access. There is no limit on the number of blockchains that may continuously operate and interoperate on the Verus network. While there is some overhead for cross notarization, the model for the Verus blockchain network is fractal, enabling an unlimited number of simultaneously operating, interoperable blockchains.
 ## Locking and Unlocking IDs
 - **Time Lock:**
@@ -15318,7 +15632,7 @@ As Verus PBaaS offers completely new capabilities that go beyond today’s decen
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ## Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -15335,23 +15649,23 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all private wallet funds to two recipients with friendly-name z-addresses (alice@:private and bob@:private):**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*Z" '[{"currency":"vrsctest","address":"alice@:private","amount":10},{"currency":"VRSCTEST","address":"bob@:private","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC using IDs as a funding source:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*i" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```json
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 - **Sending VRSCTEST cross-chain to PBaaSChain:**
   ```json
@@ -15359,7 +15673,7 @@ The `sendcurrency` API can be used to send and convert funds.
   ```
 - **Converting VRSCTEST cross-chain to PBaaSChain:**
   ```json
-  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]' 
+  verus -chain=VRSCTEST sendcurrency "*" '[{"address":"RXLYm4J6qi7yam9zXtkEkRwbvCrnWKGZuv","amount":10, "convertto":"PBaaSChain","exportto":"Bridge.PBaaSChain","via":"Bridge.PBaaSChain"}]'
   ```
 - **Converting PBaaSChain to VRSCTEST:**
   ```json
@@ -15368,8 +15682,8 @@ The `sendcurrency` API can be used to send and convert funds.
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -15378,7 +15692,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -15524,7 +15838,7 @@ Announcing MANDATORY CLI upgrade v0.7.2-8 - THIS UPDATE IS CONSIDERED MANDATORY 
 This release includes the following improvements and updates:
 - Critical updates
 - Fixed fetch-bootstrap temp file cleanup on Windows.
-- Fixed fetch-bootstrap checksum verification on MacOS 
+- Fixed fetch-bootstrap checksum verification on MacOS
 
 ## The Verus DeFi Testnet -- THERE IS NO TESTNET RESET
 All new 'sendcurrency' features described above now work on both mainnet and testnet. In addition, testnet can source funds for DeFi features from private z-addresses as well.
@@ -15533,7 +15847,7 @@ This is the most groundbreaking testnet the Verus project has ever released, and
 
 - **DeFi and cross-currency liquidity integrated with blockchain processing, fees, VerusID, and Verus PoP, 51% hash-attack resistant consensus algorithm**  - This is a massive set of platform capabilities that take DeFi further than any project in crypto today. We will list it here and describe it below. Using it is simple. Understanding the implications of what such a protocol can do when rent free and integrated in a truly decentralized public blockchain is a process of realizations that is likely to be similar to layers of an onion. We will do our best to explain below.
 
-- **System-wide queries for fractional basket currencies for arbitrage, investment discovery, or conversion bargain hunting** - The new RPC API, `getcurrencyconverters` (final name at mainnet, TBD), enables instant queries of any full node for all registered currencies above a fixed liquidity threshold that contain one or more reserve currencies. This new API enables wallets or applications to easily query the entire blockchain network of fractional currencies, determine which provides the best conversion rate at acceptable liquidity, and either convert at the best possible rates worldwide, or select only better-than-market rates and arbitrage to earn. 
+- **System-wide queries for fractional basket currencies for arbitrage, investment discovery, or conversion bargain hunting** - The new RPC API, `getcurrencyconverters` (final name at mainnet, TBD), enables instant queries of any full node for all registered currencies above a fixed liquidity threshold that contain one or more reserve currencies. This new API enables wallets or applications to easily query the entire blockchain network of fractional currencies, determine which provides the best conversion rate at acceptable liquidity, and either convert at the best possible rates worldwide, or select only better-than-market rates and arbitrage to earn.
 
 - **Enhanced VerusIDs with Verus Vault technology** - This capability extends the already groundbreaking VerusID revocable, recoverable, provable, friendly name blockchain addresses and identities to include an advanced time lock capability that does not prevent staking on locked funds, enabling easy implementation of things like vesting, trusts, protocols for theft-proofing funds, simplifying estate planning, and much more. With Verus Vault technology, your funds, identity, and estate planning can be done in a fully self-sovereign manner, with the peace of mind in knowing you are protected from lost or stolen private keys.
 
@@ -15556,7 +15870,7 @@ In addition to use cases related to theft resistance and delayed lock opening, V
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ### Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -15569,33 +15883,33 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 ### Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
-The `sendcurrency` API can be used to send and convert funds. 
+The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all wallet funds to two recipients (alice@ and bob@):**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -15604,7 +15918,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -15674,7 +15988,7 @@ This is the most groundbreaking testnet the Verus project has ever released, and
 
 - **DeFi and cross-currency liquidity integrated with blockchain processing, fees, VerusID, and Verus PoP, 51% hash-attack resistant consensus algorithm**  - This is a massive set of platform capabilities that take DeFi further than any project in crypto today. We will list it here and describe it below. Using it is simple. Understanding the implications of what such a protocol can do when rent free and integrated in a truly decentralized public blockchain is a process of realizations that is likely to be similar to layers of an onion. We will do our best to explain below.
 
-- **System-wide queries for fractional basket currencies for arbitrage, investment discovery, or conversion bargain hunting** - The new RPC API, `getcurrencyconverters` (final name at mainnet, TBD), enables instant queries of any full node for all registered currencies above a fixed liquidity threshold that contain one or more reserve currencies. This new API enables wallets or applications to easily query the entire blockchain network of fractional currencies, determine which provides the best conversion rate at acceptable liquidity, and either convert at the best possible rates worldwide, or select only better-than-market rates and arbitrage to earn. 
+- **System-wide queries for fractional basket currencies for arbitrage, investment discovery, or conversion bargain hunting** - The new RPC API, `getcurrencyconverters` (final name at mainnet, TBD), enables instant queries of any full node for all registered currencies above a fixed liquidity threshold that contain one or more reserve currencies. This new API enables wallets or applications to easily query the entire blockchain network of fractional currencies, determine which provides the best conversion rate at acceptable liquidity, and either convert at the best possible rates worldwide, or select only better-than-market rates and arbitrage to earn.
 
 - **Enhanced VerusIDs with Verus Vault technology** - This capability extends the already groundbreaking VerusID revocable, recoverable, provable, friendly name blockchain addresses and identities to include an advanced time lock capability that does not prevent staking on locked funds, enabling easy implementation of things like vesting, trusts, protocols for theft-proofing funds, simplifying estate planning, and much more. With Verus Vault technology, your funds, identity, and estate planning can be done in a fully self-sovereign manner, with the peace of mind in knowing you are protected from lost or stolen private keys.
 
@@ -15697,7 +16011,7 @@ In addition to use cases related to theft resistance and delayed lock opening, V
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ### Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -15710,33 +16024,33 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 ### Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
-The `sendcurrency` API can be used to send and convert funds. 
+The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all wallet funds to two recipients (alice@ and bob@):**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -15745,7 +16059,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -15819,7 +16133,7 @@ This is the most groundbreaking testnet the Verus project has ever released, and
 
 - **DeFi and cross-currency liquidity integrated with blockchain processing, fees, VerusID, and Verus PoP, 51% hash-attack resistant consensus algorithm**  - This is a massive set of platform capabilities that take DeFi further than any project in crypto today. We will list it here and describe it below. Using it is simple. Understanding the implications of what such a protocol can do when rent free and integrated in a truly decentralized public blockchain is a process of realizations that is likely to be similar to layers of an onion. We will do our best to explain below.
 
-- **System-wide queries for fractional basket currencies for arbitrage, investment discovery, or conversion bargain hunting** - The new RPC API, `getcurrencyconverters` (final name at mainnet, TBD), enables instant queries of any full node for all registered currencies above a fixed liquidity threshold that contain one or more reserve currencies. This new API enables wallets or applications to easily query the entire blockchain network of fractional currencies, determine which provides the best conversion rate at acceptable liquidity, and either convert at the best possible rates worldwide, or select only better-than-market rates and arbitrage to earn. 
+- **System-wide queries for fractional basket currencies for arbitrage, investment discovery, or conversion bargain hunting** - The new RPC API, `getcurrencyconverters` (final name at mainnet, TBD), enables instant queries of any full node for all registered currencies above a fixed liquidity threshold that contain one or more reserve currencies. This new API enables wallets or applications to easily query the entire blockchain network of fractional currencies, determine which provides the best conversion rate at acceptable liquidity, and either convert at the best possible rates worldwide, or select only better-than-market rates and arbitrage to earn.
 
 - **Enhanced VerusIDs with Verus Vault technology** - This capability extends the already groundbreaking VerusID revocable, recoverable, provable, friendly name blockchain addresses and identities to include an advanced time lock capability that does not prevent staking on locked funds, enabling easy implementation of things like vesting, trusts, protocols for theft-proofing funds, simplifying estate planning, and much more. With Verus Vault technology, your funds, identity, and estate planning can be done in a fully self-sovereign manner, with the peace of mind in knowing you are protected from lost or stolen private keys.
 
@@ -15842,7 +16156,7 @@ In addition to use cases related to theft resistance and delayed lock opening, V
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ### Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -15855,33 +16169,33 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 ### Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
-The `sendcurrency` API can be used to send and convert funds. 
+The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all wallet funds to two recipients (alice@ and bob@):**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -15890,7 +16204,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -15954,7 +16268,7 @@ true
 Announcing NON-MANDATORY CLI upgrade v0.7.2-5, with fixes that only apply to testnet. Mainnet features are unchanged from v0.7.2-4.
 This release includes the following improvements and updates:
 - Fix testnet transaction funding issue for multi-currency `sendcurrency` commands
-- Fix testnet currency conversions 
+- Fix testnet currency conversions
 
 ## The Verus DeFi Testnet -- THERE IS NO TESTNET RESET
 All new 'sendcurrency' features described above now work on both mainnet and testnet. In addition, testnet can source funds for DeFi features from private z-addresses as well.
@@ -15963,7 +16277,7 @@ This is the most groundbreaking testnet the Verus project has ever released, and
 
 - **DeFi and cross-currency liquidity integrated with blockchain processing, fees, VerusID, and Verus PoP, 51% hash-attack resistant consensus algorithm**  - This is a massive set of platform capabilities that take DeFi further than any project in crypto today. We will list it here and describe it below. Using it is simple. Understanding the implications of what such a protocol can do when rent free and integrated in a truly decentralized public blockchain is a process of realizations that is likely to be similar to layers of an onion. We will do our best to explain below.
 
-- **System-wide queries for fractional basket currencies for arbitrage, investment discovery, or conversion bargain hunting** - The new RPC API, `getcurrencyconverters` (final name at mainnet, TBD), enables instant queries of any full node for all registered currencies above a fixed liquidity threshold that contain one or more reserve currencies. This new API enables wallets or applications to easily query the entire blockchain network of fractional currencies, determine which provides the best conversion rate at acceptable liquidity, and either convert at the best possible rates worldwide, or select only better-than-market rates and arbitrage to earn. 
+- **System-wide queries for fractional basket currencies for arbitrage, investment discovery, or conversion bargain hunting** - The new RPC API, `getcurrencyconverters` (final name at mainnet, TBD), enables instant queries of any full node for all registered currencies above a fixed liquidity threshold that contain one or more reserve currencies. This new API enables wallets or applications to easily query the entire blockchain network of fractional currencies, determine which provides the best conversion rate at acceptable liquidity, and either convert at the best possible rates worldwide, or select only better-than-market rates and arbitrage to earn.
 
 - **Enhanced VerusIDs with Verus Vault technology** - This capability extends the already groundbreaking VerusID revocable, recoverable, provable, friendly name blockchain addresses and identities to include an advanced time lock capability that does not prevent staking on locked funds, enabling easy implementation of things like vesting, trusts, protocols for theft-proofing funds, simplifying estate planning, and much more. With Verus Vault technology, your funds, identity, and estate planning can be done in a fully self-sovereign manner, with the peace of mind in knowing you are protected from lost or stolen private keys.
 
@@ -15986,7 +16300,7 @@ In addition to use cases related to theft resistance and delayed lock opening, V
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ### Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -15999,33 +16313,33 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 ### Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
-The `sendcurrency` API can be used to send and convert funds. 
+The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all wallet funds to two recipients (alice@ and bob@):**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -16034,7 +16348,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -16101,9 +16415,9 @@ Announcing NON-MANDATORY CLI upgrade v0.7.2-4 with the world's first friendly-na
 - An identity's z-address can now be referenced as a funding source or destination by appending `:private` to an ID (eg. `"idname@:private"`). This form of z-address will also be able to be used with the z_getbalance command.
 - New wildcards can also be used as funds sources in the 'sendcurrency' command and parameters to z_getbalance that include:
    - All transparent addresses in the wallet (both R-addresses and IDs)
-        `"*"`` 
+        `"*"``
    - All R-addresses in the wallet
-        `"R*"` 
+        `"R*"`
    - All IDs controlled by the wallet
         `"i*"`
 - `sendcurrency` will now be an asynchronous API that will return an operation ID, as `z_sendmany` does, and complete in the background. It will also have its status available through `z_getoperationstatus`.
@@ -16117,7 +16431,7 @@ This is the most groundbreaking testnet the Verus project has ever released, and
 
 - **DeFi and cross-currency liquidity integrated with blockchain processing, fees, VerusID, and Verus PoP, 51% hash-attack resistant consensus algorithm**  - This is a massive set of platform capabilities that take DeFi further than any project in crypto today. We will list it here and describe it below. Using it is simple. Understanding the implications of what such a protocol can do when rent free and integrated in a truly decentralized public blockchain is a process of realizations that is likely to be similar to layers of an onion. We will do our best to explain below.
 
-- **System-wide queries for fractional basket currencies for arbitrage, investment discovery, or conversion bargain hunting** - The new RPC API, `getcurrencyconverters` (final name at mainnet, TBD), enables instant queries of any full node for all registered currencies above a fixed liquidity threshold that contain one or more reserve currencies. This new API enables wallets or applications to easily query the entire blockchain network of fractional currencies, determine which provides the best conversion rate at acceptable liquidity, and either convert at the best possible rates worldwide, or select only better-than-market rates and arbitrage to earn. 
+- **System-wide queries for fractional basket currencies for arbitrage, investment discovery, or conversion bargain hunting** - The new RPC API, `getcurrencyconverters` (final name at mainnet, TBD), enables instant queries of any full node for all registered currencies above a fixed liquidity threshold that contain one or more reserve currencies. This new API enables wallets or applications to easily query the entire blockchain network of fractional currencies, determine which provides the best conversion rate at acceptable liquidity, and either convert at the best possible rates worldwide, or select only better-than-market rates and arbitrage to earn.
 
 - **Enhanced VerusIDs with Verus Vault technology** - This capability extends the already groundbreaking VerusID revocable, recoverable, provable, friendly name blockchain addresses and identities to include an advanced time lock capability that does not prevent staking on locked funds, enabling easy implementation of things like vesting, trusts, protocols for theft-proofing funds, simplifying estate planning, and much more. With Verus Vault technology, your funds, identity, and estate planning can be done in a fully self-sovereign manner, with the peace of mind in knowing you are protected from lost or stolen private keys.
 
@@ -16140,7 +16454,7 @@ In addition to use cases related to theft resistance and delayed lock opening, V
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ### Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -16153,33 +16467,33 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 ### Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
-The `sendcurrency` API can be used to send and convert funds. 
+The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all wallet funds to two recipients (alice@ and bob@):**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -16188,7 +16502,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -16281,7 +16595,7 @@ This is the most groundbreaking testnet the Verus project has ever announced, an
 
 - **DeFi and cross-currency liquidity integrated with blockchain processing, fees, VerusID, and Verus PoP, 51% hash-attack resistant consensus algorithm**  - This is a massive set of platform capabilities that take DeFi further than any project in crypto today. We will list it here and describe it below. Using it is simple. Understanding the implications of what such a protocol can do when rent free and integrated in a truly decentralized public blockchain is a process of realizations that is likely to be similar to layers of an onion. We will do our best to explain below.
 
-- **System-wide queries for fractional basket currencies for arbitrage, investment discovery, or conversion bargain hunting** - The new RPC API, `getcurrencyconverters` (final name at mainnet, TBD), enables instant queries of any full node for all registered currencies above a fixed liquidity threshold that contain one or more reserve currencies. This new API enables wallets or applications to easily query the entire blockchain network of fractional currencies, determine which provides the best conversion rate at acceptable liquidity, and either convert at the best possible rates worldwide, or select only better-than-market rates and arbitrage to earn. 
+- **System-wide queries for fractional basket currencies for arbitrage, investment discovery, or conversion bargain hunting** - The new RPC API, `getcurrencyconverters` (final name at mainnet, TBD), enables instant queries of any full node for all registered currencies above a fixed liquidity threshold that contain one or more reserve currencies. This new API enables wallets or applications to easily query the entire blockchain network of fractional currencies, determine which provides the best conversion rate at acceptable liquidity, and either convert at the best possible rates worldwide, or select only better-than-market rates and arbitrage to earn.
 
 - **Enhanced VerusIDs with Verus Vault technology** - This capability extends the already groundbreaking VerusID revocable, recoverable, provable, friendly name blockchain addresses and identities to include an advanced time lock capability that does not prevent staking on locked funds, enabling easy implementation of things like vesting, trusts, protocols for theft-proofing funds, simplifying estate planning, and much more. With Verus Vault technology, your funds, identity, and estate planning can be done in a fully self-sovereign manner, with the peace of mind in knowing you are protected from lost or stolen private keys.
 
@@ -16304,7 +16618,7 @@ In addition to use cases related to theft resistance and delayed lock opening, V
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ### Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -16317,33 +16631,33 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 ### Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
-The `sendcurrency` API can be used to send and convert funds. 
+The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all wallet funds to two recipients (alice@ and bob@):**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -16352,7 +16666,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -16444,7 +16758,7 @@ This is the most groundbreaking testnet the Verus project has ever announced, an
 
 - **DeFi and cross-currency liquidity integrated with blockchain processing, fees, VerusID, and Verus PoP, 51% hash-attack resistant consensus algorithm**  - This is a massive set of platform capabilities that take DeFi further than any project in crypto today. We will list it here and describe it below. Using it is simple. Understanding the implications of what such a protocol can do when rent free and integrated in a truly decentralized public blockchain is a process of realizations that is likely to be similar to layers of an onion. We will do our best to explain below.
 
-- **System-wide queries for fractional basket currencies for arbitrage, investment discovery, or conversion bargain hunting** - The new RPC API, `getcurrencyconverters` (final name at mainnet, TBD), enables instant queries of any full node for all registered currencies above a fixed liquidity threshold that contain one or more reserve currencies. This new API enables wallets or applications to easily query the entire blockchain network of fractional currencies, determine which provides the best conversion rate at acceptable liquidity, and either convert at the best possible rates worldwide, or select only better-than-market rates and arbitrage to earn. 
+- **System-wide queries for fractional basket currencies for arbitrage, investment discovery, or conversion bargain hunting** - The new RPC API, `getcurrencyconverters` (final name at mainnet, TBD), enables instant queries of any full node for all registered currencies above a fixed liquidity threshold that contain one or more reserve currencies. This new API enables wallets or applications to easily query the entire blockchain network of fractional currencies, determine which provides the best conversion rate at acceptable liquidity, and either convert at the best possible rates worldwide, or select only better-than-market rates and arbitrage to earn.
 
 - **Enhanced VerusIDs with Verus Vault technology** - This capability extends the already groundbreaking VerusID revocable, recoverable, provable, friendly name blockchain addresses and identities to include an advanced time lock capability that does not prevent staking on locked funds, enabling easy implementation of things like vesting, trusts, protocols for theft-proofing funds, simplifying estate planning, and much more. With Verus Vault technology, your funds, identity, and estate planning can be done in a fully self-sovereign manner, with the peace of mind in knowing you are protected from lost or stolen private keys.
 
@@ -16467,7 +16781,7 @@ In addition to use cases related to theft resistance and delayed lock opening, V
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ### Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -16480,33 +16794,33 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 ### Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
-The `sendcurrency` API can be used to send and convert funds. 
+The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all wallet funds to two recipients (alice@ and bob@):**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -16515,7 +16829,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -16608,7 +16922,7 @@ This is the most groundbreaking testnet the Verus project has ever announced, an
 
 - **DeFi and cross-currency liquidity integrated with blockchain processing, fees, VerusID, and Verus PoP, 51% hash-attack resistant consensus algorithm**  - This is a massive set of platform capabilities that take DeFi further than any project in crypto today. We will list it here and describe it below. Using it is simple. Understanding the implications of what such a protocol can do when rent free and integrated in a truly decentralized public blockchain is a process of realizations that is likely to be similar to layers of an onion. We will do our best to explain below.
 
-- **System-wide queries for fractional basket currencies for arbitrage, investment discovery, or conversion bargain hunting** - The new RPC API, `getcurrencyconverters` (final name at mainnet, TBD), enables instant queries of any full node for all registered currencies above a fixed liquidity threshold that contain one or more reserve currencies. This new API enables wallets or applications to easily query the entire blockchain network of fractional currencies, determine which provides the best conversion rate at acceptable liquidity, and either convert at the best possible rates worldwide, or select only better-than-market rates and arbitrage to earn. 
+- **System-wide queries for fractional basket currencies for arbitrage, investment discovery, or conversion bargain hunting** - The new RPC API, `getcurrencyconverters` (final name at mainnet, TBD), enables instant queries of any full node for all registered currencies above a fixed liquidity threshold that contain one or more reserve currencies. This new API enables wallets or applications to easily query the entire blockchain network of fractional currencies, determine which provides the best conversion rate at acceptable liquidity, and either convert at the best possible rates worldwide, or select only better-than-market rates and arbitrage to earn.
 
 - **Enhanced VerusIDs with Verus Vault technology** - This capability extends the already groundbreaking VerusID revocable, recoverable, provable, friendly name blockchain addresses and identities to include an advanced time lock capability that does not prevent staking on locked funds, enabling easy implementation of things like vesting, trusts, protocols for theft-proofing funds, simplifying estate planning, and much more. With Verus Vault technology, your funds, identity, and estate planning can be done in a fully self-sovereign manner, with the peace of mind in knowing you are protected from lost or stolen private keys.
 
@@ -16631,7 +16945,7 @@ In addition to use cases related to theft resistance and delayed lock opening, V
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ### Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -16644,33 +16958,33 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 ### Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
-The `sendcurrency` API can be used to send and convert funds. 
+The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all wallet funds to two recipients (alice@ and bob@):**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via":"VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -16679,7 +16993,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -16771,7 +17085,7 @@ This is the most groundbreaking testnet the Verus project has ever announced, an
 
 - **DeFi and cross-currency liquidity integrated with blockchain processing, fees, VerusID, and Verus PoP, 51% hash-attack resistant consensus algorithm**  - This is a massive set of platform capabilities that take DeFi further than any project in crypto today. We will list it here and describe it below. Using it is simple. Understanding the implications of what such a protocol can do when rent free and integrated in a truly decentralized public blockchain is a process of realizations that is likely to be similar to layers of an onion. We will do our best to explain below.
 
-- **System-wide queries for fractional basket currencies for arbitrage, investment discovery, or conversion bargain hunting** - The new RPC API, `getcurrencyconverters` (final name at mainnet, TBD), enables instant queries of any full node for all registered currencies above a fixed liquidity threshold that contain one or more reserve currencies. This new API enables wallets or applications to easily query the entire blockchain network of fractional currencies, determine which provides the best conversion rate at acceptable liquidity, and either convert at the best possible rates worldwide, or select only better-than-market rates and arbitrage to earn. 
+- **System-wide queries for fractional basket currencies for arbitrage, investment discovery, or conversion bargain hunting** - The new RPC API, `getcurrencyconverters` (final name at mainnet, TBD), enables instant queries of any full node for all registered currencies above a fixed liquidity threshold that contain one or more reserve currencies. This new API enables wallets or applications to easily query the entire blockchain network of fractional currencies, determine which provides the best conversion rate at acceptable liquidity, and either convert at the best possible rates worldwide, or select only better-than-market rates and arbitrage to earn.
 
 - **Enhanced VerusIDs with Verus Vault technology** - This capability extends the already groundbreaking VerusID revocable, recoverable, provable, friendly name blockchain addresses and identities to include an advanced time lock capability that does not prevent staking on locked funds, enabling easy implementation of things like vesting, trusts, protocols for theft-proofing funds, simplifying estate planning, and much more. With Verus Vault technology, your funds, identity, and estate planning can be done in a fully self-sovereign manner, with the peace of mind in knowing you are protected from lost or stolen private keys.
 
@@ -16794,7 +17108,7 @@ In addition to use cases related to theft resistance and delayed lock opening, V
     ```
     verus -chain=VRSCTEST updateidentity '{"name": "ID@", "flags": 2, "timelock": <Unlock block delay>, "minimumsignatures": 1, "primaryaddresses": ["t-address"]}'
     ```
-- Revoking an identity will clear its locked status, regardless of time delay or unlock height. 
+- Revoking an identity will clear its locked status, regardless of time delay or unlock height.
 - A locked identity cannot revoke itself.
 ### Conversion Queries
 The `getcurrencyconverters` API retrieves all currencies that have at least 1000 VRSC in reserve, are greater than 10% VRSC reserve ratio, and have all listed currencies as reserves
@@ -16807,33 +17121,33 @@ The `getcurrencyconverters` API retrieves all currencies that have at least 1000
 ### Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
-The `sendcurrency` API can be used to send and convert funds. 
+The `sendcurrency` API can be used to send and convert funds.
 - **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
     ```
-    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
     ```
 - **Sending VRSCTEST from all wallet funds to two recipients (alice@ and bob@):**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]'
     ```
 - **Converting VRSCTEST to a fractional basket currency, VRSC-BTC:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"VRSC-BTC"}]'
     ```
 - **Converting VRSCTEST to another reserve, BTC through a fractional currency, VRSC-BTC:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via","VRSC-BTC"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"BTC","via","VRSC-BTC"}]'
     ```
 - **Preconverting to new currency, NEWCOIN, before it is active:**
     ```
-    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+    verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
     ```
 
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -16842,7 +17156,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -16923,7 +17237,7 @@ A txt file containing the signer, standard sha256 file checksum, and signature, 
 ```
 true
 ```
-## New in v0.7.1-5 
+## New in v0.7.1-5
 This non-mandatory release is compatible with mainnet with mininal changes from v0.7.1-1. It contains fixes necessary to continue participating in the testnet launched in v0.7.1-1, without reset of your wallet or holdings, if you started using the VRSCTEST multi-currency testnet in v0.7.1-1 or later. You should be able to synchronize easily, but if you are unable to synchronize VRSCTEST shortly after connecting, try deleting the data in your VRSCTEST folder, and retain the wallet.dat file.
 
 # Verus Testnet with Multi-currency Fractional Reserves and Currency Launch Protocol
@@ -16950,22 +17264,22 @@ While this 0.7.1 testnet enables on-chain token currency definition, the same ad
 ## Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
-The `sendcurrency` API can be used to send and convert funds. 
+The `sendcurrency` API can be used to send and convert funds.
 **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
 ```
-verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
 ```
 **Sending VRSCTEST from all wallet funds to two recipients (alice@ and bob@):**
 ```
-verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]' 
+verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]'
 ```
 **Converting VRSCTEST to another currency, TESTCOIN:**
 ```
-verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"TESTCOIN"}]' 
+verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"TESTCOIN"}]'
 ```
 **Preconverting to new currency, NEWCOIN, before it is active:**
 ```
-verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
 ```
 
 
@@ -16974,8 +17288,8 @@ verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "conve
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -16984,7 +17298,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -17066,7 +17380,7 @@ A txt file containing the signer, standard sha256 file checksum, and signature, 
 ```
 true
 ```
-## New in v0.7.1-4 
+## New in v0.7.1-4
 This non-mandatory release is compatible with mainnet with mininal changes from v0.7.1-1. It contains fixes necessary to continue participating in the testnet launched in v0.7.1-1, without reset of your wallet or holdings, if you started using the VRSCTEST multi-currency testnet in v0.7.1-1 or later. You should be able to synchronize easily, but if you are unable to synchronize VRSCTEST shortly after connecting, try deleting the data in your VRSCTEST folder, and retain the wallet.dat file.
 
 # Verus Testnet with Multi-currency Fractional Reserves and Currency Launch Protocol
@@ -17093,22 +17407,22 @@ While this 0.7.1 testnet enables on-chain token currency definition, the same ad
 ## Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
-The `sendcurrency` API can be used to send and convert funds. 
+The `sendcurrency` API can be used to send and convert funds.
 **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
 ```
-verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
 ```
 **Sending VRSCTEST from all wallet funds to two recipients (alice@ and bob@):**
 ```
-verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]' 
+verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]'
 ```
 **Converting VRSCTEST to another currency, TESTCOIN:**
 ```
-verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"TESTCOIN"}]' 
+verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"TESTCOIN"}]'
 ```
 **Preconverting to new currency, NEWCOIN, before it is active:**
 ```
-verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
 ```
 
 
@@ -17117,8 +17431,8 @@ verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "conve
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -17127,7 +17441,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -17237,22 +17551,22 @@ While this 0.7.1 testnet enables on-chain token currency definition, the same ad
 ## Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
-The `sendcurrency` API can be used to send and convert funds. 
+The `sendcurrency` API can be used to send and convert funds.
 **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
 ```
-verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
 ```
 **Sending VRSCTEST from all wallet funds to two recipients (alice@ and bob@):**
 ```
-verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]' 
+verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]'
 ```
 **Converting VRSCTEST to another currency, TESTCOIN:**
 ```
-verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"TESTCOIN"}]' 
+verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"TESTCOIN"}]'
 ```
 **Preconverting to new currency, NEWCOIN, before it is active:**
 ```
-verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
 ```
 
 
@@ -17261,8 +17575,8 @@ verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "conve
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -17271,7 +17585,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -17377,22 +17691,22 @@ While this 0.7.1 testnet enables on-chain token currency definition, the same ad
 ## Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
-The `sendcurrency` API can be used to send and convert funds. 
+The `sendcurrency` API can be used to send and convert funds.
 **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
 ```
-verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
 ```
 **Sending VRSCTEST from all wallet funds to two recipients (alice@ and bob@):**
 ```
-verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]' 
+verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]'
 ```
 **Converting VRSCTEST to another currency, TESTCOIN:**
 ```
-verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"TESTCOIN"}]' 
+verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"TESTCOIN"}]'
 ```
 **Preconverting to new currency, NEWCOIN, before it is active:**
 ```
-verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
 ```
 
 
@@ -17401,8 +17715,8 @@ verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "conve
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -17411,7 +17725,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -17517,22 +17831,22 @@ While this 0.7.1 testnet enables on-chain token currency definition, the same ad
 ## Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
-The `sendcurrency` API can be used to send and convert funds. 
+The `sendcurrency` API can be used to send and convert funds.
 **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
 ```
-verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
 ```
 **Sending VRSCTEST from all wallet funds to two recipients (alice@ and bob@):**
 ```
-verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]' 
+verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]'
 ```
 **Converting VRSCTEST to another currency, TESTCOIN:**
 ```
-verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"TESTCOIN"}]' 
+verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"TESTCOIN"}]'
 ```
 **Preconverting to new currency, NEWCOIN, before it is active:**
 ```
-verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
 ```
 
 
@@ -17541,8 +17855,8 @@ verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "conve
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -17551,7 +17865,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -17654,22 +17968,22 @@ While this 0.7.1 testnet enables on-chain token currency definition, the same ad
 ## Sending and Converting Currency
 **Warning: All testnet coins/currencies have no value and will disappear whenever VRSCTEST is reset**
 
-The `sendcurrency` API can be used to send and convert funds. 
+The `sendcurrency` API can be used to send and convert funds.
 **Sending VRSCTEST from a single address (bob@) to a single recipient (alice@):**
 ```
-verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]' 
+verus -chain=VRSCTEST sendcurrency "bob@" '[{"currency":"vrsctest","address":"alice@","amount":10}]'
 ```
 **Sending VRSCTEST from all wallet funds to two recipients (alice@ and bob@):**
 ```
-verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]' 
+verus -chain=VRSCTEST sendcurrency "*" '[{"currency":"vrsctest","address":"alice@","amount":10},{"currency":"VRSCTEST","address":"bob@","amount":10}]'
 ```
 **Converting VRSCTEST to another currency, TESTCOIN:**
 ```
-verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"TESTCOIN"}]' 
+verus -chain=VRSCTEST sendcurrency "*" '[{"address":"bob@","amount":10, "convertto":"TESTCOIN"}]'
 ```
 **Preconverting to new currency, NEWCOIN, before it is active:**
 ```
-verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]' 
+verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "convertto":"NEWCOIN", "preconvert":true, "refundto":"alice@"}]'
 ```
 
 
@@ -17678,8 +17992,8 @@ verus -chain=VRSCTEST sendcurrency "*" '[{"address":"alice@","amount":10, "conve
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -17688,7 +18002,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -17785,7 +18099,7 @@ At block 1053660, the Verus Mainnet Protocol upgraded to the new Komodo Notary N
 - A new “sendcurrency” API for the command line provides more control when sending from and to multiple addresses or identities.
 
 
-- “updateidentity`  will now be able to change the case of characters in the name of a VerusID in the global locale. 
+- “updateidentity`  will now be able to change the case of characters in the name of a VerusID in the global locale.
 
 
 - Revocation identity will now lose all control over an ID after revocation, including the ability to still change the revocation identity itself, which it used to retain. After revocation now, the recovery identity will have full control over the revoked ID.
@@ -17850,10 +18164,10 @@ Although the network is running smoothly after the upgrade, an issue was identif
 - Staking will now work on all normal ID balances, enabling full use of IDs for storing and staking funds.
 
 
-- A new �`sendcurrency` API for the command line provides more control when sending from and to multiple addresses or identities.
+- A new �`sendcurrency` API for the command line provides more control when sending from and to multiple addresses or identities.
 
 
-- `updateidentity`  will now be able to change the case of characters in the name of a VerusID in the global locale. 
+- `updateidentity`  will now be able to change the case of characters in the name of a VerusID in the global locale.
 
 
 - Revocation identity will now lose all control over an ID after revocation, including the ability to still change the revocation identity itself, which it used to retain. After revocation now, the recovery identity will have full control over the revoked ID.
@@ -17919,7 +18233,7 @@ At block 1053660, the Verus Mainnet Protocol will upgrade to the new Komodo Nota
 - A new `sendcurrency` API for the command line provides more control when sending from and to multiple addresses or identities.
 
 
-- `updateidentity` will now be able to change the case of characters in the name of a VerusID in the global locale. 
+- `updateidentity` will now be able to change the case of characters in the name of a VerusID in the global locale.
 
 
 - Revocation identity will now lose all control over an ID after revocation, including the ability to still change the revocation identity itself, which it used to retain. After revocation now, the recovery identity will have full control over the revoked ID.
@@ -17929,7 +18243,7 @@ At block 1053660, the Verus Mainnet Protocol will upgrade to the new Komodo Nota
 
 ## Notable Changes:
 - Fix Komodo S4 notary count
-- `sendcurrency` does not require coinbase funds to be shielded. 
+- `sendcurrency` does not require coinbase funds to be shielded.
 
 # Disclaimer
 
@@ -17989,7 +18303,7 @@ At block 1053660, the Verus Mainnet Protocol will upgrade to the new Komodo Nota
 - A new `sendcurrency` API for the command line provides more control when sending from and to multiple addresses or identities.
 
 
-- `updateidentity`  will now be able to change the case of characters in the name of a VerusID in the global locale. 
+- `updateidentity`  will now be able to change the case of characters in the name of a VerusID in the global locale.
 
 
 - Revocation identity will now lose all control over an ID after revocation, including the ability to still change the revocation identity itself, which it used to retain. After revocation now, the recovery identity will have full control over the revoked ID.
@@ -18081,8 +18395,8 @@ Tokens can be controlled by the blockchain and used for many purposes, including
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -18091,7 +18405,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -18162,8 +18476,8 @@ Tokens can be controlled by the blockchain and used for many purposes, including
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -18172,7 +18486,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -18241,8 +18555,8 @@ Tokens can be controlled by the blockchain and used for many purposes, including
 ## Defining a Currency
 
 To create a currency of a specific name, you need an ID of the same name. The controller of this ID is the only one who can create a currency of that name, and they can only do so once.
-So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@, 
-that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold. 
+So, let's hypothetically assume I have 3 IDs, one named gold@, one named mycoin@, and one named mike@. I would like to have one currency, gold@,
+that I somehow launch in a way that maps it in a way that can be widely trusted to a specific, auditable store of gold.
 I also would like to launch a token called mycoin@, which is something like a Kickstarter, where a business, "my", offers to attribute the coins some utility or product value if the purchase exceeds a certain level.
 First, I could define the currency "gold" as follows:
 ```
@@ -18251,7 +18565,7 @@ First, I could define the currency "gold" as follows:
 of course, since this is a test currency, I send myself some to start. The identity of the currency must be funded with at least 10 VRSCTEST before sending the transaction returned from this command to
 initiate a currency launch that will start at 50 blocks from when it was made (default), and that must have 1000 VRSCTEST preconverted at 0.01 VRSCTEST per GOLD in order to launch.
 all of this happens as part of the mining process, since mining the blocks that launch a currency earn the 0.025% conversion fees of participation
-in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches. 
+in the launch, converting VRSCTEST to GOLD. I could send the following command before the block where GOLD token launches.
 After it launches, the only way at present to create new tokens is with a centralized issuance option. To convert VRSCTEST to GOLD, you could issue the command:
 ```
 ./verus -chain=VRSCTEST sendcurrency "*" '[{"address":"mike@","convertto":"gold","preconvert":1,"amount":100}]'
@@ -18921,7 +19235,7 @@ https://www.kaspersky.com/blog/not-a-virus/18015/
 
 This release includes activation support for VerusID, and relative adjustment to the CPU and FPGA-equalizing VerusHash 2.1 Algorithm
 
-**AT BLOCK 800200, THE VERUS MAINNET PROTOCOL HARDFORKED. THIS UPDATE IS MANDATORY TO REMAIN ON THE VERUS MAINNET. 
+**AT BLOCK 800200, THE VERUS MAINNET PROTOCOL HARDFORKED. THIS UPDATE IS MANDATORY TO REMAIN ON THE VERUS MAINNET.
 
 # Verus ID
 VerusIDs are a fully functional blockchain protocol, not just an ID system. There is no corporation involved in the protocol, unlike most blockchain ID implementations. VerusIDs provide plenty of opportunity for identity applications. Specifically, VerusID provides:
@@ -19002,7 +19316,7 @@ Avast and Kaspersky may flag the software as "not-a-virus" or "PUP". These are w
 To find out more about the false positives, review the following resources:
 https://blog.malwarebytes.com/detections/pup-optional-bitcoinminer/
 https://www.kaspersky.com/blog/not-a-virus/18015/
-Thanks to @hellcatz and his constant development, improvement, and support of LuckPool.net for Verus and other coins they mine, we have fixed an issue that would have allowed the old hash algorithm to be used after the VerusID and VerusHash 2.1 network activation. 
+Thanks to @hellcatz and his constant development, improvement, and support of LuckPool.net for Verus and other coins they mine, we have fixed an issue that would have allowed the old hash algorithm to be used after the VerusID and VerusHash 2.1 network activation.
 
 This release includes activation support for VerusID, and relative adjustment to the CPU and FPGA-equalizing VerusHash 2.1 Algorithm
 
@@ -19679,7 +19993,7 @@ https://www.kaspersky.com/blog/not-a-virus/18015/
 Updating to v0.5.9 or more recent version is considered CRITICAL, not mandatory. We recommended that all users upgrade to this version of the Verus CLI or GUI wallet immediately and discontinue use of previous wallets.
 
 # Notable Changes
-- Fixed address parsing in getrawtransaction 
+- Fixed address parsing in getrawtransaction
 
 
 # Testnet Reset
@@ -19715,9 +20029,9 @@ With no costs beyond public blockchain network fees, Verus PBaaS Reserve technol
 
 # Chain definition:
 
-- Maximum of 3 eras 
+- Maximum of 3 eras
 - Minimum 500 blocks worth of notarizations.
-- Minimum of 0.01 VRSCTEST per block of notarization. 
+- Minimum of 0.01 VRSCTEST per block of notarization.
 VRSCTEST are needed in wallet to make a chain.
 
 **Sample chain definition:**
@@ -19848,9 +20162,9 @@ With no costs beyond public blockchain network fees, Verus PBaaS Reserve technol
 
 # Chain definition:
 
-- Maximum of 3 eras 
+- Maximum of 3 eras
 - Minimum 500 blocks worth of notarizations.
-- Minimum of 0.01 VRSCTEST per block of notarization. 
+- Minimum of 0.01 VRSCTEST per block of notarization.
 VRSCTEST are needed in wallet to make a chain.
 
 **Sample chain definition:**
@@ -19984,9 +20298,9 @@ With no costs beyond public blockchain network fees, Verus PBaaS Reserve technol
 
 # Chain definition:
 
-- Maximum of 3 eras 
+- Maximum of 3 eras
 - Minimum 500 blocks worth of notarizations.
-- Minimum of 0.01 VRSCTEST per block of notarization. 
+- Minimum of 0.01 VRSCTEST per block of notarization.
 VRSCTEST are needed in wallet to make a chain.
 
 **Sample chain definition:**
@@ -20095,9 +20409,9 @@ With no costs beyond public blockchain network fees, Verus PBaaS Reserve technol
 
 # Chain definition:
 
-- Maximum of 3 eras 
+- Maximum of 3 eras
 - Minimum 500 blocks worth of notarizations.
-- Minimum of 0.01 VRSCTEST per block of notarization. 
+- Minimum of 0.01 VRSCTEST per block of notarization.
 VRSCTEST are needed in wallet to make a chain.
 
 **Sample chain definition:**
@@ -20195,9 +20509,9 @@ With no costs beyond public blockchain network fees, Verus PBaaS Reserve technol
 
 # Chain definition:
 
-- Maximum of 3 eras 
+- Maximum of 3 eras
 - Minimum 500 blocks worth of notarizations.
-- Minimum of 0.01 VRSCTEST per block of notarization. 
+- Minimum of 0.01 VRSCTEST per block of notarization.
 VRSCTEST are needed in wallet to make a chain.
 
 **Sample chain definition:**
@@ -20292,13 +20606,13 @@ The Verus public testnet enables anyone to make new blockchains and currencies, 
 
 Verus PBaaS Reserve technology enables any organization of any size to make a currency with its own blockchain, support it in world class wallets, develop its own applications, and use it for payments worldwide that can be converted to the reserve currency without ever having to leave the blockchain network. Each blockchain is independent and connected through the Verus Reserve protocol.
 # Notable Changes
-- Minor fix to export transactions 
+- Minor fix to export transactions
 
 # Chain definition:
 
-- Maximum of 3 eras 
+- Maximum of 3 eras
 - Minimum 500 blocks worth of notarizations.
-- Minimum of 0.01 VRSCTEST per block of notarization. 
+- Minimum of 0.01 VRSCTEST per block of notarization.
 VRSCTEST are needed in wallet to make a chain.
 
 **Sample chain definition:**
@@ -20382,15 +20696,15 @@ The Verus public testnet enables anyone to make new blockchains and currencies, 
 
 Verus PBaaS Reserve technology enables any organization of any size to make a currency with its own blockchain, support it in world class wallets, develop its own applications, and use it for payments worldwide that can be converted to the reserve currency without ever having to leave the blockchain network. Each blockchain is independent and connected through the Verus Reserve protocol.
 # Notable Changes
-- Fixed daemon output export error message on VRSCTEST 
+- Fixed daemon output export error message on VRSCTEST
 - Fixed fees bouncing back from a reserve send to Verus and allow exports to continue if done incorrectly
 - Include currency state in chain definitions for both getchaindefinition and getdefinedchains
 
 # Chain definition:
 
-- Maximum of 3 eras 
+- Maximum of 3 eras
 - Minimum 500 blocks worth of notarizations.
-- Minimum of 0.01 VRSCTEST per block of notarization. 
+- Minimum of 0.01 VRSCTEST per block of notarization.
 VRSCTEST are needed in wallet to make a chain.
 
 **Sample chain definition:**
@@ -20480,9 +20794,9 @@ Verus PBaaS Reserve technology enables any organization of any size to make a cu
 
 # Chain definition:
 
-- Maximum of 3 eras 
+- Maximum of 3 eras
 - Minimum 500 blocks worth of notarizations.
-- Minimum of 0.01 VRSCTEST per block of notarization. 
+- Minimum of 0.01 VRSCTEST per block of notarization.
 VRSCTEST are needed in wallet to make a chain.
 
 **Sample chain definition:**
@@ -20571,9 +20885,9 @@ Verus PBaaS Reserve technology enables any organization of any size to make a cu
 ./verusd -chain=VRSCTEST definechain '{"name":"RESERVEWITHPREMINE","paymentaddress":"R9LkTaMn1XpjeorE4RjM6pMcy5Nxkx9jPM","premine":50000000000000,"initialcontribution":5000000000000,"conversion":100000000,"minpreconvert":45000000000000,"maxpreconvert":100000000000000,"launchfee":0,"billingperiod":14400,"notarizationreward":100000000000,"eras":[{"reward":5000000000,"decay":0,"halving":0,"eraend":0,"eraoptions":1}],"nodes":[{"networkaddress":"ipaddress:port","paymentaddress":"R9LkTaMn1XpjeorE4RjM6pMcy5Nxkx9jPM"},
 {"networkaddress":"2ndipaddress:port","paymentaddress":"R9LkTaMn1XpjeorE4RjM6pMcy5Nxkx9jPM"}]}'
 ```
-Maximum of 3 eras 
+Maximum of 3 eras
 Minimum 500 blocks worth of notarizations.
-Minimum of 0.01 VRSCTEST per block of notarization. 
+Minimum of 0.01 VRSCTEST per block of notarization.
 VRSCTEST are needed in wallet to make a chain.
 
 The example above defines a chain that emits a premine to the indicated address and also converts all contributions up to a maximum amount to the native chain currency at launch at a 100%, 1:1 conversion price. All contributions will enter the currency's reserve deposits, and the more contributions on this chain, the higher the starting reserve ratio will be. If the minimum contributions are not met, the chain will fail to start and all contributions can be spent back to the original contributors.
@@ -20691,7 +21005,7 @@ This release does not support  the PBaaS testnet. To participate in the Pbaas te
 Renamed komodod and komodo-cli to verusd and verus and removed wrappers.
 Minor staking improvements.
 Fix longest chain reporting
-Fix getchaintips bug 
+Fix getchaintips bug
 Preparations for Pbaas
 
 # Disclaimer
@@ -20719,9 +21033,9 @@ Please note that this is a test release intended to use for testing and developm
 ```
 ./verusd -chain=VRSCTEST definechain '{ "name":"SOMECOIN", "eras": [{"reward" : 10000000000}], "notarizationreward" : 1440000000, "billingperiod" : 1440, "nodes" : [{"nodeaddress" : "127.0.0.1:2500", "paymentaddress" : ""}, {"nodeaddress" : "127.0.0.1:2501", "paymentaddress" : "RDyDzC5JB66Y29fzBkamywqEn1PJXTzj8B"}]}'
 ```
-Maximum of 3 eras 
+Maximum of 3 eras
 Minimum 500 blocks worth of notarizations.
-Minimum of 0.01 VRSCTEST per block of notarization. 
+Minimum of 0.01 VRSCTEST per block of notarization.
 VRSCTEST are needed in wallet to make a chain.
 
 **Once a chain is made, anyone running the local VRSCTEST chain can connect to any defined chain with the command:**
@@ -20746,9 +21060,9 @@ Please note that this is a test release intended to use for testing and developm
 ```
 ./verusd -chain=VRSCTEST definechain '{ "name":"SOMECOIN", "eras": [{"reward" : 10000000000}], "notarizationreward" : 1440000000, "billingperiod" : 1440, "nodes" : [{"nodeaddress" : "127.0.0.1:2500", "paymentaddress" : ""}, {"nodeaddress" : "127.0.0.1:2501", "paymentaddress" : "RDyDzC5JB66Y29fzBkamywqEn1PJXTzj8B"}]}'
 ```
-Maximum of 3 eras 
+Maximum of 3 eras
 Minimum 500 blocks worth of notarizations.
-Minimum of 0.01 VRSCTEST per block of notarization. 
+Minimum of 0.01 VRSCTEST per block of notarization.
 VRSCTEST are needed in wallet to make a chain.
 
 **Once a chain is made, anyone running the local VRSCTEST chain can connect to any defined chain with the command:**
@@ -20773,9 +21087,9 @@ Please note that this is a test release intended to use for testing and developm
 ```
 ./verusd -chain=VRSCTEST definechain '{ "name":"SOMECOIN", "eras": [{"reward" : 10000000000}], "notarizationreward" : 1440000000, "billingperiod" : 1440, "nodes" : [{"nodeaddress" : "127.0.0.1:2500", "paymentaddress" : ""}, {"nodeaddress" : "127.0.0.1:2501", "paymentaddress" : "RDyDzC5JB66Y29fzBkamywqEn1PJXTzj8B"}]}'
 ```
-Maximum of 3 eras 
+Maximum of 3 eras
 Minimum 500 blocks worth of notarizations.
-Minimum of 0.01 VRSCTEST per block of notarization. 
+Minimum of 0.01 VRSCTEST per block of notarization.
 VRSCTEST are needed in wallet to make a chain.
 
 **Once a chain is made, anyone running the local VRSCTEST chain can connect to any defined chain with the command:**
@@ -20800,9 +21114,9 @@ Please note that this is a test release intended to use for testing and developm
 ```
 ./verusd -chain=VRSCTEST definechain '{ "name":"SOMECOIN", "eras": [{"reward" : 10000000000}], "notarizationreward" : 1440000000, "billingperiod" : 1440, "nodes" : [{"nodeaddress" : "127.0.0.1:2500", "paymentaddress" : ""}, {"nodeaddress" : "127.0.0.1:2501", "paymentaddress" : "RDyDzC5JB66Y29fzBkamywqEn1PJXTzj8B"}]}'
 ```
-Maximum of 3 eras 
+Maximum of 3 eras
 Minimum 500 blocks worth of notarizations.
-Minimum of 0.01 VRSCTEST per block of notarization. 
+Minimum of 0.01 VRSCTEST per block of notarization.
 VRSCTEST are needed in wallet to make a chain.
 
 **Once a chain is made, anyone running the local VRSCTEST chain can connect to any defined chain with the command:**
@@ -20857,9 +21171,9 @@ Do not use as main wallet
 ```
 ./komodo-cli -chain=VRSCTEST definechain '{ "name":"SOMECOIN", "eras": [{"reward" : 10000000000}], "notarizationreward" : 1440000000, "billingperiod" : 1440, "nodes" : [{"nodeaddress" : "127.0.0.1:2500", "paymentaddress" : ""}, {"nodeaddress" : "127.0.0.1:2501", "paymentaddress" : "RDyDzC5JB66Y29fzBkamywqEn1PJXTzj8B"}]}'
 ```
-Maximum of 3 eras 
+Maximum of 3 eras
 Minimum 500 blocks worth of notarizations.
-Minimum of 0.01 VRSCTEST per block of notarization. 
+Minimum of 0.01 VRSCTEST per block of notarization.
 VRSCTEST are needed in wallet to make a chain.
 
 **Once a chain is made, anyone running the local VRSCTEST chain can connect to any defined chain with the command:**
@@ -20885,9 +21199,9 @@ Do not use as main wallet
 ```
 ./komodo-cli -chain=VRSCTEST definechain '{ "name":"SOMECOIN", "eras": [{"reward" : 10000000000}], "notarizationreward" : 1440000000, "billingperiod" : 1440, "nodes" : [{"nodeaddress" : "127.0.0.1:2500", "paymentaddress" : ""}, {"nodeaddress" : "127.0.0.1:2501", "paymentaddress" : "RDyDzC5JB66Y29fzBkamywqEn1PJXTzj8B"}]}'
 ```
-Maximum of 3 eras 
+Maximum of 3 eras
 Minimum 500 blocks worth of notarizations.
-Minimum of 0.01 VRSCTEST per block of notarization. 
+Minimum of 0.01 VRSCTEST per block of notarization.
 VRSCTEST are not paid out yet, but they are needed them in wallet to make a chain.
 
 **Once a chain is made, anyone running the local VRSCTEST chain can connect to any defined chain with the command:**
@@ -20975,10 +21289,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 **MacOS:** https://www.virustotal.com/#/file/d96bd2afb5db178dbc07cbe1708892e3d08c6b7984c32a0064a3dcfb2d2943dc/detection
 **Linux:** https://www.virustotal.com/#/file/1b08617478b2b84c3d1181a6f93f9bc6359ac57e2c434acd8e57d8b603988a9f/detection
-**Windows:** 
+**Windows:**
 https://www.virustotal.com/#/file/040fa02e57c2e55fd0f5fc70ef8b8ea7c38e54c10fa16e967a147c9614d1fe50/detection
 
-Avast and Kaspersky may flag the software as "not-a-virus" or "PUP". These are warnings that you are installing mining software, which may be installed by a third party to exploit your PC. 
+Avast and Kaspersky may flag the software as "not-a-virus" or "PUP". These are warnings that you are installing mining software, which may be installed by a third party to exploit your PC.
 To find out more about the false positives, review the following resources:
 https://blog.malwarebytes.com/detections/pup-optional-bitcoinminer/
 https://www.kaspersky.com/blog/not-a-virus/18015/
@@ -20994,9 +21308,9 @@ Fixed zfunds calculation on coinsupply RPC
 Fixed bug preventing Mac builds from mining with the enhancements introduced in v0.5.3
 
 
-Linux and Windows only release, MacOS on the way, Mac users should remain on version 5.1 
+Linux and Windows only release, MacOS on the way, Mac users should remain on version 5.1
 To upgrade your wallet, run the agama-upgrade script included and enter the directory of your Verus Enhanced Agama app
-Fixed one not fully portable call in the portable code 
+Fixed one not fully portable call in the portable code
 # IMPORTANT
 
 ****THIS IS A MANDATORY UPDATE, AND IF YOU DO NOT UPDATE, YOU WILL BE UNABLE TO ACCESS THE MAIN VERUS CHAIN AFTER BLOCK 310000.****
