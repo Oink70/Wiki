@@ -25,8 +25,8 @@ Go to the appropriate location for your OS as mentioned above.
 
 Add a similar list to the bottom of your `VRSC.conf`, just below `rpcallowip=127.0.0.1`:
 ```
-  addnode=157.90.113.198
-  addnode=95.217.1.76
+  addnode=157.90.113.198:27485
+  addnode=95.217.1.76:27485
 ```
 Save and exit the file.
 An up-to-date list of working nodes can be found in Verus Discord in the #tipbot channel, by messaging `/peerinfo` in that channel.
@@ -36,8 +36,8 @@ After you added nodes, remove `peers.dat` that is in the VRSC folder.
 Make sure you don't remove any other files/folders, or you'll have to [bootstrap](http://blacksquare/#!how-to/how-to_bootstrap.md) your wallet.
 Then start your wallet as you're used to.
 
-If the problem persists, continue with this WIKI: [Recover from forking, network or old wallet problems](http://blacksquare/#!faq-allos/faq-allos19_what_should_i_do_if_i_end_up_on_my_own_fork_because_of_a_network_issue_or_having_an_old_version_of_the_wallet.md)
+If the problem persists, continue with this WIKI: [Recover from forking, network or old wallet problems](https://wiki.verus.io/#!faq-allos/faq-allos19_what_should_i_do_if_i_end_up_on_my_own_fork_because_of_a_network_issue_or_having_an_old_version_of_the_wallet.md)
 
 Submitted by Oink.vrsc@ & Thoskk.vrsc@
 
-Note: last revision date 2023-05-13.
+Note: last revision date 2023-06-03.
