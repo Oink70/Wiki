@@ -1369,7 +1369,7 @@ Examples:
 > verus listidentities '{"name" : "myname"}'
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listidentities", "params": ['{"name" : "myname"}'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
-### `recoveridentity "jsonidentity" (returntx) (tokenrecover) (feeoffer) (sourceoffunds)` ***`UPDATED`***
+### `recoveridentity "jsonidentity" (returntx) (tokenrecover) (feeoffer) (sourceoffunds)`
 #### Arguments:
 ```
        "returntx"                        (bool,   optional) defaults to false and transaction is sent, if true, transaction is signed by this wallet and returned
@@ -1386,7 +1386,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "recoveridentity", "params": ['{"name" : "myname"}'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `registeridentity "jsonidregistration" (returntx) feeoffer sourceoffunds` ***`UPDATED`***
+### `registeridentity "jsonidregistration" (returntx) feeoffer sourceoffunds`
 `registeridentity` needs the values from `RegisterNameCommitment` output to register a VerusID
 
 #### Arguments:
@@ -1457,7 +1457,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "registeridentity", "params": [jsonidregistration] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `registernamecommitment "name" "controladdress" ("referralidentity") ("parentnameorid") ("sourceoffunds")` ***`UPDATED`***
+### `registernamecommitment "name" "controladdress" ("referralidentity") ("parentnameorid") ("sourceoffunds")`
 Registers a name commitment, which is required as a source for the name to be used when registering an identity. The name commitment hides the name itself while ensuring that the miner who mines in the registration cannot front-run the name unless they have also registered a name commitment for the same name or are willing to forfeit the offer of payment for the chance that a commitment made now will allow them to register the name in the future.
 
 #### Arguments:
@@ -1490,7 +1490,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "registernamecommitment", "params": ["name"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `revokeidentity "nameorID" (returntx) (tokenrevoke) (feeoffer) (sourceoffunds)` ***`UPDATED`***
+### `revokeidentity "nameorID" (returntx) (tokenrevoke) (feeoffer) (sourceoffunds)`
 #### Arguments:
 ```
 "nameorID"                        (string, required)  the unique name to commit to. creating a name commitment is not a registration, and if one is
@@ -2033,20 +2033,24 @@ Examples:
 ### `getminingdistribution`
 Retrieves current mining distribution
 
-#### Arguments:
-    "name@ || iid"        (string, required) name followed by "@" or i-address of an identity
-    "heightstart"         (number, optional) default=0, only return content from this height forward, inclusive
-    "heightend"           (number, optional) default=0 which means max height, only return content up to this height,
-                          inclusive. -1 means also return values from the mempool.
-    "txproofs"            (bool, optional) default=false, if true, returns proof of ID
-    "txproofheight"       (number, optional) default="height", height from which to generate a proof
+#### Arguments
+NONE
 
 #### Result:
+```
+NULL object if not set
+If set:
+{
+  "uniquedestination1":value    (key/number) valid destination address and relative value output to it
+  "uniquedestination2":value    (key/number) destination address and relative value output
+  ...
+}
+```
 
 #### Examples:
 ```bash
-> verus getidentityhistory "name@"
-> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getidentityhistory", "params": ["name@"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+> verus getminingdistribution
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getminingdistribution", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ### `getmininginfo`
@@ -2296,7 +2300,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "definecurrency", "params": [jsondefinition] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `estimateconversion '{"currency":"name","convertto":"name","amount":n}'` 
+### `estimateconversion '{"currency":"name","convertto":"name","amount":n}'`
 This estimates conversion from one currency to another, taking into account pending conversions, fees and slippage.
 
 #### Arguments
@@ -2361,12 +2365,12 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getbestproofroot", "params": ["{"proofroots":["version":n,"type":n,"systemid":"currencyidorname","height":n,"stateroot":"hex","blockhash":"hex","power":"hex"],"lastconfirmed":n}"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getcurrency "chainname"`
+### `getcurrency "currencyname"`
 Returns a complete definition for any given chain if it is registered on the blockchain. If the chain requested is NULL, chain definition of the current chain is returned.
 
 #### Arguments:
 ```
-1. "chainname"                     (string, optional) name of the chain to look for. no parameter returns current chain in daemon.
+1. "currencyname"                     (string, optional) name of the chain to look for. no parameter returns current chain in daemon.
 ```
 #### Result:
 ```json
@@ -2472,7 +2476,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getcurrencystate", "params": ["currencynameorid" ("n") ("connectedchainid")] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getcurrencytrust '["currencyid",...]'` 
+### `getcurrencytrust '["currencyid",...]'`
 
 #### Arguments
 ```json
@@ -2696,12 +2700,14 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getlaunchinfo", "params": ["currencyid"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getnotarizationdata "currencyid"`
+### `getnotarizationdata "currencyid" (getevidence) (separatecounterevidence)`
 Returns the latest PBaaS notarization data for the specifed currencyid.
 
 Arguments
 ```
-1. "currencyid"                  (string, required) the hex-encoded ID or string name  search for notarizations on
+1. "currencyid"                  (string, required) the hex-encoded ID or string name search for notarizations on
+2. "(getevidence)"  	           (bool, optional)    if true, returns notarization evidence as well as other data
+3. "(separatecounterevidence)"   (bool, optional)    if true, counter-evidence is processed and returned with proofroots
 ```
 #### Result:
 ```json
@@ -2827,6 +2833,30 @@ Returns the entries for a light wallet Sapling tree state.
    ]
 ```
 Examples:
+```bash
+> verus getsaplingtree name
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getsaplingtree", "params": [name] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
+### `getsaplingtree "n"` ***`NEW`***
+Returns the entries for a light wallet Sapling tree state.
+
+#### Arguments:
+1.   "n" or "m,n" or "m,n,o"         (int or string, optional) height or inclusive range with optional step at which to get the Sapling tree state
+                                                               If not specified, the latest currency state and height is returned
+#### Result:
+```json
+   [
+       {
+           "network": "VRSC",
+           "height": n,
+           "hash": "hex"
+           "time": n,
+           "tree": "hex"
+       },
+   ]
+```
+#### Examples:
 ```bash
 > verus getsaplingtree name
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getsaplingtree", "params": [name] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
@@ -4008,7 +4038,7 @@ As a json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "encryptwallet", "params": ["my pass phrase"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getaccount "VRSCTEST_address"`
+### `getaccount "VRSC_address"`
 DEPRECATED. Returns the account associated with the given address.
 
 #### Arguments:
@@ -4270,6 +4300,7 @@ Returns an object containing various wallet state info.
   "immature_balance": xxxxxx, (numeric) the total immature balance of the wallet in VRSC
   "immature_reserve_balance": xxxxxx, (numeric) total immature reserve balance of the wallet in VRSC
   "eligible_staking_balance": xxxxxx, (numeric) eligible staking balance in VRSC
+  "reserve_balance": {"currency":XXXXXX,...} (json) json with currencies and the balances
   "txcount": xxxxxxx,         (numeric) the total number of transactions in the wallet
   "keypoololdest": xxxxxx,    (numeric) the timestamp (seconds since GMT epoch) of the oldest pre-generated key in the key pool
   "keypoolsize": xxxx,        (numeric) how many new keys are pre-generated
@@ -4348,7 +4379,7 @@ Imports taddr keys from a wallet dump file (see dumpwallet).
 Examples:
 
 Dump the wallet
-```vash
+```bash
 > verus dumpwallet "nameofbackup"
 ```
 Import the wallet
@@ -5510,4 +5541,4 @@ Perform a joinsplit and return the JSDescription.
 
 compiled by Oink.vrsc@, additions by Mike@, grewalsatinder@ and allbits@
 
-Note: last revision date 2023-05-30.
+Note: last revision date 2024-01-15.

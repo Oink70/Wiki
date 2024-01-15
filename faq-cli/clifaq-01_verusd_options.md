@@ -116,10 +116,6 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
        by a range of timestamps (default: 0)
        !!! Activating requires reindexing, not compatible with bootstrap!!!
 
-   `-txindex`
-       Maintain a full transaction index, used by the getrawtransaction rpc
-       call (default: 1)
-
   `-spentindex`
        Maintain a full spent index, used to query the spending txid and input
        index for an outpoint (default: 1)
@@ -217,7 +213,7 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
 
   `-torpassword=<pass>`
        Tor control port password (default: empty)
-  
+
   `-tlsdisable=<0 or 1>`
        Disable TLS connections. (default: 0)
 
@@ -260,6 +256,13 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
        mempool, useful e.g. for a gateway
 
 ## Wallet options:
+
+  `-arbitragecurrencies`
+     Either a JSON array or a comma separated list of currency names.
+
+  `-arbitrageaddress`
+     A valid wallet address or identity controlled by this wallet that will
+     hold the arbitrage currencies to use.
 
   `-cheatcatcher=<sapling-address>`
        same as "-defaultzaddr"
@@ -603,4 +606,4 @@ These are options for developers to debug/test the chain or daemon. These option
 
 compiled by Oink.vrsc@.
 
-Note: last revision date 2023-05-30.
+Note: last revision date 2024-01-15.
