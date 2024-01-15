@@ -4,11 +4,11 @@
 
 $$ Average Time To Find One Block = ( \frac{NetworkHashrate}{LocalHashrate} ) * BlockTime $$
 
-One block = 12 coins (as now)
+One block = 6 coins (as now)
 NetworkHashrate = retrieved by `getmininginfo` command from </>CLI
 LocalHashrate = retrieved by `getmininginfo` command
 BlockTime = 60 seconds (average)
-
+note: The above formula assumes you are already mining and your hashrate is already included in the `NetworkHashrate`. For very large LocalHashrate calculations (what-if-I-had scenario) add it to the NetworkHashrate yourself.
 
 Real example with - 31 threads AMD Ryzen 5950x @ 4.4Ghz -
 
@@ -19,4 +19,4 @@ Bear in mind that these are average times to find a block. In real life you may 
 
 (submitted by @TexWiller, edited by Oink.vrsc@)
 
-note: last revision date 2022-03-23
+note: last revision date 2023-06-21
