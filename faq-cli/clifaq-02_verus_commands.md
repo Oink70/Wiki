@@ -2,7 +2,7 @@
 
 ## Important General Information
 
-### Verus CLI version v1.0.6
+### Verus CLI version v1.2.0-1
 
 #### Usage:
 `verus [options] [command]` Issue a command to the coindaemon
