@@ -30,7 +30,7 @@ Tip: The easiest way is to copy the location above and paste it into your addres
 Watch this video with an explanation how to accomplish the steps above: [Bootstrapping your wallet using the supplied script](https://youtu.be/xgLxzel5t04)
 
 
-## Advanced Issue Resolving Procedure
+## Manual Bootstrap Procedure
 
 ### Necessary files:
 
@@ -68,4 +68,4 @@ Watch this video with an explanation how to accomplish the steps above: [Bootstr
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2021-03-12.
+Note: revision date 20241-01-17.
