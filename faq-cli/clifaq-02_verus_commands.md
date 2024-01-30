@@ -2259,7 +2259,8 @@ All funds to start the currency and for initial conversion amounts must be avail
   "startblock"    : n,             (int,    optional) VRSC block must be notarized into block 1 of PBaaS chain, default curheight + 100
   "endblock"      : n,             (int,    optional) chain is considered inactive after this block height, and a new one may be started
   "currencies"    : "["VRSC",..]", (list, optional) reserve currencies backing this chain in equal amounts
-  "conversions"   : "["xx.xx",..]", (list, optional) if present, must be same size as currencies. pre-launch conversion ratio overrides
+  "weights"       : "["xx.xx",..]",(list, optional) the weight of each reserve currency in a fractional currency
+  "conversions"   : "["xx.xx",..]",(list, optional) if present, must be same size as currencies. pre-launch conversion ratio overrides
   "minpreconversion" : "["xx.xx",..]", (list, optional) must be same size as currencies. minimum in each currency to launch
   "maxpreconversion" : "["xx.xx",..]", (list, optional) maximum in each currency allowed
   "initialcontributions" : "["xx.xx",..]", (list, optional) initial contribution in each currency
@@ -5541,4 +5542,4 @@ Perform a joinsplit and return the JSDescription.
 
 compiled by Oink.vrsc@, additions by Mike@, grewalsatinder@ and allbits@
 
-Note: last revision date 2024-01-15.
+Note: last revision date 2024-01-30.
