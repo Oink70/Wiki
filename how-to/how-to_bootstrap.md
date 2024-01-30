@@ -62,10 +62,10 @@ Link 2: [Download Verus Bootstrap](https://bootstrap.verus.io/)
 
 If you followed these steps, you will have installed/updated the latest version of a wallet for verus, made a backup of your wallet and installed the bootstrap. If desired you can remove the downloaded bootstrap archive to free up space on your hard drive.
 
-## Optional:
+### Optional:
 Watch this video with an explanation how to accomplish the steps above: [Bootstrapping your wallet manually](https://youtu.be/ILr8vDgfPHI)
 
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 20241-01-17.
+Note: revision date 2024-01-17.
