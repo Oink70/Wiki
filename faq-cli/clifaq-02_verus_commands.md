@@ -1837,7 +1837,7 @@ Checks to see if the signature is valid and returns an error for invalid
 #### Examples:
 ```bash
 > verus verifysignature '{"identity":"Verus Coin Foundation.vrsc@", "message":"hello world", "signature":"base64sig"}'
-> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "verifysignature", "params": ['{"identity":"Verus Coin Foundation.vrsc@", "message":"hello world", "signature":"base64sig"}'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "verifysignature", "params": [{"identity":"Verus Coin Foundation.vrsc@", "message":"hello world", "signature":"base64sig"}]}' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ## Marketplace
