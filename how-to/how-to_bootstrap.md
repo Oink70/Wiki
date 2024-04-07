@@ -50,7 +50,7 @@ Link 2: [Download Verus Bootstrap](https://bootstrap.verus.io/)
 	c. extract the file you just downloaded to a suitable location.
 	  On MacOS and Linux you will have extracted an **AppImage** which can be run directly. Windows users need to run the **installer**.
 4. Installing the bootstrap:
-  a. Download the bootstrap from Link 2. (For Windows a zip archive is available to accomodate native extraction. Linux and MacOS users can use the tar.gz archive)
+  a. Download the bootstrap from Link 2.
   b. (Optional, but recommended) Verify the md5, sha256 or sha512 checksum and the signature of your download, to verify that you downloaded an untampered Bootstrap archive.
   c. Remove all files and folders from `VRSC Wallet Location` except `wallet.dat`, `debug.log`, `VRSC.conf` and if applicable `VRSC-bootstrap.*`.
   d. Extract the downloaded archive to `VRSC Wallet location`.  Make absolutely sure the folders `blocks` and `chainstate` are extracted into the correct folder. If the end up in a different folder (eg. `VRSC-bootstrap`-folder) move them to `VRSC Wallet location`.
@@ -68,4 +68,4 @@ Watch this video with an explanation how to accomplish the steps above: [Bootstr
 
 Information compiled by Oink.vrsc@.
 
-Note: revision date 2024-01-17.
+Note: revision date 2024-04-07.
