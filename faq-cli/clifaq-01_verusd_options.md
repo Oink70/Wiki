@@ -2,7 +2,7 @@
 
 ## Important General Information
 
-#### Verus Daemon version 1.2.0-1
+#### Verus Daemon version 1.2.2-4
 
 Usage: `verusd [options]` Start Verus Daemon
 
@@ -54,7 +54,7 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
        How thorough the block verification of -checkblocks is (0-4, default: 3)
 
   `-conf=<file>`
-       Specify configuration file (default: komodo.conf)
+       Specify configuration file (default: VRSC.conf)
 
   `-daemon`
        Run in the background as a daemon and accept commands
@@ -309,6 +309,9 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
   `-spendzeroconfchange`
        Spend unconfirmed change when sending transactions (default: 1)
 
+  `-storagefeefactor`
+       Defaults to 6.0, which is used for 6K outputs to price storage in a currency's TransactionExportFee (ie. 6.0 = 1 TransactionExportFee per K).
+
   `-txconfirmtarget=<n>`
        If paytxfee is not set, include enough fee so transactions begin
        confirmation on average within n blocks (default: 2)
@@ -454,10 +457,10 @@ all AMQP support options require `-experimentalfeatures`.
        networks - default is empty
 
   `-allowdelayednotarizations`
-       Do not notarize in order to prevent slower notarizations (default = %u, notarize to prevent slowing down)
+       Do not notarize in order to prevent slower notarizations (default = 0, notarize to prevent slowing down)
 
   `-alwayssubmitnotarizations`
-       Submit notarizations to notary chain whenevever merge mining/staking and eligible (default = %u, only as needed)
+       Submit notarizations to notary chain whenever merge mining/staking and eligible (default = 0, only as needed)
 
   `-approvecontractupgrade=<0xf09...>`
        When validating blocks, vote to agree to upgrade to the specific
@@ -605,5 +608,4 @@ These are options for developers to debug/test the chain or daemon. These option
 
 
 compiled by Oink.vrsc@.
-
-Note: last revision date 2024-01-15.
+Note: last revision date 2024-05-03.

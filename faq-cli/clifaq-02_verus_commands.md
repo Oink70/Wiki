@@ -2,7 +2,7 @@
 
 ## Important General Information
 
-### Verus CLI version v1.2.0-1
+### Verus CLI version v1.2.2-4
 
 #### Usage:
 `verus [options] [command]` Issue a command to the coindaemon
@@ -1025,7 +1025,7 @@ Takes a cross chain import tx with proof generated on assetchain and extends pro
 
 ### `migrate_converttoexport rawTx dest_symbol export_amount`
 Convert a raw transaction to a cross-chain export.
-If neccesary, the transaction should be funded using `fundrawtransaction`.
+If necesary, the transaction should be funded using `fundrawtransaction`.
 Finally, the transaction should be signed using `signrawtransaction`.
 The finished export transaction, plus the payouts, should be passed to the "`migrate_createimporttransactio`n" method on a KMD node to get the corresponding import transaction.
 
@@ -1581,37 +1581,59 @@ Full json:
 {
   "address":"i-address or friendly name (t-address will result in simple signature w/indicated hash and prefix, nothing else)",
   "prefixstring":"extra string that is hashed during signature and must be supplied for verification",
-  "filename":"filepath/filename" |
-  "message":"any message" |
-  "messagehex":"hexdata" |
-  "messagebase64":"base64data" |
-  "datahash":"256bithex",
-  "vdxfkeys":
-    ["vdxfkey i-address", ...],
-     "vdxfkeynames":["vdxfkeyname, object for getvdxfid API, or friendly name ID -- no i-addresses", ...],
-     "boundhashes":["hexhash", ...],
-  "hashtype": "sha256" | "sha256D" | "blake2b" | "keccak256"
+    "filename":"filepath/filename" |
+    "message":"any message" |
+    "vdxfdata":"vdxf encoded data" |
+    "messagehex":"hexdata" |
+    "messagebase64":"base64data" |
+    "datahash":"256bithex" |
+    "mmrdata":[{
+      "filename | serializedhex | serializedbase64 | vdxfdata | message | datahash":"str"} |
+      "strdata"
+    ],
+  "vdxfkeys": ["vdxfkey i-address", ...],
+  "vdxfkeynames":["vdxfkeyname, object for getvdxfid API, or friendly name ID -- no i-addresses", ...],
+  "boundhashes":["hexhash", ...],
+  "hashtype": "sha256" | "sha256D" | "blake2b" | "keccak256",
+  "encrypttoaddress": "sapling address",              granularly encrypt all data, either all decryptable with viewing key or parts using unique, SSKs
+  "createmmr":"bool",                                 if true, 1 or more objects will be put into a merkle mountain range and the root signed
   "signature":"currentsig"
 }
 ```
+Generates a hash (SHA256 default if "hashtype" not specified) of the data, returns the hash, and signs it with parameters specified
 #### Arguments:
 ```json
 {
   "address":"t-addr or identity"                               (string, required) The transparent address or identity to use for signing.
   "filename" | "message" | "messagehex" | "messagebase64" | "datahash" (string, required) Data to sign
+  "mmrdata":[{"filename | vdxfdata | message | serializedhex | serializedbase64 | datahash":"str"}], (array, optional) Alternate to single data parameters, this enables an MMR signing
+             "mmrsalt":["salt":"str"],                         (string, optional) Protects privacy of leaf nodes of the MMR
+             "mmrhashtype":"sha256" | "sha256D" | "blake2b" | "keccak256", (string, optional) Default is blake2b
+             "priormmr":"[{"idxhash":,"utxoref":{}}]",         (array, optional)  When growing an MMR, the prior hashes can be used to construct the MMR and root w/o data
   "vdxfkeys":["vdxfkey", ...],                                 (array, optional)  Array of vdxfkeys or ID i-addresses
   "vdxfkeynames":["vdxfkeyname", ...],                         (array, optional)  Array of vdxfkey names or fully qualified friendly IDs
   "boundhashes":["hexhash", ...],                              (array, optional)  Array of bound hash values
-  "hashtype"                                                   (string, optional) one of: "sha256", "sha256D", "blake2b", "keccak256", defaults to sha256
-  "signature"                                                  (string, optional) The current signature of the message encoded in base 64 if multisig ID
+  "hashtype": "str",                                           (string, optional) one of: "sha256", "sha256D", "blake2b", "keccak256", defaults to sha256
+  "signature":"base64str",                                     (string, optional) The current signature of the message encoded in base 64 if multisig ID
+  "encrypttoaddress":"saplingaddress",                         (string, optional) If present, encrypts and optionally returns encrypted data.
+                                                                                  All data can be decrypted with the incoming viewing key, and a unique decryption key can
+                                                                                  be generated for each sub-object.
+  "createmmr":"bool"                                           (bool, optional)   If this is true, OR there is more than one item to sign, returns processed data, MMRs, and root signature
 }
 ```
 #### Results:
 ```json
 {
-  "hash":"hexhash"         (string) The hash of the message (SHA256, NOT SHA256D)
-  "signature":"base64sig"  (string) The aggregate signature of the message encoded in base 64 if all or partial signing successful
-}
+  "hash":"hexhash"                                             (string) The hash of the message or null and returns "hashes", an array of hashes for an MMR
+  "hashes":["hexhash"]                                         (array)  Array of hashes for an MMR, alternate to "hash"
+  "mmrroot":"hexstr"                                           (string) Only returned when passed an array for signing root hash of the merkle mountain range of the objects signed
+  "vdxfkeys":["vdxfkey i-address", ...],
+  "vdxfkeynames":["vdxfkeyname, object for getvdxfid API, or friendly name ID -- no i-addresses", ...],
+  "boundhashes":["hexhash", ...],
+  "hashtype": "sha256" | "sha256D" | "blake2b" | "keccak256"
+  "signature":"base64sig"                                      (string) The aggregate signature of the message or mmrroot encoded in base 64 if all or partial signing successful for MMR, it is of root
+  ""}
+
 ```
 #### Examples
 Create the signature
@@ -1709,7 +1731,6 @@ As json rpc
 			"privateaddress": "xxxx"        (text, optional) private address attached to the ID
 }
 
-feeoffer                           (amount, optional) amount to offer miner/staker for the registration fee, if missing, uses standard price
 "returntx"                        (bool,   optional) defaults to false and transaction is sent, if true, transaction is signed by this wallet and returned
 "tokenupdate"                     (bool,   optional) defaults to false, if true, the tokenized ID control token, if one exists, will be used to update
                                                      which enables changing the revocation or recovery IDs, even if the wallet holding the token does not
@@ -1719,7 +1740,7 @@ feeoffer                           (amount, optional) amount to offer miner/stak
 ```
 
 #### Result:
-   transactionid                   (hexstr)
+   hex string of either the txid if returnhex is false or the hex serialized transaction if returntx is true
 
 Examples:
 ```bash
@@ -1869,7 +1890,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getoffers", "params": ["currencyorid" (iscurrency)] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `listopenoffers (unexpired) (expired)'`
+### `listopenoffers (unexpired) (expired)``
 Shows offers outstanding in this wallet
 
 #### Arguments
@@ -1880,15 +1901,16 @@ All open offers
 
 ### `makeoffer fromaddress '{"changeaddress":"transparentoriaddress", "expiryheight":blockheight, "offer":{"currency":"anycurrency", "amount":...} | {"identity":"idnameoriaddress",...}', "for":{"address":..., "currency":"anycurrency", "amount":...} | {"name":"identityforswap","parent":"parentid","primaryaddresses":["R-address(s)"],"minimumsignatures":1,...}}' (returntx) (feeamount)`
 This sends a transaction which provides a completely decentralized, fully on-chain an atomic swap offer for
-"decentralized swapping of any blockchain asset, including any/multi currencies, NFTs, identities, contractual
-"agreements and rights transfers, or to be used as bids for an on-chain auction of any blockchain asset(s).
-"Sources and destination of funds for swaps can be any valid transparent address capable of holding or controlling
+decentralized swapping of any blockchain asset, including any/multi currencies, NFTs, identities, contractual
+agreements and rights transfers, or to be used as bids for an on-chain auction of any blockchain asset(s).
+Sources and destination of funds for swaps can be any valid transparent address capable of holding or controlling
 the specific asset.
 
 #### Arguments
 1. "fromaddress"             (string, required) The VerusID, or wildcard address to send funds from. "\*", "R\*", or "i\*" are valid wildcards
 2. {
      "changeaddress"         (string, required) Change destination when constructing transactions
+     "expiryheight"          (number, optional) Block height at which this offer expires. Defaults to 20 blocks (avg 1/minute)
      "offer"                 (object, required) Funds description or identity name, "address" in this object should be an address of the person making an offer for change
      "for"                   (object, required) Funds description or full identity description
    }
@@ -1914,8 +1936,8 @@ If the current wallet can afford the swap, this accepts a swap offer on the bloc
 to execute it, and posts the transaction to the blockchain.
 
 #### Arguments:
-1. "fromaddress"            (string, required) The Sapling, VerusID, or wildcard address to send funds from, including fees for ID swaps.
-"\*", "R\*", or "i\*" are valid wildcards
+1. "fromaddress"         (string, required) The Sapling, VerusID, or wildcard address to send funds from, including fees for ID swaps.
+                                            "\*", "R\*", or "i\*" are valid wildcards
 2. {
     "txid"               (string, required) The transaction ID for the offer to accept
     "tx"                 (string, required) The hex transaction to complete in order to accept the offer
@@ -1943,7 +1965,7 @@ Returns block subsidy reward, taking into account the mining slow start and the 
 1. height         (numeric, optional) The block height.  If not provided, defaults to the current height of the chain.
 
 #### Result:
-```
+```json
 {
   "miner" : x.xxx           (numeric) The coinbase reward amount in VRSC.
 }
@@ -1961,33 +1983,33 @@ See https://en.bitcoin.it/wiki/BIP_0022 for full specification.
 
 #### Arguments:
 1. "jsonrequestobject"       (string, optional) A json object in the following spec
-```
+```json
      {
-       "mode":"template"    (string, optional) This must be set to "template" or omitted
-       "rewarddistribution":{
+       "mode":"template"            (string, optional) This must be set to "template" or omitted
+       "miningdistribution":{
            "(recipientaddress)":n,  (addressorid, relativeweight) key value to determine distribution
            "(recipientaddress)":n,
            "...
        "},
-       "capabilities":[       (array, optional) A list of strings
-           "support"           (string) client side supported feature, 'longpoll', 'coinbasetxn', 'coinbasevalue', 'proposal', 'serverlist', 'workid'
+       "capabilities":[             (array, optional) A list of strings
+           "support"                (string) client side supported feature, 'longpoll', 'coinbasetxn', 'coinbasevalue', 'proposal', 'serverlist', 'workid'
            ,...
          ]
      }
 ```
 
 #### Result:
-```
+```json
 {
   "version" : n,                     (numeric) The block version
-  "previousblockhash" : "xxxx",    (string) The hash of current highest block
-  "finalsaplingroothash" : "xxxx", (string) The hash of the final sapling root
+  "previousblockhash" : "xxxx",      (string) The hash of current highest block
+  "finalsaplingroothash" : "xxxx",   (string) The hash of the final sapling root
   "transactions" : [                 (array) contents of non-coinbase transactions that should be included in the next block
       {
-         "data" : "xxxx",          (string) transaction data encoded in hexadecimal (byte-for-byte)
-         "hash" : "xxxx",          (string) hash/id encoded in little-endian hexadecimal
-         "depends" : [              (array) array of numbers
-             n                        (numeric) transactions before this one (by 1-based index in 'transactions' list) that must be present in the final block if this one is
+         "data" : "xxxx",            (string) transaction data encoded in hexadecimal (byte-for-byte)
+         "hash" : "xxxx",            (string) hash/id encoded in little-endian hexadecimal
+         "depends" : [               (array) array of numbers
+             n                       (numeric) transactions before this one (by 1-based index in 'transactions' list) that must be present in the final block if this one is
              ,...
          ],
          "fee": n,                   (numeric) difference in value between transaction inputs and outputs (in Satoshis); for coinbase transactions, this is a negative Number of the total collected block fees (ie, not including the block subsidy); if key is not present, fee is unknown and clients MUST NOT assume there isn't one
@@ -1997,18 +2019,18 @@ See https://en.bitcoin.it/wiki/BIP_0022 for full specification.
       ,...
   ],
   "coinbasetxn" : { ... },           (json object) information for coinbase transaction
-  "target" : "xxxx",               (string) The hash target
+  "target" : "xxxx",                 (string) The hash target
   "mintime" : xxx,                   (numeric) The minimum timestamp appropriate for next block time in seconds since epoch (Jan 1 1970 GMT)
   "mutable" : [                      (array of string) list of ways the block template may be changed
      "value"                         (string) A way the block template may be changed, e.g. 'time', 'transactions', 'prevblock'
      ,...
   ],
-  "noncerange" : "00000000ffffffff",   (string) A range of valid nonces
-  "sigoplimit" : n,                 (numeric) limit of sigops in blocks
-  "sizelimit" : n,                  (numeric) limit of block size
-  "curtime" : ttt,                  (numeric) current timestamp in seconds since epoch (Jan 1 1970 GMT)
-  "bits" : "xxx",                 (string) compressed target of next block
-  "height" : n                      (numeric) The height of the next block
+  "noncerange" : "00000000ffffffff", (string) A range of valid nonces
+  "sigoplimit" : n,                  (numeric) limit of sigops in blocks
+  "sizelimit" : n,                   (numeric) limit of block size
+  "curtime" : ttt,                   (numeric) current timestamp in seconds since epoch (Jan 1 1970 GMT)
+  "bits" : "xxx",                    (string) compressed target of next block
+  "height" : n                       (numeric) The height of the next block
 }
 ```
 Examples:
@@ -2064,14 +2086,14 @@ Returns a json object containing mining-related information.
   "averageblockfees": xxx.xxxxx (numeric) The average block fees, in addition to block reward, over the past 100 blocks
   "difficulty": xxx.xxxxx    (numeric) The current difficulty
   "stakingsupply": xxx.xxxxx (numeric) The current estimated total staking supply
-  "errors": "..."          (string) Current errors
+  "errors": "..."            (string) Current errors
   "generate": true|false     (boolean) If the generation is on or off (see getgenerate or setgenerate calls)
   "genproclimit": n          (numeric) The processor limit for generation. -1 if no generation. (see getgenerate or setgenerate calls)
   "localsolps": xxx.xxxxx    (numeric) The average local solution rate in Sol/s since this node was started
   "networksolps": x          (numeric) The estimated network solution rate in Sol/s
   "pooledtx": n              (numeric) The size of the mem pool
   "testnet": true|false      (boolean) If using testnet or not
-  "chain": "xxxx",         (string) current network name as defined in BIP70 (main, test, regtest)
+  "chain": "xxxx",           (string) current network name as defined in BIP70 (main, test, regtest)
   "generate": true|false     (boolean) If this instance is mining or staking
   "staking": true|false      (boolean) If staking
   "numthreads": n            (numeric) Number of CPU threads mining
@@ -2234,7 +2256,7 @@ All funds to start the currency and for initial conversion amounts must be avail
 #### Arguments:
 ```json
 {
-   "options" : n,                  (int,    optional) bits (in hexadecimal):
+   "options" : n,                  (int,  optional) bits (in hexadecimal):
                                           OPTION_FRACTIONAL = 1                  // (1 decimal )allows reserve conversion using base calculations when set
                                           OPTION_ID_ISSUANCE = 2                 // (2 decimal) clear is permissionless, if set, IDs may only be created by controlling ID
                                           OPTION_ID_STAKING = 4                  // (4 decimal) all IDs on chain stake equally, rather than value-based staking
@@ -2247,17 +2269,27 @@ All funds to start the currency and for initial conversion amounts must be avail
                                           OPTION_GATEWAY_CONVERTER = 0x200       // (512 decimal) this means that for a specific PBaaS gateway, this is the default converter and will publish prices
                                           OPTION_GATEWAY_NAMECONTROLLER = 0x400  // (1024 decimal) when not set on a gateway, top level ID and currency registration happen on launch chain
                                           OPTION_NFT_TOKEN = 0x800               // (2048 decimal) single satoshi NFT token, tokenizes control over the root ID
-										  OPTIONS_FLAG_MASK = 0xfff
+                                          OPTION_NO_IDS = 0x1000                 // (4096 decimal) this currency cannot issue IDs
+										               OPTIONS_FLAG_MASK = 0xfff
   "name" : "xxxx",                 (string, required) name of existing identity with no active or pending blockchain
   "idregistrationfees" : "xx.xx",  (value, required) price of an identity in native currency
   "idreferrallevels" : n,          (int, required) how many levels ID referrals go back in reward
   "notaries" : "[identity,..]",    (list, optional) list of identities that are assigned as chain notaries
   "minnotariesconfirm" : n,        (int, optional) unique notary signatures required to confirm an auto-notarization
-  "notarizationreward" : "xx.xx",  (value,  required) default VRSC notarization reward total for first billing period
-  "billingperiod" : n,             (int,    optional) number of blocks in each billing period
-  "proofprotocol" : n,             (int,    optional) if 2, currency can be minted by whoever controls the ID
-  "startblock"    : n,             (int,    optional) VRSC block must be notarized into block 1 of PBaaS chain, default curheight + 100
-  "endblock"      : n,             (int,    optional) chain is considered inactive after this block height, and a new one may be started
+  "notarizationreward" : "xx.xx",  (value, required) default VRSC notarization reward total for first billing period
+  "proofprotocol" : n,             (int, optional) if 2, currency can be minted by whoever controls the ID
+                                                  1 = PROOF_PBAASMMR - Verus MMR proof, no notaries required
+                                                  2 = PROOF_CHAINID - non-native only - currency has centralized control, and
+                                                                      can mint/burn & change weights
+                                                  3 = PROOF_ETHNOTARIZATION - ETH & PATRICIA TRIE proof (do not attempt without
+                                                                              full understanding + C++, JavaScript & Solidity dev(s))
+  "notarizationprotocol" : n,      (int, optional) if 2, currency can be minted by whoever controls the ID
+                                                  1 = PROOF_PBAASMMR - Verus MMR proof, no notaries required
+                                                  2 = PROOF_CHAINID - chain ID is sole notary for proof, no evidence required
+                                                  3 = PROOF_ETHNOTARIZATION - Ethereum notarization & PATRICIA TRIE proof
+  "expiryheight"  : n,             (int, optional) block height at which the transaction expires, default: curheight + 20
+  "startblock"    : n,             (int, optional) VRSC block must be notarized into block 1 of PBaaS chain, default curheight + 100
+  "endblock"      : n,             (int, optional) chain or currency intended to end life after this height, 0 = no end
   "currencies"    : "["VRSC",..]", (list, optional) reserve currencies backing this chain in equal amounts
   "weights"       : "["xx.xx",..]",(list, optional) the weight of each reserve currency in a fractional currency
   "conversions"   : "["xx.xx",..]",(list, optional) if present, must be same size as currencies. pre-launch conversion ratio overrides
@@ -2321,7 +2353,11 @@ This estimates conversion from one currency to another, taking into account pend
 #### Result
 ```json
 {
-  "estimatedcurrencystate": object               Estimation of all currency values, including prices and changes
+  "inputcurrencyid": iaddress                    i-address of source currency
+  "netinputamount": value                        net amount in, after conversion fees in source cu$
+  "outputcurrencyid": iaddress                   i-address of destination currency
+  "estimatedcurrencyout": value                  estimated amount out in destination currency
+  "estimatedcurrencystate": object               Estimation of all currency values, including pric$
 }
 ```
 
@@ -2428,16 +2464,24 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getcurrency", "params": ["chainname"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getcurrencyconverters ["currency1","currency2",...]`
+### `getcurrencyconverters "currency1" "currency2" ... | 'json object'`
 Retrieves all currencies that have at least 1000 VRSC in reserve, are >10% VRSC reserve ratio, and have all listed currencies as reserves
 
 #### Arguments:
+"currencyname"                    : "string" ...  (string(s), one or more) all selected currencies are returned with their current state
+"paramobject"                     : "object" ...  (one or more parameters) advanced query with slippage options
 ```json
-  ["currencyname"    : "string", ...]  (string list, one or more) all selected currencies are returned with their current state
+       {
+           "convertto":"destcurrency"              "string"                target currency
+           "fromcurrency":"sourcecurrency" | [...] "string" | object array (string(s), one or more) currencies to convert from
+           "targetprice":n | [n,...]               "number(s)" ...         (number(s), one or more) target price within slippage required
+           "amount":n                              "number"                (number) amount of tocurrency needed
+           "slippage":n                            "number"                (number) max slippage with no other conversions max is 50000000 == 50%
+       }
 ```
 Result:
 ```json
-  "[{currency1}, {currency2}]" : "array of objects" (string) All currencies and the last notarization, which are valid converters.
+"[{currency1}, {currency2}]" : "array of objects" (string) All currencies, last currency state, and last amount to convert if amount specified
 ```
 Examples:
 ```bash
@@ -2445,7 +2489,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getcurrencyconverters", "params": ['["currency1","currency2",...]'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getcurrencystate "currencynameorid" ("n") ("connectedsystemid")`
+### `getcurrencystate "currencynameorid" ("n | m,n | m,n,o") ("connectedsystemid")`
 Returns the total amount of preconversions that have been confirmed on the blockchain for the specified chain.
 
 #### Arguments:
@@ -2481,13 +2525,13 @@ Examples:
 
 #### Arguments
 ```json
-"["currencyid",...]"                                       (strarray, optional) if specified, only returns rating values for specified currencies, otherwise all
+"["currencyid",...]"                                 (strarray, optional) if specified, only returns rating values for specified currencies, otherwise all
 ```
 
 #### Result
 ```json
 {
-  "setratings":{"id":JSONRatingObject,...},        (jsonobj) an ID/ratings key/value object
+  "setratings":{"id":JSONRatingObject,...},          (jsonobj) an ID/ratings key/value object
   "currencytrustmode":<n>                            (int) 0 = no restriction on sync, 1 = only sync to IDs rated approved, 2 = sync to all IDs but those on block list
 }
 ```
@@ -2501,7 +2545,7 @@ Examples:
 ### `getexports "chainname" (heightstart) (heightend)`
 Returns pending export transfers to the specified currency from start height to end height if specified
 
-###$ Arguments:
+### Arguments:
 ```
 1. "chainname"                     (string, optional)  name of the chain to look for. no parameter returns current chain in daemon.
 2. "heightstart"                   (int, optional)     default=0 only return exports at or above this height
@@ -2618,34 +2662,38 @@ This should be used to get information about chains that are not this chain, but
 ```
 #### Result:
 ```json
-   [
-     {
-       "flags": n,                      (hex) flags for the currency
-       "currencyid": "xxxx",            (text) i-address of the currency ID
-       "reservecurrencies": [
-         {
-     			 "currencyid": "xxxx",        (text) i-address of the currency ID
-     			 "weight": n,                 (numeric) The weight of this currence
-     			 "reserves": xxx.xxxxxxxx,    (numeric) The initial amount of this currency in reserve
-     			 "priceinreserve": n          (numeric) The initial conversion rate of this reserve currency
-     	   },
-       ],
-       "initialsupply" : xxx.xxxxxxxx,  (numeric) The initial supply of this currency
-       "emitted" : xxx.xxxxxxx,         (numeric) The currently emitted coins of this currency
-       "supply" : xxx.xxxxxxxx,         (numeric) The current supply of this currency
-       "currencies": {
-         "xxxx": {                      (text) i-address of the currency ID
-       	 "reservein": xxx.xxxxxxxx,     
-       	 "nativein": 0.00000000,
-       	 "reserveout": 249.99900299,
-       	 "lastconversionprice": 1.00000000,
-       	 "viaconversionprice": 0.99981249,
-       	 "fees": 250.06291562,
-       	 "conversionfees": 250.06251562
-       	 },
-       },
-     },
-   ]
+{
+ "flags": n,                      (hex) flags for the currency
+ "currencyid": "xxxx",            (text) i-address of the currency ID
+ "reservecurrencies": [
+   {
+		 "currencyid": "xxxx",        (text) i-address of the currency ID
+		 "weight": n,                 (numeric) The weight of this currence
+		 "reserves": xxx.xxxxxxxx,    (numeric) The initial amount of this currency in reserve
+		 "priceinreserve": n          (numeric) The initial conversion rate of this reserve currency
+   }
+ ],
+ "initialsupply" : xxx.xxxxxxxx,  (numeric) The initial supply of this currency
+ "emitted" : xxx.xxxxxxx,         (numeric) The currently emitted coins of this currency
+ "supply" : xxx.xxxxxxxx,         (numeric) The current supply of this currency
+ "currencies": {
+   "xxxx": {                      (text) i-address of the currency ID
+  	 "reservein": xxx.xxxxxxxx,     
+  	 "nativein": xxx.xxxxxxxx,
+  	 "reserveout": xxx.xxxxxxxx,
+  	 "lastconversionprice": xxx.xxxxxxxx,
+  	 "viaconversionprice": xxx.xxxxxxxx,
+  	 "fees": xxx.xxxxxxxx,
+  	 "conversionfees": xxx.xxxxxxxx,
+     "priorweights": xxx.xxxxxxxx
+   },{
+     ...
+   },
+   "primarycurrencyfees": xxx.xxxxxxx,
+   "primarycurrencyconversionfees": xxx.xxxxxxx,
+   "primarycurrencyout": xxx.xxxxxxx,
+   "preconvertedout": xxx.xxxxxxx
+}
 ```
 Examples:
 ```bash
@@ -2739,15 +2787,6 @@ any pending cross-chain notarization of an alternate chain that may not agree wi
     "entropyhash":"hex",
     "proveheight":n,
     "atheight":n
-  },
-  {
-    "type":"vrsc::evidence.validitychallenge" || "iCPb8ywQna7jYV2SHrGZ6vQMj7kuyWFxvb",
-    "evidence":{CNotaryEvidence},
-    "entropyhash":"hex",
-    "fromheight":n,
-    "toheight":n,
-    "challengedroot":{CPRoofRoot},
-    "confirmnotarization":{expectednotarization}, | "confirmroot":{CPRoofRoot}
   },
   {"type":"vrsc::evidence.primaryproof" || "iKDesmiEkEjDG61nQSZJSGhWvC8x8xA578",
       "priornotarizationref":{CUTXORef} || "priorroot":{CProofRoot
@@ -2868,12 +2907,12 @@ Returns a complete definition for any given chain if it is registered on the blo
 
 #### Arguments:
 ```json
-{                                    (json, optional) specify valid query conditions
-   "launchstate" : ("prelaunch" | "launched" | "refund" | "complete") (optional) return only currencies in that state
-   "systemtype" : ("local" | "gateway" | "pbaas")
-   "converter": bool               (bool, optional) default false, only return fractional currency converters
+{                                            (json, optional) specify valid query conditions
+   "launchstate" :                           ("prelaunch" | "launched" | "refund" | "complete") (optional) return only currencies in that state
+   "systemtype" :                            ("local" | "imported" | "gateway" | "pbaas")
+   "fromsystem" :                            ("systemnameeorid") default is the local chain, but if currency is from another system, specify here
+   "converter": ["currency1", ("currency2")] (array, optional) default empty, only return fractional currency converters of one or more currencies
 }
-
 ```
 #### Result:
 ```json
@@ -2891,7 +2930,6 @@ Returns a complete definition for any given chain if it is registered on the blo
     "proofprotocol" : n                    (int) protocol number that determines variations in cross-chain or bridged proofs
     "startblock" : n,                      (int) block # on this chain, which must be notarized into block one of the chain
     "endblock" : n,                        (int) block # after which, this chain's useful life is considered to be over
-    "currencies" : "["i-address", ...]",   (stringarray) currencies that can be converted to this currency at launch or makeup a liquidity basket
     "weights" : "[n, ...]",                (numberarray) relative currency weights (only returned for a liquidity basket)
     "conversions" : "[n, ...]",            (numberarray) pre-launch conversion rates for non-fractional currencies
     "minpreconversion" : "[n, ...]",       (numberarray) minimum amounts required in pre-conversions for currency to launch
@@ -3095,7 +3133,7 @@ Each merged block submission may be valid for Verus and/or PBaaS merge mined cha
 The submitted block consists of a valid block for this chain, along with embedded headers of other PBaaS merge mined chains.
 If the hash for this header meets targets of other chains that have been added with 'addmergedblock', this API will
 submit those blocks to the specified URL endpoints with an RPC 'submitmergedblock' request.
-Attempts to submit one more more new blocks to one or more networks.
+Attempts to submit one or more new blocks to one or more networks.
 
 #### Arguments
 1. "hexdata"    (string, required) the hex-encoded block data to submit
@@ -3170,11 +3208,11 @@ If dns is false, only a list of added nodes will be provided, otherwise connecte
 ```
 [
   {
-    "addednode" : "192.168.0.201",   (string) The node ip address
-    "connected" : true|false,          (boolean) If connected
+    "addednode" : "192.168.0.201",          (string) The node ip address
+    "connected" : true|false,               (boolean) If connected
     "addresses" : [
        {
-         "address" : "192.168.0.201:27485",  (string) The Verus server host and port
+         "address" : "192.168.0.201:27485", (string) The Verus server host and port
          "connected" : "outbound"           (string) connection, inbound or outbound
        }
        ,...
@@ -3244,30 +3282,30 @@ Returns an object containing various state info regarding P2P networking.
 ```json
 {
   "version": xxxxx,                      (numeric) the server version
-  "subversion": "/MagicBean:x.y.z[-v]/",     (string) the server subversion string
+  "subversion": "/MagicBean:x.y.z[-v]/", (string) the server subversion string
   "protocolversion": xxxxx,              (numeric) the protocol version
-  "localservices": "xxxxxxxxxxxxxxxx", (string) the services we offer to the network
+  "localservices": "xxxxxxxxxxxxxxxx",   (string) the services we offer to the network
   "timeoffset": xxxxx,                   (numeric) the time offset
   "connections": xxxxx,                  (numeric) the number of connections
   "networks": [                          (array) information per network
   {
-    "name": "xxx",                     (string) network (ipv4, ipv6 or onion)
+    "name": "xxx",                       (string) network (ipv4, ipv6 or onion)
     "limited": true|false,               (boolean) is the network limited using -onlynet?
     "reachable": true|false,             (boolean) is the network reachable?
-    "proxy": "host:port"               (string) the proxy that is used for this network, or empty if none
+    "proxy": "host:port"                 (string) the proxy that is used for this network, or empty if none
   }
   ,...
   ],
   "relayfee": x.xxxxxxxx,                (numeric) minimum relay fee for non-free transactions in VRSC/kB
   "localaddresses": [                    (array) list of local addresses
   {
-    "address": "xxxx",                 (string) network address
+    "address": "xxxx",                   (string) network address
     "port": xxx,                         (numeric) network port
     "score": xxx                         (numeric) relative score
   }
   ,...
   ]
-  "warnings": "..."                    (string) any network warnings (such as alert messages)
+  "warnings": "..."                      (string) any network warnings (such as alert messages)
 }
 ```
 Examples:
@@ -3283,27 +3321,27 @@ Returns data about each connected network node as a json array of objects.
 ```json
 [
   {
-    "id": n,                   (numeric) Peer index
-    "addr":"host:port",      (string) The ip address and port of the peer
-    "addrlocal":"ip:port",   (string) local address
-    "services":"xxxxxxxxxxxxxxxx",   (string) The services offered
-    "lastsend": ttt,           (numeric) The time in seconds since epoch (Jan 1 1970 GMT) of the last send
-    "lastrecv": ttt,           (numeric) The time in seconds since epoch (Jan 1 1970 GMT) of the last receive
-    "bytessent": n,            (numeric) The total bytes sent
-    "bytesrecv": n,            (numeric) The total bytes received
-    "conntime": ttt,           (numeric) The connection time in seconds since epoch (Jan 1 1970 GMT)
-    "timeoffset": ttt,         (numeric) The time offset in seconds
-    "pingtime": n,             (numeric) ping time
-    "pingwait": n,             (numeric) ping wait
-    "version": v,              (numeric) The peer version, such as 170002
+    "id": n,                       (numeric) Peer index
+    "addr":"host:port",            (string) The ip address and port of the peer
+    "addrlocal":"ip:port",         (string) local address
+    "services":"xxxxxxxxxxxxxxxx", (string) The services offered
+    "lastsend": ttt,               (numeric) The time in seconds since epoch (Jan 1 1970 GMT) of the last send
+    "lastrecv": ttt,               (numeric) The time in seconds since epoch (Jan 1 1970 GMT) of the last receive
+    "bytessent": n,                (numeric) The total bytes sent
+    "bytesrecv": n,                (numeric) The total bytes received
+    "conntime": ttt,               (numeric) The connection time in seconds since epoch (Jan 1 1970 GMT)
+    "timeoffset": ttt,             (numeric) The time offset in seconds
+    "pingtime": n,                 (numeric) ping time
+    "pingwait": n,                 (numeric) ping wait
+    "version": v,                  (numeric) The peer version, such as 170002
     "subver": "/MagicBean:x.y.z[-v]/",  (string) The string version
-    "inbound": true|false,     (boolean) Inbound (true) or Outbound (false)
-    "startingheight": n,       (numeric) The starting height (block) of the peer
-    "banscore": n,             (numeric) The ban score
-    "synced_headers": n,       (numeric) The last header we have in common with this peer
-    "synced_blocks": n,        (numeric) The last block we have in common with this peer
+    "inbound": true|false,         (boolean) Inbound (true) or Outbound (false)
+    "startingheight": n,           (numeric) The starting height (block) of the peer
+    "banscore": n,                 (numeric) The ban score
+    "synced_headers": n,           (numeric) The last header we have in common with this peer
+    "synced_blocks": n,            (numeric) The last block we have in common with this peer
     "inflight": [
-       n,                        (numeric) The heights of blocks we're currently asking from this peer
+       n,                          (numeric) The heights of blocks we're currently asking from this peer
        ...
     ]
   }
@@ -3496,7 +3534,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "decodescript", "params": ["hexstring"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `fundrawtransaction "hexstring"`
+### `fundrawtransaction "hexstring" '[{"txid":"8892b6c090b51a4eed7a61b72e9c8dbf5ed5bcd5aca6c6819b630acf2cb3fc87","voutnum":1},...]' (changeaddress) (explicitfee)`
 Add inputs to a transaction until it has enough in value to meet its out value.
 This will not modify existing inputs, and will add one change output to the outputs.
 Note that inputs which were signed may need to be resigned after completion since in/outputs have been added.
@@ -3504,6 +3542,9 @@ The inputs added will not be signed, use signrawtransaction for that.
 
 #### Arguments:
 1. "hexstring"    (string, required) The hex string of the raw transaction
+2. "objectarray"     (UTXO list, optional)  UTXOs to select from for funding
+3. "changeaddress"   (string, optional)     Address to send change to if there is any
+4. "explicitfee"     (number, optional)     Offer this instead of the default fee only when using UTXO list
 
 #### Result:
 ```json
@@ -3697,9 +3738,9 @@ The third optional argument (may be null) is an array of base58-encoded private 
 #### Result:
 ```json:
 {
-  "hex" : "value",           (string) The hex-encoded raw transaction with signature(s)
-  "complete" : true|false,   (boolean) If the transaction has a complete set of signatures
-  "errors" : [                 (json array of objects) Script verification errors (if there are any)
+  "hex" : "value",               (string) The hex-encoded raw transaction with signature(s)
+  "complete" : true|false,       (boolean) If the transaction has a complete set of signatures
+  "errors" : [                   (json array of objects) Script verification errors (if there are any)
     {
       "txid" : "hash",           (string) The hash of the referenced, previous transaction
       "vout" : n,                (numeric) The index of the output to spent and used as input
@@ -3724,7 +3765,7 @@ Creates a multi-signature address with n signature of m keys required.
 It returns a json object with the address and redeemScript.
 
 #### Arguments:
-1. nrequired      (numeric, required) The number of required signatures out of the n keys or addresses.
+1. nrequired    (numeric, required) The number of required signatures out of the n keys or addresses.
 2. "keys"       (string, required) A json array of keys which are Komodo addresses or hex-encoded public keys
 ```json
      [
@@ -3864,26 +3905,26 @@ Returns the VDXF key of the URI string. For example "vrsc::system.currency.expor
   "vdxfuri"            (string, required) This message is converted from hex, the data is hashed, then returned
 ```json
 {
-  "vdxfkey":"i-address or vdxfkey"   (string, optional) VDXF key or i-address to combine via hash
-  "uint256":"32bytehex"              (hexstr, optional) 256 bit hash to combine with hash
+  "vdxfkey":"i-address or vdxfkey"     (string, optional) VDXF key or i-address to combine via hash
+  "uint256":"32bytehex"                (hexstr, optional) 256 bit hash to combine with hash
   "indexnum":int                       (integer, optional) int32_t number to combine with hash
 }
 ```
 
 #### Result:
 ```json
-{                                        (object) object with both base58check and hex vdxfid values of string and parents
-  "vdxfid"                               (base58check) i-ID of the URI processed with the VDXF & all combined parameters
-  "hash160result"                        (hexstring) 20 byte hash in hex of the URL string passed in, processed with the VDXF
-  "qualifiedname":                       (object) separate name and parent ID value
+{                                      (object) object with both base58check and hex vdxfid values of string and parents
+  "vdxfid"                             (base58check) i-ID of the URI processed with the VDXF & all combined parameters
+  "hash160result"                      (hexstring) 20 byte hash in hex of the URL string passed in, processed with the VDXF
+  "qualifiedname":                     (object) separate name and parent ID value
   {
-    "name": "namestr"                    (string) leaf name
-    "parentid" | "namespace":"string"    (string) parent ID (or namespace if VDXF key) of name
+    "name": "namestr"                  (string) leaf name
+    "parentid" | "namespace":"string"  (string) parent ID (or namespace if VDXF key) of name
   }
-  "bounddata": {                         (object) if additional data is bound to create the value, it is returned here  {
-    "vdxfkey":"i-address or vdxfkey"     (string) i-address that was combined via hash
-    "uint256":"32bytehex"                (hexstr) 256 bit hash combined with hash
-    "indexnum":int                       (integer) int32_t combined with hash
+  "bounddata": {                       (object) if additional data is bound to create the value, it is returned here  {
+    "vdxfkey":"i-address or vdxfkey"   (string) i-address that was combined via hash
+    "uint256":"32bytehex"              (hexstr) 256 bit hash combined with hash
+    "indexnum":int                     (integer) int32_t combined with hash
   }
 }
 
@@ -3908,7 +3949,7 @@ Each key is a VRSC address or hex-encoded public key.
 If 'account' is specified (DEPRECATED), assign address to that account.
 
 #### Arguments:
-1. nrequired        (numeric, required) The number of required signatures out of the n keys or addresses.
+1. nrequired      (numeric, required) The number of required signatures out of the n keys or addresses.
 2. "keysobject"   (string, required) A json array of VRSC addresses or hex-encoded public keys
 ```json
      [
@@ -3966,6 +4007,43 @@ Examples:
 ```bash
 > verus convertpassphrase "walletpassphrase"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "convertpassphrase", "params": ["walletpassphrase"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
+```
+
+### `decryptdata 'json object'`
+
+
+Decrypts a vdxf data descriptor, which is typically encrypted to a z-address. If the viewing key is pr$
+If either the viewing key or the ssk are correct, the object will be returned with as much decryption $
+If no decryption is possible, this function returns an error.
+
+
+#### Arguments:
+`json object`
+```json
+{
+  "datadescriptor": {}                                           (object, required) Encrypted data descriptor to decrypt, uses wallet keys included in descriptor
+  "evk":"Sapling extended full viewing key"                      (evk, optional) if known, an extended viewing key to use for decoding that may not be in the descriptor
+  "ivk":"Sapling incoming viewing key hex"                       (ivk, optional) if known, an incoming viewing key to use for decoding
+  "txid":"hex",                                                  (txid, optional) if data is from a tx and retrieve is true, this may be needed when the data is on the same tx as the link
+  "retrieve": bool                                               (bool, optional) Defaults to false. If true and the data passed is an encrypted or unencrypted reference
+                                                                                        on this chain, it retrieves the data from its reference and decrypts if it can
+}
+```
+#### Result:
+
+#### Examples:
+Encrypt data
+```bash
+> verus signdata '{"address":"Verus Coin Foundation.vrsc@", "createmmr":true, "data":[{"message":"hello world", "encrypttoaddress":"Sapling address"}]}'
+
+```
+Decrypt data
+```bash
+> verus decryptdata '{encrypteddatadescriptor}'
+```
+As json rpc
+```bash
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "signdata", "params": ['{"address":"Verus Coin Foundation.vrsc@", "createmmr":true, "data":[{"message":"hello world", "encrypttoaddress":"Sapling address"}]}'] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
 ### `dumpprivkey "t-addr"`
@@ -4658,7 +4736,7 @@ As a json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listtransactions", "params": ["*", 20, 100] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `listunspent ( minconf maxconf  ["address",...] )`
+### `listunspent ( minconf maxconf  ["address",...] inludeshared )`
 Returns array of unspent transaction outputs with between minconf and maxconf (inclusive) confirmations.
 Optionally filter to only include txouts paid to specified addresses.
 Results are an array of Objects, each of which has:
@@ -4667,13 +4745,14 @@ Results are an array of Objects, each of which has:
 #### Arguments:
 1. minconf          (numeric, optional, default=1) The minimum confirmations to filter
 2. maxconf          (numeric, optional, default=9999999) The maximum confirmations to filter
-3. "addresses"    (string) A json array of VRSC addresses to filter
+3. "addresses  "    (string) A json array of VRSC addresses to filter
 ```json
     [
-      "address"   (string) VRSC address
+      "address"     (string) VRSC address
       ,...
     ]
 ```
+4. includeshared    (bool, optional, default=false) Include outputs that can also be spent by others
 Result
 ```json
 [                   (array of json object)
@@ -5542,4 +5621,4 @@ Perform a joinsplit and return the JSDescription.
 
 compiled by Oink.vrsc@, additions by Mike@, grewalsatinder@ and allbits@
 
-Note: last revision date 2024-01-30.
+Note: last revision date 2024-05-03.
