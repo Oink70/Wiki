@@ -523,7 +523,7 @@ If verbose is true, returns an Object with information about blockheader <hash>.
 2. verbose           (boolean, optional, default=true) true for a json object, false for the hex encoded data
 ```
 
-### Result (for verbose = true):
+#### Result (for verbose = true):
 ```json
 {
   "hash" : "hash",       (string) the block hash (same as provided)
@@ -540,7 +540,7 @@ If verbose is true, returns an Object with information about blockheader <hash>.
   "nextblockhash" : "hash"       (string) The hash of the next block
 }
 ```
-### Result (for verbose=false):
+#### Result (for verbose=false):
 ```
 "data"             (string) A string that is serialized, hex-encoded data for block 'hash'.
 ```
@@ -1890,7 +1890,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getoffers", "params": ["currencyorid" (iscurrency)] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `listopenoffers (unexpired) (expired)``
+### `listopenoffers (unexpired) (expired)`
 Shows offers outstanding in this wallet
 
 #### Arguments
@@ -2770,7 +2770,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnotarizationdata", "params": ["currencyid"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### 'getnotarizationproofs {json object}'
+### `getnotarizationproofs {json object}`
 Returns proofs to a caller for requested challenges. Some proofs can either independently or in combination
 with other proofs over time invalidate or force a competing chain to provide more proofs in order to confirm
 any pending cross-chain notarization of an alternate chain that may not agree with us.
@@ -2853,13 +2853,12 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getreservedeposits", "params": ["currencyname"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `getsaplingtree "n"`
+### `getsaplingtree "n | m,n | m,n,o"`
 Returns the entries for a light wallet Sapling tree state.
 
 #### Arguments:
-```
-   "n" or "m,n" or "m,n,o"         (int or string, optional) height or inclusive range with optional step at which to get the Sapling tree state. If not specified, the latest currency state and height is returned
-```
+1. "n" or "m,n" or "m,n,o"         (int or string, optional) height or inclusive range with optional step at which to get the Sapling tree state. If not specified, the latest currency state and height is returned
+
 #### Result:
 ```json
    [
@@ -2873,30 +2872,6 @@ Returns the entries for a light wallet Sapling tree state.
    ]
 ```
 Examples:
-```bash
-> verus getsaplingtree name
-> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getsaplingtree", "params": [name] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
-```
-
-### `getsaplingtree "n"` ***`NEW`***
-Returns the entries for a light wallet Sapling tree state.
-
-#### Arguments:
-1.   "n" or "m,n" or "m,n,o"         (int or string, optional) height or inclusive range with optional step at which to get the Sapling tree state
-                                                               If not specified, the latest currency state and height is returned
-#### Result:
-```json
-   [
-       {
-           "network": "VRSC",
-           "height": n,
-           "hash": "hex"
-           "time": n,
-           "tree": "hex"
-       },
-   ]
-```
-#### Examples:
 ```bash
 > verus getsaplingtree name
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getsaplingtree", "params": [name] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
@@ -4009,7 +3984,7 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "convertpassphrase", "params": ["walletpassphrase"] }' -H 'content-type: text/plain;' http://127.0.0.1:27486/
 ```
 
-### `decryptdata 'json object'`
+### `decryptdata 'json object'` ***`NEW`***
 
 
 Decrypts a vdxf data descriptor, which is typically encrypted to a z-address. If the viewing key is pr$
