@@ -87,12 +87,12 @@ If you have any questions about the information here, need help or have suggesti
 [error while loading shared libraries: libgomp.so.1 and/or libz.so](#!faq-arm/armfaq-01_libgomp.so.1.md)
 
 ## CLI wallet specific Information
-[Verusd options list](#!faq-cli/clifaq-01_verusd_options.md) ***`UPDATED to v1.2.2-4`***
-[Verus command list](#!faq-cli/clifaq-02_verus_commands.md) ***`UPDATED to v1.2.2-4`***
+[Verusd options list](#!faq-cli/clifaq-01_verusd_options.md) ***`UPDATED to v1.2.3-1`***
+[Verus command list](#!faq-cli/clifaq-02_verus_commands.md) ***`UPDATED to v1.2.3-1`***
 [Remarks on Windows command line formatting](#!faq-windows/winfaq-01_cli_formatting.md)
 
 ## Q&A Archive
 [Q&A questions channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-questions-20200728.html)
 [Q&A reward channel Verus-WhiteBIT 2020-07-28](#!q-a/veruscoin-q-a-reward-20200728.html)
 
-Note: last revision date 2024-05-03.
+Note: last revision date 2024-06-15.

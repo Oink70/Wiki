@@ -277,6 +277,11 @@ Windows 10: 	`%AppData%\Roaming\Komodo\VRSC\`
   `-disablewallet`
        Do not load the wallet and disable wallet RPC calls
 
+  `-fastload`
+       If fastload is true, the daemon will load much faster, potentially
+       saving an hour off of load time, and it will also require up to 4GB more
+       RAM for the same tasks
+
   `-keypool=<n>`
        Set key pool size to <n> (default: 100)
 
@@ -608,4 +613,4 @@ These are options for developers to debug/test the chain or daemon. These option
 
 
 compiled by Oink.vrsc@.
-Note: last revision date 2024-05-03.
+Note: last revision date 2024-06-16.
